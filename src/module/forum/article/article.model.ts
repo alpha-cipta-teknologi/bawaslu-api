@@ -2,8 +2,8 @@
 
 import { DataTypes } from 'sequelize';
 import conn from '../../../config/database';
-import Like from '../like_comment/like.model';
-import Comment from '../like_comment/comment.model';
+import Like from '../like.comment/like.model';
+import Comment from '../like.comment/comment.model';
 
 const Model = conn.sequelize.define(
   'forum_article',

@@ -2,27 +2,40 @@
 
 import { DataTypes } from 'sequelize';
 import conn from '../../../config/database';
-import Resource from '../../app/resource/resource.model';
+import Like from '../like.comment/like.model';
+import Comment from '../like.comment/comment.model';
 
 const Model = conn.sequelize.define(
-  'forum_comment',
+  'forum_bawaslu_update',
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    id_external: {
-      type: DataTypes.INTEGER,
+    category_name: {
+      type: DataTypes.STRING,
     },
-    group_comment: {
-      type: DataTypes.TINYINT,
-    },
-    comment: {
+    title: {
       type: DataTypes.TEXT,
+    },
+    description: {
+      type: DataTypes.TEXT,
+    },
+    path_thumbnail: {
+      type: DataTypes.STRING,
+    },
+    path_image: {
+      type: DataTypes.STRING,
     },
     status: {
       type: DataTypes.TINYINT,
+    },
+    counter_view: {
+      type: DataTypes.INTEGER,
+    },
+    counter_share: {
+      type: DataTypes.INTEGER,
     },
     created_by: {
       type: DataTypes.INTEGER,
@@ -44,6 +57,7 @@ const Model = conn.sequelize.define(
     freezeTableName: true,
   }
 );
-Model.belongsTo(Resource, { as: 'resource', targetKey: 'resource_id', foreignKey: 'created_by' });
+Model.hasMany(Like, { as: 'like', foreignKey: 'id_external' });
+Model.hasMany(Comment, { as: 'comment', foreignKey: 'id_external' });
 
 export default Model;

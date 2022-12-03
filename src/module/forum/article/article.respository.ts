@@ -2,8 +2,8 @@
 
 import { Op } from 'sequelize';
 import Model from './article.model';
-import Like from '../like_comment/like.model';
-import Comment from '../like_comment/comment.model';
+import Like from '../like.comment/like.model';
+import Comment from '../like.comment/comment.model';
 
 export default class Respository {
   public index(data: any) {
@@ -86,7 +86,7 @@ export default class Respository {
     });
   }
 
-  public update(data: any) {    
+  public update(data: any) {
     return Model.update(data?.payload, {
       where: data?.condition,
       transaction: data?.transaction,

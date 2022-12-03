@@ -50,7 +50,11 @@ export default class Controller {
 
       let icon_image: any = null;
       if (req?.files && req?.files?.icon_image) {
-        const { path_doc } = await helper.resize(req?.files?.icon_image, 'category', 250);
+        const { path_doc } = await helper.resize(
+          req?.files?.icon_image,
+          'category',
+          250
+        );
         icon_image = path_doc;
       }
 
@@ -80,7 +84,11 @@ export default class Controller {
 
       let icon_image: any = null;
       if (req?.files && req?.files?.icon_image) {
-        const { path_doc } = await helper.resize(req?.files?.icon_image, 'category', 250);
+        const { path_doc } = await helper.resize(
+          req?.files?.icon_image,
+          'category',
+          250
+        );
         icon_image = path_doc;
       }
 

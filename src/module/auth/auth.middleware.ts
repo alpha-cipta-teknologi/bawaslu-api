@@ -33,7 +33,11 @@ export default class Middleware {
       if (err?.name === 'TokenExpiredError') {
         return response.failed(err?.message, 401, res);
       } else {
-        return helper.catchError(`check token invalid: ${err?.message}`, 401, res);
+        return helper.catchError(
+          `check token invalid: ${err?.message}`,
+          401,
+          res
+        );
       }
     }
   }
@@ -51,7 +55,11 @@ export default class Middleware {
       if (err?.name === 'TokenExpiredError') {
         return response.failed(err?.message, 401, res);
       } else {
-        return helper.catchError(`check refresh token invalid: ${err?.message}`, 401, res);
+        return helper.catchError(
+          `check refresh token invalid: ${err?.message}`,
+          401,
+          res
+        );
       }
     }
   }
@@ -76,7 +84,11 @@ export default class Middleware {
         next();
         return;
       } else {
-        return helper.catchError(`check expired token invalid: ${err?.message}`, 401, res);
+        return helper.catchError(
+          `check expired token invalid: ${err?.message}`,
+          401,
+          res
+        );
       }
     }
   }

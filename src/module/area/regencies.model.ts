@@ -25,6 +25,10 @@ const Model = conn.sequelize.define(
     freezeTableName: true,
   }
 );
-Model.belongsTo(Province, { as: 'province', targetKey: 'id', foreignKey: 'area_province_id' });
+Model.belongsTo(Province, {
+  as: 'province',
+  targetKey: 'id',
+  foreignKey: 'area_province_id',
+});
 
 export default Model;

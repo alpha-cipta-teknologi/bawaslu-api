@@ -2,10 +2,7 @@
 
 export default class Variable {
   public fillable() {
-    const field: Array<string> = [
-      'folder_name',
-      'status',
-    ];
+    const field: Array<string> = ['folder_name', 'status'];
     return field;
   }
 }

@@ -8,8 +8,9 @@ const JWT_TOKEN: Secret = process.env.JWT_TOKEN || 'bawaslu';
 const JWT_REFRESH_TOKEN: Secret =
   process.env.JWT_REFRESH_TOKEN || 'bawaslu-refresh';
 const JWT_TOKEN_EXPIRED: number = +(process.env.JWT_TOKEN_EXPIRED || 604800);
-const JWT_REFRESH_TOKEN_EXPIRED: number =
-  +(process.env.JWT_REFRESH_TOKEN_EXPIRED || 1209600);
+const JWT_REFRESH_TOKEN_EXPIRED: number = +(
+  process.env.JWT_REFRESH_TOKEN_EXPIRED || 1209600
+);
 
 export default class HelperAuth {
   public decodeBearerToken(token: string) {

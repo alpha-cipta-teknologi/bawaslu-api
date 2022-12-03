@@ -43,7 +43,11 @@ export default class Controller {
       let path_image: any = null;
       if (req?.files && req?.files?.image) {
         // resize
-        const { path_doc } = await helper.resize(req?.files?.image, 'content', 250);
+        const { path_doc } = await helper.resize(
+          req?.files?.image,
+          'content',
+          250
+        );
         path_thumbnail = path_doc;
 
         // upload original
@@ -85,7 +89,11 @@ export default class Controller {
       let path_image: any = null;
       if (req?.files && req?.files?.image) {
         // resize
-        const { path_doc } = await helper.resize(req?.files?.image, 'content', 250);
+        const { path_doc } = await helper.resize(
+          req?.files?.image,
+          'content',
+          250
+        );
         path_thumbnail = path_doc;
 
         // upload original
@@ -101,7 +109,8 @@ export default class Controller {
       await repository.update({
         payload: {
           ...data,
-          path_thumbnail: path_thumbnail || check?.getDataValue('path_thumbnail'),
+          path_thumbnail:
+            path_thumbnail || check?.getDataValue('path_thumbnail'),
           path_image: path_image || check?.getDataValue('path_image'),
           path_video: path_video || check?.getDataValue('path_video'),
           modified_by: req?.user?.id,

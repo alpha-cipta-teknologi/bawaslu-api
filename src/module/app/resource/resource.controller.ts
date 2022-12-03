@@ -140,9 +140,9 @@ export default class Controller {
       let regency_id: any = null;
       let image_foto: any = null;
       if (req?.body?.role_id) role_id = JSON.parse(req?.body?.role_id);
-      if (req?.body?.province_id) province_id = JSON.parse(req?.body?.province_id);
-      if (req?.body?.regency_id)
-        regency_id = JSON.parse(req?.body?.regency_id);
+      if (req?.body?.province_id)
+        province_id = JSON.parse(req?.body?.province_id);
+      if (req?.body?.regency_id) regency_id = JSON.parse(req?.body?.regency_id);
       if (req?.files && req?.files.image_foto) {
         image_foto = await helper.upload(req?.files.image_foto, 'resource');
       }
@@ -167,8 +167,10 @@ export default class Controller {
           ...data,
           password: password || check?.getDataValue('password'),
           role_id: role_id?.value || check?.getDataValue('role_id'),
-          area_province_id: province_id?.value || check?.getDataValue('area_province_id'),
-          area_regencies_id: regency_id?.value || check?.getDataValue('area_regencies_id'),
+          area_province_id:
+            province_id?.value || check?.getDataValue('area_province_id'),
+          area_regencies_id:
+            regency_id?.value || check?.getDataValue('area_regencies_id'),
           image_foto: image_foto || check?.getDataValue('image_foto'),
           modified_by: req?.user?.id,
         },

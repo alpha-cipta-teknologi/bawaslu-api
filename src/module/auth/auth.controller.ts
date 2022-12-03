@@ -24,7 +24,8 @@ export default class Controller {
         id: user?.resource_id,
         username: user?.username,
         role_name: user?.role?.name,
-        is_public: user?.role?.name == 'public' ? { created_by: user?.resource_id } : {},
+        is_public:
+          user?.role?.name == 'public' ? { created_by: user?.resource_id } : {},
       };
 
       const t = await conn.sequelize.transaction();
@@ -68,7 +69,10 @@ export default class Controller {
       id: result?.getDataValue('resource_id'),
       username: result?.getDataValue('username'),
       role_name: result?.getDataValue('role')?.name,
-      is_public: result?.getDataValue('role')?.name == 'public' ? { created_by: result?.getDataValue('resource_id') } : {},
+      is_public:
+        result?.getDataValue('role')?.name == 'public'
+          ? { created_by: result?.getDataValue('resource_id') }
+          : {},
     };
 
     try {
@@ -153,7 +157,7 @@ export default class Controller {
   public async verify(req: Request, res: Response) {
     if (!req?.query?.confirm_hash)
       return response.failed('Confirm has is required', 422, res);
-    
+
     const t = await conn.sequelize.transaction();
     try {
       const result = await repository.detail({
@@ -168,7 +172,7 @@ export default class Controller {
         payload: { status: 'A' },
         condition: { confirm_hash: req?.query?.confirm_hash },
         transaction: t,
-    });
+      });
 
       await t.commit();
       return response.success(true, 'Account verified', res);

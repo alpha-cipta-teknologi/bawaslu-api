@@ -18,14 +18,12 @@ export default class Respository {
         ...query,
         where: {
           status: { [Op.ne]: 9 },
-          [Op.or]: [
-            { folder_name: { [Op.like]: `%${data?.keyword}%` } },
-          ],
+          [Op.or]: [{ folder_name: { [Op.like]: `%${data?.keyword}%` } }],
         },
       };
       where_detail = {
-        description: { [Op.like]: `%${data?.keyword}%` }
-      }
+        description: { [Op.like]: `%${data?.keyword}%` },
+      };
     }
     return Model.findAndCountAll({
       ...query,
@@ -71,7 +69,7 @@ export default class Respository {
     });
   }
 
-  public update(data: any) {    
+  public update(data: any) {
     return Model.update(data?.payload, {
       where: data?.condition,
       transaction: data?.transaction,
@@ -84,7 +82,7 @@ export default class Respository {
     });
   }
 
-  public updateDetail(data: any) {    
+  public updateDetail(data: any) {
     return Detail.update(data?.payload, {
       where: data?.condition,
       transaction: data?.transaction,

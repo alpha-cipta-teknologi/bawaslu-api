@@ -2,32 +2,24 @@
 
 import { DataTypes } from 'sequelize';
 import conn from '../../../config/database';
+import Resource from '../../app/resource/resource.model';
 
 const Model = conn.sequelize.define(
-  'app_menu',
+  'forum_comment',
   {
-    menu_id: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    menu_name: {
-      type: DataTypes.STRING,
+    id_external: {
+      type: DataTypes.INTEGER,
     },
-    menu_icon: {
-      type: DataTypes.STRING,
-    },
-    module_name: {
-      type: DataTypes.STRING,
-    },
-    type_menu: {
-      type: DataTypes.STRING(1),
-    },
-    seq_number: {
+    group_comment: {
       type: DataTypes.TINYINT,
     },
-    parent_id: {
-      type: DataTypes.INTEGER,
+    comment: {
+      type: DataTypes.TEXT,
     },
     status: {
       type: DataTypes.TINYINT,
@@ -52,5 +44,10 @@ const Model = conn.sequelize.define(
     freezeTableName: true,
   }
 );
+Model.belongsTo(Resource, {
+  as: 'resource',
+  targetKey: 'resource_id',
+  foreignKey: 'created_by',
+});
 
 export default Model;

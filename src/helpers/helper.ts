@@ -109,7 +109,7 @@ export default class Helper {
   }
 
   public async catchError(message: string, code: number, res: Response) {
-    await this.sendNotif(message);    
+    await this.sendNotif(message);
     return response.failed(message, code, res);
   }
 

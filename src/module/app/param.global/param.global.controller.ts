@@ -60,7 +60,11 @@ export default class Controller {
       return response.success(true, 'Data success saved', res);
     } catch (err) {
       await t.rollback();
-      return helper.catchError(`param global create: ${err?.message}`, 500, res);
+      return helper.catchError(
+        `param global create: ${err?.message}`,
+        500,
+        res
+      );
     }
   }
 
@@ -80,7 +84,11 @@ export default class Controller {
       return response.success(true, 'Data success updated', res);
     } catch (err) {
       await t.rollback();
-      return helper.catchError(`param global update: ${err?.message}`, 500, res);
+      return helper.catchError(
+        `param global update: ${err?.message}`,
+        500,
+        res
+      );
     }
   }
 
@@ -103,7 +111,11 @@ export default class Controller {
       return response.success(true, 'Data success deleted', res);
     } catch (err) {
       await t.rollback();
-      return helper.catchError(`param global delete: ${err?.message}`, 500, res);
+      return helper.catchError(
+        `param global delete: ${err?.message}`,
+        500,
+        res
+      );
     }
   }
 }

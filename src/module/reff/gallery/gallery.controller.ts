@@ -10,10 +10,7 @@ import { response } from '../../../helpers/response';
 
 const date: string = helper.date();
 
-const insertDetails = async (
-  req: Request,
-  gallery_id: number
-) => {
+const insertDetails = async (req: Request, gallery_id: number) => {
   const t = await conn.sequelize.transaction();
 
   if (req?.body?.detail_delete) {
@@ -29,9 +26,9 @@ const insertDetails = async (
 
   if (req?.body?.details) {
     const details: Array<{
-      seq: number,
-      status: number,
-      description: string,
+      seq: number;
+      status: number;
+      description: string;
     }> = JSON.parse(req?.body?.details);
 
     let insert: Array<Object> = [];
@@ -56,7 +53,7 @@ const insertDetails = async (
       await repository.bulkCreateDetail({
         payload: insert,
         transaction: t,
-      })
+      });
     }
   }
 };
@@ -95,7 +92,11 @@ export default class Controller {
 
       let path_thumbnail: any = null;
       if (req?.files && req?.files?.image) {
-        const { path_doc } = await helper.resize(req?.files?.image, 'gallery', 250);
+        const { path_doc } = await helper.resize(
+          req?.files?.image,
+          'gallery',
+          250
+        );
         path_thumbnail = path_doc;
       }
 
@@ -127,7 +128,11 @@ export default class Controller {
 
       let path_thumbnail: any = null;
       if (req?.files && req?.files?.image) {
-        const { path_doc } = await helper.resize(req?.files?.image, 'gallery', 250);
+        const { path_doc } = await helper.resize(
+          req?.files?.image,
+          'gallery',
+          250
+        );
         path_thumbnail = path_doc;
       }
 

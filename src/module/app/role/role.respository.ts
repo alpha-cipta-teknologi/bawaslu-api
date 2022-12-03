@@ -46,7 +46,7 @@ export default class Respository {
     });
   }
 
-  public update(data: any) {    
+  public update(data: any) {
     return Model.update(data?.payload, {
       where: data?.condition,
       transaction: data?.transaction,

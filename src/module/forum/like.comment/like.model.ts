@@ -32,6 +32,10 @@ const Model = conn.sequelize.define(
     freezeTableName: true,
   }
 );
-Model.belongsTo(Resource, { as: 'resource', targetKey: 'resource_id', foreignKey: 'created_by' });
+Model.belongsTo(Resource, {
+  as: 'resource',
+  targetKey: 'resource_id',
+  foreignKey: 'created_by',
+});
 
 export default Model;

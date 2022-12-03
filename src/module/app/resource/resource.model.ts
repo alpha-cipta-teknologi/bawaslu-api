@@ -80,7 +80,15 @@ const Model = conn.sequelize.define(
   }
 );
 Model.belongsTo(Role, { as: 'role', foreignKey: 'role_id' });
-Model.belongsTo(Province, { as: 'province', targetKey: 'id', foreignKey: 'area_province_id' });
-Model.belongsTo(Regency, { as: 'regency', targetKey: 'id', foreignKey: 'area_regencies_id' });
+Model.belongsTo(Province, {
+  as: 'province',
+  targetKey: 'id',
+  foreignKey: 'area_province_id',
+});
+Model.belongsTo(Regency, {
+  as: 'regency',
+  targetKey: 'id',
+  foreignKey: 'area_regencies_id',
+});
 
 export default Model;

@@ -73,7 +73,7 @@ export default class Respository {
       where: {
         ...condition,
         status: { [Op.ne]: 9 },
-      }
+      },
     });
   }
 
@@ -109,7 +109,7 @@ export default class Respository {
     });
   }
 
-  public delete(data: any) {    
+  public delete(data: any) {
     return Model.destroy({
       where: data?.condition,
       transaction: data?.transaction,
