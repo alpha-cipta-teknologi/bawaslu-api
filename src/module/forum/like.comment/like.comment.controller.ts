@@ -79,11 +79,7 @@ export default class Controller {
         res
       );
     } catch (err) {
-      return helper.catchError(
-        `comment index: ${err?.message}`,
-        500,
-        res
-      );
+      return helper.catchError(`comment index: ${err?.message}`, 500, res);
     }
   }
 

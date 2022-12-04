@@ -15,7 +15,11 @@ router.put('/article/:id', auth.checkBearerToken, article.update);
 router.delete('/article/:id', auth.checkBearerToken, article.delete);
 
 router.get('/bawaslu-update', auth.checkBearerToken, bawasluUpdate.index);
-router.get('/bawaslu-update/:slug', auth.checkBearerToken, bawasluUpdate.detail);
+router.get(
+  '/bawaslu-update/:slug',
+  auth.checkBearerToken,
+  bawasluUpdate.detail
+);
 router.post('/bawaslu-update', auth.checkBearerToken, bawasluUpdate.create);
 router.put('/bawaslu-update/:id', auth.checkBearerToken, bawasluUpdate.update);
 router.delete(

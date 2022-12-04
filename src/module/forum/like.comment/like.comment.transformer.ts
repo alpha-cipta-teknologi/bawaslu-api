@@ -8,7 +8,7 @@ const nestedChildren = async (data: any) => {
     id_external: data?.dataValues?.id,
     group_comment: 3,
   });
-  
+
   if (comments?.length > 0) {
     for (let i in comments) {
       const reply: Array<Object> = await nestedChildren(comments[i]);

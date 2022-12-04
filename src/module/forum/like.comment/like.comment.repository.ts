@@ -40,7 +40,7 @@ export default class Respository {
         'group_comment',
         'comment',
         'created_by',
-        'created_date'
+        'created_date',
       ],
       where: {
         ...data?.condition,
@@ -56,9 +56,7 @@ export default class Respository {
         where: {
           ...data?.condition,
           status: { [Op.ne]: 9 },
-          [Op.or]: [
-            { comment: { [Op.like]: `%${data?.keyword}%` } },
-          ],
+          [Op.or]: [{ comment: { [Op.like]: `%${data?.keyword}%` } }],
         },
       };
     }
@@ -66,11 +64,7 @@ export default class Respository {
       ...query,
       include: [
         {
-          attributes: [
-            'username',
-            'full_name',
-            'image_foto',
-          ],
+          attributes: ['username', 'full_name', 'image_foto'],
           model: Resource,
           as: 'author',
           required: false,
@@ -90,16 +84,12 @@ export default class Respository {
         'group_comment',
         'comment',
         'created_by',
-        'created_date'
+        'created_date',
       ],
       where: condition,
       include: [
         {
-          attributes: [
-            'username',
-            'full_name',
-            'image_foto',
-          ],
+          attributes: ['username', 'full_name', 'image_foto'],
           model: Resource,
           as: 'author',
           required: false,
@@ -119,16 +109,12 @@ export default class Respository {
         'group_comment',
         'comment',
         'created_by',
-        'created_date'
+        'created_date',
       ],
       where: condition,
       include: [
         {
-          attributes: [
-            'username',
-            'full_name',
-            'image_foto',
-          ],
+          attributes: ['username', 'full_name', 'image_foto'],
           model: Resource,
           as: 'author',
           required: false,

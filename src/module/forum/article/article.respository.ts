@@ -69,11 +69,7 @@ export default class Respository {
       ...query,
       include: [
         {
-          attributes: [
-            'username',
-            'full_name',
-            'image_foto',
-          ],
+          attributes: ['username', 'full_name', 'image_foto'],
           model: Resource,
           as: 'author',
           required: false,
@@ -136,11 +132,7 @@ export default class Respository {
       },
       include: [
         {
-          attributes: [
-            'username',
-            'full_name',
-            'image_foto',
-          ],
+          attributes: ['username', 'full_name', 'image_foto'],
           model: Resource,
           as: 'author',
           required: false,
