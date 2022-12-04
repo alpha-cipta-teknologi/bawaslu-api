@@ -5,6 +5,7 @@ import Like from './like.model';
 import { Request } from 'express';
 import Comment from './comment.model';
 import Article from '../article/article.model';
+import Resource from '../../app/resource/resource.model';
 import BawasluUpdate from '../bawaslu.update/bawaslu.update.model';
 
 export default class Respository {
@@ -31,15 +32,111 @@ export default class Respository {
     return result;
   }
 
+  public index(data: any) {
+    let query: Object = {
+      attributes: [
+        'id',
+        'id_external',
+        'group_comment',
+        'comment',
+        'created_by',
+        'created_date'
+      ],
+      where: {
+        ...data?.condition,
+        status: { [Op.ne]: 9 },
+      },
+      order: [['id', 'ASC']],
+      offset: data?.offset,
+      limit: data?.limit,
+    };
+    if (data?.keyword !== undefined && data?.keyword != null) {
+      query = {
+        ...query,
+        where: {
+          ...data?.condition,
+          status: { [Op.ne]: 9 },
+          [Op.or]: [
+            { comment: { [Op.like]: `%${data?.keyword}%` } },
+          ],
+        },
+      };
+    }
+    return Comment.findAndCountAll({
+      ...query,
+      include: [
+        {
+          attributes: [
+            'username',
+            'full_name',
+            'image_foto',
+          ],
+          model: Resource,
+          as: 'author',
+          required: false,
+          where: {
+            status: { [Op.ne]: 9 },
+          },
+        },
+      ],
+    });
+  }
+
   public comments(condition: any) {
     return Comment.findAll({
+      attributes: [
+        'id',
+        'id_external',
+        'group_comment',
+        'comment',
+        'created_by',
+        'created_date'
+      ],
       where: condition,
+      include: [
+        {
+          attributes: [
+            'username',
+            'full_name',
+            'image_foto',
+          ],
+          model: Resource,
+          as: 'author',
+          required: false,
+          where: {
+            status: { [Op.ne]: 9 },
+          },
+        },
+      ],
     });
   }
 
   public detailComment(condition: any) {
     return Comment.findOne({
+      attributes: [
+        'id',
+        'id_external',
+        'group_comment',
+        'comment',
+        'created_by',
+        'created_date'
+      ],
       where: condition,
+      include: [
+        {
+          attributes: [
+            'username',
+            'full_name',
+            'image_foto',
+          ],
+          model: Resource,
+          as: 'author',
+          required: false,
+          where: {
+            status: { [Op.ne]: 9 },
+          },
+        },
+      ],
     });
   }
 

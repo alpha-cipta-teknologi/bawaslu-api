@@ -6,7 +6,6 @@ import { helper } from '../../../helpers/helper';
 import { variable } from './bawaslu.update.variable';
 import { response } from '../../../helpers/response';
 import { repository } from './bawaslu.update.respository';
-import { transformer } from './bawaslu.update.transformer';
 import { repository as repoLC } from '../like.comment/like.comment.repository';
 
 export default class Controller {
@@ -20,10 +19,14 @@ export default class Controller {
         offset: parseInt(limit) * (parseInt(offset) - 1),
         keyword: keyword,
         condition: req?.user?.is_public,
+        user_id: req?.user?.id || null,
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
       const total: number = count?.length;
-      const bawasluUpdate = await transformer.list(rows);
+      const bawasluUpdate: Array<Object> = rows.map((item: any) => ({
+        ...item?.dataValues,
+        like: item?.like?.length > 0,
+      }));
       return response.successDetail(
         'Data bawaslu update',
         { total: total, values: bawasluUpdate },
@@ -40,13 +43,19 @@ export default class Controller {
 
   public async detail(req: Request, res: Response) {
     try {
-      const id: any = req.params.id || 0;
+      const slug: string = req.params.slug || '';
       const result: Object | any = await repository.detail({
-        id: id,
-        created_by: req?.user?.id,
+        condition: {
+          slug: slug,
+          ...req?.user?.is_public,
+        },
+        user_id: req?.user?.id || null,
       });
       if (!result) return response.failed('Data not found', 404, res);
-      const bawasluUpdate = await transformer.detail(result);
+      const bawasluUpdate: Object = {
+        ...result?.dataValues,
+        like: result?.like?.length > 0,
+      };
       return response.successDetail('Data bawaslu update', bawasluUpdate, res);
     } catch (err) {
       return helper.catchError(
@@ -60,11 +69,14 @@ export default class Controller {
   public async create(req: Request, res: Response) {
     const t = await conn.sequelize.transaction();
     try {
-      const check = await repository.check({
-        ...req?.user?.is_public,
-        title: req?.body?.title,
+      const body: any = req?.body;
+      if (!body?.title) return response.failed('Title is required', 422, res);
+
+      let slug: string = body?.title.replace(/ /g, '-').toLowerCase();
+      const checkSlug = await repository.check({
+        slug: slug,
       });
-      if (check) return response.failed('Data already exists', 400, res);
+      if (checkSlug) slug = slug + 1;
 
       let path_thumbnail: any = null;
       let path_image: any = null;
@@ -81,10 +93,11 @@ export default class Controller {
         path_image = await helper.upload(req?.files?.image, 'bawaslu update');
       }
 
-      const data: Object = helper.only(variable.fillable(), req?.body);
+      const data: Object = helper.only(variable.fillable(), body);
       await repository.create({
         payload: {
           ...data,
+          slug: slug,
           path_thumbnail: path_thumbnail,
           path_image: path_image,
           created_by: req?.user?.id,
@@ -113,6 +126,18 @@ export default class Controller {
       });
       if (!check) return response.failed('Data not found', 404, res);
 
+      const body: any = req?.body;
+      if (!body?.title) return response.failed('Title is required', 422, res);
+
+      let slug: string = check?.getDataValue('slug');
+      if (body?.title != check?.getDataValue('title')) {
+        slug = body?.title.replace(/ /g, '-').toLowerCase();
+        const checkSlug = await repository.check({
+          slug: slug,
+        });
+        if (checkSlug) slug = slug + 1;
+      }
+
       let path_thumbnail: any = null;
       let path_image: any = null;
       if (req?.files && req?.files?.image) {
@@ -128,10 +153,11 @@ export default class Controller {
         path_image = await helper.upload(req?.files?.image, 'bawaslu update');
       }
 
-      const data: Object = helper.only(variable.fillable(), req?.body, true);
+      const data: Object = helper.only(variable.fillable(), body, true);
       await repository.update({
         payload: {
           ...data,
+          slug: slug,
           path_thumbnail:
             path_thumbnail || check?.getDataValue('path_thumbnail'),
           path_image: path_image || check?.getDataValue('path_image'),

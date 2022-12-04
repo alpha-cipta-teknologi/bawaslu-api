@@ -5,6 +5,7 @@ import { Request, Response } from 'express';
 import { helper } from '../../../helpers/helper';
 import { response } from '../../../helpers/response';
 import { repository } from './like.comment.repository';
+import { transformer } from './like.comment.transformer';
 
 const date: string = helper.date();
 
@@ -48,6 +49,57 @@ export default class Controller {
     } catch (err) {
       await t.rollback();
       return helper.catchError(`like action: ${err?.message}`, 500, res);
+    }
+  }
+
+  public async index(req: Request, res: Response) {
+    try {
+      const { id_external, group, perPage, page, q } = req?.query;
+      if (!id_external || !group)
+        return response.failed('id_external and group is required', 422, res);
+
+      const limit: any = perPage || 10;
+      const offset: any = page || 1;
+      const keyword: any = q;
+      const { count, rows } = await repository.index({
+        limit: parseInt(limit),
+        offset: parseInt(limit) * (parseInt(offset) - 1),
+        keyword: keyword,
+        condition: {
+          ...req?.user?.is_public,
+          group_comment: group,
+          id_external: id_external,
+        },
+      });
+      if (rows?.length < 1) return response.failed('Data not found', 404, res);
+      const comments: Array<Object> = await transformer.list(rows);
+      return response.successDetail(
+        'Data comment',
+        { total: count, values: comments },
+        res
+      );
+    } catch (err) {
+      return helper.catchError(
+        `comment index: ${err?.message}`,
+        500,
+        res
+      );
+    }
+  }
+
+  public async detail(req: Request, res: Response) {
+    try {
+      const { id_external, group } = req?.params;
+      const result: Object | any = await repository.detailComment({
+        ...req?.user?.is_public,
+        group_comment: group,
+        id_external: id_external,
+      });
+      if (!result) return response.failed('Data not found', 404, res);
+      const comment: Array<Object> = await transformer.detail(result);
+      return response.successDetail('Data comment', comment, res);
+    } catch (err) {
+      return helper.catchError(`comment detail: ${err?.message}`, 500, res);
     }
   }
 

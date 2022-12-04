@@ -45,7 +45,7 @@ const Model = conn.sequelize.define(
   }
 );
 Model.belongsTo(Resource, {
-  as: 'resource',
+  as: 'author',
   targetKey: 'resource_id',
   foreignKey: 'created_by',
 });

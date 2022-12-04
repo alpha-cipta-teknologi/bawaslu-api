@@ -2,7 +2,8 @@
 
 import Model from './article.model';
 import sequelize, { Op } from 'sequelize';
-import Comment from '../like.comment/comment.model';
+import Like from '../like.comment/like.model';
+import Resource from '../../app/resource/resource.model';
 
 export default class Respository {
   public index(data: any) {
@@ -11,6 +12,7 @@ export default class Respository {
         'id',
         'category_name',
         'title',
+        'slug',
         'description',
         'path_thumbnail',
         'path_image',
@@ -18,10 +20,22 @@ export default class Respository {
         'counter_view',
         'counter_share',
         [
-          sequelize.literal(
-            '(select count(1) from forum_likes where forum_likes.id_external = forum_article.id and group_like = 1)'
-          ),
+          sequelize.literal(`(
+            select count(1)
+            from forum_likes
+            where forum_likes.id_external = forum_article.id
+            and forum_likes.group_like = 1
+            )`),
           'counter_like',
+        ],
+        [
+          sequelize.literal(`(
+            select count(1)
+            from forum_comment
+            where forum_comment.id_external = forum_article.id
+            and forum_comment.group_comment = 1
+            )`),
+          'counter_comment',
         ],
         'created_by',
         'created_date',
@@ -55,24 +69,38 @@ export default class Respository {
       ...query,
       include: [
         {
-          model: Comment,
-          as: 'comment',
+          attributes: [
+            'username',
+            'full_name',
+            'image_foto',
+          ],
+          model: Resource,
+          as: 'author',
           required: false,
           where: {
-            group_comment: 1,
             status: { [Op.ne]: 9 },
+          },
+        },
+        {
+          model: Like,
+          as: 'like',
+          required: false,
+          where: {
+            group_like: 1,
+            created_by: data?.user_id,
           },
         },
       ],
     });
   }
 
-  public detail(condition: any) {
+  public detail(data: any) {
     return Model.findOne({
       attributes: [
         'id',
         'category_name',
         'title',
+        'slug',
         'description',
         'path_thumbnail',
         'path_image',
@@ -80,10 +108,22 @@ export default class Respository {
         'counter_view',
         'counter_share',
         [
-          sequelize.literal(
-            '(select count(1) from forum_likes where forum_likes.id_external = forum_article.id and group_like = 1)'
-          ),
+          sequelize.literal(`(
+            select count(1)
+            from forum_likes
+            where forum_likes.id_external = forum_article.id
+            and forum_likes.group_like = 1
+            )`),
           'counter_like',
+        ],
+        [
+          sequelize.literal(`(
+            select count(1)
+            from forum_comment
+            where forum_comment.id_external = forum_article.id
+            and forum_comment.group_comment = 1
+            )`),
+          'counter_comment',
         ],
         'created_by',
         'created_date',
@@ -91,17 +131,30 @@ export default class Respository {
         'modified_date',
       ],
       where: {
-        ...condition,
+        ...data?.condition,
         status: { [Op.ne]: 9 },
       },
       include: [
         {
-          model: Comment,
-          as: 'comment',
+          attributes: [
+            'username',
+            'full_name',
+            'image_foto',
+          ],
+          model: Resource,
+          as: 'author',
           required: false,
           where: {
-            group_comment: 1,
             status: { [Op.ne]: 9 },
+          },
+        },
+        {
+          model: Like,
+          as: 'like',
+          required: false,
+          where: {
+            group_like: 1,
+            created_by: data?.user_id,
           },
         },
       ],

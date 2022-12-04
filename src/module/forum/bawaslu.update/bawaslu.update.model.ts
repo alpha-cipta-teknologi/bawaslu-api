@@ -4,6 +4,7 @@ import { DataTypes } from 'sequelize';
 import conn from '../../../config/database';
 import Like from '../like.comment/like.model';
 import Comment from '../like.comment/comment.model';
+import Resource from '../../app/resource/resource.model';
 
 const Model = conn.sequelize.define(
   'forum_bawaslu_update',
@@ -18,6 +19,10 @@ const Model = conn.sequelize.define(
     },
     title: {
       type: DataTypes.TEXT,
+    },
+    slug: {
+      type: DataTypes.STRING,
+      unique: true,
     },
     description: {
       type: DataTypes.TEXT,
@@ -57,6 +62,11 @@ const Model = conn.sequelize.define(
     freezeTableName: true,
   }
 );
+Model.belongsTo(Resource, {
+  as: 'author',
+  targetKey: 'resource_id',
+  foreignKey: 'created_by',
+});
 Model.hasMany(Like, { as: 'like', foreignKey: 'id_external' });
 Model.hasMany(Comment, { as: 'comment', foreignKey: 'id_external' });
 

@@ -3,7 +3,6 @@
 export default class Variable {
   public fillable() {
     const field: Array<string> = [
-      'username',
       'email',
       'password',
       'full_name',
