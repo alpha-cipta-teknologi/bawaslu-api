@@ -101,11 +101,11 @@ export default class Helper {
   }
 
   public async sendNotif(message: string) {
-    // await telegram.send(
-    //   CHAT_ID_TELEGRAM,
-    //   message,
-    //   Telegram_ParseModes.MarkdownV2
-    // );
+    await telegram.send(
+      CHAT_ID_TELEGRAM,
+      message,
+      Telegram_ParseModes.MarkdownV2
+    );
   }
 
   public async catchError(message: string, code: number, res: Response) {
