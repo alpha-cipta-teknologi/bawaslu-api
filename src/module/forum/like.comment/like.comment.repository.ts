@@ -22,13 +22,19 @@ export default class Respository {
       const article = await Article.findOne(condition);
       if (article) return true;
     } else if (group == 2) {
-      const comment = await Comment.findOne(condition);
-      if (comment) return true;
-    } else if (group == 3) {
       const bawasluUpdate = await BawasluUpdate.findOne(condition);
       if (bawasluUpdate) return true;
+    } else if (group == 3) {
+      const comment = await Comment.findOne(condition);
+      if (comment) return true;
     }
     return result;
+  }
+
+  public comments(condition: any) {
+    return Comment.findAll({
+      where: condition,
+    });
   }
 
   public detailComment(condition: any) {

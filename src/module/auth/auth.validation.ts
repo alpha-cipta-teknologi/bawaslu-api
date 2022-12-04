@@ -9,14 +9,18 @@ export default class Validation {
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 
-    if (!req?.body?.full_name)
-      return response.failed('Full Name is required', 422, res);
-    if (!req?.body?.email)
-      return response.failed('Email is required', 422, res);
-    if (!regexp.test(req?.body?.email))
+    const { full_name, email, password, confirm_password } = req?.body;
+    if (!full_name) return response.failed('Full Name is required', 422, res);
+    if (!email) return response.failed('Email is required', 422, res);
+    if (!regexp.test(email))
       return response.failed('Email invalid format', 422, res);
-    if (!req?.body?.password)
-      return response.failed('Password is required', 422, res);
+    if (!password) return response.failed('Password is required', 422, res);
+    if (password != confirm_password)
+      return response.failed(
+        `Confirm password doesn't match password`,
+        422,
+        res
+      );
 
     next();
   }

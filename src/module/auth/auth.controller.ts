@@ -1,6 +1,5 @@
 'use strict';
 
-import axios from 'axios';
 import dotenv from 'dotenv';
 import { Op } from 'sequelize';
 import conn from '../../config/database';
@@ -8,10 +7,10 @@ import { Request, Response } from 'express';
 import { helper } from '../../helpers/helper';
 import { response } from '../../helpers/response';
 import { helperauth } from '../../helpers/auth.helper';
-import { repository as repoAuth } from './auth.repository';
 import { variable } from '../app/resource/resource.variable';
 import { repository } from '../app/resource/resource.repository';
 import { transformer } from '../app/resource/resource.transformer';
+import { repository as repoRole } from '../app/role/role.respository';
 
 dotenv.config();
 
@@ -95,8 +94,6 @@ export default class Controller {
         email: { [Op.like]: `%${req?.body?.email}%` },
       });
       if (checkEmail) return response.failed('Data already exists', 400, res);
-      if (!req?.body?.password)
-        return response.failed('Password is required', 422, res);
 
       let username: string = req?.body?.email.split('@')[0];
       const checkUsername = await repository.check({
@@ -104,21 +101,13 @@ export default class Controller {
       });
       if (checkUsername) username = username + 1;
 
-      let role_id: any = null;
-      let image_foto: any = null;
-      let regency_id: any = null;
-      let province_id: any = null;
-      if (req?.body?.role_id) role_id = JSON.parse(req?.body?.role_id);
-      if (req?.body?.regency_id) regency_id = JSON.parse(req?.body?.regency_id);
-      if (req?.body?.province_id)
-        province_id = JSON.parse(req?.body?.province_id);
-      if (req?.files && req?.files.image_foto) {
-        image_foto = await helper.upload(req?.files.image_foto, 'resource');
-      }
-
       const password: string = await helper.hashIt(req?.body?.password);
       const confirm_hash = await helper.hashIt(username, 6);
       const only: Object = helper.only(variable.fillable(), req?.body);
+
+      const role = await repoRole.detail({
+        role_name: { [Op.like]: '%public%' },
+      });
 
       await repository.create({
         payload: {
@@ -126,10 +115,7 @@ export default class Controller {
           username: username,
           password: password,
           confirm_hash: confirm_hash,
-          image_foto: image_foto,
-          role_id: role_id?.value || 0,
-          area_province_id: province_id?.value || 0,
-          area_regencies_id: regency_id?.value || 0,
+          role_id: role?.getDataValue('role_id') || 0,
           created_by: req?.user?.id || 0,
         },
         transaction: t,

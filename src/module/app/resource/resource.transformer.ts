@@ -1,12 +1,12 @@
 'use strict';
 
-import { repository as repoRM } from '../role.menu/role.menu.respository';
+import { repository } from '../role.menu/role.menu.respository';
 
 export default class Transformer {
   public async list(data: any) {
     let result: Array<object> = [];
     for (let i in data) {
-      const role_menu: any = await repoRM.detailRole({
+      const role_menu: any = await repository.detailRole({
         role_id: data[i]?.role_id,
       });
       let ability: Array<object> = [];
@@ -42,7 +42,7 @@ export default class Transformer {
 
   public async detail(data: any) {
     const resource = data?.dataValues;
-    const role_menu: any = await repoRM.detailRole({
+    const role_menu: any = await repository.detailRole({
       role_id: resource?.role_id,
     });
     let ability: Array<object> = [];

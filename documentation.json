@@ -18,59 +18,13 @@
             "method": "POST",
             "header": [],
             "body": {
-              "mode": "formdata",
-              "formdata": [
-                {
-                  "key": "role_id",
-                  "value": "{\"value\": 2, \"label\": \"Admin\" }",
-                  "type": "text"
-                },
-                {
-                  "key": "full_name",
-                  "value": "Yusuf Hartanto",
-                  "type": "text"
-                },
-                {
-                  "key": "email",
-                  "value": "yusuf.hartanto69@gmail.com",
-                  "type": "text"
-                },
-                {
-                  "key": "telepon",
-                  "value": "083114673294/083164703778",
-                  "type": "text"
-                },
-                {
-                  "key": "password",
-                  "value": "bawaslu",
-                  "type": "text"
-                },
-                {
-                  "key": "image_foto",
-                  "type": "file",
-                  "src": "/C:/Users/ASUS/Downloads/pdf.png"
-                },
-                {
-                  "key": "place_of_birth",
-                  "value": "Bantul",
-                  "type": "text"
-                },
-                {
-                  "key": "date_of_birth",
-                  "value": "2022-03-05",
-                  "type": "text"
-                },
-                {
-                  "key": "province_id",
-                  "value": "{\"value\": 34, \"label\": \"DI YOGYAKARTA\" }",
-                  "type": "text"
-                },
-                {
-                  "key": "regency_id",
-                  "value": "{\"value\": 3402, \"label\": \"KABUPATEN BANTUL\" }",
-                  "type": "text"
+              "mode": "raw",
+              "raw": "{\r\n    \"full_name\": \"Samsul anwar\",\r\n    \"date_of_birth\": \"2022-12-04\",\r\n    \"place_of_birth\": \"demak\",\r\n    \"email\": \"samsul11@email.com\",\r\n    \"telepon\": \"12345678\",\r\n    \"password\": \"qwerty\",\r\n    \"confirm_password\": \"qwerty\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
                 }
-              ]
+              }
             },
             "url": {
               "raw": "{{url}}/auth/register",
@@ -5042,6 +4996,378 @@
               "body": "{\n    \"status\": true,\n    \"message\": \"Data navigation\",\n    \"data\": [\n        {\n            \"menu_id\": 1,\n            \"menu_name\": \"menu 1\",\n            \"menu_icon\": \"icon 1\",\n            \"module_name\": \"module1\",\n            \"type_menu\": \"A\",\n            \"seq_number\": 1,\n            \"parent_id\": 0,\n            \"status\": 1,\n            \"created_by\": null,\n            \"created_date\": \"2022-12-02T23:17:01.000Z\",\n            \"modified_by\": 1,\n            \"modified_date\": \"2022-12-02T23:20:21.000Z\",\n            \"children\": [\n                {\n                    \"menu_id\": 2,\n                    \"menu_name\": \"menu AA1\",\n                    \"menu_icon\": \"icon AA1\",\n                    \"module_name\": \"moduleAA1\",\n                    \"type_menu\": \"A\",\n                    \"seq_number\": 1,\n                    \"parent_id\": 1,\n                    \"status\": 1,\n                    \"created_by\": 1,\n                    \"created_date\": \"2022-12-02T23:17:01.000Z\",\n                    \"modified_by\": null,\n                    \"modified_date\": null,\n                    \"children\": []\n                }\n            ]\n        }\n    ]\n}"
             }
           ]
+        },
+        {
+          "name": "Content Beranda",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/fe/content",
+              "host": ["{{url}}"],
+              "path": ["fe", "content"]
+            }
+          },
+          "response": [
+            {
+              "name": "Content Beranda",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/fe/content",
+                  "host": ["{{url}}"],
+                  "path": ["fe", "content"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "548"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"224-r0UXUdOFVURKGJhwbF1y0fAFuY4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 04 Dec 2022 01:47:42 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"message\": \"Data content\",\n    \"data\": {\n        \"id\": 1,\n        \"header\": \"header update\",\n        \"title\": \"title update\",\n        \"seq\": 1,\n        \"path_thumbnail\": \"/uploads/content/2022-12/621e40220c76c_1646149666_250.png\",\n        \"path_image\": \"/uploads/content/2022-12/621e40220c76c_1646149666.png\",\n        \"path_video\": \"/uploads/content/2022-12/y2mate.com-5DetikdiJurnalStokBarangdiGudangSudahTerupdate_1080p.mp4\",\n        \"link_url\": \"http://localhost:5000\",\n        \"status\": 1,\n        \"description\": \"description update\",\n        \"created_date\": \"2022-12-03T00:44:47.000Z\",\n        \"modified_by\": 1,\n        \"modified_date\": \"2022-12-03T00:47:33.000Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Gallery Data",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/fe/gallery?page=1&perPage=10&q=",
+              "host": ["{{url}}"],
+              "path": ["fe", "gallery"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "perPage",
+                  "value": "10"
+                },
+                {
+                  "key": "q",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Gallery Data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/fe/gallery?page=1&perPage=10&q=",
+                  "host": ["{{url}}"],
+                  "path": ["fe", "gallery"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "802"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"322-flLuxauU6+uX8oXoSTOOS5pIwtE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 04 Dec 2022 01:53:26 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"message\": \"Data gallery\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"id\": 2,\n                \"folder_name\": \"Gallery B\",\n                \"path_thumbnail\": \"/uploads/gallery/2022-12/default_250.png\",\n                \"status\": 1,\n                \"created_by\": null,\n                \"created_date\": \"2022-12-03T05:34:54.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"detail\": [\n                    {\n                        \"id\": 3,\n                        \"gallery_id\": 2,\n                        \"path_image\": \"/uploads/gallery/2022-12/NewProject.png\",\n                        \"description\": \"description 1\",\n                        \"status\": 1,\n                        \"counter_view\": null,\n                        \"counter_share\": null,\n                        \"created_by\": null,\n                        \"created_date\": \"2022-12-03T05:34:48.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null\n                    },\n                    {\n                        \"id\": 4,\n                        \"gallery_id\": 2,\n                        \"path_image\": \"/uploads/gallery/2022-12/olg.jpg\",\n                        \"description\": \"description 2\",\n                        \"status\": 1,\n                        \"counter_view\": null,\n                        \"counter_share\": null,\n                        \"created_by\": null,\n                        \"created_date\": \"2022-12-03T05:34:48.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null\n                    }\n                ]\n            }\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Article Data",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/fe/article?page=1&perPage=10&q=",
+              "host": ["{{url}}"],
+              "path": ["fe", "article"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "perPage",
+                  "value": "10"
+                },
+                {
+                  "key": "q",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Article Data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/fe/article?page=1&perPage=10&q=",
+                  "host": ["{{url}}"],
+                  "path": ["fe", "article"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1277"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"4fd-E84JzQ6wusUMA3sm/uy1aNjM5Cs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 04 Dec 2022 02:35:16 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"message\": \"Data article\",\n    \"data\": {\n        \"total\": 2,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"category_name\": \"category\",\n                \"title\": \"title\",\n                \"description\": \"description\",\n                \"path_thumbnail\": \"/uploads/article/2022-12/fronalpstock_big_250.jpg\",\n                \"path_image\": \"/uploads/article/2022-12/fronalpstock_big.jpg\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-03T06:32:53.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"comment\": [\n                    {\n                        \"id\": 1,\n                        \"id_external\": 1,\n                        \"group_comment\": 1,\n                        \"comment\": \"comment update\",\n                        \"status\": 1,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-03T12:20:08.000Z\",\n                        \"modified_by\": 1,\n                        \"modified_date\": \"2022-12-03T12:30:05.000Z\",\n                        \"reply_comment\": [\n                            {\n                                \"id\": 2,\n                                \"id_external\": 1,\n                                \"group_comment\": 3,\n                                \"comment\": \"comment update\",\n                                \"status\": 1,\n                                \"created_by\": 1,\n                                \"created_date\": \"2022-12-03T12:27:03.000Z\",\n                                \"modified_by\": 1,\n                                \"modified_date\": \"2022-12-03T12:30:05.000Z\"\n                            },\n                            {\n                                \"id\": 3,\n                                \"id_external\": 1,\n                                \"group_comment\": 3,\n                                \"comment\": \"comment update\",\n                                \"status\": 1,\n                                \"created_by\": 1,\n                                \"created_date\": \"2022-12-03T12:20:08.000Z\",\n                                \"modified_by\": 1,\n                                \"modified_date\": \"2022-12-03T12:30:05.000Z\"\n                            }\n                        ]\n                    },\n                    {\n                        \"id\": 4,\n                        \"id_external\": 1,\n                        \"group_comment\": 1,\n                        \"comment\": \"comment update\",\n                        \"status\": 1,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-03T12:27:03.000Z\",\n                        \"modified_by\": 1,\n                        \"modified_date\": \"2022-12-03T12:30:05.000Z\",\n                        \"reply_comment\": []\n                    }\n                ]\n            }\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Bawaslu Update Data",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/fe/bawaslu-update?page=1&perPage=10&q=",
+              "host": ["{{url}}"],
+              "path": ["fe", "bawaslu-update"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "perPage",
+                  "value": "10"
+                },
+                {
+                  "key": "q",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Bawaslu Update Data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/fe/bawaslu-update?page=1&perPage=10&q=",
+                  "host": ["{{url}}"],
+                  "path": ["fe", "bawaslu-update"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1663"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"67f-+3IpjCXY9I0YgP7ccqiM1QsWoKU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 04 Dec 2022 03:05:32 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"message\": \"Data bawaslu update\",\n    \"data\": {\n        \"total\": 2,\n        \"values\": [\n            {\n                \"id\": 2,\n                \"category_name\": \"category\",\n                \"title\": \"title bawaslu\",\n                \"description\": \"description bawaslu\",\n                \"path_thumbnail\": \"/uploads/bawaslu_update/2022-12/NewProject_250.png\",\n                \"path_image\": \"/uploads/bawaslu update/2022-12/NewProject.png\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 0,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-04T02:47:17.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"comment\": [\n                    {\n                        \"id\": 7,\n                        \"id_external\": 2,\n                        \"group_comment\": 2,\n                        \"comment\": \"bawaslu update\",\n                        \"status\": 1,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-04T02:58:11.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null,\n                        \"reply_comment\": [\n                            {\n                                \"id\": 8,\n                                \"id_external\": 7,\n                                \"group_comment\": 3,\n                                \"comment\": \"reply bawaslu update\",\n                                \"status\": 1,\n                                \"created_by\": 1,\n                                \"created_date\": \"2022-12-04T02:58:11.000Z\",\n                                \"modified_by\": null,\n                                \"modified_date\": null\n                            }\n                        ]\n                    }\n                ]\n            },\n            {\n                \"id\": 1,\n                \"category_name\": \"category update\",\n                \"title\": \"title update\",\n                \"description\": \"description update\",\n                \"path_thumbnail\": \"/uploads/bawaslu_update/2022-12/lcd_250.jpg\",\n                \"path_image\": \"/uploads/bawaslu update/2022-12/lcd.jpg\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 0,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-04T02:46:49.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2022-12-04T02:48:20.000Z\",\n                \"comment\": [\n                    {\n                        \"id\": 5,\n                        \"id_external\": 1,\n                        \"group_comment\": 2,\n                        \"comment\": \"comment bawaslu update\",\n                        \"status\": 1,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-04T02:55:49.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null,\n                        \"reply_comment\": [\n                            {\n                                \"id\": 6,\n                                \"id_external\": 5,\n                                \"group_comment\": 3,\n                                \"comment\": \"reply comment bawaslu update\",\n                                \"status\": 1,\n                                \"created_by\": 1,\n                                \"created_date\": \"2022-12-04T02:58:11.000Z\",\n                                \"modified_by\": null,\n                                \"modified_date\": null\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}"
+            }
+          ]
         }
       ]
     },
@@ -5380,7 +5706,7 @@
               },
               "response": [
                 {
-                  "name": "Category Data",
+                  "name": "Article Data",
                   "originalRequest": {
                     "method": "GET",
                     "header": [],
@@ -5394,9 +5720,9 @@
                       }
                     },
                     "url": {
-                      "raw": "{{url}}/category?page=1&perPage=10&q=",
+                      "raw": "{{url}}/forum/article?page=1&perPage=10&q=",
                       "host": ["{{url}}"],
-                      "path": ["category"],
+                      "path": ["forum", "article"],
                       "query": [
                         {
                           "key": "page",
@@ -5435,15 +5761,15 @@
                     },
                     {
                       "key": "Content-Length",
-                      "value": "560"
+                      "value": "1277"
                     },
                     {
                       "key": "ETag",
-                      "value": "W/\"230-cy7u1fZoaEKYeEwiHs3PClS6SRI\""
+                      "value": "W/\"4fd-E84JzQ6wusUMA3sm/uy1aNjM5Cs\""
                     },
                     {
                       "key": "Date",
-                      "value": "Sat, 03 Dec 2022 00:24:58 GMT"
+                      "value": "Sun, 04 Dec 2022 02:36:21 GMT"
                     },
                     {
                       "key": "Connection",
@@ -5455,7 +5781,107 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n    \"status\": true,\n    \"message\": \"Data category\",\n    \"data\": {\n        \"total\": 2,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"category_name\": \"category update\",\n                \"type\": 1,\n                \"show_order\": 1,\n                \"icon_image\": \"/uploads/category/2022-12/default_250.png\",\n                \"description\": \"description update\",\n                \"created_date\": \"2022-12-03T00:21:14.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2022-12-03T00:24:17.000Z\"\n            },\n            {\n                \"id\": 2,\n                \"category_name\": \"category 1\",\n                \"type\": 1,\n                \"show_order\": 2,\n                \"icon_image\": \"/uploads/category/2022-12/default_250.png\",\n                \"description\": \"description\",\n                \"created_date\": \"2022-12-03T00:23:00.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null\n            }\n        ]\n    }\n}"
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data article\",\n    \"data\": {\n        \"total\": 2,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"category_name\": \"category\",\n                \"title\": \"title\",\n                \"description\": \"description\",\n                \"path_thumbnail\": \"/uploads/article/2022-12/fronalpstock_big_250.jpg\",\n                \"path_image\": \"/uploads/article/2022-12/fronalpstock_big.jpg\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-03T06:32:53.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"comment\": [\n                    {\n                        \"id\": 1,\n                        \"id_external\": 1,\n                        \"group_comment\": 1,\n                        \"comment\": \"comment update\",\n                        \"status\": 1,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-03T12:20:08.000Z\",\n                        \"modified_by\": 1,\n                        \"modified_date\": \"2022-12-03T12:30:05.000Z\",\n                        \"reply_comment\": [\n                            {\n                                \"id\": 2,\n                                \"id_external\": 1,\n                                \"group_comment\": 3,\n                                \"comment\": \"comment update\",\n                                \"status\": 1,\n                                \"created_by\": 1,\n                                \"created_date\": \"2022-12-03T12:27:03.000Z\",\n                                \"modified_by\": 1,\n                                \"modified_date\": \"2022-12-03T12:30:05.000Z\"\n                            },\n                            {\n                                \"id\": 3,\n                                \"id_external\": 1,\n                                \"group_comment\": 3,\n                                \"comment\": \"comment update\",\n                                \"status\": 1,\n                                \"created_by\": 1,\n                                \"created_date\": \"2022-12-03T12:20:08.000Z\",\n                                \"modified_by\": 1,\n                                \"modified_date\": \"2022-12-03T12:30:05.000Z\"\n                            }\n                        ]\n                    },\n                    {\n                        \"id\": 4,\n                        \"id_external\": 1,\n                        \"group_comment\": 1,\n                        \"comment\": \"comment update\",\n                        \"status\": 1,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-03T12:27:03.000Z\",\n                        \"modified_by\": 1,\n                        \"modified_date\": \"2022-12-03T12:30:05.000Z\",\n                        \"reply_comment\": []\n                    }\n                ]\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Article Detail",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/forum/article/1",
+                  "host": ["{{url}}"],
+                  "path": ["forum", "article", "1"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Article Detail",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/forum/article/1",
+                      "host": ["{{url}}"],
+                      "path": ["forum", "article", "1"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1254"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"4e6-zyacZDOsLpoBwRmwtSnVTIL5atc\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 04 Dec 2022 02:36:03 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data article\",\n    \"data\": {\n        \"id\": 1,\n        \"category_name\": \"category\",\n        \"title\": \"title\",\n        \"description\": \"description\",\n        \"path_thumbnail\": \"/uploads/article/2022-12/fronalpstock_big_250.jpg\",\n        \"path_image\": \"/uploads/article/2022-12/fronalpstock_big.jpg\",\n        \"status\": 1,\n        \"counter_view\": 0,\n        \"counter_share\": 0,\n        \"counter_like\": 1,\n        \"created_by\": 1,\n        \"created_date\": \"2022-12-03T06:32:53.000Z\",\n        \"modified_by\": null,\n        \"modified_date\": null,\n        \"comment\": [\n            {\n                \"id\": 1,\n                \"id_external\": 1,\n                \"group_comment\": 1,\n                \"comment\": \"comment update\",\n                \"status\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-03T12:20:08.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2022-12-03T12:30:05.000Z\",\n                \"reply_comment\": [\n                    {\n                        \"id\": 2,\n                        \"id_external\": 1,\n                        \"group_comment\": 3,\n                        \"comment\": \"comment update\",\n                        \"status\": 1,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-03T12:27:03.000Z\",\n                        \"modified_by\": 1,\n                        \"modified_date\": \"2022-12-03T12:30:05.000Z\"\n                    },\n                    {\n                        \"id\": 3,\n                        \"id_external\": 1,\n                        \"group_comment\": 3,\n                        \"comment\": \"comment update\",\n                        \"status\": 1,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-03T12:20:08.000Z\",\n                        \"modified_by\": 1,\n                        \"modified_date\": \"2022-12-03T12:30:05.000Z\"\n                    }\n                ]\n            },\n            {\n                \"id\": 4,\n                \"id_external\": 1,\n                \"group_comment\": 1,\n                \"comment\": \"comment update\",\n                \"status\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-03T12:27:03.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2022-12-03T12:30:05.000Z\",\n                \"reply_comment\": []\n            }\n        ]\n    }\n}"
                 }
               ]
             },
@@ -5657,7 +6083,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n    \"id\": 1,\r\n    \"group\": 1,\r\n    \"status\": 1,\r\n    \"comment\": \"comment\"\r\n}",
+                  "raw": "{\r\n    \"id\": 6,\r\n    \"group\": 3,\r\n    \"status\": 1,\r\n    \"comment\": \"reply bawaslu update\"\r\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -5928,6 +6354,596 @@
                   ],
                   "cookie": [],
                   "body": "{\n    \"status\": true,\n    \"message\": \"Comment success updated\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Bawaslu Update",
+          "item": [
+            {
+              "name": "Bawaslu Update Create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "category_name",
+                      "value": "category",
+                      "type": "text"
+                    },
+                    {
+                      "key": "title",
+                      "value": "title bawaslu",
+                      "type": "text"
+                    },
+                    {
+                      "key": "description",
+                      "value": "description bawaslu",
+                      "type": "text"
+                    },
+                    {
+                      "key": "status",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": "/C:/Users/ASUS/Downloads/New Project.png"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/forum/bawaslu-update",
+                  "host": ["{{url}}"],
+                  "path": ["forum", "bawaslu-update"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Bawaslu Update Create",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "category_name",
+                          "value": "category",
+                          "type": "text"
+                        },
+                        {
+                          "key": "title",
+                          "value": "title bawaslu",
+                          "type": "text"
+                        },
+                        {
+                          "key": "description",
+                          "value": "description bawaslu",
+                          "type": "text"
+                        },
+                        {
+                          "key": "status",
+                          "value": "1",
+                          "type": "text"
+                        },
+                        {
+                          "key": "image",
+                          "type": "file",
+                          "src": "/C:/Users/ASUS/Downloads/New Project.png"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/forum/bawaslu-update",
+                      "host": ["{{url}}"],
+                      "path": ["forum", "bawaslu-update"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "46"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"2e-uyuq6793Az67T/RbemmKsp5eyWA\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 04 Dec 2022 02:47:17 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success saved\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Bawaslu Update Update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "category_name",
+                      "value": "category update",
+                      "type": "text"
+                    },
+                    {
+                      "key": "title",
+                      "value": "title update",
+                      "type": "text"
+                    },
+                    {
+                      "key": "description",
+                      "value": "description update",
+                      "type": "text"
+                    },
+                    {
+                      "key": "status",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": "/C:/Users/ASUS/Downloads/lcd.jpg"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/forum/bawaslu-update/1",
+                  "host": ["{{url}}"],
+                  "path": ["forum", "bawaslu-update", "1"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Bawaslu Update Update",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "category_name",
+                          "value": "category update",
+                          "type": "text"
+                        },
+                        {
+                          "key": "title",
+                          "value": "title update",
+                          "type": "text"
+                        },
+                        {
+                          "key": "description",
+                          "value": "description update",
+                          "type": "text"
+                        },
+                        {
+                          "key": "status",
+                          "value": "1",
+                          "type": "text"
+                        },
+                        {
+                          "key": "image",
+                          "type": "file",
+                          "src": "/C:/Users/ASUS/Downloads/lcd.jpg"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/forum/bawaslu-update/1",
+                      "host": ["{{url}}"],
+                      "path": ["forum", "bawaslu-update", "1"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "48"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"30-l3MX88Xn6RpMow55wiG1PiqSkxg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 04 Dec 2022 02:48:21 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success updated\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Bawaslu Update Detail",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/forum/bawaslu-update/2",
+                  "host": ["{{url}}"],
+                  "path": ["forum", "bawaslu-update", "2"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Bawaslu Update Detail",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/forum/bawaslu-update/2",
+                      "host": ["{{url}}"],
+                      "path": ["forum", "bawaslu-update", "2"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "834"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"342-y51HdxDIfhdzfN8bUxnAKfrgZeU\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 04 Dec 2022 03:00:45 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data bawaslu update\",\n    \"data\": {\n        \"id\": 2,\n        \"category_name\": \"category\",\n        \"title\": \"title bawaslu\",\n        \"description\": \"description bawaslu\",\n        \"path_thumbnail\": \"/uploads/bawaslu_update/2022-12/NewProject_250.png\",\n        \"path_image\": \"/uploads/bawaslu update/2022-12/NewProject.png\",\n        \"status\": 1,\n        \"counter_view\": 0,\n        \"counter_share\": 0,\n        \"counter_like\": 0,\n        \"created_by\": 1,\n        \"created_date\": \"2022-12-04T02:47:17.000Z\",\n        \"modified_by\": null,\n        \"modified_date\": null,\n        \"comment\": [\n            {\n                \"id\": 7,\n                \"id_external\": 2,\n                \"group_comment\": 2,\n                \"comment\": \"bawaslu update\",\n                \"status\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-04T02:58:11.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"reply_comment\": [\n                    {\n                        \"id\": 8,\n                        \"id_external\": 7,\n                        \"group_comment\": 3,\n                        \"comment\": \"reply bawaslu update\",\n                        \"status\": 1,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-04T02:58:11.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null\n                    }\n                ]\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Bawaslu Update Data",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/forum/bawaslu-update?page=1&perPage=10&q=",
+                  "host": ["{{url}}"],
+                  "path": ["forum", "bawaslu-update"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Bawaslu Update Data",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/forum/bawaslu-update?page=1&perPage=10&q=",
+                      "host": ["{{url}}"],
+                      "path": ["forum", "bawaslu-update"],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "perPage",
+                          "value": "10"
+                        },
+                        {
+                          "key": "q",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1663"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"67f-+3IpjCXY9I0YgP7ccqiM1QsWoKU\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 04 Dec 2022 03:06:13 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data bawaslu update\",\n    \"data\": {\n        \"total\": 2,\n        \"values\": [\n            {\n                \"id\": 2,\n                \"category_name\": \"category\",\n                \"title\": \"title bawaslu\",\n                \"description\": \"description bawaslu\",\n                \"path_thumbnail\": \"/uploads/bawaslu_update/2022-12/NewProject_250.png\",\n                \"path_image\": \"/uploads/bawaslu update/2022-12/NewProject.png\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 0,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-04T02:47:17.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"comment\": [\n                    {\n                        \"id\": 7,\n                        \"id_external\": 2,\n                        \"group_comment\": 2,\n                        \"comment\": \"bawaslu update\",\n                        \"status\": 1,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-04T02:58:11.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null,\n                        \"reply_comment\": [\n                            {\n                                \"id\": 8,\n                                \"id_external\": 7,\n                                \"group_comment\": 3,\n                                \"comment\": \"reply bawaslu update\",\n                                \"status\": 1,\n                                \"created_by\": 1,\n                                \"created_date\": \"2022-12-04T02:58:11.000Z\",\n                                \"modified_by\": null,\n                                \"modified_date\": null\n                            }\n                        ]\n                    }\n                ]\n            },\n            {\n                \"id\": 1,\n                \"category_name\": \"category update\",\n                \"title\": \"title update\",\n                \"description\": \"description update\",\n                \"path_thumbnail\": \"/uploads/bawaslu_update/2022-12/lcd_250.jpg\",\n                \"path_image\": \"/uploads/bawaslu update/2022-12/lcd.jpg\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 0,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-04T02:46:49.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2022-12-04T02:48:20.000Z\",\n                \"comment\": [\n                    {\n                        \"id\": 5,\n                        \"id_external\": 1,\n                        \"group_comment\": 2,\n                        \"comment\": \"comment bawaslu update\",\n                        \"status\": 1,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-04T02:55:49.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null,\n                        \"reply_comment\": [\n                            {\n                                \"id\": 6,\n                                \"id_external\": 5,\n                                \"group_comment\": 3,\n                                \"comment\": \"reply comment bawaslu update\",\n                                \"status\": 1,\n                                \"created_by\": 1,\n                                \"created_date\": \"2022-12-04T02:58:11.000Z\",\n                                \"modified_by\": null,\n                                \"modified_date\": null\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Bawaslu Update Delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/forum/bawaslu-update/2",
+                  "host": ["{{url}}"],
+                  "path": ["forum", "bawaslu-update", "2"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Bawaslu Update Delete",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/forum/bawaslu-update/2",
+                      "host": ["{{url}}"],
+                      "path": ["forum", "bawaslu-update", "2"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "48"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"30-Z8Sc9zmwxkea6NjQrgGQ/qbFVQg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 04 Dec 2022 03:10:59 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success deleted\"\n}"
                 }
               ]
             }

@@ -62,6 +62,7 @@ export default class Controller {
       return helper.catchError(`resource detail: ${err?.message}`, 500, res);
     }
   }
+
   public async create(req: Request, res: Response) {
     const t = await conn.sequelize.transaction();
     try {

@@ -59,6 +59,17 @@ const insertDetails = async (req: Request, gallery_id: number) => {
 };
 
 export default class Controller {
+  public async list(req: Request, res: Response) {
+    try {
+      const result = await repository.list({});
+      if (result?.length < 1)
+        return response.failed('Data not found', 404, res);
+      return response.successList('list data gallery', result, res);
+    } catch (err) {
+      return helper.catchError(`gallery all-data: ${err?.message}`, 500, res);
+    }
+  }
+
   public async index(req: Request, res: Response) {
     try {
       const limit: any = req?.query?.perPage || 10;

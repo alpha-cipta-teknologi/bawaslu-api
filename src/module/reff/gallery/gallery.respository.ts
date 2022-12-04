@@ -5,8 +5,30 @@ import Model from './gallery.model';
 import Detail from './gallery.detail.model';
 
 export default class Respository {
+  public list(condition: any) {
+    return Model.findAll({
+      where: {
+        ...condition,
+        status: { [Op.ne]: 9 },
+      },
+      include: [
+        {
+          model: Detail,
+          as: 'detail',
+          required: false,
+          where: {
+            status: { [Op.ne]: 9 },
+          },
+        },
+      ],
+    });
+  }
+
   public index(data: any) {
     let query: Object = {
+      where: {
+        status: { [Op.ne]: 9 },
+      },
       group: 'gallery.id',
       order: [['id', 'ASC']],
       offset: data?.offset,

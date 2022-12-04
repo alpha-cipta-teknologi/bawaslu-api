@@ -1,13 +1,13 @@
 'use strict';
 
-import { variable } from './content.variable';
 import conn from '../../../config/database';
 import { Request, Response } from 'express';
 import { helper } from '../../../helpers/helper';
-import { repository } from './content.respository';
+import { variable } from './bawaslu.update.variable';
 import { response } from '../../../helpers/response';
-
-const date: string = helper.date();
+import { repository } from './bawaslu.update.respository';
+import { transformer } from './bawaslu.update.transformer';
+import { repository as repoLC } from '../like.comment/like.comment.repository';
 
 export default class Controller {
   public async index(req: Request, res: Response) {
@@ -19,36 +19,50 @@ export default class Controller {
         limit: parseInt(limit),
         offset: parseInt(limit) * (parseInt(offset) - 1),
         keyword: keyword,
+        condition: req?.user?.is_public,
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
+      const total: number = count?.length;
+      const bawasluUpdate = await transformer.list(rows);
       return response.successDetail(
-        'Data content',
-        { total: count, values: rows },
+        'Data bawaslu update',
+        { total: total, values: bawasluUpdate },
         res
       );
     } catch (err) {
-      return helper.catchError(`content index: ${err?.message}`, 500, res);
+      return helper.catchError(
+        `bawaslu update index: ${err?.message}`,
+        500,
+        res
+      );
     }
   }
 
-  public async homeContent(req: Request, res: Response) {
+  public async detail(req: Request, res: Response) {
     try {
+      const id: any = req.params.id || 0;
       const result: Object | any = await repository.detail({
-        seq: 1,
-        status: 1,
+        id: id,
+        created_by: req?.user?.id,
       });
       if (!result) return response.failed('Data not found', 404, res);
-      return response.successDetail('Data content', result, res);
+      const bawasluUpdate = await transformer.detail(result);
+      return response.successDetail('Data bawaslu update', bawasluUpdate, res);
     } catch (err) {
-      return helper.catchError(`content detail: ${err?.message}`, 500, res);
+      return helper.catchError(
+        `bawaslu update detail: ${err?.message}`,
+        500,
+        res
+      );
     }
   }
 
   public async create(req: Request, res: Response) {
     const t = await conn.sequelize.transaction();
     try {
-      const check = await repository.detail({
-        header: req?.body?.header,
+      const check = await repository.check({
+        ...req?.user?.is_public,
+        title: req?.body?.title,
       });
       if (check) return response.failed('Data already exists', 400, res);
 
@@ -58,18 +72,13 @@ export default class Controller {
         // resize
         const { path_doc } = await helper.resize(
           req?.files?.image,
-          'content',
+          'bawaslu_update',
           250
         );
         path_thumbnail = path_doc;
 
         // upload original
-        path_image = await helper.upload(req?.files?.image, 'content');
-      }
-
-      let path_video: any = null;
-      if (req?.files && req?.files?.image) {
-        path_video = await helper.upload(req?.files?.video, 'content');
+        path_image = await helper.upload(req?.files?.image, 'bawaslu update');
       }
 
       const data: Object = helper.only(variable.fillable(), req?.body);
@@ -78,7 +87,6 @@ export default class Controller {
           ...data,
           path_thumbnail: path_thumbnail,
           path_image: path_image,
-          path_video: path_video,
           created_by: req?.user?.id,
         },
         transaction: t,
@@ -87,7 +95,11 @@ export default class Controller {
       return response.success(true, 'Data success saved', res);
     } catch (err) {
       await t.rollback();
-      return helper.catchError(`content create: ${err?.message}`, 500, res);
+      return helper.catchError(
+        `bawaslu update create: ${err?.message}`,
+        500,
+        res
+      );
     }
   }
 
@@ -95,7 +107,10 @@ export default class Controller {
     const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
-      const check = await repository.detail({ id: id });
+      const check = await repository.check({
+        id: id,
+        ...req?.user?.is_public,
+      });
       if (!check) return response.failed('Data not found', 404, res);
 
       let path_thumbnail: any = null;
@@ -104,18 +119,13 @@ export default class Controller {
         // resize
         const { path_doc } = await helper.resize(
           req?.files?.image,
-          'content',
+          'bawaslu_update',
           250
         );
         path_thumbnail = path_doc;
 
         // upload original
-        path_image = await helper.upload(req?.files?.image, 'content');
-      }
-
-      let path_video: any = null;
-      if (req?.files && req?.files?.image) {
-        path_video = await helper.upload(req?.files?.video, 'content');
+        path_image = await helper.upload(req?.files?.image, 'bawaslu update');
       }
 
       const data: Object = helper.only(variable.fillable(), req?.body, true);
@@ -125,17 +135,21 @@ export default class Controller {
           path_thumbnail:
             path_thumbnail || check?.getDataValue('path_thumbnail'),
           path_image: path_image || check?.getDataValue('path_image'),
-          path_video: path_video || check?.getDataValue('path_video'),
           modified_by: req?.user?.id,
         },
         condition: { id: id },
         transaction: t,
       });
+
       await t.commit();
       return response.success(true, 'Data success updated', res);
     } catch (err) {
       await t.rollback();
-      return helper.catchError(`content update: ${err?.message}`, 500, res);
+      return helper.catchError(
+        `bawaslu update update: ${err?.message}`,
+        500,
+        res
+      );
     }
   }
 
@@ -144,7 +158,10 @@ export default class Controller {
     try {
       const id: any = req.params.id || 0;
       const date: string = helper.date();
-      const check = await repository.detail({ id: id });
+      const check = await repository.check({
+        id: id,
+        ...req?.user?.is_public,
+      });
       if (!check) return response.failed('Data not found', 404, res);
       await repository.update({
         payload: {
@@ -155,12 +172,36 @@ export default class Controller {
         condition: { id: id },
         transaction: t,
       });
+      await repoLC.deleteLike({
+        condition: {
+          id_external: id,
+          group_like: 2,
+        },
+        transaction: t,
+      });
+      await repoLC.updateComment({
+        payload: {
+          status: 9,
+          modified_by: req?.user?.id,
+          modified_date: date,
+        },
+        condition: {
+          id_external: id,
+          group_comment: 2,
+        },
+        transaction: t,
+      });
       await t.commit();
       return response.success(true, 'Data success deleted', res);
     } catch (err) {
       await t.rollback();
-      return helper.catchError(`content delete: ${err?.message}`, 500, res);
+      return helper.catchError(
+        `bawaslu update delete: ${err?.message}`,
+        500,
+        res
+      );
     }
   }
 }
-export const content = new Controller();
+
+export const bawasluUpdate = new Controller();

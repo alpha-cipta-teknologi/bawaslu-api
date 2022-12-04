@@ -1,7 +1,7 @@
 'use strict';
 
-import Model from './article.model';
 import sequelize, { Op } from 'sequelize';
+import Model from './bawaslu.update.model';
 import Comment from '../like.comment/comment.model';
 
 export default class Respository {
@@ -19,7 +19,7 @@ export default class Respository {
         'counter_share',
         [
           sequelize.literal(
-            '(select count(1) from forum_likes where forum_likes.id_external = forum_article.id and group_like = 1)'
+            '(select count(1) from forum_likes where forum_likes.id_external = forum_bawaslu_update.id and group_like = 2)'
           ),
           'counter_like',
         ],
@@ -32,7 +32,7 @@ export default class Respository {
         ...data?.condition,
         status: { [Op.ne]: 9 },
       },
-      group: 'forum_article.id',
+      group: 'forum_bawaslu_update.id',
       order: [['id', 'DESC']],
       offset: data?.offset,
       limit: data?.limit,
@@ -59,7 +59,7 @@ export default class Respository {
           as: 'comment',
           required: false,
           where: {
-            group_comment: 1,
+            group_comment: 2,
             status: { [Op.ne]: 9 },
           },
         },
@@ -81,7 +81,7 @@ export default class Respository {
         'counter_share',
         [
           sequelize.literal(
-            '(select count(1) from forum_likes where forum_likes.id_external = forum_article.id and group_like = 1)'
+            '(select count(1) from forum_likes where forum_likes.id_external = forum_bawaslu_update.id and group_like = 2)'
           ),
           'counter_like',
         ],
@@ -100,7 +100,7 @@ export default class Respository {
           as: 'comment',
           required: false,
           where: {
-            group_comment: 1,
+            group_comment: 2,
             status: { [Op.ne]: 9 },
           },
         },
