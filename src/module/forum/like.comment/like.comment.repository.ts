@@ -16,7 +16,6 @@ export default class Respository {
       where: {
         id: id,
         status: { [Op.ne]: 9 },
-        created_by: req?.user?.id,
       },
     };
     if (group == 1) {

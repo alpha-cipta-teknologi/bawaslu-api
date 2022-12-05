@@ -16,6 +16,7 @@ router.get('/fe/content', content.homeContent);
 router.get('/fe/gallery', gallery.index);
 router.get('/fe/article', article.index);
 router.get('/fe/bawaslu-update', bawasluUpdate.index);
+router.get('/fe/bawaslu-update/:slug', bawasluUpdate.detail);
 router.get('/fe/comment', likeComment.index);
 router.get('/fe/comment/:id_external/:group', likeComment.detail);
 
