@@ -32,5 +32,6 @@ router.post('/like', auth.checkBearerToken, likeComment.like);
 router.post('/comment', auth.checkBearerToken, likeComment.create);
 router.put('/comment', auth.checkBearerToken, likeComment.update);
 router.delete('/comment', auth.checkBearerToken, likeComment.delete);
+router.post('/counter', auth.checkBearerToken, likeComment.counter);
 
 export default router;

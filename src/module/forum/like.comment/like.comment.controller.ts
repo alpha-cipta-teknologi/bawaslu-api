@@ -13,10 +13,17 @@ export default class Controller {
   public async like(req: Request, res: Response) {
     const t = await conn.sequelize.transaction();
     try {
+      const { id, group } = req?.body;
+      if (![1, 2, 3].includes(group))
+        return response.failed(
+          'group must be a valid value (1,2, 3)',
+          422,
+          res
+        );
+
       const check = await repository.checkIdExternal(req);
       if (!check) return response.failed('Data not found', 404, res);
 
-      const { id, group } = req?.body;
       const like = await repository.detailLike({
         id_external: id,
         group_like: group,
@@ -102,10 +109,17 @@ export default class Controller {
   public async create(req: Request, res: Response) {
     const t = await conn.sequelize.transaction();
     try {
+      const { id, comment, status, group } = req?.body;
+      if (![1, 2, 3].includes(group))
+        return response.failed(
+          'group must be a valid value (1,2, 3)',
+          422,
+          res
+        );
+
       const check = await repository.checkIdExternal(req);
       if (!check) return response.failed('Data not found', 404, res);
 
-      const { id, comment, status, group } = req?.body;
       await repository.createComment({
         payload: {
           id_external: id,
@@ -129,10 +143,17 @@ export default class Controller {
   public async update(req: Request, res: Response) {
     const t = await conn.sequelize.transaction();
     try {
+      const { id, comment, status, group } = req?.body;
+      if (![1, 2, 3].includes(group))
+        return response.failed(
+          'group must be a valid value (1,2, 3)',
+          422,
+          res
+        );
+
       const check = await repository.checkIdExternal(req);
       if (!check) return response.failed('Data not found', 404, res);
 
-      const { id, comment, status, group } = req?.body;
       const checkComment = await repository.detailComment({
         id_external: id,
         group_comment: group,
@@ -168,10 +189,17 @@ export default class Controller {
   public async delete(req: Request, res: Response) {
     const t = await conn.sequelize.transaction();
     try {
+      const { id, group } = req?.body;
+      if (![1, 2, 3].includes(group))
+        return response.failed(
+          'group must be a valid value (1,2, 3)',
+          422,
+          res
+        );
+
       const check = await repository.checkIdExternal(req);
       if (!check) return response.failed('Data not found', 404, res);
 
-      const { id, group } = req?.body;
       const checkComment = await repository.detailComment({
         id_external: id,
         group_comment: group,
@@ -198,6 +226,53 @@ export default class Controller {
     } catch (err) {
       await t.rollback();
       return helper.catchError(`comment update: ${err?.message}`, 500, res);
+    }
+  }
+
+  public async counter(req: Request, res: Response) {
+    const t = await conn.sequelize.transaction();
+    try {
+      const { id, group, counter } = req?.body;
+      if (![1, 2].includes(group))
+        return response.failed('group must be a valid value (1,2)', 422, res);
+      if (!['view', 'share'].includes(counter))
+        return response.failed(
+          'counter must be a valid value (view, share)',
+          422,
+          res
+        );
+
+      const check = await repository.checkData(req);
+      if (!check) return response.failed('Data not found', 404, res);
+
+      let count: Object = {};
+      if (counter == 'view')
+        count = {
+          counter_view: check?.getDataValue('counter_view') + 1,
+        };
+      else if (counter == 'share')
+        count = {
+          counter_share: check?.getDataValue('counter_share') + 1,
+        };
+
+      await repository.updateViewShare({
+        payload: {
+          ...count,
+          modified_by: req?.user?.id,
+          modified_date: date,
+        },
+        condition: {
+          id: id,
+        },
+        transaction: t,
+        group: group,
+      });
+
+      await t.commit();
+      return response.success(true, 'Counter success updated', res);
+    } catch (err) {
+      await t.rollback();
+      return helper.catchError(`counter view share: ${err?.message}`, 500, res);
     }
   }
 }

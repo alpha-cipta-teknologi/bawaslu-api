@@ -31,6 +31,23 @@ export default class Respository {
     return result;
   }
 
+  public async checkData(req: Request) {
+    const { id, group } = req?.body;
+    let result: any = {};
+    const condition: Object = {
+      where: {
+        id: id,
+        status: { [Op.ne]: 9 },
+      },
+    };
+    if (group == 1) {
+      result = await Article.findOne(condition);
+    } else if (group == 2) {
+      result = await BawasluUpdate.findOne(condition);
+    }
+    return result;
+  }
+
   public index(data: any) {
     let query: Object = {
       attributes: [
@@ -155,6 +172,20 @@ export default class Respository {
       where: data?.condition,
       transaction: data?.transaction,
     });
+  }
+
+  public updateViewShare(data: any) {
+    if (data?.group == 1) {
+      return Article.update(data?.payload, {
+        where: data?.condition,
+        transaction: data?.transaction,
+      });
+    } else if (data?.group == 2) {
+      return BawasluUpdate.update(data?.payload, {
+        where: data?.condition,
+        transaction: data?.transaction,
+      });
+    }
   }
 }
 
