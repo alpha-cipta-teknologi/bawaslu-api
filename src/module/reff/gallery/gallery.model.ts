@@ -13,7 +13,10 @@ const Model = conn.sequelize.define(
       autoIncrement: true,
     },
     folder_name: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
+    },
+    description: {
+      type: DataTypes.TEXT,
     },
     path_thumbnail: {
       type: DataTypes.STRING,

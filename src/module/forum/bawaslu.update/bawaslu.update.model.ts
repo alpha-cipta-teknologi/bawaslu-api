@@ -16,6 +16,7 @@ const Model = conn.sequelize.define(
     },
     category_name: {
       type: DataTypes.STRING,
+      defaultValue: null,
     },
     title: {
       type: DataTypes.TEXT,

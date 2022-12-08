@@ -64,7 +64,7 @@ export default class Controller {
       const body: any = req?.body;
       if (!body?.title) return response.failed('Title is required', 422, res);
 
-      let slug: string = body?.title.replace(/ /g, '-').toLowerCase();
+      let slug: string = helper.slug(body?.title);
       const checkSlug = await repository.check({
         slug: slug,
       });
@@ -119,7 +119,7 @@ export default class Controller {
 
       let slug: string = check?.getDataValue('slug');
       if (body?.title != check?.getDataValue('title')) {
-        slug = body?.title.replace(/ /g, '-').toLowerCase();
+        slug = helper.slug(body?.title);
         const checkSlug = await repository.check({
           slug: slug,
         });

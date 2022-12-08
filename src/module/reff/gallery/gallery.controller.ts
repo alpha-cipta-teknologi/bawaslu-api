@@ -1,5 +1,6 @@
 'use strict';
 
+import sharp from 'sharp';
 import { Op } from 'sequelize';
 import conn from '../../../config/database';
 import { Request, Response } from 'express';
@@ -24,25 +25,23 @@ const insertDetails = async (req: Request, gallery_id: number) => {
     }
   }
 
-  if (req?.body?.details) {
-    const details: Array<{
-      seq: number;
-      status: number;
-      description: string;
-    }> = JSON.parse(req?.body?.details);
-
+  if (req?.files && req?.files?.images) {
+    const images = req?.files?.images;
     let insert: Array<Object> = [];
-    for (let i in details) {
-      let path_image: any = null;
-      const img: any = `detail_image_${details[i]?.seq}`;
-      if (req?.files && req?.files[img]) {
-        path_image = await helper.upload(req?.files[img], 'gallery');
+    if (images?.length > 0) {
+      for (let i in images) {
+        const path_image = await helper.upload(images[i], 'gallery');
+        insert.push({
+          gallery_id: gallery_id,
+          path_image: path_image,
+          created_by: req?.user?.id,
+          created_date: date,
+        });
       }
-
+    } else {
+      const path_image = await helper.upload(images, 'gallery');
       insert.push({
         gallery_id: gallery_id,
-        status: details[i]?.status,
-        description: details[i]?.description,
         path_image: path_image,
         created_by: req?.user?.id,
         created_date: date,

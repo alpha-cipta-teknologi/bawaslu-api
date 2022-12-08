@@ -34,17 +34,16 @@ export default class Respository {
       offset: data?.offset,
       limit: data?.limit,
     };
-    let where_detail: Object = {};
     if (data?.keyword !== undefined && data?.keyword != null) {
       query = {
         ...query,
         where: {
           status: { [Op.ne]: 9 },
-          [Op.or]: [{ folder_name: { [Op.like]: `%${data?.keyword}%` } }],
+          [Op.or]: [
+            { folder_name: { [Op.like]: `%${data?.keyword}%` } },
+            { description: { [Op.like]: `%${data?.keyword}%` } },
+          ],
         },
-      };
-      where_detail = {
-        description: { [Op.like]: `%${data?.keyword}%` },
       };
     }
     return Model.findAndCountAll({
@@ -54,7 +53,6 @@ export default class Respository {
           model: Detail,
           as: 'detail',
           required: false,
-          where: where_detail,
         },
       ],
     });

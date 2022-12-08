@@ -89,9 +89,21 @@ export default class Helper {
       fs.mkdirSync(upload_path, { recursive: true });
     }
 
-    const resize = await sharp(path.resolve(file?.tempFilePath))
-      .resize(w, h == 0 ? w : h)
-      .toFile(path.resolve(uploadPath));
+    let resize: any = null;
+    if (['gallery'].includes(fd)) {
+      const metadata = await sharp(path.resolve(file?.tempFilePath)).metadata();
+      const width: number = +(metadata?.width || 0);
+      const height: number = +(metadata?.height || 0);
+      const newWidth: number = Math.round(width / (height / w));
+
+      resize = await sharp(path.resolve(file?.tempFilePath))
+        .resize(newWidth, w)
+        .toFile(path.resolve(uploadPath));
+    } else {
+      resize = await sharp(path.resolve(file?.tempFilePath))
+        .resize(w, h == 0 ? w : h)
+        .toFile(path.resolve(uploadPath));
+    }
 
     return {
       ...resize,
@@ -126,6 +138,13 @@ export default class Helper {
     } catch (err) {
       await this.sendNotif(err?.message);
     }
+  }
+
+  public slug(string: string) {
+    return string
+      .replace(/ /g, '-')
+      .replace(/[^a-zA-Z0-9-]+/g, '')
+      .toLowerCase();
   }
 }
 

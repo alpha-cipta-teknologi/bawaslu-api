@@ -17,13 +17,6 @@ const Model = conn.sequelize.define(
     path_image: {
       type: DataTypes.STRING,
     },
-    description: {
-      type: DataTypes.TEXT,
-    },
-    status: {
-      type: DataTypes.TINYINT,
-      defaultValue: 1,
-    },
     counter_view: {
       type: DataTypes.INTEGER,
     },
