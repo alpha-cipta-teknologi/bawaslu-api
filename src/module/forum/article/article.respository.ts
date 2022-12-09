@@ -44,7 +44,6 @@ export default class Respository {
       ],
       where: {
         ...data?.condition,
-        status: { [Op.ne]: 9 },
       },
       group: 'forum_article.id',
       order: [['id', 'DESC']],
@@ -56,7 +55,6 @@ export default class Respository {
         ...query,
         where: {
           ...data?.condition,
-          status: { [Op.ne]: 9 },
           [Op.or]: [
             { category_name: { [Op.like]: `%${data?.keyword}%` } },
             { title: { [Op.like]: `%${data?.keyword}%` } },

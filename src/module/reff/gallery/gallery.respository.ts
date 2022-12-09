@@ -26,9 +26,7 @@ export default class Respository {
 
   public index(data: any) {
     let query: Object = {
-      where: {
-        status: { [Op.ne]: 9 },
-      },
+      where: data?.condition,
       group: 'gallery.id',
       order: [['id', 'ASC']],
       offset: data?.offset,
@@ -38,7 +36,7 @@ export default class Respository {
       query = {
         ...query,
         where: {
-          status: { [Op.ne]: 9 },
+          ...data?.condition,
           [Op.or]: [
             { folder_name: { [Op.like]: `%${data?.keyword}%` } },
             { description: { [Op.like]: `%${data?.keyword}%` } },

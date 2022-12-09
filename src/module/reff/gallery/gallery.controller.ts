@@ -1,6 +1,5 @@
 'use strict';
 
-import sharp from 'sharp';
 import { Op } from 'sequelize';
 import conn from '../../../config/database';
 import { Request, Response } from 'express';
@@ -78,6 +77,9 @@ export default class Controller {
         limit: parseInt(limit),
         offset: parseInt(limit) * (parseInt(offset) - 1),
         keyword: keyword,
+        condition: {
+          status: { [Op.ne]: 9 },
+        }
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
 

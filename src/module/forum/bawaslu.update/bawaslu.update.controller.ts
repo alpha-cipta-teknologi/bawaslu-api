@@ -1,5 +1,6 @@
 'use strict';
 
+import { Op } from 'sequelize';
 import conn from '../../../config/database';
 import { Request, Response } from 'express';
 import { helper } from '../../../helpers/helper';
@@ -18,7 +19,10 @@ export default class Controller {
         limit: parseInt(limit),
         offset: parseInt(limit) * (parseInt(offset) - 1),
         keyword: keyword,
-        condition: req?.user?.is_public,
+        condition: {
+          ...req?.user?.is_public,
+          status: { [Op.ne]: 9 },
+        },
         user_id: req?.user?.id || null,
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
@@ -48,6 +52,7 @@ export default class Controller {
         condition: {
           slug: slug,
           ...req?.user?.is_public,
+          status: { [Op.ne]: 9 },
         },
         user_id: req?.user?.id || null,
       });
@@ -90,7 +95,7 @@ export default class Controller {
         path_thumbnail = path_doc;
 
         // upload original
-        path_image = await helper.upload(req?.files?.image, 'bawaslu update');
+        path_image = await helper.upload(req?.files?.image, 'bawaslu_update');
       }
 
       const data: Object = helper.only(variable.fillable(), body);
@@ -150,7 +155,7 @@ export default class Controller {
         path_thumbnail = path_doc;
 
         // upload original
-        path_image = await helper.upload(req?.files?.image, 'bawaslu update');
+        path_image = await helper.upload(req?.files?.image, 'bawaslu_update');
       }
 
       const data: Object = helper.only(variable.fillable(), body, true);

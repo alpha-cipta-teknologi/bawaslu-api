@@ -1,5 +1,6 @@
 'use strict';
 
+import { Op } from 'sequelize';
 import conn from '../../../config/database';
 import { Request, Response } from 'express';
 import { variable } from './article.variable';
@@ -18,7 +19,10 @@ export default class Controller {
         limit: parseInt(limit),
         offset: parseInt(limit) * (parseInt(offset) - 1),
         keyword: keyword,
-        condition: req?.user?.is_public,
+        condition: {
+          ...req?.user?.is_public,
+          status: { [Op.ne]: 9 },
+        },
         user_id: req?.user?.id || null,
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
