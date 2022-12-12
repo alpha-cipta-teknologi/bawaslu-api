@@ -79,7 +79,7 @@ export default class Controller {
         keyword: keyword,
         condition: {
           status: { [Op.ne]: 9 },
-        }
+        },
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
 

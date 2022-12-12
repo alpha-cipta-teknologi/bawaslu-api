@@ -19,12 +19,15 @@ export default class Controller {
     const user = req?.user;
     const isMatch = await helper.compareIt(req?.body?.password, user?.password);
     if (isMatch) {
+      const role = user?.getDataValue('role');
       const payload = {
         id: user?.resource_id,
         username: user?.username,
         role_name: user?.role?.name,
         is_public:
-          user?.role?.name == 'public' ? { created_by: user?.resource_id } : {},
+          role?.getDataValue('role_name') == 'public'
+            ? { created_by: user?.resource_id }
+            : {},
       };
 
       const t = await conn.sequelize.transaction();

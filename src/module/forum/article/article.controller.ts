@@ -15,14 +15,21 @@ export default class Controller {
       const limit: any = req?.query?.perPage || 10;
       const offset: any = req?.query?.page || 1;
       const keyword: any = req?.query?.q;
+      const type: any = req?.query?.type;
+      let condition: any = {
+        ...req?.user?.is_public,
+        status: { [Op.ne]: 9 },
+      };
+      if (type && type == 'fe') {
+        condition = {
+          status: 1,
+        };
+      }
       const { count, rows } = await repository.index({
         limit: parseInt(limit),
         offset: parseInt(limit) * (parseInt(offset) - 1),
         keyword: keyword,
-        condition: {
-          ...req?.user?.is_public,
-          status: { [Op.ne]: 9 },
-        },
+        condition: condition,
         user_id: req?.user?.id || null,
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
@@ -47,9 +54,8 @@ export default class Controller {
       const result: Object | any = await repository.detail({
         condition: {
           slug: slug,
-          ...req?.user?.is_public,
+          status: { [Op.ne]: 9 },
         },
-        user_id: req?.user?.id || null,
       });
       if (!result) return response.failed('Data not found', 404, res);
       const article: Object = {
@@ -114,7 +120,7 @@ export default class Controller {
       const id: any = req.params.id || 0;
       const check = await repository.check({
         id: id,
-        ...req?.user?.is_public,
+        status: { [Op.ne]: 9 },
       });
       if (!check) return response.failed('Data not found', 404, res);
 
@@ -174,7 +180,7 @@ export default class Controller {
       const date: string = helper.date();
       const check = await repository.check({
         id: id,
-        ...req?.user?.is_public,
+        status: { [Op.ne]: 9 },
       });
       if (!check) return response.failed('Data not found', 404, res);
       await repository.update({

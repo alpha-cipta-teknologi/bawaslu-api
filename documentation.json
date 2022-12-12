@@ -174,7 +174,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"username\": \"yusuf.hartanto69@gmail.com\",\r\n    \"password\": \"bawaslu\"\r\n}",
+              "raw": "{\r\n    \"username\": \"adminuser\",\r\n    \"password\": \"adminuser\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4304,12 +4304,12 @@
                   "formdata": [
                     {
                       "key": "folder_name",
-                      "value": "Gallery A",
+                      "value": "View",
                       "type": "text"
                     },
                     {
                       "key": "description",
-                      "value": "description",
+                      "value": "Deskripsi View",
                       "type": "text"
                     },
                     {
@@ -4320,17 +4320,12 @@
                     {
                       "key": "image",
                       "type": "file",
-                      "src": "/C:/Users/ASUS/Downloads/win8.jpg"
+                      "src": "/C:/Users/ASUS/Downloads/88-882824_portrait-images-of-nature.jpg"
                     },
                     {
                       "key": "images",
                       "type": "file",
-                      "src": "/C:/Users/ASUS/Downloads/pdf.png"
-                    },
-                    {
-                      "key": "images",
-                      "type": "file",
-                      "src": "/C:/Users/ASUS/Downloads/auto-order.png"
+                      "src": "/C:/Users/ASUS/Downloads/88-882824_portrait-images-of-nature.jpg"
                     }
                   ]
                 },
@@ -6018,7 +6013,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{url}}/forum/article?page=1&perPage=10&q=",
+                  "raw": "{{url}}/forum/article?page=1&perPage=10&q=&type=fe",
                   "host": ["{{url}}"],
                   "path": ["forum", "article"],
                   "query": [
@@ -6033,6 +6028,10 @@
                     {
                       "key": "q",
                       "value": ""
+                    },
+                    {
+                      "key": "type",
+                      "value": "fe"
                     }
                   ]
                 }
@@ -7098,7 +7097,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{url}}/forum/bawaslu-update?page=1&perPage=10&q=",
+                  "raw": "{{url}}/forum/bawaslu-update?page=1&perPage=10&q=&type=fe",
                   "host": ["{{url}}"],
                   "path": ["forum", "bawaslu-update"],
                   "query": [
@@ -7113,6 +7112,10 @@
                     {
                       "key": "q",
                       "value": ""
+                    },
+                    {
+                      "key": "type",
+                      "value": "fe"
                     }
                   ]
                 }
