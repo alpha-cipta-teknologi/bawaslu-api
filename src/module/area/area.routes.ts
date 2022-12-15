@@ -2,11 +2,11 @@
 
 import { Router } from 'express';
 import { area } from './area.controller';
-import { auth } from '../auth/auth.middleware';
 
 const router: Router = Router();
 
-router.get('/area/province', auth.checkBearerToken, area.province);
-router.get('/area/regency/:id', auth.checkBearerToken, area.regency);
+router.get('/province', area.province);
+router.get('/regency', area.allRegency);
+router.get('/regency/:id', area.regency);
 
 export default router;

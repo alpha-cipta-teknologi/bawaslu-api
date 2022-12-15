@@ -1,5 +1,6 @@
 'use strict';
 
+import { Op } from 'sequelize';
 import conn from '../../../config/database';
 import { Request, Response } from 'express';
 import { helper } from '../../../helpers/helper';
@@ -97,6 +98,7 @@ export default class Controller {
         ...req?.user?.is_public,
         group_comment: group,
         id_external: id_external,
+        status: { [Op.ne]: 9 },
       });
       if (!result) return response.failed('Data not found', 404, res);
       const comment: Array<Object> = await transformer.detail(result);
@@ -158,6 +160,7 @@ export default class Controller {
         id_external: id,
         group_comment: group,
         created_by: req?.user?.id,
+        status: { [Op.ne]: 9 },
       });
       if (!checkComment) return response.failed('Data not found', 404, res);
 
@@ -189,23 +192,11 @@ export default class Controller {
   public async delete(req: Request, res: Response) {
     const t = await conn.sequelize.transaction();
     try {
-      const { id, group } = req?.body;
-      if (![1, 2, 3].includes(group))
-        return response.failed(
-          'group must be a valid value (1,2, 3)',
-          422,
-          res
-        );
-
-      const check = await repository.checkIdExternal(req);
-      if (!check) return response.failed('Data not found', 404, res);
-
-      const checkComment = await repository.detailComment({
-        id_external: id,
-        group_comment: group,
-        created_by: req?.user?.id,
+      const id: number = +(req?.params?.id || 0);
+      const check = await repository.detailComment({
+        id: id,
       });
-      if (!checkComment) return response.failed('Data not found', 404, res);
+      if (!check) return response.failed('Data not found', 404, res);
 
       await repository.updateComment({
         payload: {
@@ -214,9 +205,7 @@ export default class Controller {
           modified_date: date,
         },
         condition: {
-          id_external: id,
-          group_comment: group,
-          created_by: req?.user?.id,
+          id: id,
         },
         transaction: t,
       });
@@ -256,11 +245,7 @@ export default class Controller {
         };
 
       await repository.updateViewShare({
-        payload: {
-          ...count,
-          modified_by: req?.user?.id,
-          modified_date: date,
-        },
+        payload: count,
         condition: {
           id: id,
         },

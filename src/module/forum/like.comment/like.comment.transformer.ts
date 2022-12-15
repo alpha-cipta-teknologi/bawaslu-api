@@ -1,5 +1,6 @@
 'use strict';
 
+import { Op } from 'sequelize';
 import { repository } from './like.comment.repository';
 
 const nestedChildren = async (data: any) => {
@@ -7,6 +8,7 @@ const nestedChildren = async (data: any) => {
   const comments: any = await repository.comments({
     id_external: data?.dataValues?.id,
     group_comment: 3,
+    status: { [Op.ne]: 9 },
   });
 
   if (comments?.length > 0) {

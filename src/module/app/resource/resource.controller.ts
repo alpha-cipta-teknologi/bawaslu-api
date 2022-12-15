@@ -112,12 +112,12 @@ export default class Controller {
 
       await helper.sendEmail({
         to: req?.body?.email,
-        subject: 'Welcome to Bawaslu Forum,',
+        subject: 'Welcome to Bawaslu Forum',
         content: `
             Hi ${req?.body?.full_name},
             Congratulation to join as a member, below this link to activation your account:
 
-            ${process.env.BASE_URL_FE}/auth/verify?confirm_hash=${confirm_hash}
+            ${process.env.BASE_URL_FE}/account-verification?confirm_hash=${confirm_hash}
         `,
       });
 

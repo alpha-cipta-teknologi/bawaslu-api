@@ -16,5 +16,7 @@ router.post(
   auth.checkRefreshToken,
   controller.refresh
 );
+router.post('/forgot-password', controller.forgot);
+router.post('/reset-password', controller.reset);
 
 export default router;

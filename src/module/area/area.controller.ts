@@ -17,6 +17,27 @@ export default class Controller {
     }
   }
 
+  public async allRegency(req: Request, res: Response) {
+    try {
+      const limit: any = req?.query?.perPage || 10;
+      const offset: any = req?.query?.page || 1;
+      const keyword: any = req?.query?.q;
+      const { count, rows } = await repository.indexRegency({
+        limit: parseInt(limit),
+        offset: parseInt(limit) * (parseInt(offset) - 1),
+        keyword: keyword,
+      });
+      if (rows?.length < 1) return response.failed('Data not found', 404, res);
+      return response.successDetail(
+        'Data regency',
+        { total: count, values: rows },
+        res
+      );
+    } catch (err) {
+      return helper.catchError(`regency index: ${err?.message}`, 500, res);
+    }
+  }
+
   public async regency(req: Request, res: Response) {
     try {
       const id: number = +(req.params.id || 0);

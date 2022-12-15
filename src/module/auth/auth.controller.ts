@@ -13,6 +13,7 @@ import { transformer } from '../app/resource/resource.transformer';
 import { repository as repoRole } from '../app/role/role.respository';
 
 dotenv.config();
+const date: string = helper.date();
 
 export default class Controller {
   public async login(req: Request, res: Response) {
@@ -126,12 +127,12 @@ export default class Controller {
 
       await helper.sendEmail({
         to: req?.body?.email,
-        subject: 'Welcome to Bawaslu Forum,',
+        subject: 'Welcome to Bawaslu Forum',
         content: `
             Hi ${req?.body?.full_name},
             Congratulation to join as a member, below this link to activation your account:
 
-            ${process.env.BASE_URL_FE}/auth/verify?confirm_hash=${confirm_hash}
+            ${process.env.BASE_URL_FE}/account-verification?confirm_hash=${confirm_hash}
         `,
       });
 
@@ -168,6 +169,90 @@ export default class Controller {
     } catch (err) {
       await t.rollback();
       return helper.catchError(`verify: ${err?.message}`, 500, res);
+    }
+  }
+
+  public async forgot(req: Request, res: Response) {
+    const t = await conn.sequelize.transaction();
+    try {
+      const { email } = req?.body;
+      if (!email) return response.failed('Email is required', 422, res);
+
+      const result = await repository.detail({
+        email: email,
+      });
+      if (!result) return response.failed('Data not found', 404, res);
+
+      const confirm_hash = await helper.hashIt(email, 6);
+      await repository.update({
+        payload: {
+          confirm_hash: confirm_hash,
+          modified_date: date,
+        },
+        condition: { email: email },
+        transaction: t,
+      });
+
+      await helper.sendEmail({
+        to: email,
+        subject: 'Reset Password',
+        content: `
+            Hi ${result?.getDataValue('full_name')},
+            Below this link to reset password your account:
+
+            ${
+              process.env.BASE_URL_FE
+            }/forgot-password?confirm_hash=${confirm_hash}
+        `,
+      });
+
+      await t.commit();
+      return response.success(true, 'success forgot password', res);
+    } catch (err) {
+      await t.rollback();
+      return helper.catchError(`forgot: ${err?.message}`, 500, res);
+    }
+  }
+
+  public async reset(req: Request, res: Response) {
+    const { confirm_hash } = req?.query;
+    if (!confirm_hash)
+      return response.failed('Confirm has is required', 422, res);
+    const { password } = req?.body;
+    if (!password) return response.failed('Password is required', 422, res);
+
+    const t = await conn.sequelize.transaction();
+    try {
+      const result = await repository.detail({
+        confirm_hash: confirm_hash,
+      });
+      if (!result) return response.failed('Data not found', 404, res);
+
+      let newPassword: any = null;
+      const isMatch: boolean = await helper.compareIt(
+        password,
+        result?.getDataValue('password')
+      );
+      if (!isMatch) {
+        newPassword = await helper.hashIt(password);
+      } else {
+        return response.failed('Password does not same old', 500, res);
+      }
+
+      await repository.update({
+        payload: {
+          password: newPassword,
+          modified_date: date,
+        },
+        condition: { confirm_hash: confirm_hash },
+        transaction: t,
+      });
+
+      await t.commit();
+      return response.success(true, 'success reset password', res);
+    } catch (err) {
+      await t.rollback();
+      return helper.catchError(`reset: ${err?.message}`, 500, res);
     }
   }
 }
