@@ -19,7 +19,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"full_name\": \"Samsul anwar\",\r\n    \"date_of_birth\": \"2022-12-04\",\r\n    \"place_of_birth\": \"demak\",\r\n    \"email\": \"samsul11@email.com\",\r\n    \"telepon\": \"12345678\",\r\n    \"password\": \"qwerty\",\r\n    \"confirm_password\": \"qwerty\"\r\n}",
+							"raw": "{\r\n    \"full_name\": \"Samsul anwar\",\r\n    \"date_of_birth\": \"2022-12-04\",\r\n    \"place_of_birth\": \"demak\",\r\n    \"email\": \"yusuf.hartanto69+2@email.com\",\r\n    \"telepon\": \"12345678\",\r\n    \"password\": \"qwerty\",\r\n    \"confirm_password\": \"qwerty\",\r\n    \"province_id\": {\r\n        \"value\": 33,\r\n        \"label\": \"JAWA TENGAH\"\r\n    },\r\n    \"regency_id\": {\r\n        \"value\": 3321,\r\n        \"label\": \"KABUPATEN DEMAK\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

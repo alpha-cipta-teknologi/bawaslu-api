@@ -113,12 +113,15 @@ export default class Controller {
         role_name: { [Op.like]: '%public%' },
       });
 
+      const { province_id, regency_id } = req?.body;
       await repository.create({
         payload: {
           ...only,
           username: username,
           password: password,
           confirm_hash: confirm_hash,
+          area_province_id: province_id?.value || 0,
+          area_regencies_id: regency_id?.value || 0,
           role_id: role?.getDataValue('role_id') || 0,
           created_by: req?.user?.id || 0,
         },
