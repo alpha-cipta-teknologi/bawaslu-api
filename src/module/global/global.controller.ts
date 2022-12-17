@@ -91,6 +91,29 @@ export default class Controller {
       return helper.catchError(`article index: ${err?.message}`, 500, res);
     }
   }
+
+  public async trendingArticle(req: Request, res: Response) {
+    try {
+      const keyword: any = req?.query?.q;
+      const { count, rows } = await repoArticle.trending({
+        limit: 10,
+        offset: 0,
+        keyword: keyword,
+        condition: { status: 1 },
+        user_id: null,
+      });
+      if (rows?.length < 1) return response.failed('Data not found', 404, res);
+      const total: number = count?.length;
+      const article: Array<Object> = rows.map((item: any) => ({
+        ...item?.dataValues,
+        like: item?.like?.length > 0,
+      }));
+      return response.successDetail('Data article', article, res);
+    } catch (err) {
+      return helper.catchError(`article index: ${err?.message}`, 500, res);
+    }
+  }
+
   public async bwuIndex(req: Request, res: Response) {
     try {
       const limit: any = req?.query?.perPage || 10;

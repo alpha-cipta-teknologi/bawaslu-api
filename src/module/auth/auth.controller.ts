@@ -205,7 +205,7 @@ export default class Controller {
 
             ${
               process.env.BASE_URL_FE
-            }/forgot-password?confirm_hash=${confirm_hash}
+            }/reset-password?confirm_hash=${confirm_hash}
         `,
       });
 
