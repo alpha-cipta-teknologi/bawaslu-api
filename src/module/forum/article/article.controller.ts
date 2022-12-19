@@ -24,7 +24,7 @@ const notif = async (data: any, t: any) => {
 
   let insert: Array<Object> = [];
   let usernames: Array<string> = [];
-  
+
   admins.forEach((item: any) => {
     insert.push({
       resource_id: item?.resource_id,

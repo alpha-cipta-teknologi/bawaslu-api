@@ -6058,18 +6058,19 @@
                     },
                     {
                       "key": "description",
-                      "value": "description",
+                      "value": "Description Upayakan Bawaslu Jadi Etalase Pemilu, Bagja: Pojok JDIH Harus Memadai",
                       "type": "text"
                     },
                     {
                       "key": "status",
                       "value": "1",
-                      "type": "text"
+                      "type": "text",
+                      "disabled": true
                     },
                     {
                       "key": "image",
                       "type": "file",
-                      "src": "/C:/Users/ASUS/Downloads/olg.jpg"
+                      "src": "/C:/Users/ASUS/Downloads/New Project.png"
                     }
                   ]
                 },
@@ -7933,6 +7934,205 @@
               ],
               "cookie": [],
               "body": "{\n    \"status\": true,\n    \"message\": \"Data regency\",\n    \"data\": {\n        \"total\": 34,\n        \"values\": [\n            {\n                \"id\": 1171,\n                \"area_province_id\": 11,\n                \"name\": \"KOTA BANDA ACEH\"\n            },\n            {\n                \"id\": 1172,\n                \"area_province_id\": 11,\n                \"name\": \"KOTA SABANG\"\n            },\n            {\n                \"id\": 1215,\n                \"area_province_id\": 12,\n                \"name\": \"KABUPATEN HUMBANG HASUNDUTAN\"\n            },\n            {\n                \"id\": 1606,\n                \"area_province_id\": 16,\n                \"name\": \"KABUPATEN MUSI BANYUASIN\"\n            },\n            {\n                \"id\": 1607,\n                \"area_province_id\": 16,\n                \"name\": \"KABUPATEN BANYU ASIN\"\n            }\n        ]\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notif",
+      "item": [
+        {
+          "name": "Notif Data",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/notif?perPage=10&page=1&q=a&type=0",
+              "host": ["{{url}}"],
+              "path": ["notif"],
+              "query": [
+                {
+                  "key": "perPage",
+                  "value": "10"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "q",
+                  "value": "a"
+                },
+                {
+                  "key": "type",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Notif Data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/notif?perPage=10&page=1&q=a&type=0",
+                  "host": ["{{url}}"],
+                  "path": ["notif"],
+                  "query": [
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "q",
+                      "value": "a"
+                    },
+                    {
+                      "key": "type",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "489"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1e9-NvKGwfRRpeSuYSnQJqu3YeUOvbI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 19 Dec 2022 09:24:48 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"message\": \"Data notif\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"id\": 3,\n                \"resource_id\": 1,\n                \"text_message\": \"admintest create article: Upayakan Bawaslu Jadi Etalase Pemilu, Bagja: Pojok JDIH Harus Memadai\",\n                \"target_url\": \"http://127.0.0.1:5000/forum/article/upayakan-bawaslu-jadi-etalase-pemilu-bagja-pojok-jdih-harus-memadai1\",\n                \"type_message\": 1,\n                \"status\": 2,\n                \"created_by\": 12,\n                \"created_date\": \"2022-12-19T09:12:49.000Z\",\n                \"author\": {\n                    \"username\": \"admintest\",\n                    \"full_name\": \"Admin test\",\n                    \"image_foto\": null\n                }\n            }\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Notif Read",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/notif/3",
+              "host": ["{{url}}"],
+              "path": ["notif", "3"]
+            }
+          },
+          "response": [
+            {
+              "name": "Notif Read",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/notif/3",
+                  "host": ["{{url}}"],
+                  "path": ["notif", "3"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "48"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"30-l3MX88Xn6RpMow55wiG1PiqSkxg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 19 Dec 2022 09:26:13 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"message\": \"Data success updated\"\n}"
             }
           ]
         }
