@@ -36,6 +36,7 @@ const Model = conn.sequelize.define(
     },
     status: {
       type: DataTypes.TINYINT,
+      defaultValue: 1,
     },
     counter_view: {
       type: DataTypes.INTEGER,

@@ -9,7 +9,10 @@ import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
 import { Response } from 'express';
 import { response } from '../helpers/response';
+import { onesignal } from '../config/onesignal';
+import * as OneSignal from '@onesignal/node-onesignal';
 import Telegram, { Telegram_ParseModes } from 'tele-sender';
+import { repository as repoNotif } from '../module/notif/notif.respository';
 
 dotenv.config();
 const CHAT_ID_TELEGRAM: string = process.env.CHAT_ID_TELEGRAM || '';
@@ -145,6 +148,32 @@ export default class Helper {
       .replace(/ /g, '-')
       .replace(/[^a-zA-Z0-9-]+/g, '')
       .toLowerCase();
+  }
+
+  public async sendOneSignalCMS(data: any, usernames: Array<string>) {
+    const onesignal_app_id: string = process.env.ONESIGNAL_APP_ID_CMS || '';
+    const notification: OneSignal.Notification = new OneSignal.Notification();
+    notification.app_id = onesignal_app_id;
+    notification.included_segments = ['Subscribed Users'];
+    notification.contents = { en: data?.title };
+    notification.web_url = data?.web_url;
+    notification.include_external_user_ids = usernames;
+    const { id } = await onesignal.cms.createNotification(notification);
+
+    return await onesignal.cms.getNotification(onesignal_app_id, id);
+  }
+
+  public async sendOneSignalForum(msg: string, usernames: Array<string>) {
+    const onesignal_app_id: string = process.env.ONESIGNAL_APP_ID_FORUM || '';
+    const notification: OneSignal.Notification = new OneSignal.Notification();
+    notification.app_id = onesignal_app_id;
+    notification.included_segments = ['Subscribed Users'];
+    notification.contents = { en: msg };
+    notification.web_url = process.env.BASE_URL_FE || '';
+    notification.include_external_user_ids = usernames;
+    const { id } = await onesignal.forum.createNotification(notification);
+
+    return await onesignal.forum.getNotification(onesignal_app_id, id);
   }
 }
 

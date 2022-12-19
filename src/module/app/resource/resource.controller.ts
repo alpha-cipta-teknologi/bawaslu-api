@@ -75,7 +75,7 @@ export default class Controller {
 
       let username: string = req?.body?.email.split('@')[0];
       const checkUsername = await repository.check({
-        username: { [Op.like]: `%${username}%` },
+        username: username,
       });
       if (checkUsername) username = username + 1;
 

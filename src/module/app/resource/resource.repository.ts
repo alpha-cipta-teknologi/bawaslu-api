@@ -7,6 +7,13 @@ import Province from '../../area/provinces.model';
 import Regency from '../../area/regencies.model';
 
 export default class Respository {
+  public list(data: any) {
+    return Model.findAll({
+      where: data?.condition,
+      order: [['resource_id', 'DESC']],
+    });
+  }
+
   public index(data: any, condition: any) {
     let query: Object = {
       where: {

@@ -1,5 +1,6 @@
 'use strict';
 
+import dotenv from 'dotenv';
 import { Op } from 'sequelize';
 import conn from '../../../config/database';
 import { Request, Response } from 'express';
@@ -7,7 +8,45 @@ import { variable } from './article.variable';
 import { helper } from '../../../helpers/helper';
 import { repository } from './article.respository';
 import { response } from '../../../helpers/response';
+import { repository as repoNotif } from '../../notif/notif.respository';
 import { repository as repoLC } from '../like.comment/like.comment.repository';
+import { repository as repoResource } from '../../app/resource/resource.repository';
+
+dotenv.config();
+const base_url_cms: string = process.env.BASE_URL_FE_CMS || '';
+
+const notif = async (data: any, t: any) => {
+  const url: string = `${base_url_cms}/article/list`;
+
+  const admins = await repoResource.list({
+    condition: { role_id: { [Op.in]: [1, 2] } },
+  });
+
+  let insert: Array<Object> = [];
+  let usernames: Array<string> = [];
+  
+  admins.forEach((item: any) => {
+    insert.push({
+      resource_id: item?.resource_id,
+      text_message: data?.title,
+      target_url: url,
+      created_by: data?.created_by,
+    });
+    usernames.push(item?.username);
+  });
+
+  if (insert?.length > 0) {
+    await repoNotif.bulkCreate({
+      payload: insert,
+      transaction: t,
+    });
+  }
+
+  return {
+    web_url: url,
+    usernames: usernames,
+  };
+};
 
 export default class Controller {
   public async index(req: Request, res: Response) {
@@ -96,16 +135,34 @@ export default class Controller {
       }
 
       const data: Object = helper.only(variable.fillable(), body);
+      const payload: any = {
+        ...data,
+        slug: slug,
+        path_thumbnail: path_thumbnail,
+        path_image: path_image,
+        created_by: req?.user?.id,
+      };
+
       await repository.create({
-        payload: {
-          ...data,
-          slug: slug,
-          path_thumbnail: path_thumbnail,
-          path_image: path_image,
-          created_by: req?.user?.id,
-        },
+        payload: payload,
         transaction: t,
       });
+      const { web_url, usernames } = await notif(
+        {
+          ...payload,
+          title: `${req?.user?.username} create article: ${payload?.title}`,
+        },
+        t
+      );
+      await helper.sendOneSignalCMS(
+        {
+          ...payload,
+          title: `${req?.user?.username} create article: ${payload?.title}`,
+          web_url: web_url,
+        },
+        usernames
+      );
+
       await t.commit();
       return response.success(true, 'Data success saved', res);
     } catch (err) {

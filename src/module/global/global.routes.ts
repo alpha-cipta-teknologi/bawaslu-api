@@ -2,6 +2,7 @@
 
 import express from 'express';
 import { global } from './global.controller';
+import { auth } from '../auth/auth.middleware';
 import { content } from '../reff/content/content.controller';
 import { likeComment } from '../forum/like.comment/like.comment.controller';
 
