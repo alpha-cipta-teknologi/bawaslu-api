@@ -26,13 +26,13 @@ router.post('/gallery/', auth.checkBearerToken, gallery.create);
 router.put('/gallery/:id', auth.checkBearerToken, gallery.update);
 router.delete('/gallery/:id', auth.checkBearerToken, gallery.delete);
 
-router.get('/tema/all-data', auth.checkBearerToken, tema.list);
+router.get('/tema/all-data', tema.list);
 router.get('/tema/', auth.checkBearerToken, tema.index);
 router.post('/tema/', auth.checkBearerToken, tema.create);
 router.put('/tema/:id', auth.checkBearerToken, tema.update);
 router.delete('/tema/:id', auth.checkBearerToken, tema.delete);
 
-router.get('/komunitas/all-data', auth.checkBearerToken, komunitas.list);
+router.get('/komunitas/all-data', komunitas.list);
 router.get('/komunitas/', auth.checkBearerToken, komunitas.index);
 router.post('/komunitas/', auth.checkBearerToken, komunitas.create);
 router.put('/komunitas/:id', auth.checkBearerToken, komunitas.update);
