@@ -9,9 +9,35 @@ import { helper } from '../../../helpers/helper';
 import { repository } from './resource.repository';
 import { response } from '../../../helpers/response';
 import { transformer } from './resource.transformer';
+import { repository as repoTema } from '../../reff/tema/tema.respository';
 
 dotenv.config();
 const date: string = helper.date();
+const temaMapping = async (
+  data: any,
+  id: number,
+  t: any,
+  is_update: boolean = false
+) => {
+  const insert: Array<Object> = data.map((item: any) => ({
+    resource_id: id,
+    tema_id: item,
+  }));
+
+  if (is_update) {
+    await repoTema.deleteTemaMap({
+      condition: { resource_id: id },
+      transaction: t,
+    });
+  }
+
+  if (insert?.length > 0) {
+    await repoTema.bulkCreateTemaMap({
+      payload: insert,
+      transaction: t,
+    });
+  }
+};
 
 export default class Controller {
   public async index(req: Request, res: Response) {
@@ -83,10 +109,13 @@ export default class Controller {
       let image_foto: any = null;
       let regency_id: any = null;
       let province_id: any = null;
+      let komunitas_id: any = null;
       if (req?.body?.role_id) role_id = JSON.parse(req?.body?.role_id);
       if (req?.body?.regency_id) regency_id = JSON.parse(req?.body?.regency_id);
       if (req?.body?.province_id)
         province_id = JSON.parse(req?.body?.province_id);
+      if (req?.body?.komunitas_id)
+        komunitas_id = JSON.parse(req?.body?.komunitas_id);
       if (req?.files && req?.files.image_foto) {
         image_foto = await helper.upload(req?.files.image_foto, 'resource');
       }
@@ -95,7 +124,7 @@ export default class Controller {
       const confirm_hash = await helper.hashIt(username, 6);
       const only: Object = helper.only(variable.fillable(), req?.body);
 
-      await repository.create({
+      const resource = await repository.create({
         payload: {
           ...only,
           username: username,
@@ -105,10 +134,19 @@ export default class Controller {
           role_id: role_id?.value || 0,
           province_id: province_id?.value || 0,
           regency_id: regency_id?.value || 0,
+          komunitas_id: komunitas_id?.value || 0,
           created_by: req?.user?.id || 0,
         },
         transaction: t,
       });
+
+      if (req?.body?.tema_id) {
+        await temaMapping(
+          JSON.parse(req?.body?.tema_id),
+          resource?.getDataValue('resource_id'),
+          t
+        );
+      }
 
       await helper.sendEmail({
         to: req?.body?.email,
@@ -140,10 +178,13 @@ export default class Controller {
       let province_id: any = null;
       let regency_id: any = null;
       let image_foto: any = null;
+      let komunitas_id: any = null;
       if (req?.body?.role_id) role_id = JSON.parse(req?.body?.role_id);
       if (req?.body?.province_id)
         province_id = JSON.parse(req?.body?.province_id);
       if (req?.body?.regency_id) regency_id = JSON.parse(req?.body?.regency_id);
+      if (req?.body?.komunitas_id)
+        komunitas_id = JSON.parse(req?.body?.komunitas_id);
       if (req?.files && req?.files.image_foto) {
         image_foto = await helper.upload(req?.files.image_foto, 'resource');
       }
@@ -173,11 +214,18 @@ export default class Controller {
           area_regencies_id:
             regency_id?.value || check?.getDataValue('area_regencies_id'),
           image_foto: image_foto || check?.getDataValue('image_foto'),
+          komunitas_id:
+            komunitas_id?.value || check?.getDataValue('komunitas_id'),
           modified_by: req?.user?.id,
         },
         condition: { resource_id: id },
         transaction: t,
       });
+
+      if (req?.body?.tema_id) {
+        await temaMapping(JSON.parse(req?.body?.tema_id), id, t, true);
+      }
+
       await t.commit();
       return response.success(true, 'Data success updated', res);
     } catch (err) {

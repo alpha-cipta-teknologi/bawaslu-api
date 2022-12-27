@@ -55,6 +55,8 @@ export default class Controller {
       const offset: any = req?.query?.page || 1;
       const keyword: any = req?.query?.q;
       const type: any = req?.query?.type;
+      const tema_id: any = req?.query?.tema_id;
+      const komunitas_id: any = req?.query?.komunitas_id;
       let condition: any = {
         ...req?.user?.is_public,
         status: { [Op.ne]: 9 },
@@ -62,6 +64,18 @@ export default class Controller {
       if (type && type == 'fe') {
         condition = {
           status: 1,
+        };
+      }
+      if (tema_id) {
+        condition = {
+          ...condition,
+          tema_id: tema_id,
+        };
+      }
+      if (komunitas_id) {
+        condition = {
+          ...condition,
+          komunitas_id: komunitas_id,
         };
       }
       const { count, rows } = await repository.index({
@@ -134,12 +148,19 @@ export default class Controller {
         path_image = await helper.upload(req?.files?.image, 'article');
       }
 
+      let komunitas: any = null;
+      let tema: any = null;
+      const { komunitas_id, tema_id } = req?.body;
+      if (komunitas_id) komunitas = JSON.parse(komunitas_id);
+      if (tema_id) tema = JSON.parse(tema_id);
       const data: Object = helper.only(variable.fillable(), body);
       const payload: any = {
         ...data,
         slug: slug,
         path_thumbnail: path_thumbnail,
         path_image: path_image,
+        komunitas_id: komunitas?.value || 0,
+        tema_id: tema?.value || 0,
         created_by: req?.user?.id,
       };
 
@@ -208,6 +229,11 @@ export default class Controller {
         path_image = await helper.upload(req?.files?.image, 'article');
       }
 
+      let komunitas: any = null;
+      let tema: any = null;
+      const { komunitas_id, tema_id } = req?.body;
+      if (komunitas_id) komunitas = JSON.parse(komunitas_id);
+      if (tema_id) tema = JSON.parse(tema_id);
       const data: Object = helper.only(variable.fillable(), body, true);
       await repository.update({
         payload: {
@@ -216,6 +242,8 @@ export default class Controller {
           path_thumbnail:
             path_thumbnail || check?.getDataValue('path_thumbnail'),
           path_image: path_image || check?.getDataValue('path_image'),
+          komunitas_id: komunitas?.value || check?.getDataValue('komunitas_id'),
+          tema_id: tema?.value || check?.getDataValue('tema_id'),
           modified_by: req?.user?.id,
         },
         condition: { id: id },

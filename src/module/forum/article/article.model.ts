@@ -3,8 +3,10 @@
 import { DataTypes } from 'sequelize';
 import conn from '../../../config/database';
 import Like from '../like.comment/like.model';
+import Tema from '../../reff/tema/tema.model';
 import Comment from '../like.comment/comment.model';
 import Resource from '../../app/resource/resource.model';
+import Komunitas from '../../reff/komunitas/komunitas.model';
 
 const Model = conn.sequelize.define(
   'forum_article',
@@ -37,6 +39,12 @@ const Model = conn.sequelize.define(
     status: {
       type: DataTypes.TINYINT,
       defaultValue: 1,
+    },
+    komunitas_id: {
+      type: DataTypes.INTEGER,
+    },
+    tema_id: {
+      type: DataTypes.INTEGER,
     },
     counter_view: {
       type: DataTypes.INTEGER,
@@ -71,5 +79,11 @@ Model.belongsTo(Resource, {
 });
 Model.hasMany(Like, { as: 'like', foreignKey: 'id_external' });
 Model.hasMany(Comment, { as: 'comment', foreignKey: 'id_external' });
+Model.belongsTo(Tema, { as: 'tema', targetKey: 'id', foreignKey: 'tema_id' });
+Model.belongsTo(Komunitas, {
+  as: 'komunitas',
+  targetKey: 'id',
+  foreignKey: 'komunitas_id',
+});
 
 export default Model;

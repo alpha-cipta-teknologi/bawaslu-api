@@ -19,7 +19,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"full_name\": \"Samsul anwar\",\r\n    \"date_of_birth\": \"2022-12-04\",\r\n    \"place_of_birth\": \"demak\",\r\n    \"email\": \"yusuf.hartanto69+2@email.com\",\r\n    \"telepon\": \"12345678\",\r\n    \"password\": \"qwerty\",\r\n    \"confirm_password\": \"qwerty\",\r\n    \"province_id\": {\r\n        \"value\": 33,\r\n        \"label\": \"JAWA TENGAH\"\r\n    },\r\n    \"regency_id\": {\r\n        \"value\": 3321,\r\n        \"label\": \"KABUPATEN DEMAK\"\r\n    }\r\n}",
+              "raw": "{\r\n    \"full_name\": \"Yusuf Hartanto\",\r\n    \"date_of_birth\": \"2022-12-04\",\r\n    \"place_of_birth\": \"Bantul\",\r\n    \"email\": \"yusuf.hartanto69+3@email.com\",\r\n    \"telepon\": \"12345678\",\r\n    \"password\": \"qwerty\",\r\n    \"confirm_password\": \"qwerty\",\r\n    \"province_id\": {\r\n        \"value\": 33,\r\n        \"label\": \"JAWA TENGAH\"\r\n    },\r\n    \"regency_id\": {\r\n        \"value\": 3321,\r\n        \"label\": \"KABUPATEN DEMAK\"\r\n    },\r\n    \"komunitas_id\": {\r\n        \"value\": 1,\r\n        \"label\": \"Jajaran Pengawas Pemilu\"\r\n    },\r\n    \"tema_id\": [6,7]\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2559,7 +2559,7 @@
                     },
                     {
                       "key": "email",
-                      "value": "yusuf.hartanto69+1@gmail.com",
+                      "value": "yusuf.hartanto69+2@gmail.com",
                       "type": "text"
                     },
                     {
@@ -2595,6 +2595,16 @@
                     {
                       "key": "regency_id",
                       "value": "{\"value\": 3402, \"label\": \"KABUPATEN BANTUL\" }",
+                      "type": "text"
+                    },
+                    {
+                      "key": "komunitas_id",
+                      "value": "{\"value\":2,\"label\":\"Pemantau Pemilu\"}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "tema_id",
+                      "value": "[1,2,3]",
                       "type": "text"
                     }
                   ]
@@ -2748,7 +2758,7 @@
                     },
                     {
                       "key": "email",
-                      "value": "yusuf.hartanto69+1@gmail.com",
+                      "value": "yusuf.hartanto69+2@gmail.com",
                       "type": "text"
                     },
                     {
@@ -2764,7 +2774,7 @@
                     {
                       "key": "image_foto",
                       "type": "file",
-                      "src": "/C:/Users/ASUS/Downloads/default.png"
+                      "src": "/C:/Users/ASUS/Downloads/olg.jpg"
                     },
                     {
                       "key": "place_of_birth",
@@ -2785,13 +2795,23 @@
                       "key": "regency_id",
                       "value": "{\"value\": 3402, \"label\": \"KABUPATEN BANTUL\" }",
                       "type": "text"
+                    },
+                    {
+                      "key": "komunitas_id",
+                      "value": "{\"value\":2,\"label\":\"Pemantau Pemilu\"}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "tema_id",
+                      "value": "[4,5]",
+                      "type": "text"
                     }
                   ]
                 },
                 "url": {
-                  "raw": "{{url}}/app/resource/2",
+                  "raw": "{{url}}/app/resource/14",
                   "host": ["{{url}}"],
-                  "path": ["app", "resource", "2"]
+                  "path": ["app", "resource", "14"]
                 }
               },
               "response": [
@@ -5070,6 +5090,1110 @@
               ]
             }
           ]
+        },
+        {
+          "name": "Tema",
+          "item": [
+            {
+              "name": "Tema Create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "tema_name",
+                      "value": "tema 1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "show_order",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "icon_image",
+                      "type": "file",
+                      "src": "/C:/Users/ASUS/Downloads/olg.jpg"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/reff/tema",
+                  "host": ["{{url}}"],
+                  "path": ["reff", "tema"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Tema Create",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "tema_name",
+                          "value": "tema 1",
+                          "type": "text"
+                        },
+                        {
+                          "key": "show_order",
+                          "value": "1",
+                          "type": "text"
+                        },
+                        {
+                          "key": "icon_image",
+                          "type": "file",
+                          "src": "/C:/Users/ASUS/Downloads/olg.jpg"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/reff/tema",
+                      "host": ["{{url}}"],
+                      "path": ["reff", "tema"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "46"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"2e-uyuq6793Az67T/RbemmKsp5eyWA\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 27 Dec 2022 14:46:13 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success saved\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Tema Update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "tema_name",
+                      "value": "tema 1 update",
+                      "type": "text"
+                    },
+                    {
+                      "key": "show_order",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "icon_image",
+                      "type": "file",
+                      "src": "/C:/Users/ASUS/Downloads/olg.jpg",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/reff/tema/8",
+                  "host": ["{{url}}"],
+                  "path": ["reff", "tema", "8"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Tema Update",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "tema_name",
+                          "value": "tema 1 update",
+                          "type": "text"
+                        },
+                        {
+                          "key": "show_order",
+                          "value": "1",
+                          "type": "text"
+                        },
+                        {
+                          "key": "icon_image",
+                          "type": "file",
+                          "src": "/C:/Users/ASUS/Downloads/olg.jpg",
+                          "disabled": true
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/reff/tema/8",
+                      "host": ["{{url}}"],
+                      "path": ["reff", "tema", "8"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "48"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"30-l3MX88Xn6RpMow55wiG1PiqSkxg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 27 Dec 2022 14:47:41 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success updated\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Tema All Data",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/reff/tema/all-data",
+                  "host": ["{{url}}"],
+                  "path": ["reff", "tema", "all-data"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Tema All Data",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/reff/tema/all-data",
+                      "host": ["{{url}}"],
+                      "path": ["reff", "tema", "all-data"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1704"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"6a8-SOPK4tK4l/VU6bzVwEgM9sqBPRQ\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 27 Dec 2022 14:50:10 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"list data tema\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n            \"type\": 0,\n            \"show_order\": 1,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 8,\n            \"tema_name\": \"tema 1 update\",\n            \"type\": 0,\n            \"show_order\": 1,\n            \"icon_image\": \"/uploads/tema/2022-12/olg_250.jpg\",\n            \"created_by\": null,\n            \"created_date\": \"2022-12-27T14:46:13.000Z\",\n            \"modified_by\": 1,\n            \"modified_date\": \"2022-12-27T14:47:41.000Z\"\n        },\n        {\n            \"id\": 2,\n            \"tema_name\": \"Agenda Pencegahan Pelanggaran dan Sengketa Proses Pemilu dan/atau Pemilihan\",\n            \"type\": 0,\n            \"show_order\": 2,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 3,\n            \"tema_name\": \"Partisipasi masyarakat dalam pengawasan Pemilu dan/atau Pemilihan\",\n            \"type\": 0,\n            \"show_order\": 3,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 4,\n            \"tema_name\": \"Pelaporan dugaan pelanggaran administratif, tindak pidana, serta sengketa proses Pemilu dan/atau Pemilihan\",\n            \"type\": 0,\n            \"show_order\": 4,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 5,\n            \"tema_name\": \"Konsolidasi dan Kolaborasi Pengawasan Partisipatif\",\n            \"type\": 0,\n            \"show_order\": 5,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 6,\n            \"tema_name\": \"Advokasi hak-hak konstitusional kelompok rentan\",\n            \"type\": 0,\n            \"show_order\": 6,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 7,\n            \"tema_name\": \"Pengawasan tahapan Pemilu dan/atau Pemilihan\",\n            \"type\": 0,\n            \"show_order\": 7,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        }\n    ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "Tema Data",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/reff/tema?page=1&perPage=10&q=",
+                  "host": ["{{url}}"],
+                  "path": ["reff", "tema"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Tema Data",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/reff/tema?page=1&perPage=10&q=",
+                      "host": ["{{url}}"],
+                      "path": ["reff", "tema"],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "perPage",
+                          "value": "10"
+                        },
+                        {
+                          "key": "q",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1720"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"6b8-nZa3PLwuaOL2Bcvwar2Loy7RJmw\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 27 Dec 2022 14:50:45 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data tema\",\n    \"data\": {\n        \"total\": 8,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"type\": 0,\n                \"show_order\": 1,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 8,\n                \"tema_name\": \"tema 1 update\",\n                \"type\": 0,\n                \"show_order\": 1,\n                \"icon_image\": \"/uploads/tema/2022-12/olg_250.jpg\",\n                \"created_by\": null,\n                \"created_date\": \"2022-12-27T14:46:13.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2022-12-27T14:47:41.000Z\"\n            },\n            {\n                \"id\": 2,\n                \"tema_name\": \"Agenda Pencegahan Pelanggaran dan Sengketa Proses Pemilu dan/atau Pemilihan\",\n                \"type\": 0,\n                \"show_order\": 2,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 3,\n                \"tema_name\": \"Partisipasi masyarakat dalam pengawasan Pemilu dan/atau Pemilihan\",\n                \"type\": 0,\n                \"show_order\": 3,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 4,\n                \"tema_name\": \"Pelaporan dugaan pelanggaran administratif, tindak pidana, serta sengketa proses Pemilu dan/atau Pemilihan\",\n                \"type\": 0,\n                \"show_order\": 4,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 5,\n                \"tema_name\": \"Konsolidasi dan Kolaborasi Pengawasan Partisipatif\",\n                \"type\": 0,\n                \"show_order\": 5,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 6,\n                \"tema_name\": \"Advokasi hak-hak konstitusional kelompok rentan\",\n                \"type\": 0,\n                \"show_order\": 6,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 7,\n                \"tema_name\": \"Pengawasan tahapan Pemilu dan/atau Pemilihan\",\n                \"type\": 0,\n                \"show_order\": 7,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Tema Delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/reff/tema/8",
+                  "host": ["{{url}}"],
+                  "path": ["reff", "tema", "8"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Tema Delete",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/reff/tema/8",
+                      "host": ["{{url}}"],
+                      "path": ["reff", "tema", "8"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "48"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"30-Z8Sc9zmwxkea6NjQrgGQ/qbFVQg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 27 Dec 2022 14:51:17 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success deleted\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Komunitas",
+          "item": [
+            {
+              "name": "Komunitas Create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "komunitas_name",
+                      "value": "komunitas 1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "show_order",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "icon_image",
+                      "type": "file",
+                      "src": "/C:/Users/ASUS/Downloads/olg.jpg"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/reff/komunitas",
+                  "host": ["{{url}}"],
+                  "path": ["reff", "komunitas"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Komunitas Create",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "komunitas_name",
+                          "value": "komunitas 1",
+                          "type": "text"
+                        },
+                        {
+                          "key": "show_order",
+                          "value": "1",
+                          "type": "text"
+                        },
+                        {
+                          "key": "icon_image",
+                          "type": "file",
+                          "src": "/C:/Users/ASUS/Downloads/olg.jpg"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/reff/komunitas",
+                      "host": ["{{url}}"],
+                      "path": ["reff", "komunitas"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "46"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"2e-uyuq6793Az67T/RbemmKsp5eyWA\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 27 Dec 2022 14:51:56 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success saved\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Komunitas Update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "komunitas_name",
+                      "value": "komunitas 1 update",
+                      "type": "text"
+                    },
+                    {
+                      "key": "show_order",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "icon_image",
+                      "type": "file",
+                      "src": "/C:/Users/ASUS/Downloads/olg.jpg",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/reff/komunitas/9",
+                  "host": ["{{url}}"],
+                  "path": ["reff", "komunitas", "9"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Komunitas Update",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "komunitas_name",
+                          "value": "komunitas 1 update",
+                          "type": "text"
+                        },
+                        {
+                          "key": "show_order",
+                          "value": "1",
+                          "type": "text"
+                        },
+                        {
+                          "key": "icon_image",
+                          "type": "file",
+                          "src": "/C:/Users/ASUS/Downloads/olg.jpg",
+                          "disabled": true
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/reff/komunitas/9",
+                      "host": ["{{url}}"],
+                      "path": ["reff", "komunitas", "9"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "48"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"30-l3MX88Xn6RpMow55wiG1PiqSkxg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 27 Dec 2022 14:53:05 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success updated\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Komunitas All Data",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/reff/komunitas/all-data",
+                  "host": ["{{url}}"],
+                  "path": ["reff", "komunitas", "all-data"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Komunitas All Data",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/reff/komunitas/all-data",
+                      "host": ["{{url}}"],
+                      "path": ["reff", "komunitas", "all-data"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1679"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"68f-DlNH8zpZcCKOFk5XqeKNXImMIME\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 27 Dec 2022 14:53:35 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"list data komunitas\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n            \"type\": 0,\n            \"show_order\": null,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 2,\n            \"komunitas_name\": \"Pemantau Pemilu\",\n            \"type\": 0,\n            \"show_order\": null,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 3,\n            \"komunitas_name\": \"Peserta Pemilu\",\n            \"type\": 0,\n            \"show_order\": null,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 4,\n            \"komunitas_name\": \"Kader Pengawas Partisipatif\",\n            \"type\": 0,\n            \"show_order\": null,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 5,\n            \"komunitas_name\": \"Pemilih pemula\",\n            \"type\": 0,\n            \"show_order\": null,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 6,\n            \"komunitas_name\": \"Penyandang disabilitas\",\n            \"type\": 0,\n            \"show_order\": null,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 7,\n            \"komunitas_name\": \"Pemilih perempuan\",\n            \"type\": 0,\n            \"show_order\": null,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 8,\n            \"komunitas_name\": \"Pengurus organisasi kemasyarakatan\",\n            \"type\": 0,\n            \"show_order\": null,\n            \"icon_image\": null,\n            \"created_by\": null,\n            \"created_date\": null,\n            \"modified_by\": null,\n            \"modified_date\": null\n        },\n        {\n            \"id\": 9,\n            \"komunitas_name\": \"komunitas 1 update\",\n            \"type\": 0,\n            \"show_order\": 1,\n            \"icon_image\": \"/uploads/komunitas/2022-12/olg_250.jpg\",\n            \"created_by\": 1,\n            \"created_date\": \"2022-12-27T14:51:56.000Z\",\n            \"modified_by\": 1,\n            \"modified_date\": \"2022-12-27T14:53:05.000Z\"\n        }\n    ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "Komunitas Data",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/reff/komunitas?page=1&perPage=10&q=",
+                  "host": ["{{url}}"],
+                  "path": ["reff", "komunitas"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Komunitas Data",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/reff/komunitas?page=1&perPage=10&q=",
+                      "host": ["{{url}}"],
+                      "path": ["reff", "komunitas"],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "perPage",
+                          "value": "10"
+                        },
+                        {
+                          "key": "q",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1695"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"69f-TSnM1aa4Tz2mDT+jhSARJJHFy/g\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 27 Dec 2022 14:53:59 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data komunitas\",\n    \"data\": {\n        \"total\": 9,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"type\": 0,\n                \"show_order\": null,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 2,\n                \"komunitas_name\": \"Pemantau Pemilu\",\n                \"type\": 0,\n                \"show_order\": null,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 3,\n                \"komunitas_name\": \"Peserta Pemilu\",\n                \"type\": 0,\n                \"show_order\": null,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 4,\n                \"komunitas_name\": \"Kader Pengawas Partisipatif\",\n                \"type\": 0,\n                \"show_order\": null,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 5,\n                \"komunitas_name\": \"Pemilih pemula\",\n                \"type\": 0,\n                \"show_order\": null,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 6,\n                \"komunitas_name\": \"Penyandang disabilitas\",\n                \"type\": 0,\n                \"show_order\": null,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 7,\n                \"komunitas_name\": \"Pemilih perempuan\",\n                \"type\": 0,\n                \"show_order\": null,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 8,\n                \"komunitas_name\": \"Pengurus organisasi kemasyarakatan\",\n                \"type\": 0,\n                \"show_order\": null,\n                \"icon_image\": null,\n                \"created_by\": null,\n                \"created_date\": null,\n                \"modified_by\": null,\n                \"modified_date\": null\n            },\n            {\n                \"id\": 9,\n                \"komunitas_name\": \"komunitas 1 update\",\n                \"type\": 0,\n                \"show_order\": 1,\n                \"icon_image\": \"/uploads/komunitas/2022-12/olg_250.jpg\",\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-27T14:51:56.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2022-12-27T14:53:05.000Z\"\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Komunitas Delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/reff/komunitas/9",
+                  "host": ["{{url}}"],
+                  "path": ["reff", "komunitas", "9"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Komunitas Delete",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/reff/komunitas/9",
+                      "host": ["{{url}}"],
+                      "path": ["reff", "komunitas", "9"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "48"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"30-Z8Sc9zmwxkea6NjQrgGQ/qbFVQg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 27 Dec 2022 14:54:20 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success deleted\"\n}"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -6071,6 +7195,16 @@
                       "key": "image",
                       "type": "file",
                       "src": "/C:/Users/ASUS/Downloads/New Project.png"
+                    },
+                    {
+                      "key": "komunitas_id",
+                      "value": "{\"value\":2,\"label\":\"Pemantau Pemilu\"}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "tema_id",
+                      "value": "{\"value\":1,\"label\":\"Penguatan SDM Pengawas Pemilu\"}",
+                      "type": "text"
                     }
                   ]
                 },
@@ -6211,6 +7345,16 @@
                       "type": "file",
                       "src": "/C:/Users/ASUS/Downloads/20220814_123900.jpg",
                       "disabled": true
+                    },
+                    {
+                      "key": "komunitas_id",
+                      "value": "{\"value\":2,\"label\":\"Pemantau Pemilu\"}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "tema_id",
+                      "value": "{\"value\":1,\"label\":\"Penguatan SDM Pengawas Pemilu\"}",
+                      "type": "text"
                     }
                   ]
                 },

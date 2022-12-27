@@ -4,14 +4,14 @@ import { DataTypes } from 'sequelize';
 import conn from '../../../config/database';
 
 const Model = conn.sequelize.define(
-  'category',
+  'content_komunitas',
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    category_name: {
+    komunitas_name: {
       type: DataTypes.STRING(100),
     },
     type: {
@@ -22,9 +22,6 @@ const Model = conn.sequelize.define(
     },
     icon_image: {
       type: DataTypes.STRING,
-    },
-    description: {
-      type: DataTypes.TEXT,
     },
     created_by: {
       type: DataTypes.INTEGER,

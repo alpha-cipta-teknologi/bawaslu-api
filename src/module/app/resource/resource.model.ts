@@ -5,6 +5,7 @@ import Role from '../role/role.model';
 import conn from '../../../config/database';
 import Regency from '../../area/regencies.model';
 import Province from '../../area/provinces.model';
+import Komunitas from '../../reff/komunitas/komunitas.model';
 
 const Model = conn.sequelize.define(
   'app_resource',
@@ -46,6 +47,9 @@ const Model = conn.sequelize.define(
     status: {
       type: DataTypes.STRING(5),
       defaultValue: 'NV',
+    },
+    komunitas_id: {
+      type: DataTypes.INTEGER,
     },
     total_login: {
       type: DataTypes.INTEGER,
@@ -89,6 +93,11 @@ Model.belongsTo(Regency, {
   as: 'regency',
   targetKey: 'id',
   foreignKey: 'area_regencies_id',
+});
+Model.belongsTo(Komunitas, {
+  as: 'komunitas',
+  targetKey: 'id',
+  foreignKey: 'komunitas_id',
 });
 
 export default Model;

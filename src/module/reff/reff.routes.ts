@@ -1,10 +1,12 @@
 'use strict';
 
 import { Router } from 'express';
+import { tema } from './tema/tema.controller';
 import { auth } from '../auth/auth.middleware';
 import { content } from './content/content.controller';
 import { gallery } from './gallery/gallery.controller';
 import { category } from './category/category.controller';
+import { komunitas } from './komunitas/komunitas.controller';
 
 const router: Router = Router();
 
@@ -23,5 +25,17 @@ router.get('/gallery/', auth.checkBearerToken, gallery.index);
 router.post('/gallery/', auth.checkBearerToken, gallery.create);
 router.put('/gallery/:id', auth.checkBearerToken, gallery.update);
 router.delete('/gallery/:id', auth.checkBearerToken, gallery.delete);
+
+router.get('/tema/all-data', auth.checkBearerToken, tema.list);
+router.get('/tema/', auth.checkBearerToken, tema.index);
+router.post('/tema/', auth.checkBearerToken, tema.create);
+router.put('/tema/:id', auth.checkBearerToken, tema.update);
+router.delete('/tema/:id', auth.checkBearerToken, tema.delete);
+
+router.get('/komunitas/all-data', auth.checkBearerToken, komunitas.list);
+router.get('/komunitas/', auth.checkBearerToken, komunitas.index);
+router.post('/komunitas/', auth.checkBearerToken, komunitas.create);
+router.put('/komunitas/:id', auth.checkBearerToken, komunitas.update);
+router.delete('/komunitas/:id', auth.checkBearerToken, komunitas.delete);
 
 export default router;

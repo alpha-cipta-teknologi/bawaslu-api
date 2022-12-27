@@ -27,6 +27,10 @@ const sequelize = new Sequelize(cfg?.database, cfg?.username, cfg?.password, {
   port: cfg?.port,
   dialect: 'mysql',
   timezone: '+07:00',
+  retry: {
+    match: [/Deadlock/i],
+    max: 3,
+  },
 });
 
 conn.sequelize = sequelize;

@@ -39,6 +39,9 @@ const Model = conn.sequelize.define(
     description: {
       type: DataTypes.TEXT,
     },
+    created_by: {
+      type: DataTypes.INTEGER,
+    },
     created_date: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,

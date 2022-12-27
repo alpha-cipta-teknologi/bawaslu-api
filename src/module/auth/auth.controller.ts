@@ -11,6 +11,7 @@ import { variable } from '../app/resource/resource.variable';
 import { repository } from '../app/resource/resource.repository';
 import { transformer } from '../app/resource/resource.transformer';
 import { repository as repoRole } from '../app/role/role.respository';
+import { repository as repoTema } from '../reff/tema/tema.respository';
 
 dotenv.config();
 const date: string = helper.date();
@@ -113,8 +114,10 @@ export default class Controller {
         role_name: { [Op.like]: '%public%' },
       });
 
-      const { province_id, regency_id } = req?.body;
-      await repository.create({
+      const { province_id, regency_id, komunitas_id, tema_id } = req?.body;
+      let komunitas: any = null;
+      if (komunitas_id) komunitas = komunitas_id;
+      const resource = await repository.create({
         payload: {
           ...only,
           username: username,
@@ -123,10 +126,25 @@ export default class Controller {
           area_province_id: province_id?.value || 0,
           area_regencies_id: regency_id?.value || 0,
           role_id: role?.getDataValue('role_id') || 0,
+          komunitas_id: komunitas?.value || 0,
           created_by: req?.user?.id || 0,
         },
         transaction: t,
       });
+
+      if (tema_id?.length > 0) {
+        const insert: Array<Object> = tema_id.map((item: any) => ({
+          resource_id: resource?.getDataValue('resource_id'),
+          tema_id: item,
+        }));
+
+        if (insert?.length > 0) {
+          await repoTema.bulkCreateTemaMap({
+            payload: insert,
+            transaction: t,
+          });
+        }
+      }
 
       await helper.sendEmail({
         to: req?.body?.email,
