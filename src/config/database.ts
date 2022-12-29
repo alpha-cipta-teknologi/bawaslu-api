@@ -31,6 +31,12 @@ const sequelize = new Sequelize(cfg?.database, cfg?.username, cfg?.password, {
     match: [/Deadlock/i],
     max: 3,
   },
+  pool: {
+      max: 30,
+      min: 0,
+      acquire: 60000,
+      idle: 5000
+  },
 });
 
 conn.sequelize = sequelize;
