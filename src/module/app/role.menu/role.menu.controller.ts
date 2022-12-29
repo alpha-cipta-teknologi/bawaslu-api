@@ -45,7 +45,6 @@ export default class Controller {
   }
 
   public async create(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       interface Menu {
         menu_id: number;
@@ -82,18 +81,14 @@ export default class Controller {
       if (insert?.length > 0) {
         await repository.delete({
           condition: { role_id: { [Op.in]: role_id } },
-          transaction: t,
         });
         await repository.bulkCreate({
           payload: insert,
-          transaction: t,
         });
       }
 
-      await t.commit();
       return response.success(true, 'Data success saved', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`role menu create: ${err?.message}`, 500, res);
     }
   }

@@ -45,7 +45,6 @@ export default class Controller {
   }
 
   public async create(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const check = await repository.detail({
         param_key: req?.body?.param_key,
@@ -54,12 +53,9 @@ export default class Controller {
       const data: Object = helper.only(variable.fillable(), req?.body);
       await repository.create({
         payload: { ...data, created_by: req?.user?.id },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success saved', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(
         `param global create: ${err?.message}`,
         500,
@@ -69,7 +65,6 @@ export default class Controller {
   }
 
   public async update(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const check = await repository.detail({ id: id });
@@ -78,12 +73,9 @@ export default class Controller {
       await repository.update({
         payload: { ...data, modified_by: req?.user?.id },
         condition: { id: id },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success updated', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(
         `param global update: ${err?.message}`,
         500,
@@ -93,7 +85,6 @@ export default class Controller {
   }
 
   public async delete(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const check = await repository.detail({ id: id });
@@ -105,12 +96,9 @@ export default class Controller {
           modified_date: date,
         },
         condition: { id: id },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success deleted', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(
         `param global delete: ${err?.message}`,
         500,

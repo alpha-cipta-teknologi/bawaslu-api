@@ -12,7 +12,6 @@ const date: string = helper.date();
 
 export default class Controller {
   public async like(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const { id, group } = req?.body;
       if (![1, 2, 3].includes(group))
@@ -38,7 +37,6 @@ export default class Controller {
             group_like: group,
             created_by: req?.user?.id,
           },
-          transaction: t,
         });
       } else {
         await repository.createLike({
@@ -48,14 +46,11 @@ export default class Controller {
             created_by: req?.user?.id,
             created_date: date,
           },
-          transaction: t,
         });
       }
 
-      await t.commit();
       return response.success(true, 'Like success saved', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`like action: ${err?.message}`, 500, res);
     }
   }
@@ -109,7 +104,6 @@ export default class Controller {
   }
 
   public async create(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const { id, comment, status, group } = req?.body;
       if (![1, 2, 3].includes(group))
@@ -131,19 +125,15 @@ export default class Controller {
           created_by: req?.user?.id,
           created_date: date,
         },
-        transaction: t,
       });
 
-      await t.commit();
       return response.success(true, 'Comment success saved', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`comment create: ${err?.message}`, 500, res);
     }
   }
 
   public async update(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const { id, comment, status, group } = req?.body;
       if (![1, 2, 3].includes(group))
@@ -178,19 +168,15 @@ export default class Controller {
           group_comment: group,
           created_by: req?.user?.id,
         },
-        transaction: t,
       });
 
-      await t.commit();
       return response.success(true, 'Comment success updated', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`comment update: ${err?.message}`, 500, res);
     }
   }
 
   public async delete(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: number = +(req?.params?.id || 0);
       const check = await repository.detailComment({
@@ -207,19 +193,15 @@ export default class Controller {
         condition: {
           id: id,
         },
-        transaction: t,
       });
 
-      await t.commit();
       return response.success(true, 'Comment success updated', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`comment update: ${err?.message}`, 500, res);
     }
   }
 
   public async counter(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const { id, group, counter } = req?.body;
       if (![1, 2].includes(group))
@@ -249,14 +231,11 @@ export default class Controller {
         condition: {
           id: id,
         },
-        transaction: t,
         group: group,
       });
 
-      await t.commit();
       return response.success(true, 'Counter success updated', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`counter view share: ${err?.message}`, 500, res);
     }
   }

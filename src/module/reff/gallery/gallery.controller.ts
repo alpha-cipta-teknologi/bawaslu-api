@@ -11,15 +11,12 @@ import { response } from '../../../helpers/response';
 const date: string = helper.date();
 
 const insertDetails = async (req: Request, gallery_id: number) => {
-  const t = await conn.sequelize.transaction();
-
   if (req?.body?.detail_delete) {
     const detail_delete: any = JSON.parse(req?.body?.detail_delete);
     if (detail_delete?.length > 0) {
       const arrId = detail_delete.map((t: any) => t);
       await repository.deleteDetail({
         condition: { id: { [Op.in]: arrId } },
-        transaction: t,
       });
     }
   }
@@ -50,7 +47,6 @@ const insertDetails = async (req: Request, gallery_id: number) => {
     if (insert?.length > 0) {
       await repository.bulkCreateDetail({
         payload: insert,
-        transaction: t,
       });
     }
   }
@@ -95,7 +91,6 @@ export default class Controller {
   }
 
   public async create(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const check = await repository.detail({
         folder_name: req?.body?.folder_name,
@@ -119,20 +114,16 @@ export default class Controller {
           path_thumbnail: path_thumbnail,
           created_by: req?.user?.id,
         },
-        transaction: t,
       });
       await insertDetails(req, result?.getDataValue('id'));
 
-      await t.commit();
       return response.success(true, 'Data success saved', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`gallery create: ${err?.message}`, 500, res);
     }
   }
 
   public async update(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const check = await repository.detail({ id: id });
@@ -156,20 +147,16 @@ export default class Controller {
           modified_by: req?.user?.id,
         },
         condition: { id: id },
-        transaction: t,
       });
       await insertDetails(req, id);
 
-      await t.commit();
       return response.success(true, 'Data success updated', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`gallery update: ${err?.message}`, 500, res);
     }
   }
 
   public async delete(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const date: string = helper.date();
@@ -182,7 +169,6 @@ export default class Controller {
           modified_date: date,
         },
         condition: { id: id },
-        transaction: t,
       });
       await repository.updateDetail({
         payload: {
@@ -191,13 +177,10 @@ export default class Controller {
           modified_date: date,
         },
         condition: { gallery_id: id },
-        transaction: t,
       });
 
-      await t.commit();
       return response.success(true, 'Data success deleted', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`gallery delete: ${err?.message}`, 500, res);
     }
   }

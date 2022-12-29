@@ -143,15 +143,12 @@ export default class Respository {
   }
 
   public createComment(data: any) {
-    return Comment.create(data?.payload, {
-      transaction: data?.transaction,
-    });
+    return Comment.create(data?.payload);
   }
 
   public updateComment(data: any) {
     return Comment.update(data?.payload, {
       where: data?.condition,
-      transaction: data?.transaction,
     });
   }
 
@@ -162,15 +159,12 @@ export default class Respository {
   }
 
   public createLike(data: any) {
-    return Like.create(data?.payload, {
-      transaction: data?.transaction,
-    });
+    return Like.create(data?.payload);
   }
 
   public deleteLike(data: any) {
     return Like.destroy({
       where: data?.condition,
-      transaction: data?.transaction,
     });
   }
 
@@ -178,12 +172,10 @@ export default class Respository {
     if (data?.group == 1) {
       return Article.update(data?.payload, {
         where: data?.condition,
-        transaction: data?.transaction,
       });
     } else if (data?.group == 2) {
       return BawasluUpdate.update(data?.payload, {
         where: data?.condition,
-        transaction: data?.transaction,
       });
     }
   }

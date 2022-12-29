@@ -32,7 +32,6 @@ export default class Controller {
             : {},
       };
 
-      const t = await conn.sequelize.transaction();
       try {
         const token: string = helperauth.token(payload);
         const refresh: string = helperauth.refresh(payload);
@@ -41,7 +40,6 @@ export default class Controller {
         await repository.update({
           payload: { total_login: user?.total_login + 1 },
           condition: { resource_id: user?.resource_id },
-          transaction: t,
         });
 
         const data: Object = {
@@ -52,10 +50,8 @@ export default class Controller {
           access_token: token,
           refresh_token: refresh,
         };
-        await t.commit();
         return response.successDetail('Login success', data, res);
       } catch (err) {
-        await t.rollback();
         return helper.catchError(`login: ${err?.message}`, 500, res);
       }
     } else {
@@ -93,7 +89,6 @@ export default class Controller {
   }
 
   public async register(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const checkEmail = await repository.check({
         email: { [Op.like]: `%${req?.body?.email}%` },
@@ -129,7 +124,6 @@ export default class Controller {
           komunitas_id: komunitas?.value || 0,
           created_by: req?.user?.id || 0,
         },
-        transaction: t,
       });
 
       if (tema_id?.length > 0) {
@@ -141,7 +135,6 @@ export default class Controller {
         if (insert?.length > 0) {
           await repoTema.bulkCreateTemaMap({
             payload: insert,
-            transaction: t,
           });
         }
       }
@@ -157,10 +150,8 @@ export default class Controller {
         `,
       });
 
-      await t.commit();
       return response.success(true, 'success register', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`register: ${err?.message}`, 500, res);
     }
   }
@@ -169,7 +160,6 @@ export default class Controller {
     if (!req?.query?.confirm_hash)
       return response.failed('Confirm has is required', 422, res);
 
-    const t = await conn.sequelize.transaction();
     try {
       const result = await repository.detail({
         confirm_hash: req?.query?.confirm_hash,
@@ -182,19 +172,15 @@ export default class Controller {
       await repository.update({
         payload: { status: 'A' },
         condition: { confirm_hash: req?.query?.confirm_hash },
-        transaction: t,
       });
 
-      await t.commit();
       return response.success(true, 'Account verified', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`verify: ${err?.message}`, 500, res);
     }
   }
 
   public async forgot(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const { email } = req?.body;
       if (!email) return response.failed('Email is required', 422, res);
@@ -211,7 +197,6 @@ export default class Controller {
           modified_date: date,
         },
         condition: { email: email },
-        transaction: t,
       });
 
       await helper.sendEmail({
@@ -227,10 +212,8 @@ export default class Controller {
         `,
       });
 
-      await t.commit();
       return response.success(true, 'success forgot password', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`forgot: ${err?.message}`, 500, res);
     }
   }
@@ -242,7 +225,6 @@ export default class Controller {
     const { password } = req?.body;
     if (!password) return response.failed('Password is required', 422, res);
 
-    const t = await conn.sequelize.transaction();
     try {
       const result = await repository.detail({
         confirm_hash: confirm_hash,
@@ -266,13 +248,10 @@ export default class Controller {
           modified_date: date,
         },
         condition: { confirm_hash: confirm_hash },
-        transaction: t,
       });
 
-      await t.commit();
       return response.success(true, 'success reset password', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`reset: ${err?.message}`, 500, res);
     }
   }

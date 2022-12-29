@@ -15,7 +15,7 @@ import { repository as repoResource } from '../../app/resource/resource.reposito
 dotenv.config();
 const base_url_cms: string = process.env.BASE_URL_FE_CMS || '';
 
-const notif = async (data: any, t: any) => {
+const notif = async (data: any) => {
   const url: string = `${base_url_cms}/article/list`;
 
   const admins = await repoResource.list({
@@ -38,7 +38,6 @@ const notif = async (data: any, t: any) => {
   if (insert?.length > 0) {
     await repoNotif.bulkCreate({
       payload: insert,
-      transaction: t,
     });
   }
 
@@ -122,7 +121,6 @@ export default class Controller {
   }
 
   public async create(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const body: any = req?.body;
       if (!body?.title) return response.failed('Title is required', 422, res);
@@ -166,15 +164,11 @@ export default class Controller {
 
       await repository.create({
         payload: payload,
-        transaction: t,
       });
-      const { web_url, usernames } = await notif(
-        {
-          ...payload,
-          title: `${req?.user?.username} create article: ${payload?.title}`,
-        },
-        t
-      );
+      const { web_url, usernames } = await notif({
+        ...payload,
+        title: `${req?.user?.username} create article: ${payload?.title}`,
+      });
       await helper.sendOneSignalCMS(
         {
           ...payload,
@@ -184,16 +178,13 @@ export default class Controller {
         usernames
       );
 
-      await t.commit();
       return response.success(true, 'Data success saved', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`article create: ${err?.message}`, 500, res);
     }
   }
 
   public async update(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const check = await repository.check({
@@ -247,19 +238,15 @@ export default class Controller {
           modified_by: req?.user?.id,
         },
         condition: { id: id },
-        transaction: t,
       });
 
-      await t.commit();
       return response.success(true, 'Data success updated', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`article update: ${err?.message}`, 500, res);
     }
   }
 
   public async delete(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const date: string = helper.date();
@@ -275,14 +262,12 @@ export default class Controller {
           modified_date: date,
         },
         condition: { id: id },
-        transaction: t,
       });
       await repoLC.deleteLike({
         condition: {
           id_external: id,
           group_like: 1,
         },
-        transaction: t,
       });
       await repoLC.updateComment({
         payload: {
@@ -294,12 +279,9 @@ export default class Controller {
           id_external: id,
           group_comment: 1,
         },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success deleted', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`article delete: ${err?.message}`, 500, res);
     }
   }

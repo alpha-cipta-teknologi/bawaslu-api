@@ -41,7 +41,6 @@ export default class Controller {
   }
 
   public async create(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const check = await repository.detail({
         menu_name: req?.body?.menu_name,
@@ -54,18 +53,14 @@ export default class Controller {
           module_name: req?.body?.module_name.replace(/ /g, ''),
           created_by: req?.user?.id,
         },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success saved', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`menu create: ${err?.message}`, 500, res);
     }
   }
 
   public async update(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const check = await repository.detail({ menu_id: id });
@@ -78,18 +73,14 @@ export default class Controller {
           modified_by: req?.user?.id,
         },
         condition: { menu_id: id },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success updated', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`menu update: ${err?.message}`, 500, res);
     }
   }
 
   public async delete(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const date: string = helper.date();
@@ -102,12 +93,9 @@ export default class Controller {
           modified_date: date,
         },
         condition: { menu_id: id },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success deleted', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`menu delete: ${err?.message}`, 500, res);
     }
   }

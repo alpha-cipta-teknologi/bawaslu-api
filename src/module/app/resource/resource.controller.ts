@@ -16,7 +16,6 @@ const date: string = helper.date();
 const temaMapping = async (
   data: any,
   id: number,
-  t: any,
   is_update: boolean = false
 ) => {
   const insert: Array<Object> = data.map((item: any) => ({
@@ -27,14 +26,12 @@ const temaMapping = async (
   if (is_update) {
     await repoTema.deleteTemaMap({
       condition: { resource_id: id },
-      transaction: t,
     });
   }
 
   if (insert?.length > 0) {
     await repoTema.bulkCreateTemaMap({
       payload: insert,
-      transaction: t,
     });
   }
 };
@@ -90,7 +87,6 @@ export default class Controller {
   }
 
   public async create(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const checkEmail = await repository.check({
         email: { [Op.like]: `%${req?.body?.email}%` },
@@ -137,14 +133,12 @@ export default class Controller {
           komunitas_id: komunitas_id?.value || 0,
           created_by: req?.user?.id || 0,
         },
-        transaction: t,
       });
 
       if (req?.body?.tema_id) {
         await temaMapping(
           JSON.parse(req?.body?.tema_id),
-          resource?.getDataValue('resource_id'),
-          t
+          resource?.getDataValue('resource_id')
         );
       }
 
@@ -159,16 +153,13 @@ export default class Controller {
         `,
       });
 
-      await t.commit();
       return response.success(true, 'Data success saved', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`resource create: ${err?.message}`, 500, res);
     }
   }
 
   public async update(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const check = await repository.check({ resource_id: id });
@@ -219,23 +210,19 @@ export default class Controller {
           modified_by: req?.user?.id,
         },
         condition: { resource_id: id },
-        transaction: t,
       });
 
       if (req?.body?.tema_id) {
-        await temaMapping(JSON.parse(req?.body?.tema_id), id, t, true);
+        await temaMapping(JSON.parse(req?.body?.tema_id), id, true);
       }
 
-      await t.commit();
       return response.success(true, 'Data success updated', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`resource update: ${err?.message}`, 500, res);
     }
   }
 
   public async delete(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const check = await repository.detail({ resource_id: id });
@@ -247,12 +234,9 @@ export default class Controller {
           modified_date: date,
         },
         condition: { resource_id: id },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success deleted', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`resource delete: ${err?.message}`, 500, res);
     }
   }

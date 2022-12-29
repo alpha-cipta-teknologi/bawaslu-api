@@ -37,22 +37,18 @@ export default class Respository {
   }
 
   public create(data: any) {
-    return Model.create(data?.payload, {
-      transaction: data?.transaction,
-    });
+    return Model.create(data?.payload);
   }
 
   public update(data: any) {
     return Model.update(data?.payload, {
       where: data?.condition,
-      transaction: data?.transaction,
     });
   }
 
   public delete(data: any) {
     return Model.destroy({
       where: data?.condition,
-      transaction: data?.transaction,
     });
   }
 }

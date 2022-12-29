@@ -32,10 +32,10 @@ const sequelize = new Sequelize(cfg?.database, cfg?.username, cfg?.password, {
     max: 3,
   },
   pool: {
-      max: 30,
-      min: 0,
-      acquire: 60000,
-      idle: 5000
+    max: 30,
+    min: 0,
+    acquire: 60000,
+    idle: 5000,
   },
 });
 

@@ -104,15 +104,12 @@ export default class Respository {
   }
 
   public bulkCreate(data: any) {
-    return Model.bulkCreate(data?.payload, {
-      transaction: data?.transaction,
-    });
+    return Model.bulkCreate(data?.payload);
   }
 
   public delete(data: any) {
     return Model.destroy({
       where: data?.condition,
-      transaction: data?.transaction,
     });
   }
 }

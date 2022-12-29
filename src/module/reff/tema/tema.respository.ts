@@ -35,35 +35,28 @@ export default class Respository {
   }
 
   public create(data: any) {
-    return Model.create(data?.payload, {
-      transaction: data?.transaction,
-    });
+    return Model.create(data?.payload);
   }
 
   public update(data: any) {
     return Model.update(data?.payload, {
       where: data?.condition,
-      transaction: data?.transaction,
     });
   }
 
   public delete(data: any) {
     return Model.destroy({
       where: data?.condition,
-      transaction: data?.transaction,
     });
   }
 
   public bulkCreateTemaMap(data: any) {
-    return ModelTema.bulkCreate(data?.payload, {
-      transaction: data?.transaction,
-    });
+    return ModelTema.bulkCreate(data?.payload);
   }
 
   public deleteTemaMap(data: any) {
     return ModelTema.destroy({
       where: data?.condition,
-      transaction: data?.transaction,
     });
   }
 }

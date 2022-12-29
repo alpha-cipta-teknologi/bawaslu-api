@@ -43,7 +43,6 @@ export default class Controller {
   }
 
   public async create(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const check = await repository.detail({
         role_name: req?.body?.role_name,
@@ -52,18 +51,14 @@ export default class Controller {
       const data: Object = helper.only(variable.fillable(), req?.body);
       await repository.create({
         payload: { ...data, created_by: req?.user?.id },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success saved', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`role create: ${err?.message}`, 500, res);
     }
   }
 
   public async update(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const check = await repository.detail({ role_id: id });
@@ -72,18 +67,14 @@ export default class Controller {
       await repository.update({
         payload: { ...data, modified_by: req?.user?.id },
         condition: { role_id: id },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success updated', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`role update: ${err?.message}`, 500, res);
     }
   }
 
   public async delete(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const check = await repository.detail({ role_id: id });
@@ -95,12 +86,9 @@ export default class Controller {
           modified_date: date,
         },
         condition: { role_id: id },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success deleted', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`role delete: ${err?.message}`, 500, res);
     }
   }

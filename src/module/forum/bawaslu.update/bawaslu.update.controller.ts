@@ -77,7 +77,6 @@ export default class Controller {
   }
 
   public async create(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const body: any = req?.body;
       if (!body?.title) return response.failed('Title is required', 422, res);
@@ -112,12 +111,9 @@ export default class Controller {
           path_image: path_image,
           created_by: req?.user?.id,
         },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success saved', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(
         `bawaslu update create: ${err?.message}`,
         500,
@@ -127,7 +123,6 @@ export default class Controller {
   }
 
   public async update(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const check = await repository.check({
@@ -174,13 +169,10 @@ export default class Controller {
           modified_by: req?.user?.id,
         },
         condition: { id: id },
-        transaction: t,
       });
 
-      await t.commit();
       return response.success(true, 'Data success updated', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(
         `bawaslu update update: ${err?.message}`,
         500,
@@ -190,7 +182,6 @@ export default class Controller {
   }
 
   public async delete(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const date: string = helper.date();
@@ -206,14 +197,12 @@ export default class Controller {
           modified_date: date,
         },
         condition: { id: id },
-        transaction: t,
       });
       await repoLC.deleteLike({
         condition: {
           id_external: id,
           group_like: 2,
         },
-        transaction: t,
       });
       await repoLC.updateComment({
         payload: {
@@ -225,12 +214,9 @@ export default class Controller {
           id_external: id,
           group_comment: 2,
         },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success deleted', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(
         `bawaslu update delete: ${err?.message}`,
         500,

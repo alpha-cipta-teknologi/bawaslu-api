@@ -38,7 +38,6 @@ export default class Controller {
   }
 
   public async read(req: Request, res: Response) {
-    const t = await conn.sequelize.transaction();
     try {
       const id: any = req.params.id || 0;
       const check = await repository.detail({
@@ -49,12 +48,9 @@ export default class Controller {
       await repository.update({
         payload: { status: 1 },
         condition: { id: id },
-        transaction: t,
       });
-      await t.commit();
       return response.success(true, 'Data success updated', res);
     } catch (err) {
-      await t.rollback();
       return helper.catchError(`notif update: ${err?.message}`, 500, res);
     }
   }
