@@ -2,7 +2,6 @@
 
 import dotenv from 'dotenv';
 import { Op } from 'sequelize';
-import conn from '../../../config/database';
 import { Request, Response } from 'express';
 import { variable } from './article.variable';
 import { helper } from '../../../helpers/helper';
@@ -108,6 +107,7 @@ export default class Controller {
           slug: slug,
           status: { [Op.ne]: 9 },
         },
+        user_id: null,
       });
       if (!result) return response.failed('Data not found', 404, res);
       const article: Object = {

@@ -1,7 +1,6 @@
 'use strict';
 
 import { Request, Response } from 'express';
-import conn from '../../../config/database';
 import { helper } from '../../../helpers/helper';
 import { variable } from './param.global.variable';
 import { response } from '../../../helpers/response';

@@ -1,7 +1,6 @@
 'use strict';
 
 import { variable } from './category.variable';
-import conn from '../../../config/database';
 import { Request, Response } from 'express';
 import { helper } from '../../../helpers/helper';
 import { repository } from './category.respository';

@@ -1,7 +1,6 @@
 'use strict';
 
 import { Op } from 'sequelize';
-import conn from '../../../config/database';
 import { Request, Response } from 'express';
 import { helper } from '../../../helpers/helper';
 import { variable } from './bawaslu.update.variable';

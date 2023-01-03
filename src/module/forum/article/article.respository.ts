@@ -3,7 +3,9 @@
 import Model from './article.model';
 import sequelize, { Op } from 'sequelize';
 import Like from '../like.comment/like.model';
+import Tema from '../../reff/tema/tema.model';
 import Resource from '../../app/resource/resource.model';
+import Komunitas from '../../reff/komunitas/komunitas.model';
 
 export default class Respository {
   public index(data: any) {
@@ -84,6 +86,18 @@ export default class Respository {
             group_like: 1,
             created_by: data?.user_id,
           },
+        },
+        {
+          attributes: ['id', 'komunitas_name', 'type', 'icon_image'],
+          model: Komunitas,
+          as: 'komunitas',
+          required: false,
+        },
+        {
+          attributes: ['id', 'tema_name', 'type', 'icon_image'],
+          model: Tema,
+          as: 'tema',
+          required: false,
         },
       ],
     });
@@ -171,6 +185,18 @@ export default class Respository {
             created_by: data?.user_id,
           },
         },
+        {
+          attributes: ['id', 'komunitas_name', 'type', 'icon_image'],
+          model: Komunitas,
+          as: 'komunitas',
+          required: false,
+        },
+        {
+          attributes: ['id', 'tema_name', 'type', 'icon_image'],
+          model: Tema,
+          as: 'tema',
+          required: false,
+        },
       ],
     });
   }
@@ -234,6 +260,18 @@ export default class Respository {
             group_like: 1,
             created_by: data?.user_id,
           },
+        },
+        {
+          attributes: ['id', 'komunitas_name', 'type', 'icon_image'],
+          model: Komunitas,
+          as: 'komunitas',
+          required: false,
+        },
+        {
+          attributes: ['id', 'tema_name', 'type', 'icon_image'],
+          model: Tema,
+          as: 'tema',
+          required: false,
         },
       ],
     });

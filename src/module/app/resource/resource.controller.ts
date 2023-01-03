@@ -2,7 +2,6 @@
 
 import dotenv from 'dotenv';
 import { Op } from 'sequelize';
-import conn from '../../../config/database';
 import { Request, Response } from 'express';
 import { variable } from './resource.variable';
 import { helper } from '../../../helpers/helper';

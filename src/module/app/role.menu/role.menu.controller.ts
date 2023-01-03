@@ -1,7 +1,6 @@
 'use strict';
 
 import { Op } from 'sequelize';
-import conn from '../../../config/database';
 import { Request, Response } from 'express';
 import { response } from '../../../helpers/response';
 import { helper } from '../../../helpers/helper';

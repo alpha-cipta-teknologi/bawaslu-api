@@ -1,5 +1,6 @@
 'use strict';
 
+import { Op } from 'sequelize';
 import { Request, Response } from 'express';
 import { helper } from '../../helpers/helper';
 import { response } from '../../helpers/response';
@@ -68,11 +69,21 @@ export default class Controller {
       const limit: any = req?.query?.perPage || 10;
       const offset: any = req?.query?.page || 1;
       const keyword: any = req?.query?.q;
+      const komunitas_id: any = req?.query?.komunitas_id;
+      let condition: any = {
+        status: 1,
+      };
+      if (komunitas_id) {
+        condition = {
+          ...condition,
+          komunitas_id: komunitas_id,
+        };
+      }
       const { count, rows } = await repoArticle.index({
         limit: parseInt(limit),
         offset: parseInt(limit) * (parseInt(offset) - 1),
         keyword: keyword,
-        condition: { status: 1 },
+        condition: condition,
         user_id: null,
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);

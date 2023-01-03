@@ -2,7 +2,6 @@
 
 import { variable } from './role.variable';
 import { Request, Response } from 'express';
-import conn from '../../../config/database';
 import { repository } from './role.respository';
 import { helper } from '../../../helpers/helper';
 import { response } from '../../../helpers/response';
