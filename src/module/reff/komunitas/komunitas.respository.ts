@@ -1,11 +1,40 @@
 'use strict';
 
-import { Op } from 'sequelize';
+import sequelize, { Op } from 'sequelize';
 import Model from './komunitas.model';
 
 export default class Respository {
   public list() {
     return Model.findAll({
+      attributes: [
+        'id',
+        'komunitas_name',
+        'type',
+        'icon_image',
+        'show_order',
+        [
+          sequelize.literal(`(
+            select count(1)
+            from forum_article
+            where forum_article.komunitas_id = content_komunitas.id
+            and forum_article.status <> 9
+            )`),
+          'counter_thread',
+        ],
+        [
+          sequelize.literal(`(
+            select count(1)
+            from app_resource
+            where app_resource.komunitas_id = content_komunitas.id
+            and app_resource.status = 'A'
+            )`),
+          'counter_resource',
+        ],
+        'created_by',
+        'created_date',
+        'modified_by',
+        'modified_date',
+      ],
       order: [['show_order', 'ASC']],
     });
   }

@@ -1,6 +1,7 @@
 'use strict';
 
 import { repository } from '../role.menu/role.menu.respository';
+import { repository as repoTema } from '../../reff/tema/tema.respository';
 
 export default class Transformer {
   public async list(data: any) {
@@ -64,9 +65,17 @@ export default class Transformer {
       }));
     }
 
+    const temas: any = await repoTema.TemaMap({
+      condition: { resource_id: resource?.resource_id },
+    });
+    const tema: Array<Object> = temas.map((item: any) => {
+      return item?.tema;
+    });
+
     const result: any = {
       ...resource,
       ability: ability,
+      tema: tema,
     };
     delete result?.password;
     delete result?.confirm_hash;

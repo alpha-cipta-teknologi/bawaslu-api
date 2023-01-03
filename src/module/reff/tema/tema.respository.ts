@@ -50,6 +50,20 @@ export default class Respository {
     });
   }
 
+  public TemaMap(data: any) {
+    return ModelTema.findAll({
+      where: data?.condition,
+      include: [
+        {
+          attributes: ['id', 'tema_name', 'type', 'icon_image'],
+          model: Model,
+          as: 'tema',
+          required: false,
+        },
+      ],
+    });
+  }
+
   public bulkCreateTemaMap(data: any) {
     return ModelTema.bulkCreate(data?.payload);
   }

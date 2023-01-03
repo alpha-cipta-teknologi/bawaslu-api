@@ -3,8 +3,9 @@
 import { Op } from 'sequelize';
 import Model from './resource.model';
 import Role from '../role/role.model';
-import Province from '../../area/provinces.model';
 import Regency from '../../area/regencies.model';
+import Province from '../../area/provinces.model';
+import Komunitas from '../../reff/komunitas/komunitas.model';
 
 export default class Respository {
   public list(data: any) {
@@ -63,6 +64,12 @@ export default class Respository {
           as: 'regency',
           required: false,
         },
+        {
+          attributes: ['id', 'komunitas_name', 'type', 'icon_image'],
+          model: Komunitas,
+          as: 'komunitas',
+          required: false,
+        },
       ],
     });
   }
@@ -90,6 +97,12 @@ export default class Respository {
           model: Regency,
           attributes: ['id', 'name', 'area_province_id'],
           as: 'regency',
+          required: false,
+        },
+        {
+          attributes: ['id', 'komunitas_name', 'type', 'icon_image'],
+          model: Komunitas,
+          as: 'komunitas',
           required: false,
         },
       ],
