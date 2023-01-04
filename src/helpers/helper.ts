@@ -10,9 +10,9 @@ import bcrypt from 'bcryptjs';
 import { Response } from 'express';
 import { response } from '../helpers/response';
 import { onesignal } from '../config/onesignal';
+import SSOLogs from '../module/auth/sso.log.model';
 import * as OneSignal from '@onesignal/node-onesignal';
 import Telegram, { Telegram_ParseModes } from 'tele-sender';
-import { repository as repoNotif } from '../module/notif/notif.respository';
 
 dotenv.config();
 const CHAT_ID_TELEGRAM: string = process.env.CHAT_ID_TELEGRAM || '';
@@ -174,6 +174,10 @@ export default class Helper {
     const { id } = await onesignal.forum.createNotification(notification);
 
     return await onesignal.forum.getNotification(onesignal_app_id, id);
+  }
+
+  public async SSOLogs(data: any) {
+    return SSOLogs.create(data);
   }
 }
 

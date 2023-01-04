@@ -55,6 +55,11 @@ export default class HelperAuth {
     });
     return Buffer.from(refresh).toString('base64');
   }
+
+  public decodeSSOToken(token: string) {
+    const payload: any = jwt.decode(token);
+    return payload;
+  }
 }
 
 export const helperauth = new HelperAuth();

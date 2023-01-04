@@ -1,17 +1,106 @@
 'use strict';
 
+import axios from 'axios';
+import dotenv from 'dotenv';
 import { Op } from 'sequelize';
+import redis from '../../config/redis';
 import { helper } from '../../helpers/helper';
 import { response } from '../../helpers/response';
 import { helperauth } from '../../helpers/auth.helper';
 import { Request, Response, NextFunction } from 'express';
 import { repository } from '../app/resource/resource.repository';
 
+dotenv.config();
+const date: string = helper.date();
+const base_url_sso: string = process.env.BASE_URL_SSO || '';
+const client_id: string = process.env.CLIENT_ID || '';
+const client_secret: string = process.env.CLIENT_SECRET || '';
 type RequestBody<T> = Request<{}, {}, T>;
 interface UserBody {
   username: string;
   password: string;
 }
+interface SSOTokenBody {
+  access_token: string;
+  refresh_token: string;
+}
+
+const tokenValidationSSO = async (
+  username: string,
+  token_sso: any,
+  res: Response,
+  next: NextFunction
+) => {
+  const url: string = `${base_url_sso}/userinfo`;
+  const token: string = `Bearer ${token_sso?.access_token}`;
+
+  axios.defaults.headers.common['Authorization'] = token;
+  axios
+    .get(url)
+    .then(async (res) => {
+      // sso logs
+      await helper.SSOLogs({
+        url: url,
+        request: token,
+        response: JSON.stringify(res?.data),
+        created_by: username,
+        created_date: date,
+      });
+
+      next();
+      return;
+    })
+    .catch(async (err) => {
+      if (err?.response?.status == 401) {
+        const url_refresh: string = `${base_url_sso}/token`;
+        const payload: Object = {
+          grant_type: 'refresh_token',
+          client_id: client_id,
+          client_secret: client_secret,
+          refresh_token: token_sso?.refresh_token,
+        };
+
+        axios.defaults.headers.post['Content-Type'] =
+          'application/x-www-form-urlencoded';
+        axios
+          .post(url_refresh, payload)
+          .then(async (res_refresh) => {
+            const { access_token, refresh_token } = res_refresh?.data;
+            await redis.set(
+              username,
+              JSON.stringify({ access_token, refresh_token })
+            );
+            // sso logs
+            await helper.SSOLogs({
+              url: url_refresh,
+              request: JSON.stringify(payload),
+              response: JSON.stringify(res_refresh?.data),
+              created_by: username,
+              created_date: date,
+            });
+
+            next();
+            return;
+          })
+          .catch(async (err_refresh) => {
+            // sso logs
+            await helper.SSOLogs({
+              url: url_refresh,
+              request: JSON.stringify(payload),
+              response: JSON.stringify(err_refresh?.response?.data),
+              created_by: username,
+              created_date: date,
+            });
+
+            return response.failed(
+              `token refresh sso expired: ${err_refresh}`,
+              401,
+              res
+            );
+          });
+      }
+    });
+};
 
 export default class Middleware {
   public async checkBearerToken(
@@ -26,6 +115,12 @@ export default class Middleware {
 
     try {
       const auth: any = helperauth.decodeToken(token);
+      if (auth?.is_sso == 1) {
+        const getRedisUser = await redis.get(auth?.username);
+        const token_sso: any = JSON.parse(getRedisUser || '');
+        return await tokenValidationSSO(auth?.username, token_sso, res, next);
+      }
+
       req.user = auth;
       next();
       return;
@@ -118,6 +213,42 @@ export default class Middleware {
       }
     } catch (err) {
       return helper.catchError(`check verify: ${err?.message}`, 400, res);
+    }
+  }
+
+  public async checkSSOToken(
+    req: RequestBody<SSOTokenBody>,
+    res: Response,
+    next: NextFunction
+  ) {
+    try {
+      const { access_token, refresh_token } = req?.body;
+      if (!access_token || !refresh_token)
+        return response.failed(
+          'access_token and refresh_token is required',
+          404,
+          res
+        );
+
+      const payload = helperauth.decodeSSOToken(access_token);
+      const { realm_access } = payload;
+      if (!realm_access?.roles.includes('app_komunitas')) {
+        return response.failed(`user does'nt have role access`, 401, res);
+      }
+
+      const resource = await repository.detail({
+        username: payload?.preferred_username,
+      });
+      if (!resource) return response.failed('Data not found', 404, res);
+
+      await redis.set(
+        resource?.getDataValue('username'),
+        JSON.stringify({ access_token, refresh_token })
+      );
+      req.user = resource;
+      next();
+    } catch (err) {
+      return response.failed(`check sso token: ${err?.message}`, 404, res);
     }
   }
 }

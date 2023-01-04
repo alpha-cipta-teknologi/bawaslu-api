@@ -8,6 +8,7 @@ import express, { Express } from 'express';
 import fileUpload from 'express-fileupload';
 
 import routes from './routes';
+import redis from './config/redis';
 import conn from './config/database';
 import { helper } from './helpers/helper';
 require('express-async-errors');
@@ -44,7 +45,7 @@ const options: cors.CorsOptions = {
 app.use(cors(options));
 app.use(routes);
 
-const Connection = async () => {
+(async () => {
   try {
     await conn.sequelize.authenticate();
     console.warn('Connection has been established successfully.');
@@ -52,8 +53,15 @@ const Connection = async () => {
     await helper.sendNotif(err?.message);
     console.warn('Unable to connect to the database:', err?.message);
   }
-};
-Connection();
+})();
+
+(async () => {
+  redis.on('error', async (error) => {
+    await helper.sendNotif(`Redis : ${error}`);
+    console.warn(`Redis : ${error}`);
+  });
+  await redis.connect();
+})();
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running on port: ${port}`);

@@ -18,5 +18,6 @@ router.post(
 );
 router.post('/forgot-password', controller.forgot);
 router.post('/reset-password', controller.reset);
+router.post('/login-sso', auth.checkSSOToken, controller.loginSSO);
 
 export default router;

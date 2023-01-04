@@ -22,13 +22,14 @@ export default class Controller {
     const isMatch = await helper.compareIt(req?.body?.password, user?.password);
     if (isMatch) {
       const role = user?.getDataValue('role');
-      const payload = {
-        id: user?.resource_id,
-        username: user?.username,
-        role_name: user?.role?.name,
+      const payload: Object = {
+        id: user?.getDataValue('resource_id'),
+        username: user?.getDataValue('username'),
+        role_name: role?.getDataValue('role_name'),
+        is_sso: 0,
         is_public:
           role?.getDataValue('role_name') == 'public'
-            ? { created_by: user?.resource_id }
+            ? { created_by: user?.getDataValue('resource_id') }
             : {},
       };
 
@@ -68,9 +69,10 @@ export default class Controller {
     const payload = {
       id: result?.getDataValue('resource_id'),
       username: result?.getDataValue('username'),
-      role_name: result?.getDataValue('role')?.name,
+      role_name: result?.getDataValue('role')?.role_name,
+      is_sso: 0,
       is_public:
-        result?.getDataValue('role')?.name == 'public'
+        result?.getDataValue('role')?.role_name == 'public'
           ? { created_by: result?.getDataValue('resource_id') }
           : {},
     };
@@ -253,6 +255,44 @@ export default class Controller {
       return response.success(true, 'success reset password', res);
     } catch (err) {
       return helper.catchError(`reset: ${err?.message}`, 500, res);
+    }
+  }
+
+  public async loginSSO(req: Request, res: Response) {
+    const user: any = req?.user;
+    const role: any = user?.getDataValue('role');
+    const payload: Object = {
+      id: user?.getDataValue('resource_id'),
+      username: user?.getDataValue('username'),
+      role_name: role?.getDataValue('role_name'),
+      is_sso: 1,
+      is_public:
+        role?.getDataValue('role_name') == 'public'
+          ? { created_by: user?.getDataValue('resource_id') }
+          : {},
+    };
+
+    try {
+      const token: string = helperauth.token(payload);
+      const refresh: string = helperauth.refresh(payload);
+      const getUser: Object = await transformer.detail(user);
+
+      await repository.update({
+        payload: { total_login: user?.total_login + 1 },
+        condition: { resource_id: user?.resource_id },
+      });
+
+      const data: Object = {
+        userdata: {
+          ...getUser,
+          total_login: user?.total_login + 1,
+        },
+        access_token: token,
+        refresh_token: refresh,
+      };
+      return response.successDetail('Login SSO success', data, res);
+    } catch (err) {
+      return helper.catchError(`login sso: ${err?.message}`, 500, res);
     }
   }
 }
