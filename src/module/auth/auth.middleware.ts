@@ -92,11 +92,7 @@ const tokenValidationSSO = async (
               created_date: date,
             });
 
-            return response.failed(
-              `token refresh sso expired: ${err_refresh}`,
-              401,
-              res
-            );
+            return response.failed(`refresh token sso expired`, 401, res);
           });
       }
     });
