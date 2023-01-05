@@ -111,13 +111,14 @@ export default class Middleware {
 
     try {
       const auth: any = helperauth.decodeToken(token);
+      req.user = auth;
+
       if (auth?.is_sso == 1) {
         const getRedisUser = await redis.get(auth?.username);
         const token_sso: any = JSON.parse(getRedisUser || '');
         return await tokenValidationSSO(auth?.username, token_sso, res, next);
       }
 
-      req.user = auth;
       next();
       return;
     } catch (err) {
