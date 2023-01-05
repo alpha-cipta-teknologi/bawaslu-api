@@ -60,6 +60,9 @@ app.use(routes);
     await helper.sendNotif(`Redis : ${error}`);
     console.warn(`Redis : ${error}`);
   });
+  redis.on('connect', () => {
+    console.warn('Redis connected!');
+  });
   await redis.connect();
 })();
 

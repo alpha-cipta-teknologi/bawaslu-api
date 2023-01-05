@@ -114,9 +114,16 @@ export default class Middleware {
       req.user = auth;
 
       if (auth?.is_sso == 1) {
-        const getRedisUser = await redis.get(auth?.username);
-        const token_sso: any = JSON.parse(getRedisUser || '');
-        return await tokenValidationSSO(auth?.username, token_sso, res, next);
+        const getRedisUser: string = (await redis.get(auth?.username)) || '0';
+        const token_sso: any = JSON.parse(getRedisUser);
+        if (token_sso != 0) {
+          return await tokenValidationSSO(auth?.username, token_sso, res, next);
+        }
+        return response.failed(
+          `access and refresh token sso not found`,
+          404,
+          res
+        );
       }
 
       next();

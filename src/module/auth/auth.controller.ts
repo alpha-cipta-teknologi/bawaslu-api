@@ -1,8 +1,9 @@
 'use strict';
 
+import axios from 'axios';
 import dotenv from 'dotenv';
 import { Op } from 'sequelize';
-import conn from '../../config/database';
+import redis from '../../config/redis';
 import { Request, Response } from 'express';
 import { helper } from '../../helpers/helper';
 import { response } from '../../helpers/response';
@@ -15,6 +16,9 @@ import { repository as repoTema } from '../reff/tema/tema.respository';
 
 dotenv.config();
 const date: string = helper.date();
+const base_url_sso: string = process.env.BASE_URL_SSO || '';
+const client_id: string = process.env.CLIENT_ID || '';
+const client_secret: string = process.env.CLIENT_SECRET || '';
 
 export default class Controller {
   public async login(req: Request, res: Response) {
@@ -293,6 +297,43 @@ export default class Controller {
       return response.successDetail('Login SSO success', data, res);
     } catch (err) {
       return helper.catchError(`login sso: ${err?.message}`, 500, res);
+    }
+  }
+
+  public async logout(req: Request, res: Response) {
+    try {
+      const user = req?.user;
+
+      if (user?.is_sso == 1) {
+        const getRedisUser: string = (await redis.get(user?.username)) || '0';
+        const token_sso: any = JSON.parse(getRedisUser);
+        if (token_sso != 0) {
+          const url: string = `${base_url_sso}/logout`;
+          const payload: Object = {
+            grant_type: 'logout',
+            client_id: client_id,
+            client_secret: client_secret,
+            refresh_token: token_sso?.refresh_token,
+          };
+
+          axios.defaults.headers.post['Content-Type'] =
+            'application/x-www-form-urlencoded';
+          const response = await axios.post(url, payload);
+          await redis.del(user?.username);
+
+          // sso logs
+          await helper.SSOLogs({
+            url: url,
+            request: JSON.stringify(payload),
+            response: JSON.stringify(response?.data),
+            created_by: user?.username,
+            created_date: date,
+          });
+        }
+      }
+      return response.success(true, 'logout success', res);
+    } catch (err) {
+      return helper.catchError(`logout: ${err?.message}`, 500, res);
     }
   }
 }
