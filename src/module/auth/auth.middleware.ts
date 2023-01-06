@@ -2,6 +2,7 @@
 
 import axios from 'axios';
 import dotenv from 'dotenv';
+import moment from 'moment';
 import { Op } from 'sequelize';
 import redis from '../../config/redis';
 import { helper } from '../../helpers/helper';
@@ -65,10 +66,13 @@ const tokenValidationSSO = async (
         axios
           .post(url_refresh, payload)
           .then(async (res_refresh) => {
-            const { access_token, refresh_token } = res_refresh?.data;
+            const { access_token, refresh_token, expires_in } = res_refresh?.data;
+            
+            const countdown: number = expires_in - 60;
+            const duration: any = moment().add((countdown > 0 ? countdown : 300), 'seconds');
             await redis.set(
               username,
-              JSON.stringify({ access_token, refresh_token })
+              JSON.stringify({ access_token, refresh_token, duration })
             );
             // sso logs
             await helper.SSOLogs({
@@ -116,7 +120,7 @@ export default class Middleware {
       if (auth?.is_sso == 1) {
         const getRedisUser: string = (await redis.get(auth?.username)) || '0';
         const token_sso: any = JSON.parse(getRedisUser);
-        if (token_sso != 0) {
+        if (token_sso != 0 && moment().diff(moment(token_sso?.duration)) >= 0) {
           return await tokenValidationSSO(auth?.username, token_sso, res, next);
         }
         return response.failed(
@@ -245,9 +249,11 @@ export default class Middleware {
       });
       if (!resource) return response.failed('Data not found', 404, res);
 
+      const countdown: number = payload?.expires_in - 60;
+      const duration: any = moment().add((countdown > 0 ? countdown : 300), 'seconds');
       await redis.set(
         resource?.getDataValue('username'),
-        JSON.stringify({ access_token, refresh_token })
+        JSON.stringify({ access_token, refresh_token, countdown, duration })
       );
       req.user = resource;
       next();
