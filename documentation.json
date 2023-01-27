@@ -628,7 +628,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"email\": \"mail@gmail.com\"\r\n}",
+              "raw": "{\r\n    \"email\": \"yusuf.hartanto69@gmail.com\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4302,6 +4302,11 @@
                       "key": "video",
                       "type": "file",
                       "src": "/C:/Users/ASUS/Downloads/y2mate.com - 5 Detik di Jurnal Stok Barang di Gudang Sudah Terupdate_1080p.mp4"
+                    },
+                    {
+                      "key": "sort_description",
+                      "value": "sort description",
+                      "type": "text"
                     }
                   ]
                 },
@@ -4471,13 +4476,18 @@
                       "key": "video",
                       "type": "file",
                       "src": "/C:/Users/ASUS/Downloads/y2mate.com - 5 Detik di Jurnal Stok Barang di Gudang Sudah Terupdate_1080p.mp4"
+                    },
+                    {
+                      "key": "sort_description",
+                      "value": "sort description",
+                      "type": "text"
                     }
                   ]
                 },
                 "url": {
-                  "raw": "{{url}}/reff/content/1",
+                  "raw": "{{url}}/reff/content/2",
                   "host": ["{{url}}"],
-                  "path": ["reff", "content", "1"]
+                  "path": ["reff", "content", "2"]
                 }
               },
               "response": [
@@ -9752,6 +9762,1023 @@
               ],
               "cookie": [],
               "body": "{\n    \"status\": true,\n    \"message\": \"Data success updated\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Report",
+      "item": [
+        {
+          "name": "Article",
+          "item": [
+            {
+              "name": "Report Article Create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"article_id\": {\r\n        \"value\": 12,\r\n        \"label\": \"Persiapan Pengawasan Mutarlih\"\r\n    },\r\n    \"jenis_laporan\": \"jenis laporan\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/article",
+                  "host": ["{{url}}"],
+                  "path": ["report", "article"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Report Article Create",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"article_id\": {\r\n        \"value\": 12,\r\n        \"label\": \"Persiapan Pengawasan Mutarlih\"\r\n    },\r\n    \"jenis_laporan\": \"jenis laporan\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/article",
+                      "host": ["{{url}}"],
+                      "path": ["report", "article"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "46"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"2e-uyuq6793Az67T/RbemmKsp5eyWA\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 27 Jan 2023 23:08:19 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success saved\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Report Article Update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"hasil_cek_fakta\": \"hasil cek fakta\",\r\n    \"status\": 2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/article/1",
+                  "host": ["{{url}}"],
+                  "path": ["report", "article", "1"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Report Article Update",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"hasil_cek_fakta\": \"hasil cek fakta\",\r\n    \"status\": 2\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/article/1",
+                      "host": ["{{url}}"],
+                      "path": ["report", "article", "1"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "48"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"30-l3MX88Xn6RpMow55wiG1PiqSkxg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 27 Jan 2023 23:10:00 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success updated\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Report Article Data",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/article?page=1&perPage=10&q=",
+                  "host": ["{{url}}"],
+                  "path": ["report", "article"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Report Article Data",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/article?page=1&perPage=10&q=",
+                      "host": ["{{url}}"],
+                      "path": ["report", "article"],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "perPage",
+                          "value": "10"
+                        },
+                        {
+                          "key": "q",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "591"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"24f-iP3JksOVzlVxcb+n0cT1hLGbN50\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 27 Jan 2023 23:19:15 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data report article\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"article_id\": 12,\n                \"jenis_laporan\": \"jenis laporan\",\n                \"hasil_cek_fakta\": \"hasil cek fakta\",\n                \"status\": 2,\n                \"created_by\": 1,\n                \"created_date\": \"2023-01-27T23:08:19.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2023-01-27T23:11:25.000Z\",\n                \"article\": {\n                    \"id\": 12,\n                    \"category_name\": \"Umum\",\n                    \"title\": \"Persiapan Pengawasan Mutarlih\",\n                    \"slug\": \"persiapan-pengawasan-mutarlih\",\n                    \"description\": \"<p>#ayoawasibersama</p>\\r\\n\",\n                    \"path_thumbnail\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb_250.jpg\",\n                    \"path_image\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb.jpg\"\n                }\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Report Article Detail",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/article/1",
+                  "host": ["{{url}}"],
+                  "path": ["report", "article", "1"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Report Article Detail",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/article/1",
+                      "host": ["{{url}}"],
+                      "path": ["report", "article", "1"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "568"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"238-wWDmCOOpmj9IJnSQww/j0rTYBAA\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 27 Jan 2023 23:19:38 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data report article\",\n    \"data\": {\n        \"id\": 1,\n        \"article_id\": 12,\n        \"jenis_laporan\": \"jenis laporan\",\n        \"hasil_cek_fakta\": \"hasil cek fakta\",\n        \"status\": 2,\n        \"created_by\": 1,\n        \"created_date\": \"2023-01-27T23:08:19.000Z\",\n        \"modified_by\": 1,\n        \"modified_date\": \"2023-01-27T23:11:25.000Z\",\n        \"article\": {\n            \"id\": 12,\n            \"category_name\": \"Umum\",\n            \"title\": \"Persiapan Pengawasan Mutarlih\",\n            \"slug\": \"persiapan-pengawasan-mutarlih\",\n            \"description\": \"<p>#ayoawasibersama</p>\\r\\n\",\n            \"path_thumbnail\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb_250.jpg\",\n            \"path_image\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb.jpg\"\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Report Article Delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/report/article/1",
+                  "host": ["{{url}}"],
+                  "path": ["report", "article", "1"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Report Article Delete",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/report/article/1",
+                      "host": ["{{url}}"],
+                      "path": ["report", "article", "1"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "48"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"30-Z8Sc9zmwxkea6NjQrgGQ/qbFVQg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 27 Jan 2023 23:11:25 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success deleted\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Complaint",
+          "item": [
+            {
+              "name": "Report Complaint Create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"province_id\": {\r\n        \"value\": 34,\r\n        \"label\": \"DI YOGYAKARTA\"\r\n    },\r\n    \"regencies_id\": {\r\n        \"value\": 3402,\r\n        \"label\": \"KABUPATEN BANTUL\"\r\n    },\r\n    \"title\": \"title\",\r\n    \"description\": \"description\",\r\n    \"link_berita\": \"https://jarimuawasipemilu.bawaslu.go.id/forum/persiapan-pengawasan-mutarlih\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/complaint",
+                  "host": ["{{url}}"],
+                  "path": ["report", "complaint"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Report Complaint Create",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"province_id\": {\r\n        \"value\": 34,\r\n        \"label\": \"DI YOGYAKARTA\"\r\n    },\r\n    \"regencies_id\": {\r\n        \"value\": 3402,\r\n        \"label\": \"KABUPATEN BANTUL\"\r\n    },\r\n    \"title\": \"title\",\r\n    \"description\": \"description\",\r\n    \"link_berita\": \"https://jarimuawasipemilu.bawaslu.go.id/forum/persiapan-pengawasan-mutarlih\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/complaint",
+                      "host": ["{{url}}"],
+                      "path": ["report", "complaint"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "46"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"2e-uyuq6793Az67T/RbemmKsp5eyWA\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 27 Jan 2023 23:29:16 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success saved\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Report Complaint Update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"province_id\": {\r\n        \"value\": 34,\r\n        \"label\": \"DI YOGYAKARTA\"\r\n    },\r\n    \"regencies_id\": {\r\n        \"value\": 3402,\r\n        \"label\": \"KABUPATEN BANTUL\"\r\n    },\r\n    \"title\": \"title\",\r\n    \"description\": \"description\",\r\n    \"link_berita\": \"https://jarimuawasipemilu.bawaslu.go.id/forum/persiapan-pengawasan-mutarlih\",\r\n    \"status\": 2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/complaint/1",
+                  "host": ["{{url}}"],
+                  "path": ["report", "complaint", "1"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Report Complaint Update",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"province_id\": {\r\n        \"value\": 34,\r\n        \"label\": \"DI YOGYAKARTA\"\r\n    },\r\n    \"regencies_id\": {\r\n        \"value\": 3402,\r\n        \"label\": \"KABUPATEN BANTUL\"\r\n    },\r\n    \"title\": \"title\",\r\n    \"description\": \"description\",\r\n    \"link_berita\": \"https://jarimuawasipemilu.bawaslu.go.id/forum/persiapan-pengawasan-mutarlih\",\r\n    \"status\": 2\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/complaint/1",
+                      "host": ["{{url}}"],
+                      "path": ["report", "complaint", "1"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "48"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"30-l3MX88Xn6RpMow55wiG1PiqSkxg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 27 Jan 2023 23:30:14 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success updated\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Report Complaint Data",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/complaint?page=1&perPage=10&q=",
+                  "host": ["{{url}}"],
+                  "path": ["report", "complaint"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Report Complaint Data",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/complaint?page=1&perPage=10&q=",
+                      "host": ["{{url}}"],
+                      "path": ["report", "complaint"],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "perPage",
+                          "value": "10"
+                        },
+                        {
+                          "key": "q",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "512"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"200-7ZjWb6VmbMF0mVrvhRXYs4VTFcQ\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 27 Jan 2023 23:31:05 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data report complaint\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"title\": \"title\",\n                \"description\": \"description\",\n                \"link_berita\": \"https://jarimuawasipemilu.bawaslu.go.id/forum/persiapan-pengawasan-mutarlih\",\n                \"area_province_id\": 34,\n                \"area_regencies_id\": 3402,\n                \"status\": 2,\n                \"created_by\": 1,\n                \"created_date\": \"2023-01-27T23:29:16.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2023-01-27T23:31:02.000Z\",\n                \"province\": {\n                    \"id\": 34,\n                    \"name\": \"DI YOGYAKARTA\"\n                },\n                \"regency\": {\n                    \"id\": 3402,\n                    \"area_province_id\": 34,\n                    \"name\": \"KABUPATEN BANTUL\"\n                }\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Report Complaint Detail",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/complaint/1",
+                  "host": ["{{url}}"],
+                  "path": ["report", "complaint", "1"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Report Complaint Detail",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/complaint/1",
+                      "host": ["{{url}}"],
+                      "path": ["report", "complaint", "1"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "489"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1e9-88MpCkCtF3HUK+sKl/au27Hzbjo\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 27 Jan 2023 23:31:26 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data report complaint\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"title\",\n        \"description\": \"description\",\n        \"link_berita\": \"https://jarimuawasipemilu.bawaslu.go.id/forum/persiapan-pengawasan-mutarlih\",\n        \"area_province_id\": 34,\n        \"area_regencies_id\": 3402,\n        \"status\": 2,\n        \"created_by\": 1,\n        \"created_date\": \"2023-01-27T23:29:16.000Z\",\n        \"modified_by\": 1,\n        \"modified_date\": \"2023-01-27T23:31:02.000Z\",\n        \"province\": {\n            \"id\": 34,\n            \"name\": \"DI YOGYAKARTA\"\n        },\n        \"regency\": {\n            \"id\": 3402,\n            \"area_province_id\": 34,\n            \"name\": \"KABUPATEN BANTUL\"\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Report Complaint Delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/report/complaint/1",
+                  "host": ["{{url}}"],
+                  "path": ["report", "complaint", "1"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Report Complaint Delete",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{url}}/report/complaint/1",
+                      "host": ["{{url}}"],
+                      "path": ["report", "complaint", "1"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "48"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"30-Z8Sc9zmwxkea6NjQrgGQ/qbFVQg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 27 Jan 2023 23:31:54 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success deleted\"\n}"
+                }
+              ]
             }
           ]
         }

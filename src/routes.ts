@@ -9,6 +9,7 @@ import reff from './module/reff/reff.routes';
 import forum from './module/forum/forum.routes';
 import notif from './module/notif/notif.routes';
 import global from './module/global/global.routes';
+import report from './module/report/report.routes';
 
 const router: Router = Router();
 
@@ -19,6 +20,7 @@ router.use('/area', area);
 router.use('/reff', reff);
 router.use('/forum', forum);
 router.use('/notif', notif);
+router.use('/report', report);
 router.use(exception);
 
 export default router;

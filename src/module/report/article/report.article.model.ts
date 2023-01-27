@@ -2,45 +2,28 @@
 
 import { DataTypes } from 'sequelize';
 import conn from '../../../config/database';
+import Article from '../../forum/article/article.model';
 
 const Model = conn.sequelize.define(
-  'content_beranda',
+  'laporan_article',
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    header: {
+    article_id: {
+      type: DataTypes.INTEGER,
+    },
+    jenis_laporan: {
       type: DataTypes.STRING,
     },
-    title: {
-      type: DataTypes.TEXT,
-    },
-    seq: {
-      type: DataTypes.TINYINT,
-      default: 1,
-    },
-    path_thumbnail: {
-      type: DataTypes.STRING,
-    },
-    path_image: {
-      type: DataTypes.STRING,
-    },
-    path_video: {
-      type: DataTypes.STRING,
-    },
-    link_url: {
+    hasil_cek_fakta: {
       type: DataTypes.STRING,
     },
     status: {
       type: DataTypes.TINYINT,
-    },
-    sort_description: {
-      type: DataTypes.TEXT,
-    },
-    description: {
-      type: DataTypes.TEXT,
+      defaultValue: 1,
     },
     created_by: {
       type: DataTypes.INTEGER,
@@ -62,5 +45,10 @@ const Model = conn.sequelize.define(
     freezeTableName: true,
   }
 );
+Model.belongsTo(Article, {
+  as: 'article',
+  targetKey: 'id',
+  foreignKey: 'article_id',
+});
 
 export default Model;

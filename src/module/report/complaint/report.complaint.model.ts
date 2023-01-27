@@ -2,45 +2,35 @@
 
 import { DataTypes } from 'sequelize';
 import conn from '../../../config/database';
+import Regency from '../../area/regencies.model';
+import Province from '../../area/provinces.model';
 
 const Model = conn.sequelize.define(
-  'content_beranda',
+  'laporan_aduan',
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    header: {
-      type: DataTypes.STRING,
-    },
     title: {
-      type: DataTypes.TEXT,
-    },
-    seq: {
-      type: DataTypes.TINYINT,
-      default: 1,
-    },
-    path_thumbnail: {
       type: DataTypes.STRING,
-    },
-    path_image: {
-      type: DataTypes.STRING,
-    },
-    path_video: {
-      type: DataTypes.STRING,
-    },
-    link_url: {
-      type: DataTypes.STRING,
-    },
-    status: {
-      type: DataTypes.TINYINT,
-    },
-    sort_description: {
-      type: DataTypes.TEXT,
     },
     description: {
       type: DataTypes.TEXT,
+    },
+    link_berita: {
+      type: DataTypes.STRING,
+    },
+    area_province_id: {
+      type: DataTypes.INTEGER,
+    },
+    area_regencies_id: {
+      type: DataTypes.INTEGER,
+    },
+    status: {
+      type: DataTypes.TINYINT,
+      defaultValue: 1,
     },
     created_by: {
       type: DataTypes.INTEGER,
@@ -62,5 +52,15 @@ const Model = conn.sequelize.define(
     freezeTableName: true,
   }
 );
+Model.belongsTo(Province, {
+  as: 'province',
+  targetKey: 'id',
+  foreignKey: 'area_province_id',
+});
+Model.belongsTo(Regency, {
+  as: 'regency',
+  targetKey: 'id',
+  foreignKey: 'area_regencies_id',
+});
 
 export default Model;

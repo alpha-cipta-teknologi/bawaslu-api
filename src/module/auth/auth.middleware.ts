@@ -66,10 +66,14 @@ const tokenValidationSSO = async (
         axios
           .post(url_refresh, payload)
           .then(async (res_refresh) => {
-            const { access_token, refresh_token, expires_in } = res_refresh?.data;
-            
+            const { access_token, refresh_token, expires_in } =
+              res_refresh?.data;
+
             const countdown: number = expires_in - 60;
-            const duration: any = moment().add((countdown > 0 ? countdown : 300), 'seconds');
+            const duration: any = moment().add(
+              countdown > 0 ? countdown : 300,
+              'seconds'
+            );
             await redis.set(
               username,
               JSON.stringify({ access_token, refresh_token, duration })
@@ -250,7 +254,10 @@ export default class Middleware {
       if (!resource) return response.failed('Data not found', 404, res);
 
       const countdown: number = payload?.expires_in - 60;
-      const duration: any = moment().add((countdown > 0 ? countdown : 300), 'seconds');
+      const duration: any = moment().add(
+        countdown > 0 ? countdown : 300,
+        'seconds'
+      );
       await redis.set(
         resource?.getDataValue('username'),
         JSON.stringify({ access_token, refresh_token, countdown, duration })
