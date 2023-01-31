@@ -10296,7 +10296,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n    \"province_id\": {\r\n        \"value\": 34,\r\n        \"label\": \"DI YOGYAKARTA\"\r\n    },\r\n    \"regencies_id\": {\r\n        \"value\": 3402,\r\n        \"label\": \"KABUPATEN BANTUL\"\r\n    },\r\n    \"title\": \"title\",\r\n    \"description\": \"description\",\r\n    \"link_berita\": \"https://jarimuawasipemilu.bawaslu.go.id/forum/persiapan-pengawasan-mutarlih\"\r\n}",
+                  "raw": "{\r\n    \"province_id\": {\r\n        \"value\": 34,\r\n        \"label\": \"DI YOGYAKARTA\"\r\n    },\r\n    \"regencies_id\": {\r\n        \"value\": 3402,\r\n        \"label\": \"KABUPATEN BANTUL\"\r\n    },\r\n    \"title\": \"title\",\r\n    \"description\": \"description\",\r\n    \"link_berita\": \"https://jarimuawasipemilu.bawaslu.go.id/forum/persiapan-pengawasan-mutarlih\",\r\n    \"jenis_aduan\": \"jenis aduan\"\r\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -10393,7 +10393,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n    \"province_id\": {\r\n        \"value\": 34,\r\n        \"label\": \"DI YOGYAKARTA\"\r\n    },\r\n    \"regencies_id\": {\r\n        \"value\": 3402,\r\n        \"label\": \"KABUPATEN BANTUL\"\r\n    },\r\n    \"title\": \"title\",\r\n    \"description\": \"description\",\r\n    \"link_berita\": \"https://jarimuawasipemilu.bawaslu.go.id/forum/persiapan-pengawasan-mutarlih\",\r\n    \"status\": 2\r\n}",
+                  "raw": "{\r\n    \"province_id\": {\r\n        \"value\": 34,\r\n        \"label\": \"DI YOGYAKARTA\"\r\n    },\r\n    \"regencies_id\": {\r\n        \"value\": 3402,\r\n        \"label\": \"KABUPATEN BANTUL\"\r\n    },\r\n    \"title\": \"title\",\r\n    \"description\": \"description\",\r\n    \"link_berita\": \"https://jarimuawasipemilu.bawaslu.go.id/forum/persiapan-pengawasan-mutarlih\",\r\n    \"status\": 2,\r\n    \"jenis_aduan\": \"jenis aduan\"\r\n}",
                   "options": {
                     "raw": {
                       "language": "json"

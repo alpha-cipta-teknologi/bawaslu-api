@@ -13,6 +13,9 @@ const Model = conn.sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
+    jenis_aduan: {
+      type: DataTypes.STRING,
+    },
     title: {
       type: DataTypes.STRING,
     },
