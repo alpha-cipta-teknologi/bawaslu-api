@@ -2,7 +2,10 @@
 
 import { Op } from 'sequelize';
 import Model from './report.article.model';
+import Tema from '../../reff/tema/tema.model';
 import Article from '../../forum/article/article.model';
+import Resource from '../../app/resource/resource.model';
+import Komunitas from '../../reff/komunitas/komunitas.model';
 
 export default class Respository {
   public index(data: any) {
@@ -38,6 +41,30 @@ export default class Respository {
             'description',
             'path_thumbnail',
             'path_image',
+            'status',
+          ],
+          include: [
+            {
+              attributes: ['username', 'full_name', 'image_foto'],
+              model: Resource,
+              as: 'author',
+              required: false,
+              where: {
+                status: { [Op.ne]: 9 },
+              },
+            },
+            {
+              attributes: ['id', 'komunitas_name', 'type', 'icon_image'],
+              model: Komunitas,
+              as: 'komunitas',
+              required: false,
+            },
+            {
+              attributes: ['id', 'tema_name', 'type', 'icon_image'],
+              model: Tema,
+              as: 'tema',
+              required: false,
+            },
           ],
         },
       ],
@@ -63,6 +90,29 @@ export default class Respository {
             'description',
             'path_thumbnail',
             'path_image',
+          ],
+          include: [
+            {
+              attributes: ['username', 'full_name', 'image_foto'],
+              model: Resource,
+              as: 'author',
+              required: false,
+              where: {
+                status: { [Op.ne]: 9 },
+              },
+            },
+            {
+              attributes: ['id', 'komunitas_name', 'type', 'icon_image'],
+              model: Komunitas,
+              as: 'komunitas',
+              required: false,
+            },
+            {
+              attributes: ['id', 'tema_name', 'type', 'icon_image'],
+              model: Tema,
+              as: 'tema',
+              required: false,
+            },
           ],
         },
       ],

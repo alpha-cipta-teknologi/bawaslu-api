@@ -10071,15 +10071,15 @@
                     },
                     {
                       "key": "Content-Length",
-                      "value": "591"
+                      "value": "849"
                     },
                     {
                       "key": "ETag",
-                      "value": "W/\"24f-iP3JksOVzlVxcb+n0cT1hLGbN50\""
+                      "value": "W/\"351-Dtyw4HWG3jG9cfm9LERvYs+ZQjI\""
                     },
                     {
                       "key": "Date",
-                      "value": "Fri, 27 Jan 2023 23:19:15 GMT"
+                      "value": "Tue, 31 Jan 2023 05:43:40 GMT"
                     },
                     {
                       "key": "Connection",
@@ -10091,7 +10091,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n    \"status\": true,\n    \"message\": \"Data report article\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"article_id\": 12,\n                \"jenis_laporan\": \"jenis laporan\",\n                \"hasil_cek_fakta\": \"hasil cek fakta\",\n                \"status\": 2,\n                \"created_by\": 1,\n                \"created_date\": \"2023-01-27T23:08:19.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2023-01-27T23:11:25.000Z\",\n                \"article\": {\n                    \"id\": 12,\n                    \"category_name\": \"Umum\",\n                    \"title\": \"Persiapan Pengawasan Mutarlih\",\n                    \"slug\": \"persiapan-pengawasan-mutarlih\",\n                    \"description\": \"<p>#ayoawasibersama</p>\\r\\n\",\n                    \"path_thumbnail\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb_250.jpg\",\n                    \"path_image\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb.jpg\"\n                }\n            }\n        ]\n    }\n}"
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data report article\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"article_id\": 12,\n                \"jenis_laporan\": \"jenis laporan\",\n                \"hasil_cek_fakta\": null,\n                \"status\": 1,\n                \"created_by\": 15,\n                \"created_date\": \"2023-01-29T07:34:11.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2023-01-29T07:35:37.000Z\",\n                \"article\": {\n                    \"id\": 12,\n                    \"category_name\": \"Umum\",\n                    \"title\": \"Persiapan Pengawasan Mutarlih\",\n                    \"slug\": \"persiapan-pengawasan-mutarlih\",\n                    \"description\": \"<p>#ayoawasibersama</p>\\r\\n\",\n                    \"path_thumbnail\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb_250.jpg\",\n                    \"path_image\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb.jpg\",\n                    \"status\": 1,\n                    \"author\": {\n                        \"username\": \"ijijaelani14\",\n                        \"full_name\": \"Iji Jaelani\",\n                        \"image_foto\": null\n                    },\n                    \"komunitas\": {\n                        \"id\": 1,\n                        \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                        \"type\": 0,\n                        \"icon_image\": null\n                    },\n                    \"tema\": {\n                        \"id\": 1,\n                        \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                        \"type\": 0,\n                        \"icon_image\": null\n                    }\n                }\n            }\n        ]\n    }\n}"
                 }
               ]
             },
@@ -10171,15 +10171,15 @@
                     },
                     {
                       "key": "Content-Length",
-                      "value": "568"
+                      "value": "815"
                     },
                     {
                       "key": "ETag",
-                      "value": "W/\"238-wWDmCOOpmj9IJnSQww/j0rTYBAA\""
+                      "value": "W/\"32f-Zb4Q80JzZAWNZdyRq9gjSKAXVN0\""
                     },
                     {
                       "key": "Date",
-                      "value": "Fri, 27 Jan 2023 23:19:38 GMT"
+                      "value": "Tue, 31 Jan 2023 05:44:16 GMT"
                     },
                     {
                       "key": "Connection",
@@ -10191,7 +10191,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n    \"status\": true,\n    \"message\": \"Data report article\",\n    \"data\": {\n        \"id\": 1,\n        \"article_id\": 12,\n        \"jenis_laporan\": \"jenis laporan\",\n        \"hasil_cek_fakta\": \"hasil cek fakta\",\n        \"status\": 2,\n        \"created_by\": 1,\n        \"created_date\": \"2023-01-27T23:08:19.000Z\",\n        \"modified_by\": 1,\n        \"modified_date\": \"2023-01-27T23:11:25.000Z\",\n        \"article\": {\n            \"id\": 12,\n            \"category_name\": \"Umum\",\n            \"title\": \"Persiapan Pengawasan Mutarlih\",\n            \"slug\": \"persiapan-pengawasan-mutarlih\",\n            \"description\": \"<p>#ayoawasibersama</p>\\r\\n\",\n            \"path_thumbnail\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb_250.jpg\",\n            \"path_image\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb.jpg\"\n        }\n    }\n}"
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data report article\",\n    \"data\": {\n        \"id\": 1,\n        \"article_id\": 12,\n        \"jenis_laporan\": \"jenis laporan\",\n        \"hasil_cek_fakta\": null,\n        \"status\": 1,\n        \"created_by\": 15,\n        \"created_date\": \"2023-01-29T07:34:11.000Z\",\n        \"modified_by\": 1,\n        \"modified_date\": \"2023-01-29T07:35:37.000Z\",\n        \"article\": {\n            \"id\": 12,\n            \"category_name\": \"Umum\",\n            \"title\": \"Persiapan Pengawasan Mutarlih\",\n            \"slug\": \"persiapan-pengawasan-mutarlih\",\n            \"description\": \"<p>#ayoawasibersama</p>\\r\\n\",\n            \"path_thumbnail\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb_250.jpg\",\n            \"path_image\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb.jpg\",\n            \"author\": {\n                \"username\": \"ijijaelani14\",\n                \"full_name\": \"Iji Jaelani\",\n                \"image_foto\": null\n            },\n            \"komunitas\": {\n                \"id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"type\": 0,\n                \"icon_image\": null\n            },\n            \"tema\": {\n                \"id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"type\": 0,\n                \"icon_image\": null\n            }\n        }\n    }\n}"
                 }
               ]
             },
