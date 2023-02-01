@@ -2,22 +2,37 @@
 
 import fs from 'fs';
 import path from 'path';
-import axios from 'axios';
 import sharp from 'sharp';
 import moment from 'moment';
 import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
 import { Response } from 'express';
+import nodemailer from 'nodemailer';
 import { response } from '../helpers/response';
 import { onesignal } from '../config/onesignal';
 import SSOLogs from '../module/auth/sso.log.model';
 import * as OneSignal from '@onesignal/node-onesignal';
 import Telegram, { Telegram_ParseModes } from 'tele-sender';
 
+interface mail {
+  host: string;
+  port: number;
+  user: string;
+  pass: string;
+  sender: string;
+}
+
 dotenv.config();
 const CHAT_ID_TELEGRAM: string = process.env.CHAT_ID_TELEGRAM || '';
 const telegram = new Telegram(process.env.TOKEN_TELEGRAM || '');
 const month: string = moment().format('YYYY-MM');
+const configMail: mail = {
+  host: process.env.MAIL_HOST || 'smtp.mailtrap.io',
+  port: +(process.env.MAIL_PORT || 2525),
+  user: process.env.MAIL_USERNAME || 'fce06934e4832d',
+  pass: process.env.MAIL_PASSWORD || '27ceb283c382c4',
+  sender: process.env.MAIL_SENDER || 'noreply@bawaslu.go.id',
+};
 
 export default class Helper {
   public date() {
@@ -129,18 +144,37 @@ export default class Helper {
   }
 
   public async sendEmail(data: Object | any) {
-    // try {
-    //   const url: string = process.env.EMAIL_URL + '/send';
-    //   axios.defaults.headers.common['apikey'] = process.env.EMAIL_APIKEY;
-    //   await axios.post(url, {
-    //     recipients: [data?.to],
-    //     subject: data?.subject,
-    //     encode: url,
-    //     content: data?.content,
-    //   });
-    // } catch (err) {
-    //   await this.sendNotif(`send email: ${err?.message}`);
-    // }
+    const transporter = nodemailer.createTransport({
+      host: configMail?.host,
+      port: configMail?.port,
+      secure: true,
+      requireTLS: true,
+      auth: {
+        user: configMail?.user,
+        pass: configMail?.pass,
+      },
+      tls: {
+        minVersion: 'TLSv1',
+        rejectUnauthorized: false,
+      },
+      logger: false,
+    });
+
+    const mailOptions = {
+      from: configMail?.sender,
+      to: data?.to,
+      subject: data?.subject,
+      html: data?.content,
+    };
+
+    transporter.sendMail(mailOptions, async (error, info) => {
+      if (error) {
+        await this.sendNotif(`Email error: ${error}`);
+        console.warn(`Email error: ${error}`);
+      } else {
+        console.warn(`Email sent: ${info?.response}`);
+      }
+    });
   }
 
   public slug(string: string) {
