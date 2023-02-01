@@ -167,7 +167,7 @@ export default class Helper {
       html: data?.content,
     };
 
-    transporter.sendMail(mailOptions, async (error, info) => {
+    transporter.sendMail(mailOptions, async (error: any, info: any) => {
       if (error) {
         await this.sendNotif(`Email error: ${error}`);
         console.warn(`Email error: ${error}`);
