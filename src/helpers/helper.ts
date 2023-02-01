@@ -129,18 +129,18 @@ export default class Helper {
   }
 
   public async sendEmail(data: Object | any) {
-    try {
-      const url: string = process.env.EMAIL_URL + '/send';
-      axios.defaults.headers.common['apikey'] = process.env.EMAIL_APIKEY;
-      await axios.post(url, {
-        recipients: [data?.to],
-        subject: data?.subject,
-        encode: url,
-        content: data?.content,
-      });
-    } catch (err) {
-      await this.sendNotif(err?.message);
-    }
+    // try {
+    //   const url: string = process.env.EMAIL_URL + '/send';
+    //   axios.defaults.headers.common['apikey'] = process.env.EMAIL_APIKEY;
+    //   await axios.post(url, {
+    //     recipients: [data?.to],
+    //     subject: data?.subject,
+    //     encode: url,
+    //     content: data?.content,
+    //   });
+    // } catch (err) {
+    //   await this.sendNotif(`send email: ${err?.message}`);
+    // }
   }
 
   public slug(string: string) {
