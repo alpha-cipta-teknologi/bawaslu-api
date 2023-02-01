@@ -8,6 +8,7 @@ export default class Variable {
       'description',
       'link_berita',
       'status',
+      'hasil_cek_fakta',
     ];
     return field;
   }

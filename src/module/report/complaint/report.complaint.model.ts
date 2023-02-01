@@ -20,7 +20,10 @@ const Model = conn.sequelize.define(
       type: DataTypes.STRING,
     },
     description: {
-      type: DataTypes.TEXT,
+      type: DataTypes.TEXT('long'),
+    },
+    hasil_cek_fakta: {
+      type: DataTypes.TEXT('long'),
     },
     link_berita: {
       type: DataTypes.STRING,
