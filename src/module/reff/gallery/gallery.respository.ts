@@ -41,7 +41,7 @@ export default class Respository {
                 where area_regencies.id = author.area_regencies_id
               )`),
               'regency',
-            ]
+            ],
           ],
           model: Resource,
           as: 'author',
@@ -102,7 +102,7 @@ export default class Respository {
                 where area_regencies.id = author.area_regencies_id
               )`),
               'regency',
-            ]
+            ],
           ],
           model: Resource,
           as: 'author',
@@ -147,7 +147,7 @@ export default class Respository {
                 where area_regencies.id = author.area_regencies_id
               )`),
               'regency',
-            ]
+            ],
           ],
           model: Resource,
           as: 'author',

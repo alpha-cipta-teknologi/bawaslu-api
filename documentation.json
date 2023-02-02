@@ -5257,15 +5257,15 @@
                     },
                     {
                       "key": "Content-Length",
-                      "value": "738"
+                      "value": "3516"
                     },
                     {
                       "key": "ETag",
-                      "value": "W/\"2e2-ySUghc+C3MgcaMjIxO94Au/lQR4\""
+                      "value": "W/\"dbc-5hb9LfVZHSNOTkMHfJ4H3nSTBpU\""
                     },
                     {
                       "key": "Date",
-                      "value": "Thu, 08 Dec 2022 23:27:51 GMT"
+                      "value": "Thu, 02 Feb 2023 03:47:22 GMT"
                     },
                     {
                       "key": "Connection",
@@ -5277,7 +5277,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n    \"status\": true,\n    \"message\": \"Data gallery\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"id\": 3,\n                \"folder_name\": \"Gallery update\",\n                \"description\": \"description\",\n                \"path_thumbnail\": \"/uploads/gallery/2022-12/win8_250.jpg\",\n                \"status\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-08T23:27:47.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": null,\n                \"detail\": [\n                    {\n                        \"id\": 8,\n                        \"gallery_id\": 3,\n                        \"path_image\": \"/uploads/gallery/2022-12/auto-order.png\",\n                        \"counter_view\": null,\n                        \"counter_share\": null,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-08T23:27:44.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null\n                    },\n                    {\n                        \"id\": 7,\n                        \"gallery_id\": 3,\n                        \"path_image\": \"/uploads/gallery/2022-12/pdf.png\",\n                        \"counter_view\": null,\n                        \"counter_share\": null,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-08T23:27:44.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null\n                    }\n                ]\n            }\n        ]\n    }\n}"
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data gallery\",\n    \"data\": {\n        \"total\": 5,\n        \"values\": [\n            {\n                \"id\": 5,\n                \"folder_name\": \"Room\",\n                \"description\": \"Deskripsi Room\",\n                \"path_thumbnail\": \"/uploads/gallery/2022-12/1650244185_250.jpg\",\n                \"status\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-09T00:11:41.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"detail\": [\n                    {\n                        \"id\": 9,\n                        \"gallery_id\": 5,\n                        \"path_image\": \"/uploads/gallery/2022-12/1650244185.jpg\",\n                        \"counter_view\": null,\n                        \"counter_share\": null,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-08T23:43:51.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null\n                    }\n                ],\n                \"author\": {\n                    \"username\": \"adminuser\",\n                    \"full_name\": \"Super Admin\",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN BANDUNG\"\n                }\n            },\n            {\n                \"id\": 6,\n                \"folder_name\": \"View\",\n                \"description\": \"Deskripsi View\",\n                \"path_thumbnail\": \"/uploads/gallery/2022-12/88-882824_portrait-images-of-nature_250.jpg\",\n                \"status\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-09T00:12:35.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"detail\": [\n                    {\n                        \"id\": 10,\n                        \"gallery_id\": 6,\n                        \"path_image\": \"/uploads/gallery/2022-12/88-882824_portrait-images-of-nature.jpg\",\n                        \"counter_view\": null,\n                        \"counter_share\": null,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-08T23:43:51.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null\n                    }\n                ],\n                \"author\": {\n                    \"username\": \"adminuser\",\n                    \"full_name\": \"Super Admin\",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN BANDUNG\"\n                }\n            },\n            {\n                \"id\": 7,\n                \"folder_name\": \"Mountaine\",\n                \"description\": \"Deskripsi Mountaine\",\n                \"path_thumbnail\": \"/uploads/gallery/2022-12/1491581207261_250.jpeg\",\n                \"status\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-09T03:41:39.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"detail\": [\n                    {\n                        \"id\": 11,\n                        \"gallery_id\": 7,\n                        \"path_image\": \"/uploads/gallery/2022-12/1491581207261.jpeg\",\n                        \"counter_view\": null,\n                        \"counter_share\": null,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-09T03:36:01.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null\n                    },\n                    {\n                        \"id\": 12,\n                        \"gallery_id\": 7,\n                        \"path_image\": \"/uploads/gallery/2022-12/1650244185.jpg\",\n                        \"counter_view\": null,\n                        \"counter_share\": null,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-09T03:36:01.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null\n                    }\n                ],\n                \"author\": {\n                    \"username\": \"adminuser\",\n                    \"full_name\": \"Super Admin\",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN BANDUNG\"\n                }\n            },\n            {\n                \"id\": 8,\n                \"folder_name\": \"Gallery update\",\n                \"description\": \"description\",\n                \"path_thumbnail\": \"/uploads/gallery/2022-12/unsplash_9cd8qOgeNIY_250.png\",\n                \"status\": 1,\n                \"created_by\": 9,\n                \"created_date\": \"2022-12-11T16:13:26.000Z\",\n                \"modified_by\": 9,\n                \"modified_date\": null,\n                \"detail\": [],\n                \"author\": {\n                    \"username\": \"gifaniasofia\",\n                    \"full_name\": \"Gifania Sofia L\",\n                    \"image_foto\": \"/uploads/resource/2022-12/imgUrl20220511014927874.jpg\",\n                    \"province\": null,\n                    \"regency\": null\n                }\n            },\n            {\n                \"id\": 9,\n                \"folder_name\": \"Cegah Pelanggaran, Bagja Minta Seluruh Jajaran Bawaslu Awasi Rekrutmen PPS secara Melekat\",\n                \"description\": \"Cegah Pelanggaran, Bagja Minta Seluruh Jajaran Bawaslu Awasi Rekrutmen PPS secara Melekat\",\n                \"path_thumbnail\": \"/uploads/gallery/2022-12/bagja_250.jpeg\",\n                \"status\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2023-01-03T06:18:57.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": null,\n                \"detail\": [\n                    {\n                        \"id\": 13,\n                        \"gallery_id\": 9,\n                        \"path_image\": \"/uploads/gallery/2022-12/bagja.jpeg\",\n                        \"counter_view\": null,\n                        \"counter_share\": null,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-29T03:13:02.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null\n                    },\n                    {\n                        \"id\": 14,\n                        \"gallery_id\": 9,\n                        \"path_image\": \"/uploads/gallery/2022-12/bagja1.jpeg\",\n                        \"counter_view\": null,\n                        \"counter_share\": null,\n                        \"created_by\": 1,\n                        \"created_date\": \"2022-12-29T03:13:02.000Z\",\n                        \"modified_by\": null,\n                        \"modified_date\": null\n                    }\n                ],\n                \"author\": {\n                    \"username\": \"adminuser\",\n                    \"full_name\": \"Super Admin\",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN BANDUNG\"\n                }\n            }\n        ]\n    }\n}"
                 }
               ]
             },
@@ -7459,15 +7459,15 @@
                 },
                 {
                   "key": "Content-Length",
-                  "value": "11029"
+                  "value": "12320"
                 },
                 {
                   "key": "ETag",
-                  "value": "W/\"2b15-tefcMxOQ3iZ1kfsFq/9Xmt75UC8\""
+                  "value": "W/\"3020-WYC9W95I+drO60y+W586+ZLsvzo\""
                 },
                 {
                   "key": "Date",
-                  "value": "Sat, 17 Dec 2022 14:59:39 GMT"
+                  "value": "Thu, 02 Feb 2023 03:45:37 GMT"
                 },
                 {
                   "key": "Connection",
@@ -7479,7 +7479,263 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n    \"status\": true,\n    \"message\": \"Data article\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"category_name\": \"Umum\",\n            \"title\": \"Cara Melihat password\",\n            \"slug\": \"cara-melihat-password\",\n            \"description\": \"<p>Klik tombol di icon <del>mata</del> .</p>\\r\\n<p>sekian tutorial hari ini</p>\\r\\n\",\n            \"path_thumbnail\": null,\n            \"path_image\": null,\n            \"status\": 1,\n            \"counter_view\": 2,\n            \"counter_share\": 0,\n            \"counter_like\": 4,\n            \"counter_comment\": 5,\n            \"created_by\": 3,\n            \"created_date\": \"2022-12-06T17:08:41.000Z\",\n            \"modified_by\": 9,\n            \"modified_date\": \"2022-12-09T16:26:30.000Z\",\n            \"author\": {\n                \"username\": \"sam.aan46\",\n                \"full_name\": \"Samsul Anwar\",\n                \"image_foto\": \"/uploads/resource/2022-12/profil.jpg\"\n            },\n            \"like\": false\n        },\n        {\n            \"id\": 8,\n            \"category_name\": \"Umum\",\n            \"title\": \"testing\",\n            \"slug\": \"testing\",\n            \"description\": \"<p>testing</p>\\r\\n\",\n            \"path_thumbnail\": null,\n            \"path_image\": null,\n            \"status\": 1,\n            \"counter_view\": 0,\n            \"counter_share\": 0,\n            \"counter_like\": 0,\n            \"counter_comment\": 1,\n            \"created_by\": 9,\n            \"created_date\": \"2022-12-15T11:30:11.000Z\",\n            \"modified_by\": null,\n            \"modified_date\": null,\n            \"author\": {\n                \"username\": \"gifaniasofia\",\n                \"full_name\": \"Gifania Sofia L\",\n                \"image_foto\": \"/uploads/resource/2022-12/imgUrl20220511014927874.jpg\"\n            },\n            \"like\": false\n        },\n        {\n            \"id\": 7,\n            \"category_name\": \"Umum\",\n            \"title\": \"Jaga Kondusifitas, Bawaslu Imbau Warga Negara Tak Berpolitik Praktis di Tempat Ibadah\",\n            \"slug\": \"jaga-kondusifitas-bawaslu-imbau-warga-negara-tak-berpolitik-praktis-di-tempat-ibadah\",\n            \"description\": \"<p style=\\\"text-align:start;\\\"><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 14px;font-family: Open Sans\\\", sans-serif;\\\">Jakarta, Badan Pengawas Pemilihan Umum- Ketua Bawaslu Rahmat Bagja mengimbau kepada seluruh pihak agar tidak melakukan atau menghindari aktivitas politik praktis di tempat ibadah. Dia mengingatkan untuk saat ini tidak melakukan aktivitas politik yang mengarah pada dukungan dan/atau kampanye terkait Pemilu 2024 di tempat ibadah.</span></p>\\r\\n<p style=\\\"text-align:start;\\\"><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 14px;font-family: Open Sans\\\", sans-serif;\\\">\\\"Kami mengimbau dan mengingatkan agar para pihak untuk menahan diri karena ini sangat menganggu proses-proses kedepan atau mengganggu kondusifitas Pemilu 2024,\\\" cetus Bagja dalam konferensi pers di Jakarta, Senin (12/12/2022).</span></p>\\r\\n<p style=\\\"text-align:start;\\\"><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 14px;font-family: Open Sans\\\", sans-serif;\\\">Imbauan tersebut disampaikannya meskipun saat ini peserta Pemilu 2024 belum ditetapkan KPU dan tahapan kampanye pemilu belum dimulai sebagaimana diatur dalam Peraturan KPU Nomor 3 Tahun 2022 tentang Tahapan dan Jadwal Penyelenggaran Pemilu Tahun 2024.</span></p>\\r\\n<p style=\\\"text-align:start;\\\"><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 14px;font-family: Open Sans\\\", sans-serif;\\\">\\\"Kami perlu mengingatkan ini karena nanti setelah masa kampanye (Pemilu 2024) itu termasuk dalam pelanggaran pidana pemilu. Aktifitas kampanye di tempat ibadah dilarang Undang-undang Nomor 7 Tahun 2017 tentang Pemilu,\\\" urai alumnus Universitas Indonesia itu.</span></p>\\r\\n<p style=\\\"text-align:start;\\\"><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 14px;font-family: Open Sans\\\", sans-serif;\\\">Bagja berharap para pihak menahan diri untuk tidak berpolitik praktis di tempat ibadah. Baginya, tempat ibadah harus menjadi tempat yang menyejukkan bagi semua umat beragama di Indonesia.</span></p>\\r\\n<p style=\\\"text-align:start;\\\"><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 14px;font-family: Open Sans\\\", sans-serif;\\\">\\\"Kami harapkan semua para pihak menjaga menjelang kampanye kedepan, karena waktunya panjang 1sepuluh bulanan lah ya. Kami harapkan ketegangan itu ataupun juga, pidana itu terakhir sanksi, itu kita warning dari sekarang, berharap jangan lakukan kampanye sebelum waktunya karena akan kena pidana di <em>tempat ibadah</em>, <strong>siapapun</strong> dia,\\\" papar Bagja.</span><span style=\\\"font-size: 14px;\\\"> </span></p>\\r\\n<p></p>\\r\\n<img src=\\\"https://bawaslu.go.id/sites/default/files/styles/gambar_berita_besar/public/foto_berita/IMG-20221212-WA0058.jpg?itok=R7VmNBT5\\\" alt=\\\"undefined\\\" style=\\\"height: auto;width: auto\\\"/>\\r\\n<p><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 11px;font-family: Open Sans\\\", sans-serif;\\\">Ketua Bawaslu Rahmat Bagja mengimbau seluruh pihak menghindari aktivitas politik praktis di tempat ibadah hal itu dikatakannya saat konferensi pers di Jakarta, Senin (12/12/2022)/foto: Pemberitaan dan Publikasi</span>&nbsp;</p>\\r\\n<p></p>\\r\\n<p></p>\\r\\n\",\n            \"path_thumbnail\": \"/uploads/article/2022-12/unsplash_9cd8qOgeNIY_250.png\",\n            \"path_image\": \"/uploads/article/2022-12/unsplash_9cd8qOgeNIY.png\",\n            \"status\": 1,\n            \"counter_view\": 0,\n            \"counter_share\": 0,\n            \"counter_like\": 1,\n            \"counter_comment\": 1,\n            \"created_by\": 9,\n            \"created_date\": \"2022-12-13T03:08:41.000Z\",\n            \"modified_by\": null,\n            \"modified_date\": null,\n            \"author\": {\n                \"username\": \"gifaniasofia\",\n                \"full_name\": \"Gifania Sofia L\",\n                \"image_foto\": \"/uploads/resource/2022-12/imgUrl20220511014927874.jpg\"\n            },\n            \"like\": false\n        },\n        {\n            \"id\": 5,\n            \"category_name\": \"Umum\",\n            \"title\": \"Bawaslu Terima Laporan Akhir Divisi Penanganan Pelanggaran Bawaslu Provinsi Kalimantan Selatan Usai Pelaksanaan Pilkada Tahun 2020\",\n            \"slug\": \"bawaslu-terima-laporan-akhir-divisi-penanganan-pelanggaran-bawaslu-provinsi-kalimantan-selatan-usai-pelaksanaan-pilkada-tahun-2020\",\n            \"description\": \"<p><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">Jakarta, Badan Pengawas Pemilu- Anggota Bawaslu Ratna Dewi Pettalolo menerima laporan akhir kerja divisi penanganan pelanggaran usai pelaksanaan Pilkada Tahun 2020 dari Bawaslu Kalimantan Selatan di Gedung Bawaslu RI,  Jln MH Thamrin Jakarta, Kamis (4/03/2021). Photo: HUMAS-Ranap </span>&nbsp;</p>\\r\\n\",\n            \"path_thumbnail\": \"/uploads/article/2022-12/WhatsAppImage2021-03-05at20_250.jpeg\",\n            \"path_image\": \"/uploads/article/2022-12/WhatsAppImage2021-03-05at20.54.35(4).jpeg\",\n            \"status\": 1,\n            \"counter_view\": 0,\n            \"counter_share\": 0,\n            \"counter_like\": 0,\n            \"counter_comment\": 0,\n            \"created_by\": 9,\n            \"created_date\": \"2022-12-12T10:05:36.000Z\",\n            \"modified_by\": 9,\n            \"modified_date\": \"2022-12-12T15:50:38.000Z\",\n            \"author\": {\n                \"username\": \"gifaniasofia\",\n                \"full_name\": \"Gifania Sofia L\",\n                \"image_foto\": \"/uploads/resource/2022-12/imgUrl20220511014927874.jpg\"\n            },\n            \"like\": false\n        },\n        {\n            \"id\": 3,\n            \"category_name\": \"Umum\",\n            \"title\": \"Bagja Minta Seluruh Jajaran Bawaslu Tingkatkan Kapasitas sebagai Humas Lembaga\",\n            \"slug\": \"bagja-minta-seluruh-jajaran-bawaslu-tingkatkan-kapasitas-sebagai-humas-lembaga\",\n            \"description\": \"<p style=\\\"text-align:start;\\\"></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 11px;font-family: Open Sans\\\", sans-serif;\\\">Ketua Bawaslu Rahmat Bagja saat menutup Rapat Koordonasi Nasional (Rakornas) Identifikasi Strategi Kebijakan Pengawasan Tahapan Penetapan Jumlah Kursi dan Penetapan Daerah Pemilihan di Bali, Selasa (6/12/2022) malam.</span></p>\\r\\n<p style=\\\"text-align:start;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">Bali, Badan Pengawas Pemilihan Umum - Ketua Bawaslu Rahmat Bagja mengingatkan seluruh anggota dan jajaran Bawaslu daerah dapat menjalankan peran sebagai humas Bawaslu. Maka dia meminta seluruh jajaran dapat memanfaatkan media sosial menjadi wadah sosialisasi.</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">\\\"Anda adalah humas bagi Bawaslu, kami ke depan akan melakukan berbagai program untuk meningkatkan hal ini,\\\" pesan dia saat menutup Rapat Koordonasi Nasional (Rakornas) Identifikasi Strategi Kebijakan Pengawasan Tahapan Penetapan Jumlah Kursi dan Penetapan Daerah Pemilihan di Bali, Selasa (6/12/2022).</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">Tidak hanya itu, Bagja menegaskan Bawaslu juga berupaya meningkatkan kapasitas sumber daya manusia (SDM) bagi seluruh jajaran pengawas pemilu. Termasuk, kata dia, cara berkomunikasi dengan multistakeholder seperti kepada kepolisian, kejaksaan, pemuka agama, dan lembaga lainnya.</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">\\\"Kami berharap nanti teman-teman juga melakukan ini (memberikan pelatihan) kepada Panwascam, misalnya bagaimana berhadapan dengan tokoh agama,\\\" ujarnya.</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">Pelaksana tugas Pusat Penelitian Pengembangan Pendidikan dan Pelatihan (Puslitbangdiklat) Ibrahim Malik Tanjung dalam poin rekomendasi Rakornas menyatakan Bawaslu perlu melakukan sosialisasi secara masif mengenai seluruh proses tahapan pengawasan.</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">\\\"Bawaslu perlu melakukan sosialisasi secara masif mengenai seluruh proses tahapan pengawasan dan kewenangan Bawaslu mulai dari pencegahan sampai penindakan dengan melakukan kolaborasi bersama stakeholder sebagai salah satu upaya meningkatkan kepercayaan publik,\\\" ucapnya.</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">Sebagai informasi, dalam menyusun program kerja pengembangan SDM dan strategi pengawasan Pemilu Tahun 2023 Bawaslu meminta masukan dari berbagai pihak, seperti anggota KPU RI Mochamad Affifuddin, pegiat pemilu Nurlia Dian Paramita dari JPPR, Yusfitriadi dari Visi Nusantara, Jefri Adriansyah dari Dignity Indonesia, Erik Kurniawan dari Sindikasi Pemilu dan Demokrasi, dan Ihsan Maulana dari Perludem. Ada juga, dari kalangan akademisi yakni Rudi Rohi dari Universitas Nusa Cendana, Dian Permata dari Universitas Ibnu Chaldun.</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">Editor: Reyn Gloria</span><br><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">Foto: Bhakti Satrio</span>&nbsp;</p>\\r\\n\",\n            \"path_thumbnail\": \"/uploads/article/2022-12/IMG-20221207-WA0004_250.jpg\",\n            \"path_image\": \"/uploads/article/2022-12/IMG-20221207-WA0004.jpg\",\n            \"status\": 1,\n            \"counter_view\": 0,\n            \"counter_share\": 0,\n            \"counter_like\": 1,\n            \"counter_comment\": 2,\n            \"created_by\": 5,\n            \"created_date\": \"2022-12-07T05:08:39.000Z\",\n            \"modified_by\": 1,\n            \"modified_date\": \"2022-12-09T09:14:42.000Z\",\n            \"author\": {\n                \"username\": \"yudi.wahyudi154\",\n                \"full_name\": \"Yudi Wahyudi\",\n                \"image_foto\": \"/uploads/resource/2022-12/16711554905211207231976479210950.jpg\"\n            },\n            \"like\": false\n        }\n    ]\n}"
+              "body": "{\n    \"status\": true,\n    \"message\": \"Data article\",\n    \"data\": [\n        {\n            \"id\": 12,\n            \"category_name\": \"Umum\",\n            \"title\": \"Persiapan Pengawasan Mutarlih\",\n            \"slug\": \"persiapan-pengawasan-mutarlih\",\n            \"description\": \"<p>#ayoawasibersama</p>\\r\\n\",\n            \"path_thumbnail\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb_250.jpg\",\n            \"path_image\": \"/uploads/article/2022-12/FfB1Z6NaAAACyCb.jpg\",\n            \"status\": 1,\n            \"counter_view\": 349,\n            \"counter_share\": 8,\n            \"counter_like\": 17,\n            \"counter_comment\": 1,\n            \"created_by\": 20,\n            \"created_date\": \"2023-01-03T05:58:11.000Z\",\n            \"modified_by\": 1,\n            \"modified_date\": \"2023-01-05T15:06:06.000Z\",\n            \"author\": {\n                \"username\": \"ijijaelani14\",\n                \"full_name\": \"Iji Jaelani\",\n                \"image_foto\": null,\n                \"province\": \"JAWA BARAT\",\n                \"regency\": \"KOTA BANDUNG\"\n            },\n            \"like\": false,\n            \"komunitas\": {\n                \"id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"type\": 0,\n                \"icon_image\": null\n            },\n            \"tema\": {\n                \"id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"type\": 0,\n                \"icon_image\": null\n            }\n        },\n        {\n            \"id\": 1,\n            \"category_name\": \"Umum\",\n            \"title\": \"Cara Melihat password\",\n            \"slug\": \"cara-melihat-password\",\n            \"description\": \"<p>Klik tombol di icon <del>mata</del> .</p>\\r\\n<p>sekian tutorial hari ini</p>\\r\\n\",\n            \"path_thumbnail\": null,\n            \"path_image\": null,\n            \"status\": 1,\n            \"counter_view\": 180,\n            \"counter_share\": 0,\n            \"counter_like\": 5,\n            \"counter_comment\": 6,\n            \"created_by\": 3,\n            \"created_date\": \"2022-12-06T17:08:41.000Z\",\n            \"modified_by\": 9,\n            \"modified_date\": \"2022-12-09T16:26:30.000Z\",\n            \"author\": {\n                \"username\": \"sam.aan46\",\n                \"full_name\": \"Samsul Anwar\",\n                \"image_foto\": \"/uploads/resource/2022-12/profil.jpg\",\n                \"province\": \"JAWA TENGAH\",\n                \"regency\": \"KABUPATEN DEMAK\"\n            },\n            \"like\": false,\n            \"komunitas\": null,\n            \"tema\": null\n        },\n        {\n            \"id\": 10,\n            \"category_name\": \"Umum\",\n            \"title\": \"Podcast Bawaslu\",\n            \"slug\": \"podcast-bawaslu1\",\n            \"description\": \"<p>Hari pencoblosan Pemilu 2024 masih jauh, tetapi sekarang sudah mulai ramai pembahasan soal pemilu. Memang pemilu sudah sedekat apa? Kenapa kita sudah mulai ikut \\\"heboh\\\" dari sekarang? Obrolan dengan Koordinator Nasional Jaringan Pendidikan Pemilih untuk Rakyat (JPPR) Nurlia Dian Paramitha ini membedah soal pemilih, perilaku pemilih, dan apa yang bisa kita lakukan dalam pemilu. Apa cukup memilih saja, atau ada hal lain yang bisa dilakukan.&nbsp;</p>\\r\\n<p><a href=\\\"https://www.youtube.com/watch?v=vo5sYHiYaW8&t=92s\\\" target=\\\"_self\\\">https://www.youtube.com/watch?v=vo5sYHiYaW8&amp;t=92s</a>&nbsp;</p>\\r\\n\",\n            \"path_thumbnail\": \"/uploads/article/2022-12/podcast_250.JPG\",\n            \"path_image\": \"/uploads/article/2022-12/podcast.JPG\",\n            \"status\": 1,\n            \"counter_view\": 151,\n            \"counter_share\": 1,\n            \"counter_like\": 8,\n            \"counter_comment\": 2,\n            \"created_by\": 11,\n            \"created_date\": \"2022-12-22T07:48:13.000Z\",\n            \"modified_by\": null,\n            \"modified_date\": null,\n            \"author\": {\n                \"username\": \"arif.kenthip\",\n                \"full_name\": \"arif harjanto\",\n                \"image_foto\": \"/uploads/resource/2022-12/victory.jpg\",\n                \"province\": null,\n                \"regency\": null\n            },\n            \"like\": false,\n            \"komunitas\": null,\n            \"tema\": null\n        },\n        {\n            \"id\": 18,\n            \"category_name\": null,\n            \"title\": \"Jaga Hak Pilih \",\n            \"slug\": \"jaga-hak-pilih-\",\n            \"description\": \"<p></p>\\r\\n\",\n            \"path_thumbnail\": \"/uploads/article/2023-01/+62821-5522-433720230130_223831_250.jpg\",\n            \"path_image\": \"/uploads/article/2023-01/+62821-5522-433720230130_223831.jpg\",\n            \"status\": 1,\n            \"counter_view\": 89,\n            \"counter_share\": 1,\n            \"counter_like\": 13,\n            \"counter_comment\": 2,\n            \"created_by\": 117,\n            \"created_date\": \"2023-01-30T14:41:27.000Z\",\n            \"modified_by\": null,\n            \"modified_date\": null,\n            \"author\": {\n                \"username\": \"ahmadiazis28\",\n                \"full_name\": \"Ahmadi Azis \",\n                \"image_foto\": \"/uploads/resource/2023-01/IMG_20221127_081454.jpg\",\n                \"province\": \"KALIMANTAN TIMUR\",\n                \"regency\": \"KOTA BALIKPAPAN\"\n            },\n            \"like\": false,\n            \"komunitas\": {\n                \"id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"type\": 0,\n                \"icon_image\": null\n            },\n            \"tema\": {\n                \"id\": 2,\n                \"tema_name\": \"Agenda Pencegahan Pelanggaran dan Sengketa Proses Pemilu dan/atau Pemilihan\",\n                \"type\": 0,\n                \"icon_image\": null\n            }\n        },\n        {\n            \"id\": 24,\n            \"category_name\": null,\n            \"title\": \"TEST\",\n            \"slug\": \"test\",\n            \"description\": \"<p>MASIH BANYAK YANG HARUS DIPERBAIKI INI WEBSITE</p>\\r\\n\",\n            \"path_thumbnail\": null,\n            \"path_image\": null,\n            \"status\": 1,\n            \"counter_view\": 54,\n            \"counter_share\": 1,\n            \"counter_like\": 3,\n            \"counter_comment\": 0,\n            \"created_by\": 992,\n            \"created_date\": \"2023-01-31T01:56:19.000Z\",\n            \"modified_by\": 1,\n            \"modified_date\": \"2023-01-31T23:09:45.000Z\",\n            \"author\": {\n                \"username\": \"apeprustandi22\",\n                \"full_name\": \"Apep Rustandi\",\n                \"image_foto\": \"/uploads/resource/2023-01/1654257222654(1)(1).jpg\",\n                \"province\": \"JAWA BARAT\",\n                \"regency\": \"KABUPATEN CIANJUR\"\n            },\n            \"like\": false,\n            \"komunitas\": {\n                \"id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"type\": 0,\n                \"icon_image\": null\n            },\n            \"tema\": {\n                \"id\": 7,\n                \"tema_name\": \"Pengawasan tahapan Pemilu dan/atau Pemilihan\",\n                \"type\": 0,\n                \"icon_image\": null\n            }\n        },\n        {\n            \"id\": 21,\n            \"category_name\": null,\n            \"title\": \"Jelang Vermin Perbaikan Ke-Satu Pencalonan DPD, Bawaslu PB Gelar Rakernis\",\n            \"slug\": \"jelang-vermin-perbaikan-ke-satu-pencalonan-dpd-bawaslu-pb-gelar-rakernis\",\n            \"description\": \"<p><br><br>Pembukaan Rakernis Persiapan Vermin Perbaikan Ke-Satu Dokumen Syarat Dukungan Bakal Calon Anggota DPD Prov. Papua Barat &amp; Papua Barat Daya<br>Pembukaan Rakernis Persiapan Vermin Perbaikan Ke-Satu Dokumen Syarat Dukungan Bakal Calon Anggota DPD Prov. Papua Barat &amp; Papua Barat Daya<br>Kota Sorong, Bawaslu Papua Barat- Badan Pengawas Pemilihan Umum Provinsi Papua Barat melaksanakan Rapat Kerja Teknis (Rakernis) Pengawasan Verifikasi Administrasi (Vermin) Perbaikan Ke Satu bersama Bawaslu Kabupaten/Kota Se-Provinsi Papua Barat dan Papua Barat Daya. (Senin, 30/01/2023)<br><br>Rakernis yang dilaksanakan di Aula Gedung Kampus Institut Agama Islam Negeri (IAIN) Sorong ini dihadiri langsung oleh Koordinator Divisi Hukum dan Penyelesaian Sengketa, Nurlaila Muhammad dan Koordinator Penanganan Pelanggaran dan Data Informasi Muh. Nazil Hilmie serta Ketua dan Anggota bersama staf bidang pencegahan di Bawaslu Kabupaten/kota se Provinsi Papua Barat dan Papua Barat Daya.<br><br>Dalam sambutannya, Nazil Hilmie menyampaikan bahwa pentingnya pelaksanaan Rakernis pengawasan vermin ini dilakukan untuk mencapai satu pemahaman terkait teknis pengawasan tahapan perbaikan ke-satu.<br><br>“dalam pelaksanaan pengawasan vermin perbaikan ini, kabupaten/kota harus memahami betul teknis pelaksanaan tahapan verifikasi administrasi ke-satu yang di atur jelas dalam PKPU 10 tahun 2022 pada pasal 47 sampai pasal 62 serta penggunaan alat kerja pengawasan yang di atur dalam SE Bawaslu RI No.3 Tahun 2023” ujarnya.<br><br>Hal ini perlu dilakukan agar pelaksanaan pengawasan di Kabupaten/kota dapat berjalan maksimal dan tepat sasaran.<br><br>Kordiv Hukum dan Penyelesaian Sengketa, Nurlaila Muhammad dalam materinya juga menambahkan bahwa dalam pelaksanaan pengawasan Vermin Perbaikan Ke-satu Bawaslu Kab./Kota harus selalu dilaporkan secara berkala kepada Bawaslu Provinsi.<br><br>“Bawaslu Kab./Kota harus selalu mengirimkan laporan pengawasan secara berkala kepada Bawaslu Provinsi” tegas wanita yang akrab disapa Cah Lily tersebut. (30/01/2023)<br><br>Lily juga menegaskan bahwa Bawaslu Kab./Kota harus memperhatikan dengan teliti terkait pemberian status TMS, BMS, dan MS pada dokumen syarat pendaftaran Bakal Calon yang diserahkan ke KPU pada tahapan Perbaikan ke-Satu.<br><br>Selain itu, menurut beliau Bawaslu Kab./Kota juga harus mengisi alat kerja sesuai dengan fakta dilapangan agar tidak terjadi perbedaan data yang dimiliki Bawaslu Provinsi dengan KPU Provinsi dan tidak merugikan hak dari bakal calon DPD.<br><br>“Bawaslu tidak hanya menegakkan keadilan Pemilu namun juga melindungi hak-hak bakal calon DPD dan peserta Pemilu, Bawaslu harus aktif dalam melakukan sosialisasi dan menerima laporan masyarakat” ucapnya.</p>\\r\\n\",\n            \"path_thumbnail\": \"/uploads/article/2023-01/IMG-20230130-WA0104_250.jpg\",\n            \"path_image\": \"/uploads/article/2023-01/IMG-20230130-WA0104.jpg\",\n            \"status\": 1,\n            \"counter_view\": 48,\n            \"counter_share\": 0,\n            \"counter_like\": 7,\n            \"counter_comment\": 0,\n            \"created_by\": 616,\n            \"created_date\": \"2023-01-31T01:01:48.000Z\",\n            \"modified_by\": null,\n            \"modified_date\": null,\n            \"author\": {\n                \"username\": \"nazilhilmieoke\",\n                \"full_name\": \"Muhammad Nazil Hilmie \",\n                \"image_foto\": \"/uploads/resource/2023-01/EBCD8740-B1AF-4E1F-9A01-0B9C66F975F0-scaled.jpeg\",\n                \"province\": \"PAPUA BARAT\",\n                \"regency\": \"KABUPATEN MANOKWARI\"\n            },\n            \"like\": false,\n            \"komunitas\": {\n                \"id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"type\": 0,\n                \"icon_image\": null\n            },\n            \"tema\": {\n                \"id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"type\": 0,\n                \"icon_image\": null\n            }\n        },\n        {\n            \"id\": 19,\n            \"category_name\": null,\n            \"title\": \"SADAP PEMILU 2024 (Safari Data Pemilih Pemilu 2024)\",\n            \"slug\": \"sadap-pemilu-2024-safari-data-pemilih-pemilu-2024\",\n            \"description\": \"<p>Rangkaian kegiatan Safari Data Pemilih Pemilu 2024 (SADAP PEMILU 2024) bersama Kapolres MAJALENGKA untuk memastikan seluruh keluarga POLRI (istri, anak dan kerabat) beserta para Purnawirawan POLRI terlindungi Hak Pilihnya.</p>\\n\",\n            \"path_thumbnail\": \"/uploads/article/2023-01/IMG-20230126-WA0004_250.jpg\",\n            \"path_image\": \"/uploads/article/2023-01/IMG-20230126-WA0004.jpg\",\n            \"status\": 1,\n            \"counter_view\": 48,\n            \"counter_share\": 0,\n            \"counter_like\": 5,\n            \"counter_comment\": 2,\n            \"created_by\": 305,\n            \"created_date\": \"2023-01-31T00:27:19.000Z\",\n            \"modified_by\": null,\n            \"modified_date\": null,\n            \"author\": {\n                \"username\": \"sukmayadidede3\",\n                \"full_name\": \"DEDE SUKMAYADI \",\n                \"image_foto\": null,\n                \"province\": \"JAWA BARAT\",\n                \"regency\": \"KABUPATEN MAJALENGKA\"\n            },\n            \"like\": false,\n            \"komunitas\": {\n                \"id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"type\": 0,\n                \"icon_image\": null\n            },\n            \"tema\": {\n                \"id\": 2,\n                \"tema_name\": \"Agenda Pencegahan Pelanggaran dan Sengketa Proses Pemilu dan/atau Pemilihan\",\n                \"type\": 0,\n                \"icon_image\": null\n            }\n        },\n        {\n            \"id\": 28,\n            \"category_name\": null,\n            \"title\": \"Mitigasi TPS Khusus di Ibu Kota Nusantara (IKN)\",\n            \"slug\": \"mitigasi-tps-khusus-di-ibu-kota-nusantara-ikn1\",\n            \"description\": \"<p>Pelaksanaan Pemilu di Indonesia memposisikan penggunaan suara pagi pemilih sebagai hak bukan kewajiban, maka dalam hal ini undang-undang memberikan perlindungan kepada setiap pemilih untuk terfassilitasi, termasuk bagi mereka yang sedang berada diwilayah kerja dan tidak cukup waktu untuk menggunakan suaranya ditempat sesuai domisili yang tercantum pada KTP-E &nbsp;</p>\\r\\n\",\n            \"path_thumbnail\": \"/uploads/article/2023-01/WhatsAppImage2023-01-31at12_250.jpeg\",\n            \"path_image\": \"/uploads/article/2023-01/WhatsAppImage2023-01-31at12.36.52.jpeg\",\n            \"status\": 1,\n            \"counter_view\": 46,\n            \"counter_share\": 3,\n            \"counter_like\": 8,\n            \"counter_comment\": 0,\n            \"created_by\": 151,\n            \"created_date\": \"2023-01-31T06:02:16.000Z\",\n            \"modified_by\": null,\n            \"modified_date\": null,\n            \"author\": {\n                \"username\": \"kaconk1181\",\n                \"full_name\": \"MOH KHAZIN \",\n                \"image_foto\": null,\n                \"province\": \"KALIMANTAN TIMUR\",\n                \"regency\": \"KABUPATEN PENAJAM PASER UTARA\"\n            },\n            \"like\": false,\n            \"komunitas\": {\n                \"id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"type\": 0,\n                \"icon_image\": null\n            },\n            \"tema\": {\n                \"id\": 5,\n                \"tema_name\": \"Konsolidasi dan Kolaborasi Pengawasan Partisipatif\",\n                \"type\": 0,\n                \"icon_image\": null\n            }\n        },\n        {\n            \"id\": 17,\n            \"category_name\": null,\n            \"title\": \"Hobi\",\n            \"slug\": \"hobi\",\n            \"description\": \"<p>Hobi</p>\\r\\n\",\n            \"path_thumbnail\": \"/uploads/article/2023-01/BawasluHadiriLaporanTahunanMKTahun2021_250.jpeg\",\n            \"path_image\": \"/uploads/article/2023-01/BawasluHadiriLaporanTahunanMKTahun2021.jpeg\",\n            \"status\": 1,\n            \"counter_view\": 40,\n            \"counter_share\": 0,\n            \"counter_like\": 2,\n            \"counter_comment\": 0,\n            \"created_by\": 5,\n            \"created_date\": \"2023-01-09T09:26:01.000Z\",\n            \"modified_by\": null,\n            \"modified_date\": null,\n            \"author\": {\n                \"username\": \"yudi.wahyudi154\",\n                \"full_name\": \"Yudi Wahyudi\",\n                \"image_foto\": \"/uploads/resource/2022-12/16711554905211207231976479210950.jpg\",\n                \"province\": null,\n                \"regency\": null\n            },\n            \"like\": false,\n            \"komunitas\": {\n                \"id\": 11,\n                \"komunitas_name\": \"Komunitas Hobi\",\n                \"type\": 0,\n                \"icon_image\": null\n            },\n            \"tema\": {\n                \"id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"type\": 0,\n                \"icon_image\": null\n            }\n        },\n        {\n            \"id\": 26,\n            \"category_name\": null,\n            \"title\": \"Rapat Koordinasi Penyamaan Pendapat dan Silaturahmi\",\n            \"slug\": \"rapat-koordinasi-penyamaan-pendapat-dan-silaturahmi\",\n            \"description\": \"<p>Mempererat Hubungan Emosional antara Lembaga Penyelenggara, sebuah bentuk komitmen bersama membentuk Pemilu yang berkualitas dan berintegritas</p>\\r\\n\",\n            \"path_thumbnail\": \"/uploads/article/2023-01/WhatsAppImage2023-01-30at11_250.jpeg\",\n            \"path_image\": \"/uploads/article/2023-01/WhatsAppImage2023-01-30at11.16.18.jpeg\",\n            \"status\": 1,\n            \"counter_view\": 34,\n            \"counter_share\": 3,\n            \"counter_like\": 12,\n            \"counter_comment\": 0,\n            \"created_by\": 684,\n            \"created_date\": \"2023-01-31T02:53:44.000Z\",\n            \"modified_by\": null,\n            \"modified_date\": null,\n            \"author\": {\n                \"username\": \"bawaslu.pencegahan93\",\n                \"full_name\": \"Aswandi\",\n                \"image_foto\": \"/uploads/resource/2023-01/WhatsAppImage2022-11-11at10.44.20.jpeg\",\n                \"province\": \"KALIMANTAN UTARA\",\n                \"regency\": \"KABUPATEN TANA TIDUNG\"\n            },\n            \"like\": false,\n            \"komunitas\": {\n                \"id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"type\": 0,\n                \"icon_image\": null\n            },\n            \"tema\": {\n                \"id\": 2,\n                \"tema_name\": \"Agenda Pencegahan Pelanggaran dan Sengketa Proses Pemilu dan/atau Pemilihan\",\n                \"type\": 0,\n                \"icon_image\": null\n            }\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Fact Check Data",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "text"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/fe/factcheck?page=1&perPage=10&q=",
+              "host": ["{{url}}"],
+              "path": ["fe", "factcheck"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "perPage",
+                  "value": "10"
+                },
+                {
+                  "key": "q",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Fact Check Data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/fe/factcheck?page=1&perPage=10&q=",
+                  "host": ["{{url}}"],
+                  "path": ["fe", "factcheck"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "527"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"20f-u4gj5RyG5Lvwkg1B+3IhGYyJpec\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 02 Feb 2023 04:16:15 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"message\": \"Data fact check results\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"judul\": \"judul update\",\n                \"link_berita\": \"http://localhost:5005/\",\n                \"path_image\": \"/uploads/factcheck/2023-02/default.png\",\n                \"path_thumbnail\": \"/uploads/factcheck/2023-02/default_250.png\",\n                \"status\": 3,\n                \"created_by\": 1,\n                \"created_date\": \"2023-02-02T04:10:58.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2023-02-02T04:13:56.000Z\",\n                \"author\": {\n                    \"username\": \"adminuser\",\n                    \"full_name\": \"Super Admin\",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN BANDUNG\"\n                }\n            }\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Report Complaint Data",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "text"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/fe/history-complaint?page=1&perPage=10&q=",
+              "host": ["{{url}}"],
+              "path": ["fe", "history-complaint"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "perPage",
+                  "value": "10"
+                },
+                {
+                  "key": "q",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Report Complaint Data",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/fe/history-complaint?page=1&perPage=10&q=",
+                  "host": ["{{url}}"],
+                  "path": ["fe", "history-complaint"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "608"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"260-Q4pnnUtYEyCADFJKYgVrdHlpj1A\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 02 Feb 2023 04:30:52 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"message\": \"Data report complaint\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"jenis_aduan\": \"Disinformasi\",\n                \"title\": \"Test\",\n                \"description\": \"<p>Isu</p>\\n\",\n                \"hasil_cek_fakta\": null,\n                \"link_berita\": \"https://news.detik.com/pemilu/d-6543013/nasdem-tunggu-deklarasi-resmi-anies-dari-pks-demokrat\",\n                \"area_province_id\": 0,\n                \"area_regencies_id\": 0,\n                \"status\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2023-01-31T04:08:00.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"province\": null,\n                \"regency\": null,\n                \"author\": {\n                    \"username\": \"adminuser\",\n                    \"full_name\": \"Super Admin\",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN BANDUNG\"\n                }\n            }\n        ]\n    }\n}"
             }
           ]
         }
@@ -7859,84 +8115,6 @@
                       }
                     },
                     "url": {
-                      "raw": "{{url}}/forum/article?page=1&perPage=10&q=",
-                      "host": ["{{url}}"],
-                      "path": ["forum", "article"],
-                      "query": [
-                        {
-                          "key": "page",
-                          "value": "1"
-                        },
-                        {
-                          "key": "perPage",
-                          "value": "10"
-                        },
-                        {
-                          "key": "q",
-                          "value": ""
-                        }
-                      ]
-                    }
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "X-Powered-By",
-                      "value": "Express"
-                    },
-                    {
-                      "key": "Access-Control-Allow-Origin",
-                      "value": "*"
-                    },
-                    {
-                      "key": "Access-Control-Allow-Credentials",
-                      "value": "true"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json; charset=utf-8"
-                    },
-                    {
-                      "key": "Content-Length",
-                      "value": "1146"
-                    },
-                    {
-                      "key": "ETag",
-                      "value": "W/\"47a-JQD1NHdd712YkZNEEo50eqEsoWY\""
-                    },
-                    {
-                      "key": "Date",
-                      "value": "Sun, 04 Dec 2022 15:07:33 GMT"
-                    },
-                    {
-                      "key": "Connection",
-                      "value": "keep-alive"
-                    },
-                    {
-                      "key": "Keep-Alive",
-                      "value": "timeout=5"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": true,\n    \"message\": \"Data article\",\n    \"data\": {\n        \"total\": 2,\n        \"values\": [\n            {\n                \"id\": 2,\n                \"category_name\": \"category Update\",\n                \"title\": \"title Update\",\n                \"slug\": \"title-update\",\n                \"description\": \"description Update\",\n                \"path_thumbnail\": \"/uploads/article/2022-12/20220814_123900_250.jpg\",\n                \"path_image\": \"/uploads/article/2022-12/20220814_123900.jpg\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 0,\n                \"counter_comment\": 0,\n                \"created_by\": 4,\n                \"created_date\": \"2022-12-03T06:34:12.000Z\",\n                \"modified_by\": 4,\n                \"modified_date\": \"2022-12-03T06:53:10.000Z\",\n                \"author\": {\n                    \"username\": \"samsul1\",\n                    \"full_name\": \"Samsul anwar\",\n                    \"image_foto\": null\n                },\n                \"like\": false\n            },\n            {\n                \"id\": 1,\n                \"category_name\": \"category\",\n                \"title\": \"title\",\n                \"slug\": \"title\",\n                \"description\": \"description\",\n                \"path_thumbnail\": \"/uploads/article/2022-12/fronalpstock_big_250.jpg\",\n                \"path_image\": \"/uploads/article/2022-12/fronalpstock_big.jpg\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 1,\n                \"counter_comment\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-03T06:32:53.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"author\": {\n                    \"username\": \"yusuf.hartanto69\",\n                    \"full_name\": \"Yusuf Hartanto\",\n                    \"image_foto\": \"/uploads/resource/2022-12/pdf.png\"\n                },\n                \"like\": true\n            }\n        ]\n    }\n}"
-                },
-                {
-                  "name": "Article Data",
-                  "originalRequest": {
-                    "method": "GET",
-                    "header": [],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "",
-                      "options": {
-                        "raw": {
-                          "language": "text"
-                        }
-                      }
-                    },
-                    "url": {
                       "raw": "{{url}}/forum/article?page=1&perPage=10&q=&type=fe",
                       "host": ["{{url}}"],
                       "path": ["forum", "article"],
@@ -7982,15 +8160,15 @@
                     },
                     {
                       "key": "Content-Length",
-                      "value": "7043"
+                      "value": "15181"
                     },
                     {
                       "key": "ETag",
-                      "value": "W/\"1b83-2VQ5VsXS/600lrG7klIYt02Vbfc\""
+                      "value": "W/\"3b4d-FhSuNqc4LYlVBPTw6dy0Bnpn/u8\""
                     },
                     {
                       "key": "Date",
-                      "value": "Tue, 03 Jan 2023 07:39:57 GMT"
+                      "value": "Thu, 02 Feb 2023 03:40:59 GMT"
                     },
                     {
                       "key": "Connection",
@@ -8002,7 +8180,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n    \"status\": true,\n    \"message\": \"Data article\",\n    \"data\": {\n        \"total\": 3,\n        \"values\": [\n            {\n                \"id\": 10,\n                \"category_name\": \"Umum\",\n                \"title\": \"Podcast Bawaslu\",\n                \"slug\": \"podcast-bawaslu1\",\n                \"description\": \"<p>Hari pencoblosan Pemilu 2024 masih jauh, tetapi sekarang sudah mulai ramai pembahasan soal pemilu. Memang pemilu sudah sedekat apa? Kenapa kita sudah mulai ikut \\\"heboh\\\" dari sekarang? Obrolan dengan Koordinator Nasional Jaringan Pendidikan Pemilih untuk Rakyat (JPPR) Nurlia Dian Paramitha ini membedah soal pemilih, perilaku pemilih, dan apa yang bisa kita lakukan dalam pemilu. Apa cukup memilih saja, atau ada hal lain yang bisa dilakukan.&nbsp;</p>\\r\\n<p><a href=\\\"https://www.youtube.com/watch?v=vo5sYHiYaW8&t=92s\\\" target=\\\"_self\\\">https://www.youtube.com/watch?v=vo5sYHiYaW8&amp;t=92s</a>&nbsp;</p>\\r\\n\",\n                \"path_thumbnail\": \"/uploads/article/2022-12/podcast_250.JPG\",\n                \"path_image\": \"/uploads/article/2022-12/podcast.JPG\",\n                \"status\": 1,\n                \"counter_view\": 1,\n                \"counter_share\": 0,\n                \"counter_like\": 2,\n                \"counter_comment\": 1,\n                \"created_by\": 11,\n                \"created_date\": \"2022-12-22T07:48:13.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"author\": {\n                    \"username\": \"arif.kenthip\",\n                    \"full_name\": \"arif harjanto\",\n                    \"image_foto\": \"/uploads/resource/2022-12/victory.jpg\"\n                },\n                \"like\": false,\n                \"komunitas\": {\n                    \"id\": 2,\n                    \"komunitas_name\": \"Pemantau Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 3,\n                    \"tema_name\": \"Partisipasi masyarakat dalam pengawasan Pemilu dan/atau Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 3,\n                \"category_name\": \"Umum\",\n                \"title\": \"Bagja Minta Seluruh Jajaran Bawaslu Tingkatkan Kapasitas sebagai Humas Lembaga\",\n                \"slug\": \"bagja-minta-seluruh-jajaran-bawaslu-tingkatkan-kapasitas-sebagai-humas-lembaga\",\n                \"description\": \"<p style=\\\"text-align:start;\\\"></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 11px;font-family: Open Sans\\\", sans-serif;\\\">Ketua Bawaslu Rahmat Bagja saat menutup Rapat Koordonasi Nasional (Rakornas) Identifikasi Strategi Kebijakan Pengawasan Tahapan Penetapan Jumlah Kursi dan Penetapan Daerah Pemilihan di Bali, Selasa (6/12/2022) malam.</span></p>\\r\\n<p style=\\\"text-align:start;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">Bali, Badan Pengawas Pemilihan Umum - Ketua Bawaslu Rahmat Bagja mengingatkan seluruh anggota dan jajaran Bawaslu daerah dapat menjalankan peran sebagai humas Bawaslu. Maka dia meminta seluruh jajaran dapat memanfaatkan media sosial menjadi wadah sosialisasi.</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">\\\"Anda adalah humas bagi Bawaslu, kami ke depan akan melakukan berbagai program untuk meningkatkan hal ini,\\\" pesan dia saat menutup Rapat Koordonasi Nasional (Rakornas) Identifikasi Strategi Kebijakan Pengawasan Tahapan Penetapan Jumlah Kursi dan Penetapan Daerah Pemilihan di Bali, Selasa (6/12/2022).</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">Tidak hanya itu, Bagja menegaskan Bawaslu juga berupaya meningkatkan kapasitas sumber daya manusia (SDM) bagi seluruh jajaran pengawas pemilu. Termasuk, kata dia, cara berkomunikasi dengan multistakeholder seperti kepada kepolisian, kejaksaan, pemuka agama, dan lembaga lainnya.</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">\\\"Kami berharap nanti teman-teman juga melakukan ini (memberikan pelatihan) kepada Panwascam, misalnya bagaimana berhadapan dengan tokoh agama,\\\" ujarnya.</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">Pelaksana tugas Pusat Penelitian Pengembangan Pendidikan dan Pelatihan (Puslitbangdiklat) Ibrahim Malik Tanjung dalam poin rekomendasi Rakornas menyatakan Bawaslu perlu melakukan sosialisasi secara masif mengenai seluruh proses tahapan pengawasan.</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">\\\"Bawaslu perlu melakukan sosialisasi secara masif mengenai seluruh proses tahapan pengawasan dan kewenangan Bawaslu mulai dari pencegahan sampai penindakan dengan melakukan kolaborasi bersama stakeholder sebagai salah satu upaya meningkatkan kepercayaan publik,\\\" ucapnya.</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">Sebagai informasi, dalam menyusun program kerja pengembangan SDM dan strategi pengawasan Pemilu Tahun 2023 Bawaslu meminta masukan dari berbagai pihak, seperti anggota KPU RI Mochamad Affifuddin, pegiat pemilu Nurlia Dian Paramita dari JPPR, Yusfitriadi dari Visi Nusantara, Jefri Adriansyah dari Dignity Indonesia, Erik Kurniawan dari Sindikasi Pemilu dan Demokrasi, dan Ihsan Maulana dari Perludem. Ada juga, dari kalangan akademisi yakni Rudi Rohi dari Universitas Nusa Cendana, Dian Permata dari Universitas Ibnu Chaldun.</span></p>\\r\\n<p style=\\\"margin-left:0px;\\\"><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">Editor: Reyn Gloria</span><br><span style=\\\"color: rgb(68,68,68);background-color: transparent;font-size: 13px;font-family: Open Sans\\\", sans-serif;\\\">Foto: Bhakti Satrio</span>&nbsp;</p>\\r\\n\",\n                \"path_thumbnail\": \"/uploads/article/2022-12/IMG-20221207-WA0004_250.jpg\",\n                \"path_image\": \"/uploads/article/2022-12/IMG-20221207-WA0004.jpg\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 1,\n                \"counter_comment\": 2,\n                \"created_by\": 5,\n                \"created_date\": \"2022-12-07T05:08:39.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2022-12-09T09:14:42.000Z\",\n                \"author\": {\n                    \"username\": \"yudi.wahyudi154\",\n                    \"full_name\": \"Yudi Wahyudi\",\n                    \"image_foto\": \"/uploads/resource/2022-12/16711554905211207231976479210950.jpg\"\n                },\n                \"like\": false,\n                \"komunitas\": {\n                    \"id\": 3,\n                    \"komunitas_name\": \"Peserta Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 3,\n                    \"tema_name\": \"Partisipasi masyarakat dalam pengawasan Pemilu dan/atau Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 1,\n                \"category_name\": \"Umum\",\n                \"title\": \"Cara Melihat password\",\n                \"slug\": \"cara-melihat-password\",\n                \"description\": \"<p>Klik tombol di icon <del>mata</del> .</p>\\r\\n<p>sekian tutorial hari ini</p>\\r\\n\",\n                \"path_thumbnail\": null,\n                \"path_image\": null,\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 4,\n                \"counter_comment\": 5,\n                \"created_by\": 3,\n                \"created_date\": \"2022-12-06T17:08:41.000Z\",\n                \"modified_by\": 9,\n                \"modified_date\": \"2022-12-09T16:26:30.000Z\",\n                \"author\": {\n                    \"username\": \"sam.aan46\",\n                    \"full_name\": \"Samsul Anwar\",\n                    \"image_foto\": \"/uploads/resource/2022-12/profil.jpg\"\n                },\n                \"like\": false,\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 1,\n                    \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            }\n        ]\n    }\n}"
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data article\",\n    \"data\": {\n        \"total\": 15,\n        \"values\": [\n            {\n                \"id\": 30,\n                \"category_name\": null,\n                \"title\": \"Perekrutan PPKD\",\n                \"slug\": \"perekrutan-ppkd\",\n                \"description\": \"<p>Pembukaan perekrutan PPKD untuk daerah Kabupaten Tebo se-Kecamatan Tebo Ilir,di buka oleh ibu ULFA. S.Ag selaku kelapa sekretarian panwascam Tebo Ilir&nbsp;</p>\\r\\n\",\n                \"path_thumbnail\": null,\n                \"path_image\": null,\n                \"status\": 1,\n                \"counter_view\": 14,\n                \"counter_share\": 0,\n                \"counter_like\": 0,\n                \"counter_comment\": 0,\n                \"created_by\": 2936,\n                \"created_date\": \"2023-01-31T15:36:38.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"author\": {\n                    \"username\": \"basarudin131\",\n                    \"full_name\": \"Basarudin\",\n                    \"image_foto\": null,\n                    \"province\": \"JAMBI\",\n                    \"regency\": \"KABUPATEN TEBO\"\n                },\n                \"like\": false,\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 3,\n                    \"tema_name\": \"Partisipasi masyarakat dalam pengawasan Pemilu dan/atau Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 28,\n                \"category_name\": null,\n                \"title\": \"Mitigasi TPS Khusus di Ibu Kota Nusantara (IKN)\",\n                \"slug\": \"mitigasi-tps-khusus-di-ibu-kota-nusantara-ikn1\",\n                \"description\": \"<p>Pelaksanaan Pemilu di Indonesia memposisikan penggunaan suara pagi pemilih sebagai hak bukan kewajiban, maka dalam hal ini undang-undang memberikan perlindungan kepada setiap pemilih untuk terfassilitasi, termasuk bagi mereka yang sedang berada diwilayah kerja dan tidak cukup waktu untuk menggunakan suaranya ditempat sesuai domisili yang tercantum pada KTP-E &nbsp;</p>\\r\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-01/WhatsAppImage2023-01-31at12_250.jpeg\",\n                \"path_image\": \"/uploads/article/2023-01/WhatsAppImage2023-01-31at12.36.52.jpeg\",\n                \"status\": 1,\n                \"counter_view\": 46,\n                \"counter_share\": 3,\n                \"counter_like\": 8,\n                \"counter_comment\": 0,\n                \"created_by\": 151,\n                \"created_date\": \"2023-01-31T06:02:16.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"author\": {\n                    \"username\": \"kaconk1181\",\n                    \"full_name\": \"MOH KHAZIN \",\n                    \"image_foto\": null,\n                    \"province\": \"KALIMANTAN TIMUR\",\n                    \"regency\": \"KABUPATEN PENAJAM PASER UTARA\"\n                },\n                \"like\": false,\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 5,\n                    \"tema_name\": \"Konsolidasi dan Kolaborasi Pengawasan Partisipatif\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 26,\n                \"category_name\": null,\n                \"title\": \"Rapat Koordinasi Penyamaan Pendapat dan Silaturahmi\",\n                \"slug\": \"rapat-koordinasi-penyamaan-pendapat-dan-silaturahmi\",\n                \"description\": \"<p>Mempererat Hubungan Emosional antara Lembaga Penyelenggara, sebuah bentuk komitmen bersama membentuk Pemilu yang berkualitas dan berintegritas</p>\\r\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-01/WhatsAppImage2023-01-30at11_250.jpeg\",\n                \"path_image\": \"/uploads/article/2023-01/WhatsAppImage2023-01-30at11.16.18.jpeg\",\n                \"status\": 1,\n                \"counter_view\": 34,\n                \"counter_share\": 3,\n                \"counter_like\": 12,\n                \"counter_comment\": 0,\n                \"created_by\": 684,\n                \"created_date\": \"2023-01-31T02:53:44.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"author\": {\n                    \"username\": \"bawaslu.pencegahan93\",\n                    \"full_name\": \"Aswandi\",\n                    \"image_foto\": \"/uploads/resource/2023-01/WhatsAppImage2022-11-11at10.44.20.jpeg\",\n                    \"province\": \"KALIMANTAN UTARA\",\n                    \"regency\": \"KABUPATEN TANA TIDUNG\"\n                },\n                \"like\": false,\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 2,\n                    \"tema_name\": \"Agenda Pencegahan Pelanggaran dan Sengketa Proses Pemilu dan/atau Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 25,\n                \"category_name\": null,\n                \"title\": \"Sebagai sistem, demokrasi adalah mekanisme politik untuk pemgambilan keputusan publik  demi tercapainya kepentingan umum seluas-luasnya.\",\n                \"slug\": \"sebagai-sistem-demokrasi-adalah-mekanisme-politik-untuk-pemgambilan-keputusan-publik--demi-tercapainya-kepentingan-umum-seluas-luasnya\",\n                \"description\": \"<p></p>\\r\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-01/FB_IMG_1675130289802_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-01/FB_IMG_1675130289802.jpg\",\n                \"status\": 1,\n                \"counter_view\": 3,\n                \"counter_share\": 0,\n                \"counter_like\": 6,\n                \"counter_comment\": 0,\n                \"created_by\": 848,\n                \"created_date\": \"2023-01-31T02:01:58.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"author\": {\n                    \"username\": \"piank.pratama99\",\n                    \"full_name\": \"SUAIB ALIMUDDIN\",\n                    \"image_foto\": null,\n                    \"province\": \"SULAWESI BARAT\",\n                    \"regency\": \"KABUPATEN POLEWALI MANDAR\"\n                },\n                \"like\": false,\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 3,\n                    \"tema_name\": \"Partisipasi masyarakat dalam pengawasan Pemilu dan/atau Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 24,\n                \"category_name\": null,\n                \"title\": \"TEST\",\n                \"slug\": \"test\",\n                \"description\": \"<p>MASIH BANYAK YANG HARUS DIPERBAIKI INI WEBSITE</p>\\r\\n\",\n                \"path_thumbnail\": null,\n                \"path_image\": null,\n                \"status\": 1,\n                \"counter_view\": 54,\n                \"counter_share\": 1,\n                \"counter_like\": 3,\n                \"counter_comment\": 0,\n                \"created_by\": 992,\n                \"created_date\": \"2023-01-31T01:56:19.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2023-01-31T23:09:45.000Z\",\n                \"author\": {\n                    \"username\": \"apeprustandi22\",\n                    \"full_name\": \"Apep Rustandi\",\n                    \"image_foto\": \"/uploads/resource/2023-01/1654257222654(1)(1).jpg\",\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN CIANJUR\"\n                },\n                \"like\": false,\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 7,\n                    \"tema_name\": \"Pengawasan tahapan Pemilu dan/atau Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 23,\n                \"category_name\": null,\n                \"title\": \"Maksimalkan Pengawasan Pemutakhiran Data Pemilih, Bawaslu Polman hadiri Rapat Koordinasi di Mamuju Tengah.\",\n                \"slug\": \"maksimalkan-pengawasan-pemutakhiran-data-pemilih-bawaslu-polman-hadiri-rapat-koordinasi-di-mamuju-tengah\",\n                \"description\": \"<p>Dalam rangka memaksimalkan pengawasan pemutakhiran data dan penyusunan data pemilih , Bawaslu Kabupaten Polewali Mandar hadiri kegiatan “Rapat Koordinasi Persiapan Pengawasan Pemutakhiran Data dan Penyusunan Daftar Pemilih pada Pemilu Serentak Tahun 2024\\\".</p>\\r\\n<p>Kegiatan yang diselenggarakan oleh Bawaslu Provinsi Sulawesi Barat ini diselenggarakan pada hari Rabu tanggal 25 Januari 2023 di Kilometer Satu Coffe &amp; Food Topoyo Kabupaten Mamuju Tengah yang dihadiri oleh Ketua dan Anggota Bawaslu Provinsi Sulawesi Barat, Kepala Sekretariat Provinsi Sulawesi Barat, Ketua dan Anggota Divisi Pencegahan Partisipasi Masyarakat dan Humas Bawaslu Kabupaten Se-Provinsi Sulawesi Barat beserta jajaran staf.</p>\\r\\n<p>Dalam kegiatan tersebut, Koordinator Divisi Pencegahan, Parmas dan Humas Bawaslu Provinsi Sulawesi Barat, Hamrana Hakim memaparkan identifikasi potensi kerawanan Tahapan Pemutakhiran Data dan Penyusunan Daftar Pemilih dalam Pemilihan Umum sesuai dengan Surat Edaran Ketua Bawaslu RI Nomor 1 Tahun 2023.</p>\\r\\n<p>\\\"Acuan kita dalam melakukan pencegahan dugaan pelanggaran dan pengawasan Tahapan Pemutakhiran Data dan Penyusunan Daftar Pemilih pada Pemilu 2024 ini adalah Surat Edaran Ketua Bawaslu RI Nomor 1 Tahun 2023 yang didalamnya terdapat beberapa identifikasi kerawanan termasuk kerawanan penyusunan bahan daftar pemilih yang akan kita bahas pada pertemuan hari ini\\\" paparnya.</p>\\r\\n<p>Ketua Bawaslu Kabupaten Polewali Mandar memberikan gambaran terhadap potensi bertambahnya jumlah TPS di Kabupaten Polewali Mandar.</p>\\r\\n<p>\\\"Jumlah TPS di Kabupaten Polewali Mandar pada Pemilu 2019 sebanyak 1.229 TPS dan berpotensi akan bertambah. Salah satu faktor yang mempengaruhi adalah aspek geografis di Kabupaten Polewali Mandar\\\", ujar Saifuddin.</p>\\r\\n<p>Juga hadir dalam pertemuan tersebut adalah Suaib, Koordinator Divisi Pencegahan, Parmas dan Humas Bawaslu Kabupaten Polewali Mandar mengharapkan adanya kesepahaman dan persepsi antara Bawaslu Provinsi Sulawesi Barat dan KPU Provinsi Sulawesi Barat dalam proses pelaksanaan pencocokan dan penelitian (Coklit) sehingga sinergitas Pantarlih dan Pengawas Kelurahan/Desa dapat terjaga dengan baik.</p>\\r\\n<p>\\\"Kami tidak menginginkan adanya prasangka buruk kepada Pengawas Kelurahan/Desa bahwa pekerjaan mereka hanya meminta data kepada Pantarlih. Kiranya ini perlu diluruskan, mengingat Pengawas Kelurahan/Desa sebanyak satu orang tiap Kelurahan/Desa harus mengawasi Pantarlih yang jumlahnya satu orang satu TPS di Kelurahan/Desa\\\" tutupnya.</p>\\r\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-01/WhatsAppImage2023-01-27at09_250.jpeg\",\n                \"path_image\": \"/uploads/article/2023-01/WhatsAppImage2023-01-27at09.34.38(1).jpeg\",\n                \"status\": 1,\n                \"counter_view\": 25,\n                \"counter_share\": 0,\n                \"counter_like\": 4,\n                \"counter_comment\": 0,\n                \"created_by\": 848,\n                \"created_date\": \"2023-01-31T01:46:28.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"author\": {\n                    \"username\": \"piank.pratama99\",\n                    \"full_name\": \"SUAIB ALIMUDDIN\",\n                    \"image_foto\": null,\n                    \"province\": \"SULAWESI BARAT\",\n                    \"regency\": \"KABUPATEN POLEWALI MANDAR\"\n                },\n                \"like\": false,\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 2,\n                    \"tema_name\": \"Agenda Pencegahan Pelanggaran dan Sengketa Proses Pemilu dan/atau Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 22,\n                \"category_name\": null,\n                \"title\": \"KUNKER TA BAWASLU RI\",\n                \"slug\": \"kunker-ta-bawaslu-ri\",\n                \"description\": \"<p>Kunker TA Bawaslu RI, DR. Bachtiar dan TIM ke kantor Bawaslu Kota Tarakan</p>\\r\\n<p></p>\\r\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-01/IMG-20230126-WA0042_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-01/IMG-20230126-WA0042.jpg\",\n                \"status\": 1,\n                \"counter_view\": 8,\n                \"counter_share\": 0,\n                \"counter_like\": 3,\n                \"counter_comment\": 0,\n                \"created_by\": 813,\n                \"created_date\": \"2023-01-31T01:36:37.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"author\": {\n                    \"username\": \"dianantarja\",\n                    \"full_name\": \"Dian Antarja\",\n                    \"image_foto\": null,\n                    \"province\": \"KALIMANTAN UTARA\",\n                    \"regency\": \"KOTA TARAKAN\"\n                },\n                \"like\": false,\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 4,\n                    \"tema_name\": \"Pelaporan dugaan pelanggaran administratif, tindak pidana, serta sengketa proses Pemilu dan/atau Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 21,\n                \"category_name\": null,\n                \"title\": \"Jelang Vermin Perbaikan Ke-Satu Pencalonan DPD, Bawaslu PB Gelar Rakernis\",\n                \"slug\": \"jelang-vermin-perbaikan-ke-satu-pencalonan-dpd-bawaslu-pb-gelar-rakernis\",\n                \"description\": \"<p><br><br>Pembukaan Rakernis Persiapan Vermin Perbaikan Ke-Satu Dokumen Syarat Dukungan Bakal Calon Anggota DPD Prov. Papua Barat &amp; Papua Barat Daya<br>Pembukaan Rakernis Persiapan Vermin Perbaikan Ke-Satu Dokumen Syarat Dukungan Bakal Calon Anggota DPD Prov. Papua Barat &amp; Papua Barat Daya<br>Kota Sorong, Bawaslu Papua Barat- Badan Pengawas Pemilihan Umum Provinsi Papua Barat melaksanakan Rapat Kerja Teknis (Rakernis) Pengawasan Verifikasi Administrasi (Vermin) Perbaikan Ke Satu bersama Bawaslu Kabupaten/Kota Se-Provinsi Papua Barat dan Papua Barat Daya. (Senin, 30/01/2023)<br><br>Rakernis yang dilaksanakan di Aula Gedung Kampus Institut Agama Islam Negeri (IAIN) Sorong ini dihadiri langsung oleh Koordinator Divisi Hukum dan Penyelesaian Sengketa, Nurlaila Muhammad dan Koordinator Penanganan Pelanggaran dan Data Informasi Muh. Nazil Hilmie serta Ketua dan Anggota bersama staf bidang pencegahan di Bawaslu Kabupaten/kota se Provinsi Papua Barat dan Papua Barat Daya.<br><br>Dalam sambutannya, Nazil Hilmie menyampaikan bahwa pentingnya pelaksanaan Rakernis pengawasan vermin ini dilakukan untuk mencapai satu pemahaman terkait teknis pengawasan tahapan perbaikan ke-satu.<br><br>“dalam pelaksanaan pengawasan vermin perbaikan ini, kabupaten/kota harus memahami betul teknis pelaksanaan tahapan verifikasi administrasi ke-satu yang di atur jelas dalam PKPU 10 tahun 2022 pada pasal 47 sampai pasal 62 serta penggunaan alat kerja pengawasan yang di atur dalam SE Bawaslu RI No.3 Tahun 2023” ujarnya.<br><br>Hal ini perlu dilakukan agar pelaksanaan pengawasan di Kabupaten/kota dapat berjalan maksimal dan tepat sasaran.<br><br>Kordiv Hukum dan Penyelesaian Sengketa, Nurlaila Muhammad dalam materinya juga menambahkan bahwa dalam pelaksanaan pengawasan Vermin Perbaikan Ke-satu Bawaslu Kab./Kota harus selalu dilaporkan secara berkala kepada Bawaslu Provinsi.<br><br>“Bawaslu Kab./Kota harus selalu mengirimkan laporan pengawasan secara berkala kepada Bawaslu Provinsi” tegas wanita yang akrab disapa Cah Lily tersebut. (30/01/2023)<br><br>Lily juga menegaskan bahwa Bawaslu Kab./Kota harus memperhatikan dengan teliti terkait pemberian status TMS, BMS, dan MS pada dokumen syarat pendaftaran Bakal Calon yang diserahkan ke KPU pada tahapan Perbaikan ke-Satu.<br><br>Selain itu, menurut beliau Bawaslu Kab./Kota juga harus mengisi alat kerja sesuai dengan fakta dilapangan agar tidak terjadi perbedaan data yang dimiliki Bawaslu Provinsi dengan KPU Provinsi dan tidak merugikan hak dari bakal calon DPD.<br><br>“Bawaslu tidak hanya menegakkan keadilan Pemilu namun juga melindungi hak-hak bakal calon DPD dan peserta Pemilu, Bawaslu harus aktif dalam melakukan sosialisasi dan menerima laporan masyarakat” ucapnya.</p>\\r\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-01/IMG-20230130-WA0104_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-01/IMG-20230130-WA0104.jpg\",\n                \"status\": 1,\n                \"counter_view\": 48,\n                \"counter_share\": 0,\n                \"counter_like\": 7,\n                \"counter_comment\": 0,\n                \"created_by\": 616,\n                \"created_date\": \"2023-01-31T01:01:48.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"author\": {\n                    \"username\": \"nazilhilmieoke\",\n                    \"full_name\": \"Muhammad Nazil Hilmie \",\n                    \"image_foto\": \"/uploads/resource/2023-01/EBCD8740-B1AF-4E1F-9A01-0B9C66F975F0-scaled.jpeg\",\n                    \"province\": \"PAPUA BARAT\",\n                    \"regency\": \"KABUPATEN MANOKWARI\"\n                },\n                \"like\": false,\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 1,\n                    \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 20,\n                \"category_name\": null,\n                \"title\": \"SADAP PEMILU 2024\",\n                \"slug\": \"sadap-pemilu-2024\",\n                \"description\": \"<p></p>\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-01/IMG-20230127-WA0083_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-01/IMG-20230127-WA0083.jpg\",\n                \"status\": 1,\n                \"counter_view\": 12,\n                \"counter_share\": 0,\n                \"counter_like\": 6,\n                \"counter_comment\": 0,\n                \"created_by\": 305,\n                \"created_date\": \"2023-01-31T00:46:12.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"author\": {\n                    \"username\": \"sukmayadidede3\",\n                    \"full_name\": \"DEDE SUKMAYADI \",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN MAJALENGKA\"\n                },\n                \"like\": false,\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 2,\n                    \"tema_name\": \"Agenda Pencegahan Pelanggaran dan Sengketa Proses Pemilu dan/atau Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 19,\n                \"category_name\": null,\n                \"title\": \"SADAP PEMILU 2024 (Safari Data Pemilih Pemilu 2024)\",\n                \"slug\": \"sadap-pemilu-2024-safari-data-pemilih-pemilu-2024\",\n                \"description\": \"<p>Rangkaian kegiatan Safari Data Pemilih Pemilu 2024 (SADAP PEMILU 2024) bersama Kapolres MAJALENGKA untuk memastikan seluruh keluarga POLRI (istri, anak dan kerabat) beserta para Purnawirawan POLRI terlindungi Hak Pilihnya.</p>\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-01/IMG-20230126-WA0004_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-01/IMG-20230126-WA0004.jpg\",\n                \"status\": 1,\n                \"counter_view\": 48,\n                \"counter_share\": 0,\n                \"counter_like\": 5,\n                \"counter_comment\": 2,\n                \"created_by\": 305,\n                \"created_date\": \"2023-01-31T00:27:19.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"author\": {\n                    \"username\": \"sukmayadidede3\",\n                    \"full_name\": \"DEDE SUKMAYADI \",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN MAJALENGKA\"\n                },\n                \"like\": false,\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 2,\n                    \"tema_name\": \"Agenda Pencegahan Pelanggaran dan Sengketa Proses Pemilu dan/atau Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            }\n        ]\n    }\n}"
                 }
               ]
             },
@@ -8055,70 +8233,6 @@
                       }
                     },
                     "url": {
-                      "raw": "{{url}}/forum/article/title",
-                      "host": ["{{url}}"],
-                      "path": ["forum", "article", "title"]
-                    }
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "_postman_previewlanguage": "json",
-                  "header": [
-                    {
-                      "key": "X-Powered-By",
-                      "value": "Express"
-                    },
-                    {
-                      "key": "Access-Control-Allow-Origin",
-                      "value": "*"
-                    },
-                    {
-                      "key": "Access-Control-Allow-Credentials",
-                      "value": "true"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json; charset=utf-8"
-                    },
-                    {
-                      "key": "Content-Length",
-                      "value": "583"
-                    },
-                    {
-                      "key": "ETag",
-                      "value": "W/\"247-zWxa4ZQPSBcC/kuSzkq4Ls5nezk\""
-                    },
-                    {
-                      "key": "Date",
-                      "value": "Sun, 04 Dec 2022 15:07:53 GMT"
-                    },
-                    {
-                      "key": "Connection",
-                      "value": "keep-alive"
-                    },
-                    {
-                      "key": "Keep-Alive",
-                      "value": "timeout=5"
-                    }
-                  ],
-                  "cookie": [],
-                  "body": "{\n    \"status\": true,\n    \"message\": \"Data article\",\n    \"data\": {\n        \"id\": 1,\n        \"category_name\": \"category\",\n        \"title\": \"title\",\n        \"slug\": \"title\",\n        \"description\": \"description\",\n        \"path_thumbnail\": \"/uploads/article/2022-12/fronalpstock_big_250.jpg\",\n        \"path_image\": \"/uploads/article/2022-12/fronalpstock_big.jpg\",\n        \"status\": 1,\n        \"counter_view\": 0,\n        \"counter_share\": 0,\n        \"counter_like\": 1,\n        \"counter_comment\": 1,\n        \"created_by\": 1,\n        \"created_date\": \"2022-12-03T06:32:53.000Z\",\n        \"modified_by\": null,\n        \"modified_date\": null,\n        \"author\": {\n            \"username\": \"yusuf.hartanto69\",\n            \"full_name\": \"Yusuf Hartanto\",\n            \"image_foto\": \"/uploads/resource/2022-12/pdf.png\"\n        },\n        \"like\": true\n    }\n}"
-                },
-                {
-                  "name": "Article Detail",
-                  "originalRequest": {
-                    "method": "GET",
-                    "header": [],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "",
-                      "options": {
-                        "raw": {
-                          "language": "text"
-                        }
-                      }
-                    },
-                    "url": {
                       "raw": "{{url}}/forum/article/cara-melihat-password",
                       "host": ["{{url}}"],
                       "path": ["forum", "article", "cara-melihat-password"]
@@ -8146,15 +8260,15 @@
                     },
                     {
                       "key": "Content-Length",
-                      "value": "785"
+                      "value": "691"
                     },
                     {
                       "key": "ETag",
-                      "value": "W/\"311-YpVLAgkO7PKl+nSwvaDbrO7PmbE\""
+                      "value": "W/\"2b3-+2L+zXcLmIBbu5C+A60vhBLSIrU\""
                     },
                     {
                       "key": "Date",
-                      "value": "Tue, 03 Jan 2023 07:41:59 GMT"
+                      "value": "Thu, 02 Feb 2023 03:41:25 GMT"
                     },
                     {
                       "key": "Connection",
@@ -8166,7 +8280,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n    \"status\": true,\n    \"message\": \"Data article\",\n    \"data\": {\n        \"id\": 1,\n        \"category_name\": \"Umum\",\n        \"title\": \"Cara Melihat password\",\n        \"slug\": \"cara-melihat-password\",\n        \"description\": \"<p>Klik tombol di icon <del>mata</del> .</p>\\r\\n<p>sekian tutorial hari ini</p>\\r\\n\",\n        \"path_thumbnail\": null,\n        \"path_image\": null,\n        \"status\": 1,\n        \"counter_view\": 0,\n        \"counter_share\": 0,\n        \"counter_like\": 4,\n        \"counter_comment\": 5,\n        \"created_by\": 3,\n        \"created_date\": \"2022-12-06T17:08:41.000Z\",\n        \"modified_by\": 9,\n        \"modified_date\": \"2022-12-09T16:26:30.000Z\",\n        \"author\": {\n            \"username\": \"sam.aan46\",\n            \"full_name\": \"Samsul Anwar\",\n            \"image_foto\": \"/uploads/resource/2022-12/profil.jpg\"\n        },\n        \"like\": false,\n        \"komunitas\": {\n            \"id\": 1,\n            \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n            \"type\": 0,\n            \"icon_image\": null\n        },\n        \"tema\": {\n            \"id\": 1,\n            \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n            \"type\": 0,\n            \"icon_image\": null\n        }\n    }\n}"
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data article\",\n    \"data\": {\n        \"id\": 1,\n        \"category_name\": \"Umum\",\n        \"title\": \"Cara Melihat password\",\n        \"slug\": \"cara-melihat-password\",\n        \"description\": \"<p>Klik tombol di icon <del>mata</del> .</p>\\r\\n<p>sekian tutorial hari ini</p>\\r\\n\",\n        \"path_thumbnail\": null,\n        \"path_image\": null,\n        \"status\": 1,\n        \"counter_view\": 180,\n        \"counter_share\": 0,\n        \"counter_like\": 5,\n        \"counter_comment\": 6,\n        \"created_by\": 3,\n        \"created_date\": \"2022-12-06T17:08:41.000Z\",\n        \"modified_by\": 9,\n        \"modified_date\": \"2022-12-09T16:26:30.000Z\",\n        \"author\": {\n            \"username\": \"sam.aan46\",\n            \"full_name\": \"Samsul Anwar\",\n            \"image_foto\": \"/uploads/resource/2022-12/profil.jpg\",\n            \"province\": \"JAWA TENGAH\",\n            \"regency\": \"KABUPATEN DEMAK\"\n        },\n        \"like\": false,\n        \"komunitas\": null,\n        \"tema\": null\n    }\n}"
                 }
               ]
             },
@@ -9080,7 +9194,7 @@
                       }
                     },
                     "url": {
-                      "raw": "{{url}}/forum/bawaslu-update?page=1&perPage=10&q=",
+                      "raw": "{{url}}/forum/bawaslu-update?page=1&perPage=10&q=&type=fe",
                       "host": ["{{url}}"],
                       "path": ["forum", "bawaslu-update"],
                       "query": [
@@ -9095,6 +9209,10 @@
                         {
                           "key": "q",
                           "value": ""
+                        },
+                        {
+                          "key": "type",
+                          "value": "fe"
                         }
                       ]
                     }
@@ -9121,15 +9239,15 @@
                     },
                     {
                       "key": "Content-Length",
-                      "value": "1188"
+                      "value": "6468"
                     },
                     {
                       "key": "ETag",
-                      "value": "W/\"4a4-7kqz6BWFKDSaKZ8lrW88+REroYo\""
+                      "value": "W/\"1944-9XcvYrYBT+jERVuSAK4/V1LsbTs\""
                     },
                     {
                       "key": "Date",
-                      "value": "Sun, 04 Dec 2022 15:12:17 GMT"
+                      "value": "Thu, 02 Feb 2023 03:38:37 GMT"
                     },
                     {
                       "key": "Connection",
@@ -9141,7 +9259,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n    \"status\": true,\n    \"message\": \"Data bawaslu update\",\n    \"data\": {\n        \"total\": 2,\n        \"values\": [\n            {\n                \"id\": 2,\n                \"category_name\": \"category\",\n                \"title\": \"title bawaslu\",\n                \"slug\": \"title-bawaslu\",\n                \"description\": \"description bawaslu\",\n                \"path_thumbnail\": \"/uploads/bawaslu_update/2022-12/NewProject_250.png\",\n                \"path_image\": \"/uploads/bawaslu update/2022-12/NewProject.png\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 0,\n                \"counter_comment\": 1,\n                \"created_by\": 4,\n                \"created_date\": \"2022-12-04T02:47:17.000Z\",\n                \"modified_by\": 4,\n                \"modified_date\": \"2022-12-04T03:10:59.000Z\",\n                \"author\": {\n                    \"username\": \"samsul1\",\n                    \"full_name\": \"Samsul anwar\",\n                    \"image_foto\": null\n                },\n                \"like\": false\n            },\n            {\n                \"id\": 1,\n                \"category_name\": \"category update\",\n                \"title\": \"title update\",\n                \"slug\": \"title-update\",\n                \"description\": \"description update\",\n                \"path_thumbnail\": \"/uploads/bawaslu_update/2022-12/lcd_250.jpg\",\n                \"path_image\": \"/uploads/bawaslu update/2022-12/lcd.jpg\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 1,\n                \"counter_comment\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-04T02:46:49.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2022-12-04T02:48:20.000Z\",\n                \"author\": {\n                    \"username\": \"yusuf.hartanto69\",\n                    \"full_name\": \"Yusuf Hartanto\",\n                    \"image_foto\": \"/uploads/resource/2022-12/pdf.png\"\n                },\n                \"like\": true\n            }\n        ]\n    }\n}"
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data bawaslu update\",\n    \"data\": {\n        \"total\": 2,\n        \"values\": [\n            {\n                \"id\": 3,\n                \"category_name\": \"Umum\",\n                \"title\": \"Bagja Minta Seluruh Jajaran Bawaslu Tingkatkan Kapasitas sebagai Humas Lembaga\",\n                \"slug\": \"bagja-minta-seluruh-jajaran-bawaslu-tingkatkan-kapasitas-sebagai-humas-lembaga1\",\n                \"description\": \"<p><span style=\\\"color: rgb(0, 0, 0); font-family: ui-sans-serif, system-ui, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: medium; letter-spacing: normal;\\\">Ketua Bawaslu Rahmat Bagja saat menutup Rapat Koordonasi Nasional (Rakornas) Identifikasi Strategi Kebijakan Pengawasan Tahapan Penetapan Jumlah Kursi dan Penetapan Daerah Pemilihan di Bali, Selasa (6/12/2022) malam. Bali, Badan Pengawas Pemilihan Umum - Ketua Bawaslu Rahmat Bagja mengingatkan seluruh anggota dan jajaran Bawaslu daerah dapat menjalankan peran sebagai humas Bawaslu. Maka dia meminta seluruh jajaran dapat memanfaatkan media sosial menjadi wadah sosialisasi. \\\"Anda adalah humas bagi Bawaslu, kami ke depan akan melakukan berbagai program untuk meningkatkan hal ini,\\\" pesan dia saat menutup Rapat Koordonasi Nasional (Rakornas) Identifikasi Strategi Kebijakan Pengawasan Tahapan Penetapan Jumlah Kursi dan Penetapan Daerah Pemilihan di Bali, Selasa (6/12/2022). Tidak hanya itu, Bagja menegaskan Bawaslu juga berupaya meningkatkan kapasitas sumber daya manusia (SDM) bagi seluruh jajaran pengawas pemilu. Termasuk, kata dia, cara berkomunikasi dengan multistakeholder seperti kepada kepolisian, kejaksaan, pemuka agama, dan lembaga lainnya. \\\"Kami berharap nanti teman-teman juga melakukan ini (memberikan pelatihan) kepada Panwascam, misalnya bagaimana berhadapan dengan tokoh agama,\\\" ujarnya. Pelaksana tugas Pusat Penelitian Pengembangan Pendidikan dan Pelatihan (Puslitbangdiklat) Ibrahim Malik Tanjung dalam poin rekomendasi Rakornas menyatakan Bawaslu perlu melakukan sosialisasi secara masif mengenai seluruh proses tahapan pengawasan. \\\"Bawaslu perlu melakukan sosialisasi secara masif mengenai seluruh proses tahapan pengawasan dan kewenangan Bawaslu mulai dari pencegahan sampai penindakan dengan melakukan kolaborasi bersama stakeholder sebagai salah satu upaya meningkatkan kepercayaan publik,\\\" ucapnya. Sebagai informasi, dalam menyusun program kerja pengembangan SDM dan strategi pengawasan Pemilu Tahun 2023 Bawaslu meminta masukan dari berbagai pihak, seperti anggota KPU RI Mochamad Affifuddin, pegiat pemilu Nurlia Dian Paramita dari JPPR, Yusfitriadi dari Visi Nusantara, Jefri Adriansyah dari Dignity Indonesia, Erik Kurniawan dari Sindikasi Pemilu dan Demokrasi, dan Ihsan Maulana dari Perludem. Ada juga, dari kalangan akademisi yakni Rudi Rohi dari Universitas Nusa Cendana, Dian Permata dari Universitas Ibnu Chaldun. Editor: Reyn Gloria Foto: Bhakti Satrio</span><br></p>\",\n                \"path_thumbnail\": \"/uploads/bawaslu_update/2022-12/2_250.jpg\",\n                \"path_image\": \"/uploads/bawaslu_update/2022-12/2.jpg\",\n                \"status\": 1,\n                \"counter_view\": 62,\n                \"counter_share\": 1,\n                \"counter_like\": 1,\n                \"counter_comment\": 6,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-08T01:41:23.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2022-12-09T16:27:31.000Z\",\n                \"author\": {\n                    \"username\": \"adminuser\",\n                    \"full_name\": \"Super Admin\",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN BANDUNG\"\n                },\n                \"like\": false\n            },\n            {\n                \"id\": 2,\n                \"category_name\": \"Umum\",\n                \"title\": \"Bagja Minta Seluruh Jajaran Bawaslu Tingkatkan Kapasitas sebagai Humas Lembaga\",\n                \"slug\": \"bagja-minta-seluruh-jajaran-bawaslu-tingkatkan-kapasitas-sebagai-humas-lembaga\",\n                \"description\": \"Ketua Bawaslu Rahmat Bagja saat menutup Rapat Koordonasi Nasional (Rakornas) Identifikasi Strategi Kebijakan Pengawasan Tahapan Penetapan Jumlah Kursi dan Penetapan Daerah Pemilihan di Bali, Selasa (6/12/2022) malam.\\nBali, Badan Pengawas Pemilihan Umum - Ketua Bawaslu Rahmat Bagja mengingatkan seluruh anggota dan jajaran Bawaslu daerah dapat menjalankan peran sebagai humas Bawaslu. Maka dia meminta seluruh jajaran dapat memanfaatkan media sosial menjadi wadah sosialisasi.\\n\\n\\\"Anda adalah humas bagi Bawaslu, kami ke depan akan melakukan berbagai program untuk meningkatkan hal ini,\\\" pesan dia saat menutup Rapat Koordonasi Nasional (Rakornas) Identifikasi Strategi Kebijakan Pengawasan Tahapan Penetapan Jumlah Kursi dan Penetapan Daerah Pemilihan di Bali, Selasa (6/12/2022).\\n\\nTidak hanya itu, Bagja menegaskan Bawaslu juga berupaya meningkatkan kapasitas sumber daya manusia (SDM) bagi seluruh jajaran pengawas pemilu. Termasuk, kata dia, cara berkomunikasi dengan multistakeholder seperti kepada kepolisian, kejaksaan, pemuka agama, dan lembaga lainnya.\\n\\n\\\"Kami berharap nanti teman-teman juga melakukan ini (memberikan pelatihan) kepada Panwascam, misalnya bagaimana berhadapan dengan tokoh agama,\\\" ujarnya.\\n\\nPelaksana tugas Pusat Penelitian Pengembangan Pendidikan dan Pelatihan (Puslitbangdiklat) Ibrahim Malik Tanjung dalam poin rekomendasi Rakornas menyatakan Bawaslu perlu melakukan sosialisasi secara masif mengenai seluruh proses tahapan pengawasan.\\n\\n\\\"Bawaslu perlu melakukan sosialisasi secara masif mengenai seluruh proses tahapan pengawasan dan kewenangan Bawaslu mulai dari pencegahan sampai penindakan dengan melakukan kolaborasi bersama stakeholder sebagai salah satu upaya meningkatkan kepercayaan publik,\\\" ucapnya.\\n\\nSebagai informasi, dalam menyusun program kerja pengembangan SDM dan strategi pengawasan Pemilu Tahun 2023 Bawaslu meminta masukan dari berbagai pihak, seperti anggota KPU RI Mochamad Affifuddin, pegiat pemilu Nurlia Dian Paramita dari JPPR, Yusfitriadi dari Visi Nusantara, Jefri Adriansyah dari Dignity Indonesia, Erik Kurniawan dari Sindikasi Pemilu dan Demokrasi, dan Ihsan Maulana dari Perludem. Ada juga, dari kalangan akademisi yakni Rudi Rohi dari Universitas Nusa Cendana, Dian Permata dari Universitas Ibnu Chaldun.\\n\\nEditor: Reyn Gloria\\nFoto: Bhakti Satrio\",\n                \"path_thumbnail\": \"/uploads/bawaslu_update/2022-12/1_250.jpg\",\n                \"path_image\": \"/uploads/bawaslu_update/2022-12/1.jpg\",\n                \"status\": 1,\n                \"counter_view\": 27,\n                \"counter_share\": 1,\n                \"counter_like\": 2,\n                \"counter_comment\": 2,\n                \"created_by\": 1,\n                \"created_date\": \"2022-12-08T00:51:19.000Z\",\n                \"modified_by\": 9,\n                \"modified_date\": \"2022-12-12T04:41:17.000Z\",\n                \"author\": {\n                    \"username\": \"adminuser\",\n                    \"full_name\": \"Super Admin\",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN BANDUNG\"\n                },\n                \"like\": false\n            }\n        ]\n    }\n}"
                 }
               ]
             },
@@ -9173,9 +9291,13 @@
                   }
                 },
                 "url": {
-                  "raw": "{{url}}/forum/bawaslu-update/title-update",
+                  "raw": "{{url}}/forum/bawaslu-update/bagja-minta-seluruh-jajaran-bawaslu-tingkatkan-kapasitas-sebagai-humas-lembaga1",
                   "host": ["{{url}}"],
-                  "path": ["forum", "bawaslu-update", "title-update"]
+                  "path": [
+                    "forum",
+                    "bawaslu-update",
+                    "bagja-minta-seluruh-jajaran-bawaslu-tingkatkan-kapasitas-sebagai-humas-lembaga1"
+                  ]
                 }
               },
               "response": [
@@ -9194,9 +9316,13 @@
                       }
                     },
                     "url": {
-                      "raw": "{{url}}/forum/bawaslu-update/title-update",
+                      "raw": "{{url}}/forum/bawaslu-update/bagja-minta-seluruh-jajaran-bawaslu-tingkatkan-kapasitas-sebagai-humas-lembaga1",
                       "host": ["{{url}}"],
-                      "path": ["forum", "bawaslu-update", "title-update"]
+                      "path": [
+                        "forum",
+                        "bawaslu-update",
+                        "bagja-minta-seluruh-jajaran-bawaslu-tingkatkan-kapasitas-sebagai-humas-lembaga1"
+                      ]
                     }
                   },
                   "status": "OK",
@@ -9221,15 +9347,15 @@
                     },
                     {
                       "key": "Content-Length",
-                      "value": "625"
+                      "value": "3435"
                     },
                     {
                       "key": "ETag",
-                      "value": "W/\"271-0nnd1gfjsTY96zxz6d1SiyKxtEw\""
+                      "value": "W/\"d6b-efYipvojxGWPhgmkkIl+nd2GvYk\""
                     },
                     {
                       "key": "Date",
-                      "value": "Sun, 04 Dec 2022 15:13:00 GMT"
+                      "value": "Thu, 02 Feb 2023 03:40:34 GMT"
                     },
                     {
                       "key": "Connection",
@@ -9241,7 +9367,7 @@
                     }
                   ],
                   "cookie": [],
-                  "body": "{\n    \"status\": true,\n    \"message\": \"Data bawaslu update\",\n    \"data\": {\n        \"id\": 1,\n        \"category_name\": \"category update\",\n        \"title\": \"title update\",\n        \"slug\": \"title-update\",\n        \"description\": \"description update\",\n        \"path_thumbnail\": \"/uploads/bawaslu_update/2022-12/lcd_250.jpg\",\n        \"path_image\": \"/uploads/bawaslu update/2022-12/lcd.jpg\",\n        \"status\": 1,\n        \"counter_view\": 0,\n        \"counter_share\": 0,\n        \"counter_like\": 1,\n        \"counter_comment\": 1,\n        \"created_by\": 1,\n        \"created_date\": \"2022-12-04T02:46:49.000Z\",\n        \"modified_by\": 1,\n        \"modified_date\": \"2022-12-04T02:48:20.000Z\",\n        \"author\": {\n            \"username\": \"yusuf.hartanto69\",\n            \"full_name\": \"Yusuf Hartanto\",\n            \"image_foto\": \"/uploads/resource/2022-12/pdf.png\"\n        },\n        \"like\": true\n    }\n}"
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data bawaslu update\",\n    \"data\": {\n        \"id\": 3,\n        \"category_name\": \"Umum\",\n        \"title\": \"Bagja Minta Seluruh Jajaran Bawaslu Tingkatkan Kapasitas sebagai Humas Lembaga\",\n        \"slug\": \"bagja-minta-seluruh-jajaran-bawaslu-tingkatkan-kapasitas-sebagai-humas-lembaga1\",\n        \"description\": \"<p><span style=\\\"color: rgb(0, 0, 0); font-family: ui-sans-serif, system-ui, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: medium; letter-spacing: normal;\\\">Ketua Bawaslu Rahmat Bagja saat menutup Rapat Koordonasi Nasional (Rakornas) Identifikasi Strategi Kebijakan Pengawasan Tahapan Penetapan Jumlah Kursi dan Penetapan Daerah Pemilihan di Bali, Selasa (6/12/2022) malam. Bali, Badan Pengawas Pemilihan Umum - Ketua Bawaslu Rahmat Bagja mengingatkan seluruh anggota dan jajaran Bawaslu daerah dapat menjalankan peran sebagai humas Bawaslu. Maka dia meminta seluruh jajaran dapat memanfaatkan media sosial menjadi wadah sosialisasi. \\\"Anda adalah humas bagi Bawaslu, kami ke depan akan melakukan berbagai program untuk meningkatkan hal ini,\\\" pesan dia saat menutup Rapat Koordonasi Nasional (Rakornas) Identifikasi Strategi Kebijakan Pengawasan Tahapan Penetapan Jumlah Kursi dan Penetapan Daerah Pemilihan di Bali, Selasa (6/12/2022). Tidak hanya itu, Bagja menegaskan Bawaslu juga berupaya meningkatkan kapasitas sumber daya manusia (SDM) bagi seluruh jajaran pengawas pemilu. Termasuk, kata dia, cara berkomunikasi dengan multistakeholder seperti kepada kepolisian, kejaksaan, pemuka agama, dan lembaga lainnya. \\\"Kami berharap nanti teman-teman juga melakukan ini (memberikan pelatihan) kepada Panwascam, misalnya bagaimana berhadapan dengan tokoh agama,\\\" ujarnya. Pelaksana tugas Pusat Penelitian Pengembangan Pendidikan dan Pelatihan (Puslitbangdiklat) Ibrahim Malik Tanjung dalam poin rekomendasi Rakornas menyatakan Bawaslu perlu melakukan sosialisasi secara masif mengenai seluruh proses tahapan pengawasan. \\\"Bawaslu perlu melakukan sosialisasi secara masif mengenai seluruh proses tahapan pengawasan dan kewenangan Bawaslu mulai dari pencegahan sampai penindakan dengan melakukan kolaborasi bersama stakeholder sebagai salah satu upaya meningkatkan kepercayaan publik,\\\" ucapnya. Sebagai informasi, dalam menyusun program kerja pengembangan SDM dan strategi pengawasan Pemilu Tahun 2023 Bawaslu meminta masukan dari berbagai pihak, seperti anggota KPU RI Mochamad Affifuddin, pegiat pemilu Nurlia Dian Paramita dari JPPR, Yusfitriadi dari Visi Nusantara, Jefri Adriansyah dari Dignity Indonesia, Erik Kurniawan dari Sindikasi Pemilu dan Demokrasi, dan Ihsan Maulana dari Perludem. Ada juga, dari kalangan akademisi yakni Rudi Rohi dari Universitas Nusa Cendana, Dian Permata dari Universitas Ibnu Chaldun. Editor: Reyn Gloria Foto: Bhakti Satrio</span><br></p>\",\n        \"path_thumbnail\": \"/uploads/bawaslu_update/2022-12/2_250.jpg\",\n        \"path_image\": \"/uploads/bawaslu_update/2022-12/2.jpg\",\n        \"status\": 1,\n        \"counter_view\": 62,\n        \"counter_share\": 1,\n        \"counter_like\": 1,\n        \"counter_comment\": 6,\n        \"created_by\": 1,\n        \"created_date\": \"2022-12-08T01:41:23.000Z\",\n        \"modified_by\": 1,\n        \"modified_date\": \"2022-12-09T16:27:31.000Z\",\n        \"author\": {\n            \"username\": \"adminuser\",\n            \"full_name\": \"Super Admin\",\n            \"image_foto\": null,\n            \"province\": \"JAWA BARAT\",\n            \"regency\": \"KABUPATEN BANDUNG\"\n        },\n        \"like\": false\n    }\n}"
                 }
               ]
             },
@@ -10777,6 +10903,885 @@
                   ],
                   "cookie": [],
                   "body": "{\n    \"status\": true,\n    \"message\": \"Data success deleted\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Fact Check",
+          "item": [
+            {
+              "name": "Fact Check Create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "judul",
+                      "value": "judul",
+                      "type": "text"
+                    },
+                    {
+                      "key": "link_berita",
+                      "value": "http://localhost:5000",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": "/C:/Users/ASUS/Downloads/default.png"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/report/factcheck",
+                  "host": ["{{url}}"],
+                  "path": ["report", "factcheck"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Fact Check Create",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "judul",
+                          "value": "judul",
+                          "type": "text"
+                        },
+                        {
+                          "key": "link_berita",
+                          "value": "http://localhost:5000",
+                          "type": "text"
+                        },
+                        {
+                          "key": "image",
+                          "type": "file",
+                          "src": "/C:/Users/ASUS/Downloads/default.png"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/factcheck",
+                      "host": ["{{url}}"],
+                      "path": ["report", "factcheck"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "46"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"2e-uyuq6793Az67T/RbemmKsp5eyWA\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 02 Feb 2023 04:10:58 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success saved\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Fact Check Update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "judul",
+                      "value": "judul update",
+                      "type": "text"
+                    },
+                    {
+                      "key": "link_berita",
+                      "value": "http://localhost:5005/",
+                      "type": "text"
+                    },
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": "/C:/Users/ASUS/Downloads/default.png"
+                    },
+                    {
+                      "key": "status",
+                      "value": "3",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/report/factcheck/1",
+                  "host": ["{{url}}"],
+                  "path": ["report", "factcheck", "1"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Fact Check Update",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "judul",
+                          "value": "judul update",
+                          "type": "text"
+                        },
+                        {
+                          "key": "link_berita",
+                          "value": "http://localhost:5005/",
+                          "type": "text"
+                        },
+                        {
+                          "key": "image",
+                          "type": "file",
+                          "src": "/C:/Users/ASUS/Downloads/default.png"
+                        },
+                        {
+                          "key": "status",
+                          "value": "3",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/factcheck/1",
+                      "host": ["{{url}}"],
+                      "path": ["report", "factcheck", "1"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "48"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"30-l3MX88Xn6RpMow55wiG1PiqSkxg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 02 Feb 2023 04:12:29 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success updated\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Fact Check Data",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/factcheck?page=1&perPage=10&q=",
+                  "host": ["{{url}}"],
+                  "path": ["report", "factcheck"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Fact Check Data",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/factcheck?page=1&perPage=10&q=",
+                      "host": ["{{url}}"],
+                      "path": ["report", "factcheck"],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "perPage",
+                          "value": "10"
+                        },
+                        {
+                          "key": "q",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "527"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"20f-9XqpJNLL4Y7F6Pbebsr6YZYy6kg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 02 Feb 2023 04:12:55 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data fact check results\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"judul\": \"judul update\",\n                \"link_berita\": \"http://localhost:5005/\",\n                \"path_image\": \"/uploads/factcheck/2023-02/default.png\",\n                \"path_thumbnail\": \"/uploads/factcheck/2023-02/default_250.png\",\n                \"status\": 3,\n                \"created_by\": 1,\n                \"created_date\": \"2023-02-02T04:10:58.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2023-02-02T04:12:29.000Z\",\n                \"author\": {\n                    \"username\": \"adminuser\",\n                    \"full_name\": \"Super Admin\",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN BANDUNG\"\n                }\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Fact Check Detail",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/factcheck/1",
+                  "host": ["{{url}}"],
+                  "path": ["report", "factcheck", "1"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Fact Check Detail",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/factcheck/1",
+                      "host": ["{{url}}"],
+                      "path": ["report", "factcheck", "1"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "504"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1f8-IfDJXFK7aOACWfqdVmkUc4noJ/4\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 02 Feb 2023 04:13:29 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data fact check results\",\n    \"data\": {\n        \"id\": 1,\n        \"judul\": \"judul update\",\n        \"link_berita\": \"http://localhost:5005/\",\n        \"path_image\": \"/uploads/factcheck/2023-02/default.png\",\n        \"path_thumbnail\": \"/uploads/factcheck/2023-02/default_250.png\",\n        \"status\": 3,\n        \"created_by\": 1,\n        \"created_date\": \"2023-02-02T04:10:58.000Z\",\n        \"modified_by\": 1,\n        \"modified_date\": \"2023-02-02T04:12:29.000Z\",\n        \"author\": {\n            \"username\": \"adminuser\",\n            \"full_name\": \"Super Admin\",\n            \"image_foto\": null,\n            \"province\": \"JAWA BARAT\",\n            \"regency\": \"KABUPATEN BANDUNG\"\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Fact Check Delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/factcheck/1",
+                  "host": ["{{url}}"],
+                  "path": ["report", "factcheck", "1"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Fact Check Delete",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/factcheck/1",
+                      "host": ["{{url}}"],
+                      "path": ["report", "factcheck", "1"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "48"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"30-Z8Sc9zmwxkea6NjQrgGQ/qbFVQg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 02 Feb 2023 04:13:56 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data success deleted\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Summary",
+          "item": [
+            {
+              "name": "Pengguna",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/summary/pengguna?page=1&perPage=10&q=YOGYAKARTA",
+                  "host": ["{{url}}"],
+                  "path": ["report", "summary", "pengguna"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": "YOGYAKARTA"
+                    },
+                    {
+                      "key": "province",
+                      "value": "34",
+                      "disabled": true
+                    },
+                    {
+                      "key": "regency",
+                      "value": "3401",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Pengguna",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/summary/pengguna?page=1&perPage=10&q=YOGYAKARTA",
+                      "host": ["{{url}}"],
+                      "path": ["report", "summary", "pengguna"],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "perPage",
+                          "value": "10"
+                        },
+                        {
+                          "key": "q",
+                          "value": "YOGYAKARTA"
+                        },
+                        {
+                          "key": "province",
+                          "value": "34",
+                          "disabled": true
+                        },
+                        {
+                          "key": "regency",
+                          "value": "3401",
+                          "disabled": true
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1197"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"4ad-DO+IBtd2FPJggfPRp7EaIor5Fvg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 02 Feb 2023 05:04:55 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data summary pengguna\",\n    \"data\": {\n        \"total\": 5,\n        \"values\": [\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 1,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 1,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 2\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3402,\n                \"regencies\": \"KABUPATEN BANTUL\",\n                \"anak_anak\": 1,\n                \"muda\": 1,\n                \"pekerja_awal\": 17,\n                \"paruh_baya\": 3,\n                \"pra_pensiun\": 4,\n                \"pensiun\": 2,\n                \"lansia\": 0,\n                \"total_pengguna\": 28\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3403,\n                \"regencies\": \"KABUPATEN GUNUNG KIDUL\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 1,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 1\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3404,\n                \"regencies\": \"KABUPATEN SLEMAN\",\n                \"anak_anak\": 1,\n                \"muda\": 0,\n                \"pekerja_awal\": 3,\n                \"paruh_baya\": 5,\n                \"pra_pensiun\": 1,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 10\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3471,\n                \"regencies\": \"KOTA YOGYAKARTA\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 1,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 1\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Pengguna per Komunitas",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/summary/pengguna-komunitas?page=1&perPage=10&province=34",
+                  "host": ["{{url}}"],
+                  "path": ["report", "summary", "pengguna-komunitas"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": "YOGYAKARTA",
+                      "disabled": true
+                    },
+                    {
+                      "key": "province",
+                      "value": "34"
+                    },
+                    {
+                      "key": "regency",
+                      "value": "3401",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Pengguna per Komunitas",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/summary/pengguna-komunitas?page=1&perPage=10&province=34",
+                      "host": ["{{url}}"],
+                      "path": ["report", "summary", "pengguna-komunitas"],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "perPage",
+                          "value": "10"
+                        },
+                        {
+                          "key": "q",
+                          "value": "YOGYAKARTA",
+                          "disabled": true
+                        },
+                        {
+                          "key": "province",
+                          "value": "34"
+                        },
+                        {
+                          "key": "regency",
+                          "value": "3401",
+                          "disabled": true
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "2925"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"b6d-PKQpDfrkn2dY2iwSecA0aTUv4L8\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 02 Feb 2023 05:06:31 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data summary pengguna\",\n    \"data\": {\n        \"total\": 60,\n        \"values\": [\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 1,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 1,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 2\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 2,\n                \"komunitas_name\": \"Pemantau Pemilu\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 3,\n                \"komunitas_name\": \"Peserta Pemilu\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 4,\n                \"komunitas_name\": \"Kader Pengawas Partisipatif\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 5,\n                \"komunitas_name\": \"Pemilih pemula\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 6,\n                \"komunitas_name\": \"Penyandang disabilitas\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 7,\n                \"komunitas_name\": \"Pemilih perempuan\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 8,\n                \"komunitas_name\": \"Pengurus organisasi kemasyarakatan\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 9,\n                \"komunitas_name\": \"Tokoh Agama\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 10,\n                \"komunitas_name\": \"Pengajar, Pelajar, dan/atau Mahasiswa\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            }\n        ]\n    }\n}"
                 }
               ]
             }
