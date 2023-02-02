@@ -12104,6 +12104,106 @@
                   "body": "{\n    \"status\": true,\n    \"message\": \"Data summary article per tema\",\n    \"data\": {\n        \"total\": 42,\n        \"values\": [\n            {\n                \"area_province_id\": 11,\n                \"provinces\": \"ACEH\",\n                \"area_regencies_id\": 1101,\n                \"regencies\": \"KABUPATEN SIMEULUE\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 2\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"area_regencies_id\": 1201,\n                \"regencies\": \"KABUPATEN NIAS\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 2\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"area_regencies_id\": 1206,\n                \"regencies\": \"KABUPATEN TOBA SAMOSIR\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 1\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"area_regencies_id\": 1211,\n                \"regencies\": \"KABUPATEN KARO\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 2\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"area_regencies_id\": 1214,\n                \"regencies\": \"KABUPATEN NIAS SELATAN\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 4\n            },\n            {\n                \"area_province_id\": 13,\n                \"provinces\": \"SUMATERA BARAT\",\n                \"area_regencies_id\": 1302,\n                \"regencies\": \"KABUPATEN PESISIR SELATAN\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 1\n            },\n            {\n                \"area_province_id\": 14,\n                \"provinces\": \"RIAU\",\n                \"area_regencies_id\": 1401,\n                \"regencies\": \"KABUPATEN KUANTAN SINGINGI\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 2\n            },\n            {\n                \"area_province_id\": 14,\n                \"provinces\": \"RIAU\",\n                \"area_regencies_id\": 1402,\n                \"regencies\": \"KABUPATEN INDRAGIRI HULU\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 3\n            },\n            {\n                \"area_province_id\": 14,\n                \"provinces\": \"RIAU\",\n                \"area_regencies_id\": 1408,\n                \"regencies\": \"KABUPATEN BENGKALIS\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 1\n            },\n            {\n                \"area_province_id\": 32,\n                \"provinces\": \"JAWA BARAT\",\n                \"area_regencies_id\": 3203,\n                \"regencies\": \"KABUPATEN CIANJUR\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 1\n            }\n        ]\n    }\n}"
                 }
               ]
+            },
+            {
+              "name": "Dashboard",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/summary/dashboard",
+                  "host": ["{{url}}"],
+                  "path": ["report", "summary", "dashboard"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Dashboard",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/summary/dashboard",
+                      "host": ["{{url}}"],
+                      "path": ["report", "summary", "dashboard"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "149"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"95-7C1Zyl94J2U6ely2IihTvZvaT+s\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 02 Feb 2023 23:54:04 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data dashboard\",\n    \"data\": {\n        \"pengguna\": 1003,\n        \"gallery\": 6,\n        \"article\": 25,\n        \"bawaslu_update\": 2,\n        \"laporan_aduan\": 2,\n        \"laporan_article\": 5\n    }\n}"
+                }
+              ]
             }
           ]
         }

@@ -104,7 +104,9 @@ export default class Respository {
         (SELECT COUNT(1) FROM app_resource WHERE status = 'A' AND role_id = 3) AS pengguna,
         (SELECT COUNT(1) FROM gallery WHERE status <> 9) AS gallery,
         (SELECT COUNT(1) FROM forum_article WHERE status <> 9) AS article,
-        (SELECT COUNT(1) FROM forum_bawaslu_update WHERE status <> 9) AS bawaslu_update
+        (SELECT COUNT(1) FROM forum_bawaslu_update WHERE status <> 9) AS bawaslu_update,
+        (SELECT COUNT(1) FROM laporan_aduan WHERE status <> 9) AS laporan_aduan,
+        (SELECT COUNT(1) FROM laporan_article WHERE status <> 9) AS laporan_article
       `,
       { type: QueryTypes.SELECT }
     );
