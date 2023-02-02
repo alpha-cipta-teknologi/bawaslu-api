@@ -17,5 +17,6 @@ router.get('/fe/bawaslu-update/:slug', global.bwuDetail);
 router.get('/fe/comment', likeComment.index);
 router.get('/fe/comment/:id_external/:group', likeComment.detail);
 router.get('/fe/trending-article', global.trendingArticle);
+router.post('/sendmail', global.sendmail);
 
 export default router;

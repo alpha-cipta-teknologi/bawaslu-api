@@ -149,10 +149,9 @@ export default class Controller {
         to: req?.body?.email,
         subject: 'Welcome to Bawaslu Forum',
         content: `
-            Hi ${req?.body?.full_name},
-            Congratulation to join as a member, below this link to activation your account:
-
-            ${process.env.BASE_URL_FE}/account-verification?confirm_hash=${confirm_hash}
+          <p>Hi ${req?.body?.full_name},</p>
+          <p>Congratulation to join as a member, below this link to activation your account:</p>
+          ${process.env.BASE_URL_FE}/account-verification?confirm_hash=${confirm_hash}
         `,
       });
 
@@ -209,12 +208,9 @@ export default class Controller {
         to: email,
         subject: 'Reset Password',
         content: `
-            Hi ${result?.getDataValue('full_name')},
-            Below this link to reset password your account:
-
-            ${
-              process.env.BASE_URL_FE
-            }/reset-password?confirm_hash=${confirm_hash}
+          <p>Hi ${result?.getDataValue('full_name')},</p>
+          <p>Below this link to reset password your account:</p>
+          ${process.env.BASE_URL_FE}/reset-password?confirm_hash=${confirm_hash}
         `,
       });
 

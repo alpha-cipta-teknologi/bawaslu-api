@@ -179,6 +179,23 @@ export default class Controller {
       );
     }
   }
+
+  public async sendmail(req: Request, res: Response) {
+    try {
+      await helper.sendEmail({
+        to: req?.body?.email,
+        subject: 'Jarimu Awasi Pemilu',
+        content: `
+          <p>Hi ${req?.body?.email},</p>
+          Send email success!!!
+        `,
+      });
+
+      return response.success(true, 'Send email success', res);
+    } catch (err) {
+      return helper.catchError(`sendmail: ${err?.message}`, 500, res);
+    }
+  }
 }
 
 export const global = new Controller();

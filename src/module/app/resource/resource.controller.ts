@@ -145,10 +145,9 @@ export default class Controller {
         to: req?.body?.email,
         subject: 'Welcome to Bawaslu Forum',
         content: `
-            Hi ${req?.body?.full_name},
-            Congratulation to join as a member, below this link to activation your account:
-
-            ${process.env.BASE_URL_FE}/account-verification?confirm_hash=${confirm_hash}
+          <p>Hi ${req?.body?.full_name},</p>
+          <p>Congratulation to join as a member, below this link to activation your account:</p>
+          ${process.env.BASE_URL_FE}/account-verification?confirm_hash=${confirm_hash}
         `,
       });
 

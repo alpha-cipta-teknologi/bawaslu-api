@@ -157,7 +157,7 @@ export default class Helper {
         minVersion: 'TLSv1',
         rejectUnauthorized: false,
       },
-      logger: false,
+      logger: true,
     });
 
     const mailOptions = {
