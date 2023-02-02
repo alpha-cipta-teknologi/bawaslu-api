@@ -1,7 +1,8 @@
 'use strict';
 
-import { Op } from 'sequelize';
+import { Op, QueryTypes } from 'sequelize';
 import Pengguna from './pengguna.model';
+import conn from '../../../config/database';
 import ArticleTema from './article.tema.model';
 import ArticleKomunitas from './article.komunitas.model';
 import PenggunaKomunitas from './pengguna.komunitas.model';
@@ -94,6 +95,19 @@ export default class Respository {
       };
     }
     return ArticleKomunitas.findAndCountAll(query);
+  }
+
+  public async dashboard() {
+    return await conn.sequelize.query(
+      `
+        SELECT
+        (SELECT COUNT(1) FROM app_resource WHERE status = 'A' AND role_id = 3) AS pengguna,
+        (SELECT COUNT(1) FROM gallery WHERE status <> 9) AS gallery,
+        (SELECT COUNT(1) FROM forum_article WHERE status <> 9) AS article,
+        (SELECT COUNT(1) FROM forum_bawaslu_update WHERE status <> 9) AS bawaslu_update
+      `,
+      { type: QueryTypes.SELECT }
+    );
   }
 }
 

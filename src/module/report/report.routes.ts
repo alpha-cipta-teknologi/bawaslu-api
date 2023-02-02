@@ -39,5 +39,6 @@ router.get(
   auth.checkBearerToken,
   summary.articleKomunitas
 );
+router.get('/summary/dashboard', auth.checkBearerToken, summary.dashboard);
 
 export default router;

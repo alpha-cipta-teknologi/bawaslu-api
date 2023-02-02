@@ -177,5 +177,14 @@ export default class Controller {
       );
     }
   }
+
+  public async dashboard(req: Request, res: Response) {
+    try {
+      const results = await repository.dashboard();
+      return response.successDetail('Data dashboard', results[0], res);
+    } catch (err) {
+      return helper.catchError(`dashboard: ${err?.message}`, 500, res);
+    }
+  }
 }
 export const summary = new Controller();
