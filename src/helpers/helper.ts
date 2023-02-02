@@ -3,6 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
+import axios from 'axios';
 import moment from 'moment';
 import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
@@ -144,37 +145,47 @@ export default class Helper {
   }
 
   public async sendEmail(data: Object | any) {
-    const transporter = nodemailer.createTransport({
-      host: configMail?.host,
-      port: configMail?.port,
-      secure: true,
-      requireTLS: true,
-      auth: {
-        user: configMail?.user,
-        pass: configMail?.pass,
-      },
-      tls: {
-        minVersion: 'TLSv1',
-        rejectUnauthorized: false,
-      },
-      logger: true,
-    });
+    // const transporter = nodemailer.createTransport({
+    //   host: configMail?.host,
+    //   port: configMail?.port,
+    //   secure: true,
+    //   requireTLS: true,
+    //   auth: {
+    //     user: configMail?.user,
+    //     pass: configMail?.pass,
+    //   },
+    //   tls: {
+    //     minVersion: 'TLSv1',
+    //     rejectUnauthorized: false,
+    //   },
+    //   logger: true,
+    // });
 
-    const mailOptions = {
-      from: configMail?.sender,
-      to: data?.to,
-      subject: data?.subject,
-      html: data?.content,
-    };
+    // const mailOptions = {
+    //   from: configMail?.sender,
+    //   to: data?.to,
+    //   subject: data?.subject,
+    //   html: data?.content,
+    // };
 
-    transporter.sendMail(mailOptions, async (error: any, info: any) => {
-      if (error) {
-        await this.sendNotif(`Email error: ${error}`);
-        console.warn(`Email error: ${error}`);
-      } else {
-        console.warn(`Email sent: ${info?.response}`);
-      }
-    });
+    // transporter.sendMail(mailOptions, async (error: any, info: any) => {
+    //   if (error) {
+    //     await this.sendNotif(`Email error: ${error}`);
+    //     console.warn(`Email error: ${error}`);
+    //   } else {
+    //     console.warn(`Email sent: ${info?.response}`);
+    //   }
+    // });
+    try {
+      const url: string = 'https://dev-api-ckp.sphere154.com/sendmail';
+      await axios.post(url, {
+        email: [data?.to],
+        subject: data?.subject,
+        content: data?.content,
+      });
+    } catch (err) {
+      await this.sendNotif(`send email: ${err?.message}`);
+    }
   }
 
   public slug(string: string) {

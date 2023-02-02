@@ -149,7 +149,7 @@ export default class Controller {
         to: req?.body?.email,
         subject: 'Welcome to Bawaslu Forum',
         content: `
-          <p>Hi ${req?.body?.full_name},</p>
+          <h3>Hi ${req?.body?.full_name},</h3>
           <p>Congratulation to join as a member, below this link to activation your account:</p>
           ${process.env.BASE_URL_FE}/account-verification?confirm_hash=${confirm_hash}
         `,
@@ -208,7 +208,7 @@ export default class Controller {
         to: email,
         subject: 'Reset Password',
         content: `
-          <p>Hi ${result?.getDataValue('full_name')},</p>
+          <h3>Hi ${result?.getDataValue('full_name')},</h3>
           <p>Below this link to reset password your account:</p>
           ${process.env.BASE_URL_FE}/reset-password?confirm_hash=${confirm_hash}
         `,

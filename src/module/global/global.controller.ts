@@ -182,13 +182,11 @@ export default class Controller {
 
   public async sendmail(req: Request, res: Response) {
     try {
+      const { email, subject, content } = req?.body;
       await helper.sendEmail({
-        to: req?.body?.email,
-        subject: 'Jarimu Awasi Pemilu',
-        content: `
-          <p>Hi ${req?.body?.email},</p>
-          Send email success!!!
-        `,
+        to: email,
+        subject: subject,
+        content: content,
       });
 
       return response.success(true, 'Send email success', res);
