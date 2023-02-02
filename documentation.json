@@ -11665,7 +11665,7 @@
                   }
                 },
                 "url": {
-                  "raw": "{{url}}/report/summary/pengguna-komunitas?page=1&perPage=10&province=34",
+                  "raw": "{{url}}/report/summary/pengguna-komunitas?page=1&perPage=10&province=34&komunitas=1",
                   "host": ["{{url}}"],
                   "path": ["report", "summary", "pengguna-komunitas"],
                   "query": [
@@ -11690,6 +11690,10 @@
                       "key": "regency",
                       "value": "3401",
                       "disabled": true
+                    },
+                    {
+                      "key": "komunitas",
+                      "value": "1"
                     }
                   ]
                 }
@@ -11782,6 +11786,322 @@
                   ],
                   "cookie": [],
                   "body": "{\n    \"status\": true,\n    \"message\": \"Data summary pengguna\",\n    \"data\": {\n        \"total\": 60,\n        \"values\": [\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 1,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 1,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 2\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 2,\n                \"komunitas_name\": \"Pemantau Pemilu\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 3,\n                \"komunitas_name\": \"Peserta Pemilu\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 4,\n                \"komunitas_name\": \"Kader Pengawas Partisipatif\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 5,\n                \"komunitas_name\": \"Pemilih pemula\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 6,\n                \"komunitas_name\": \"Penyandang disabilitas\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 7,\n                \"komunitas_name\": \"Pemilih perempuan\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 8,\n                \"komunitas_name\": \"Pengurus organisasi kemasyarakatan\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 9,\n                \"komunitas_name\": \"Tokoh Agama\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            },\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"area_regencies_id\": 3401,\n                \"regencies\": \"KABUPATEN KULON PROGO\",\n                \"komunitas_id\": 10,\n                \"komunitas_name\": \"Pengajar, Pelajar, dan/atau Mahasiswa\",\n                \"anak_anak\": 0,\n                \"muda\": 0,\n                \"pekerja_awal\": 0,\n                \"paruh_baya\": 0,\n                \"pra_pensiun\": 0,\n                \"pensiun\": 0,\n                \"lansia\": 0,\n                \"total_pengguna\": 0\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Article per Komunitas",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/summary/article-komunitas?page=1&perPage=10&komunitas=1",
+                  "host": ["{{url}}"],
+                  "path": ["report", "summary", "article-komunitas"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": "YOGYAKARTA",
+                      "disabled": true
+                    },
+                    {
+                      "key": "province",
+                      "value": "34",
+                      "disabled": true
+                    },
+                    {
+                      "key": "regency",
+                      "value": "3401",
+                      "disabled": true
+                    },
+                    {
+                      "key": "komunitas",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Article per Komunitas",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/summary/article-komunitas?page=1&perPage=10&komunitas=1",
+                      "host": ["{{url}}"],
+                      "path": ["report", "summary", "article-komunitas"],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "perPage",
+                          "value": "10"
+                        },
+                        {
+                          "key": "q",
+                          "value": "YOGYAKARTA",
+                          "disabled": true
+                        },
+                        {
+                          "key": "province",
+                          "value": "34",
+                          "disabled": true
+                        },
+                        {
+                          "key": "regency",
+                          "value": "3401",
+                          "disabled": true
+                        },
+                        {
+                          "key": "komunitas",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1979"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"7bb-hxR9qtRUR29+PSoUDa6AflkdZfk\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 02 Feb 2023 17:40:29 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data summary article per komunitas\",\n    \"data\": {\n        \"total\": 62,\n        \"values\": [\n            {\n                \"area_province_id\": 11,\n                \"provinces\": \"ACEH\",\n                \"area_regencies_id\": 1101,\n                \"regencies\": \"KABUPATEN SIMEULUE\",\n                \"komunitas_id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"jumlah_article\": 2\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"area_regencies_id\": 1201,\n                \"regencies\": \"KABUPATEN NIAS\",\n                \"komunitas_id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"jumlah_article\": 2\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"area_regencies_id\": 1206,\n                \"regencies\": \"KABUPATEN TOBA SAMOSIR\",\n                \"komunitas_id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"jumlah_article\": 2\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"area_regencies_id\": 1208,\n                \"regencies\": \"KABUPATEN ASAHAN\",\n                \"komunitas_id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"jumlah_article\": 1\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"area_regencies_id\": 1211,\n                \"regencies\": \"KABUPATEN KARO\",\n                \"komunitas_id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"jumlah_article\": 2\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"area_regencies_id\": 1214,\n                \"regencies\": \"KABUPATEN NIAS SELATAN\",\n                \"komunitas_id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"jumlah_article\": 4\n            },\n            {\n                \"area_province_id\": 13,\n                \"provinces\": \"SUMATERA BARAT\",\n                \"area_regencies_id\": 1302,\n                \"regencies\": \"KABUPATEN PESISIR SELATAN\",\n                \"komunitas_id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"jumlah_article\": 2\n            },\n            {\n                \"area_province_id\": 14,\n                \"provinces\": \"RIAU\",\n                \"area_regencies_id\": 1401,\n                \"regencies\": \"KABUPATEN KUANTAN SINGINGI\",\n                \"komunitas_id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"jumlah_article\": 4\n            },\n            {\n                \"area_province_id\": 14,\n                \"provinces\": \"RIAU\",\n                \"area_regencies_id\": 1402,\n                \"regencies\": \"KABUPATEN INDRAGIRI HULU\",\n                \"komunitas_id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"jumlah_article\": 3\n            },\n            {\n                \"area_province_id\": 14,\n                \"provinces\": \"RIAU\",\n                \"area_regencies_id\": 1403,\n                \"regencies\": \"KABUPATEN INDRAGIRI HILIR\",\n                \"komunitas_id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"jumlah_article\": 1\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Article per Tema",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/summary/article-tema?page=1&perPage=10&tema=1",
+                  "host": ["{{url}}"],
+                  "path": ["report", "summary", "article-tema"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": "YOGYAKARTA",
+                      "disabled": true
+                    },
+                    {
+                      "key": "province",
+                      "value": "34",
+                      "disabled": true
+                    },
+                    {
+                      "key": "regency",
+                      "value": "3401",
+                      "disabled": true
+                    },
+                    {
+                      "key": "tema",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Article per Tema",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/summary/article-tema?page=1&perPage=10&tema=1",
+                      "host": ["{{url}}"],
+                      "path": ["report", "summary", "article-tema"],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "perPage",
+                          "value": "10"
+                        },
+                        {
+                          "key": "q",
+                          "value": "YOGYAKARTA",
+                          "disabled": true
+                        },
+                        {
+                          "key": "province",
+                          "value": "34",
+                          "disabled": true
+                        },
+                        {
+                          "key": "regency",
+                          "value": "3401",
+                          "disabled": true
+                        },
+                        {
+                          "key": "tema",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1925"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"785-Qmtnll7bA9FNuenTZ4jCJUl2ljw\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 02 Feb 2023 17:41:16 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data summary article per tema\",\n    \"data\": {\n        \"total\": 42,\n        \"values\": [\n            {\n                \"area_province_id\": 11,\n                \"provinces\": \"ACEH\",\n                \"area_regencies_id\": 1101,\n                \"regencies\": \"KABUPATEN SIMEULUE\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 2\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"area_regencies_id\": 1201,\n                \"regencies\": \"KABUPATEN NIAS\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 2\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"area_regencies_id\": 1206,\n                \"regencies\": \"KABUPATEN TOBA SAMOSIR\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 1\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"area_regencies_id\": 1211,\n                \"regencies\": \"KABUPATEN KARO\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 2\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"area_regencies_id\": 1214,\n                \"regencies\": \"KABUPATEN NIAS SELATAN\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 4\n            },\n            {\n                \"area_province_id\": 13,\n                \"provinces\": \"SUMATERA BARAT\",\n                \"area_regencies_id\": 1302,\n                \"regencies\": \"KABUPATEN PESISIR SELATAN\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 1\n            },\n            {\n                \"area_province_id\": 14,\n                \"provinces\": \"RIAU\",\n                \"area_regencies_id\": 1401,\n                \"regencies\": \"KABUPATEN KUANTAN SINGINGI\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 2\n            },\n            {\n                \"area_province_id\": 14,\n                \"provinces\": \"RIAU\",\n                \"area_regencies_id\": 1402,\n                \"regencies\": \"KABUPATEN INDRAGIRI HULU\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 3\n            },\n            {\n                \"area_province_id\": 14,\n                \"provinces\": \"RIAU\",\n                \"area_regencies_id\": 1408,\n                \"regencies\": \"KABUPATEN BENGKALIS\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 1\n            },\n            {\n                \"area_province_id\": 32,\n                \"provinces\": \"JAWA BARAT\",\n                \"area_regencies_id\": 3203,\n                \"regencies\": \"KABUPATEN CIANJUR\",\n                \"tema_id\": 1,\n                \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                \"jumlah_article\": 1\n            }\n        ]\n    }\n}"
                 }
               ]
             }

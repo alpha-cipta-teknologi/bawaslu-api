@@ -33,5 +33,11 @@ router.get(
   auth.checkBearerToken,
   summary.penggunaKomunitas
 );
+router.get('/summary/article-tema', auth.checkBearerToken, summary.articleTema);
+router.get(
+  '/summary/article-komunitas',
+  auth.checkBearerToken,
+  summary.articleKomunitas
+);
 
 export default router;
