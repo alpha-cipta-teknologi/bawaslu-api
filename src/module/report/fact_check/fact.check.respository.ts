@@ -1,9 +1,7 @@
 'use strict';
 
+import Model from './fact.check.model';
 import sequelize, { Op } from 'sequelize';
-import Model from './report.complaint.model';
-import Regency from '../../area/regencies.model';
-import Province from '../../area/provinces.model';
 import Resource from '../../app/resource/resource.model';
 
 export default class Respository {
@@ -18,27 +16,13 @@ export default class Respository {
         ...query,
         where: {
           ...data?.condition,
-          status: { [Op.ne]: 9 },
-          [Op.or]: [
-            { title: { [Op.like]: `%${data?.keyword}%` } },
-            { description: { [Op.like]: `%${data?.keyword}%` } },
-          ],
+          [Op.or]: [{ judul: { [Op.like]: `%${data?.keyword}%` } }],
         },
       };
     }
     return Model.findAndCountAll({
       ...query,
       include: [
-        {
-          model: Province,
-          as: 'province',
-          required: false,
-        },
-        {
-          model: Regency,
-          as: 'regency',
-          required: false,
-        },
         {
           attributes: [
             'username',
@@ -48,7 +32,7 @@ export default class Respository {
               sequelize.literal(`(
                 select name
                 from area_provinces
-                where area_provinces.id = author.area_province_id
+                where area_provinces.id = area_province_id
               )`),
               'province',
             ],
@@ -56,7 +40,7 @@ export default class Respository {
               sequelize.literal(`(
                 select name
                 from area_regencies
-                where area_regencies.id = author.area_regencies_id
+                where area_regencies.id = area_regencies_id
               )`),
               'regency',
             ]
@@ -80,16 +64,6 @@ export default class Respository {
       },
       include: [
         {
-          model: Province,
-          as: 'province',
-          required: false,
-        },
-        {
-          model: Regency,
-          as: 'regency',
-          required: false,
-        },
-        {
           attributes: [
             'username',
             'full_name',
@@ -98,7 +72,7 @@ export default class Respository {
               sequelize.literal(`(
                 select name
                 from area_provinces
-                where area_provinces.id = author.area_province_id
+                where area_provinces.id = area_province_id
               )`),
               'province',
             ],
@@ -106,7 +80,7 @@ export default class Respository {
               sequelize.literal(`(
                 select name
                 from area_regencies
-                where area_regencies.id = author.area_regencies_id
+                where area_regencies.id = area_regencies_id
               )`),
               'regency',
             ]

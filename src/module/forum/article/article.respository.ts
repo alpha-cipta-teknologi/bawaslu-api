@@ -70,7 +70,27 @@ export default class Respository {
       ...query,
       include: [
         {
-          attributes: ['username', 'full_name', 'image_foto'],
+          attributes: [
+            'username',
+            'full_name',
+            'image_foto',
+            [
+              sequelize.literal(`(
+                select name
+                from area_provinces
+                where area_provinces.id = author.area_province_id
+              )`),
+              'province',
+            ],
+            [
+              sequelize.literal(`(
+                select name
+                from area_regencies
+                where area_regencies.id = author.area_regencies_id
+              )`),
+              'regency',
+            ]
+          ],
           model: Resource,
           as: 'author',
           required: false,
@@ -168,7 +188,27 @@ export default class Respository {
       ...query,
       include: [
         {
-          attributes: ['username', 'full_name', 'image_foto'],
+          attributes: [
+            'username',
+            'full_name',
+            'image_foto',
+            [
+              sequelize.literal(`(
+                select name
+                from area_provinces
+                where area_provinces.id = author.area_province_id
+              )`),
+              'province',
+            ],
+            [
+              sequelize.literal(`(
+                select name
+                from area_regencies
+                where area_regencies.id = author.area_regencies_id
+              )`),
+              'regency',
+            ]
+          ],
           model: Resource,
           as: 'author',
           required: false,
@@ -244,7 +284,27 @@ export default class Respository {
       },
       include: [
         {
-          attributes: ['username', 'full_name', 'image_foto'],
+          attributes: [
+            'username',
+            'full_name',
+            'image_foto',
+            [
+              sequelize.literal(`(
+                select name
+                from area_provinces
+                where area_provinces.id = author.area_province_id
+              )`),
+              'province',
+            ],
+            [
+              sequelize.literal(`(
+                select name
+                from area_regencies
+                where area_regencies.id = author.area_regencies_id
+              )`),
+              'regency',
+            ]
+          ],
           model: Resource,
           as: 'author',
           required: false,

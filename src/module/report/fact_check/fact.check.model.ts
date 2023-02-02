@@ -2,22 +2,24 @@
 
 import { DataTypes } from 'sequelize';
 import conn from '../../../config/database';
-import Detail from './gallery.detail.model';
 import Resource from '../../app/resource/resource.model';
 
 const Model = conn.sequelize.define(
-  'gallery',
+  'hasil_cek_fakta',
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    folder_name: {
+    judul: {
       type: DataTypes.TEXT,
     },
-    description: {
-      type: DataTypes.TEXT,
+    link_berita: {
+      type: DataTypes.STRING,
+    },
+    path_image: {
+      type: DataTypes.STRING,
     },
     path_thumbnail: {
       type: DataTypes.STRING,
@@ -46,7 +48,6 @@ const Model = conn.sequelize.define(
     freezeTableName: true,
   }
 );
-Model.hasMany(Detail, { as: 'detail', foreignKey: 'gallery_id' });
 Model.belongsTo(Resource, {
   as: 'author',
   targetKey: 'resource_id',

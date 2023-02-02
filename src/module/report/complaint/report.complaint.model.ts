@@ -4,6 +4,7 @@ import { DataTypes } from 'sequelize';
 import conn from '../../../config/database';
 import Regency from '../../area/regencies.model';
 import Province from '../../area/provinces.model';
+import Resource from '../../app/resource/resource.model';
 
 const Model = conn.sequelize.define(
   'laporan_aduan',
@@ -67,6 +68,11 @@ Model.belongsTo(Regency, {
   as: 'regency',
   targetKey: 'id',
   foreignKey: 'area_regencies_id',
+});
+Model.belongsTo(Resource, {
+  as: 'author',
+  targetKey: 'resource_id',
+  foreignKey: 'created_by',
 });
 
 export default Model;

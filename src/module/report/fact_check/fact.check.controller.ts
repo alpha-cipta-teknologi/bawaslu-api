@@ -1,10 +1,11 @@
 'use strict';
 
+import { Op } from 'sequelize';
 import { Request, Response } from 'express';
 import { helper } from '../../../helpers/helper';
+import { variable } from './fact.check.variable';
+import { repository } from './fact.check.respository';
 import { response } from '../../../helpers/response';
-import { variable } from './report.complaint.variable';
-import { repository } from './report.complaint.respository';
 
 const date: string = helper.date();
 
@@ -18,24 +19,26 @@ export default class Controller {
         limit: parseInt(limit),
         offset: parseInt(limit) * (parseInt(offset) - 1),
         keyword: keyword,
-        condition: {},
+        condition: {
+          status: { [Op.ne]: 9 },
+        },
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
       return response.successDetail(
-        'Data report complaint',
+        'Data fact check results',
         { total: count, values: rows },
         res
       );
     } catch (err) {
       return helper.catchError(
-        `report complaint index: ${err?.message}`,
+        `fact check results index: ${err?.message}`,
         500,
         res
       );
     }
   }
 
-  public async history(req: Request, res: Response) {
+  public async indexFE(req: Request, res: Response) {
     try {
       const limit: any = req?.query?.perPage || 10;
       const offset: any = req?.query?.page || 1;
@@ -44,17 +47,17 @@ export default class Controller {
         limit: parseInt(limit),
         offset: parseInt(limit) * (parseInt(offset) - 1),
         keyword: keyword,
-        condition: { created_by: req?.user?.id },
+        condition: { status: 3 },
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
       return response.successDetail(
-        'Data report complaint',
+        'Data fact check results',
         { total: count, values: rows },
         res
       );
     } catch (err) {
       return helper.catchError(
-        `report complaint index: ${err?.message}`,
+        `fact check results index: ${err?.message}`,
         500,
         res
       );
@@ -68,10 +71,10 @@ export default class Controller {
         id: id,
       });
       if (!result) return response.failed('Data not found', 404, res);
-      return response.successDetail('Data report complaint', result, res);
+      return response.successDetail('Data fact check results', result, res);
     } catch (err) {
       return helper.catchError(
-        `report complaint detail: ${err?.message}`,
+        `fact check results detail: ${err?.message}`,
         500,
         res
       );
@@ -80,20 +83,34 @@ export default class Controller {
 
   public async create(req: Request, res: Response) {
     try {
-      const { province_id, regencies_id } = req?.body;
+      let path_image: any = null;
+      let path_thumbnail: any = null;
+      if (req?.files && req?.files?.image) {
+        // resize
+        const { path_doc } = await helper.resize(
+          req?.files?.image,
+          'factcheck',
+          250
+        );
+        path_thumbnail = path_doc;
+
+        // upload original
+        path_image = await helper.upload(req?.files?.image, 'factcheck');
+      }
+
       const data: Object = helper.only(variable.fillable(), req?.body);
       await repository.create({
         payload: {
           ...data,
-          area_province_id: province_id?.value || 0,
-          area_regencies_id: regencies_id?.value || 0,
+          path_thumbnail: path_thumbnail,
+          path_image: path_image,
           created_by: req?.user?.id,
         },
       });
       return response.success(true, 'Data success saved', res);
     } catch (err) {
       return helper.catchError(
-        `report complaint create: ${err?.message}`,
+        `fact check results create: ${err?.message}`,
         500,
         res
       );
@@ -106,15 +123,28 @@ export default class Controller {
       const check = await repository.detail({ id: id });
       if (!check) return response.failed('Data not found', 404, res);
 
-      const { province_id, regencies_id } = req?.body;
+      let path_image: any = null;
+      let path_thumbnail: any = null;
+      if (req?.files && req?.files?.image) {
+        // resize
+        const { path_doc } = await helper.resize(
+          req?.files?.image,
+          'factcheck',
+          250
+        );
+        path_thumbnail = path_doc;
+
+        // upload original
+        path_image = await helper.upload(req?.files?.image, 'factcheck');
+      }
+
       const data: Object = helper.only(variable.fillable(), req?.body, true);
       await repository.update({
         payload: {
           ...data,
-          area_province_id:
-            province_id?.value || check?.getDataValue('area_province_id'),
-          area_regencies_id:
-            regencies_id?.value || check?.getDataValue('area_regencies_id'),
+          path_thumbnail:
+            path_thumbnail || check?.getDataValue('path_thumbnail'),
+          path_image: path_image || check?.getDataValue('path_image'),
           modified_by: req?.user?.id,
         },
         condition: { id: id },
@@ -122,7 +152,7 @@ export default class Controller {
       return response.success(true, 'Data success updated', res);
     } catch (err) {
       return helper.catchError(
-        `report complaint update: ${err?.message}`,
+        `fact check results update: ${err?.message}`,
         500,
         res
       );
@@ -146,11 +176,11 @@ export default class Controller {
       return response.success(true, 'Data success deleted', res);
     } catch (err) {
       return helper.catchError(
-        `report complaint delete: ${err?.message}`,
+        `fact check results delete: ${err?.message}`,
         500,
         res
       );
     }
   }
 }
-export const complaint = new Controller();
+export const factcheck = new Controller();

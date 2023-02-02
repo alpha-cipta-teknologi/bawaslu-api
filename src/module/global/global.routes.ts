@@ -2,8 +2,11 @@
 
 import express from 'express';
 import { global } from './global.controller';
+import { auth } from '../auth/auth.middleware';
 import { content } from '../reff/content/content.controller';
+import { factcheck } from '../report/fact_check/fact.check.controller';
 import { likeComment } from '../forum/like.comment/like.comment.controller';
+import { complaint } from '../report/complaint/report.complaint.controller';
 
 const router = express.Router();
 
@@ -18,5 +21,7 @@ router.get('/fe/comment', likeComment.index);
 router.get('/fe/comment/:id_external/:group', likeComment.detail);
 router.get('/fe/trending-article', global.trendingArticle);
 router.post('/sendmail', global.sendmail);
+router.get('/fe/factcheck', factcheck.indexFE);
+router.get('/fe/history-complaint', auth.checkBearerToken, complaint.history);
 
 export default router;

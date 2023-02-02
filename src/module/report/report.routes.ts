@@ -3,6 +3,7 @@
 import { Router } from 'express';
 import { auth } from '../auth/auth.middleware';
 import { article } from '../report/article/report.article.controller';
+import { factcheck } from '../report/fact_check/fact.check.controller';
 import { complaint } from '../report/complaint/report.complaint.controller';
 
 const router: Router = Router();
@@ -18,5 +19,11 @@ router.get('/complaint/:id', auth.checkBearerToken, complaint.detail);
 router.post('/complaint/', auth.checkBearerToken, complaint.create);
 router.put('/complaint/:id', auth.checkBearerToken, complaint.update);
 router.delete('/complaint/:id', auth.checkBearerToken, complaint.delete);
+
+router.get('/factcheck/', auth.checkBearerToken, factcheck.index);
+router.get('/factcheck/:id', auth.checkBearerToken, factcheck.detail);
+router.post('/factcheck/', auth.checkBearerToken, factcheck.create);
+router.put('/factcheck/:id', auth.checkBearerToken, factcheck.update);
+router.delete('/factcheck/:id', auth.checkBearerToken, factcheck.delete);
 
 export default router;
