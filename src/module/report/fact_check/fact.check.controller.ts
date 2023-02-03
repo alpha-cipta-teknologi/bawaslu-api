@@ -47,7 +47,7 @@ export default class Controller {
         limit: parseInt(limit),
         offset: parseInt(limit) * (parseInt(offset) - 1),
         keyword: keyword,
-        condition: { status: 3 },
+        condition: { status: 1 },
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
       return response.successDetail(
