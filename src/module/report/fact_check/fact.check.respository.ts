@@ -10,6 +10,7 @@ export default class Respository {
       order: [['id', 'DESC']],
       offset: data?.offset,
       limit: data?.limit,
+      where: data?.condition,
     };
     if (data?.keyword !== undefined && data?.keyword != null) {
       query = {
