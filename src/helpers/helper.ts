@@ -170,8 +170,12 @@ export default class Helper {
 
     transporter.sendMail(mailOptions, async (error: any, info: any) => {
       if (error) {
-        await this.sendNotif(`Email error: ${error}`);
         console.warn(`Email error: ${error}`);
+        await telegram.send(
+          CHAT_ID_TELEGRAM,
+          error,
+          Telegram_ParseModes.MarkdownV2
+        );
       } else {
         console.warn(`Email sent: ${info?.response}`);
       }

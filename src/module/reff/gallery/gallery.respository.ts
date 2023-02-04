@@ -8,6 +8,7 @@ import Resource from '../../app/resource/resource.model';
 export default class Respository {
   public list(condition: any) {
     return Model.findAll({
+      order: [['created_date', 'DESC']],
       where: {
         ...condition,
         status: { [Op.ne]: 9 },
@@ -58,7 +59,7 @@ export default class Respository {
     let query: Object = {
       where: data?.condition,
       group: 'gallery.id',
-      order: [['id', 'ASC']],
+      order: [['created_date', 'DESC']],
       offset: data?.offset,
       limit: data?.limit,
     };
