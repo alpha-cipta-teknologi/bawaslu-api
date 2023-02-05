@@ -186,5 +186,77 @@ export default class Controller {
       return helper.catchError(`dashboard: ${err?.message}`, 500, res);
     }
   }
+
+  public async penggunaProvince(req: Request, res: Response) {
+    try {
+      const { q, province, regency, komunitas } = req?.query;
+      const limit: any = req?.query?.perPage || 10;
+      const offset: any = req?.query?.page || 1;
+      let condition: Object = {};
+      if (province) {
+        condition = {
+          ...condition,
+          area_province_id: province,
+        };
+      }
+      const { count, rows } = await repository.penggunaProvince({
+        limit: parseInt(limit),
+        offset: parseInt(limit) * (parseInt(offset) - 1),
+        keyword: q,
+        condition: condition,
+      });
+      if (rows?.length < 1) return response.failed('Data not found', 404, res);
+      return response.successDetail(
+        'Data summary pengguna province',
+        { total: count, values: rows },
+        res
+      );
+    } catch (err) {
+      return helper.catchError(
+        `summary pengguna province: ${err?.message}`,
+        500,
+        res
+      );
+    }
+  }
+
+  public async penggunaProvinceKomunitas(req: Request, res: Response) {
+    try {
+      const { q, province, regency, komunitas } = req?.query;
+      const limit: any = req?.query?.perPage || 10;
+      const offset: any = req?.query?.page || 1;
+      let condition: Object = {};
+      if (province) {
+        condition = {
+          ...condition,
+          area_province_id: province,
+        };
+      }
+      if (komunitas) {
+        condition = {
+          ...condition,
+          komunitas_id: komunitas,
+        };
+      }
+      const { count, rows } = await repository.penggunaProvinceKomunitas({
+        limit: parseInt(limit),
+        offset: parseInt(limit) * (parseInt(offset) - 1),
+        keyword: q,
+        condition: condition,
+      });
+      if (rows?.length < 1) return response.failed('Data not found', 404, res);
+      return response.successDetail(
+        'Data summary province per komunitas',
+        { total: count, values: rows },
+        res
+      );
+    } catch (err) {
+      return helper.catchError(
+        `summary province per komunitas: ${err?.message}`,
+        500,
+        res
+      );
+    }
+  }
 }
 export const summary = new Controller();

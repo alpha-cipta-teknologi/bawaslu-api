@@ -40,5 +40,15 @@ router.get(
   summary.articleKomunitas
 );
 router.get('/summary/dashboard', auth.checkBearerToken, summary.dashboard);
+router.get(
+  '/summary/pengguna-province',
+  auth.checkBearerToken,
+  summary.penggunaProvince
+);
+router.get(
+  '/summary/pengguna-province-komunitas',
+  auth.checkBearerToken,
+  summary.penggunaProvinceKomunitas
+);
 
 export default router;

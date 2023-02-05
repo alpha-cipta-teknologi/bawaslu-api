@@ -23,5 +23,6 @@ router.get('/fe/trending-article', global.trendingArticle);
 router.post('/sendmail', global.sendmail);
 router.get('/fe/factcheck', factcheck.indexFE);
 router.get('/fe/history-complaint', auth.checkBearerToken, complaint.history);
+router.get('/fe/search', global.search);
 
 export default router;

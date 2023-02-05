@@ -7587,15 +7587,15 @@
                 },
                 {
                   "key": "Content-Length",
-                  "value": "527"
+                  "value": "665"
                 },
                 {
                   "key": "ETag",
-                  "value": "W/\"20f-u4gj5RyG5Lvwkg1B+3IhGYyJpec\""
+                  "value": "W/\"299-BF/6C1BY8R7faQhhBVpSmzolbWY\""
                 },
                 {
                   "key": "Date",
-                  "value": "Thu, 02 Feb 2023 04:16:15 GMT"
+                  "value": "Fri, 03 Feb 2023 02:20:14 GMT"
                 },
                 {
                   "key": "Connection",
@@ -7607,7 +7607,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n    \"status\": true,\n    \"message\": \"Data fact check results\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"judul\": \"judul update\",\n                \"link_berita\": \"http://localhost:5005/\",\n                \"path_image\": \"/uploads/factcheck/2023-02/default.png\",\n                \"path_thumbnail\": \"/uploads/factcheck/2023-02/default_250.png\",\n                \"status\": 3,\n                \"created_by\": 1,\n                \"created_date\": \"2023-02-02T04:10:58.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2023-02-02T04:13:56.000Z\",\n                \"author\": {\n                    \"username\": \"adminuser\",\n                    \"full_name\": \"Super Admin\",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN BANDUNG\"\n                }\n            }\n        ]\n    }\n}"
+              "body": "{\n    \"status\": true,\n    \"message\": \"Data fact check results\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"id\": 2,\n                \"judul\": \"Wawancara\",\n                \"link_berita\": \"https://sulbar.tribunnews.com/2023/02/02/bawaslu-sulbar-pantau-langsung-tes-wawancara-calon-anggota-panwaslu-kelurahan-desa\",\n                \"path_image\": \"/uploads/factcheck/2023-02/ScreenShot2023-02-02at15.02.52.png\",\n                \"path_thumbnail\": \"/uploads/factcheck/2023-02/ScreenShot2023-02-02at15_250.png\",\n                \"status\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2023-02-02T08:09:52.000Z\",\n                \"modified_by\": 1,\n                \"modified_date\": \"2023-02-02T08:15:47.000Z\",\n                \"author\": {\n                    \"username\": \"adminuser\",\n                    \"full_name\": \"Super Admin\",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN BANDUNG\"\n                }\n            }\n        ]\n    }\n}"
             }
           ]
         },
@@ -7736,6 +7736,128 @@
               ],
               "cookie": [],
               "body": "{\n    \"status\": true,\n    \"message\": \"Data report complaint\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"id\": 1,\n                \"jenis_aduan\": \"Disinformasi\",\n                \"title\": \"Test\",\n                \"description\": \"<p>Isu</p>\\n\",\n                \"hasil_cek_fakta\": null,\n                \"link_berita\": \"https://news.detik.com/pemilu/d-6543013/nasdem-tunggu-deklarasi-resmi-anies-dari-pks-demokrat\",\n                \"area_province_id\": 0,\n                \"area_regencies_id\": 0,\n                \"status\": 1,\n                \"created_by\": 1,\n                \"created_date\": \"2023-01-31T04:08:00.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"province\": null,\n                \"regency\": null,\n                \"author\": {\n                    \"username\": \"adminuser\",\n                    \"full_name\": \"Super Admin\",\n                    \"image_foto\": null,\n                    \"province\": \"JAWA BARAT\",\n                    \"regency\": \"KABUPATEN BANDUNG\"\n                }\n            }\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Search",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "text"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/fe/search?q=PKD",
+              "host": ["{{url}}"],
+              "path": ["fe", "search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "PKD"
+                },
+                {
+                  "key": "user_id",
+                  "value": "2",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Search",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/fe/search?q=PKD",
+                  "host": ["{{url}}"],
+                  "path": ["fe", "search"],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "PKD"
+                    },
+                    {
+                      "key": "user_id",
+                      "value": "2",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "15105"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"3b01-E1BlpElBHfhVTwt1Wy5gGtlxGhQ\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 05 Feb 2023 17:00:06 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"message\": \"Data search\",\n    \"data\": {\n        \"total\": 270,\n        \"values\": [\n            {\n                \"id\": 577,\n                \"category_name\": null,\n                \"title\": \"PELANTIKAN dan PEMBEKALAN PKD Kec Kebumen\",\n                \"slug\": \"pelantikan-dan-pembekalan-pkd-kec-kebumen\",\n                \"description\": \"<p>Pada hari minggu 5 februari 2023 sejumlah 29 PKD Resmi dilantik. Dari tahapan selama proses perekrutan ada 121 pendaftar dan ada 2 yang dinyatakan tidak lolos ferivikasi administrasi sehingga yang berhak ikut seleksi wawancara sejumlah 119 peserta. Setela lh wawancara terpilihlah sejumalah 29 calon PKD sesuai dengan jumlah kebutuhan di wilayah Kec. Kebumen yakni 5 Kelurahan dan 24 Desa. setelah proses Pelantikan di lanjutkan dengan Pembekelan yang hadir sebagai Narasumber yaitu Camat Kebumen dan Ketua PPK kebumen, hadir pada acara tersebut secara langsung Ketua Bawaslu Kab Kebumen Bpk Arif Supriyanto. S.Sos , dalam sambutanya Ketua Bawaslu berpesan kepada PKD yang baru dilantik agar segera menyesuaikan tugas2nya dan bener2 siap bekerja penuh waktu dan menjalankan tugas dengan se baik2nya juga bener2 menunjukan sikap netralitas sebagai PKD. Acara pelantikan di tutup dengan seremonial Ramah Tamah sekaligus oemberian ucapan selamat oleh ketua Bawaslu,Camat Kebumen, Panwaslucam Kebumen beserta jajaran.</p>\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-02/IMG-20230205-WA0096_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-02/IMG-20230205-WA0096.jpg\",\n                \"status\": 1,\n                \"counter_view\": 6,\n                \"counter_share\": 0,\n                \"counter_like\": 0,\n                \"counter_comment\": 0,\n                \"created_by\": 7566,\n                \"created_date\": \"2023-02-05T15:48:47.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"like\": false,\n                \"author\": {\n                    \"resource_id\": 7566,\n                    \"username\": \"e3k.yumnarobith\",\n                    \"full_name\": \"Eko Teguh Priyatno\",\n                    \"image_foto\": null\n                },\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 577,\n                    \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 576,\n                \"category_name\": null,\n                \"title\": \"PELANTIKAN DAN PEMBEKALAN ANGGOTA PANWASLU DESA SE-KECAMATAN KUWARASAN PEMILU SERENTAK 2024\",\n                \"slug\": \"pelantikan-dan-pembekalan-anggota-panwaslu-desa-se-kecamatan-kuwarasan-pemilu-serentak-2024\",\n                \"description\": \"<p>Pada hari ini Minggu tanggal 5 Februari 2023 bertempat di Hotel Grafika Gombong, Ketua Panwaslu Kecamatan Kuwarasan Bapak Sukron Maksudi, S.Pd.I telah melantik  dan mengambil sumpah/janji jabatan 22 anggota panwaslu desa se-Kecamatan Kuwarasan.</p>\\r\\n<p>Pada acara hari ini hadir Camat Kuwarasan Bapak Bahrun Munawir,S.STP,M,Si ,Anggota Bawaslu Kebumen Koordinasi Divisi Hukum dan Penyelesaian Sengketa Ibu Maesaroh,M.Ag yang memberikan motivasi kepada PKD terpilih, dan Ketua PPK Kecamatan Kuwarasan Ibu Umi Latifah, S.Pd, M.Pd sebagai narasumber yang memberikan materi tentang kelembagaan pemilu dan tahapan penyelenggaraan pemilu 2024.</p>\\r\\n<p>Setelah pelantikan anggota PKD terpilih sudah mulai bertugas dan langsung diberikan bimtek mengenai tahapan pemilu, serta pengawasan pemutakhiran data pemilih yang sebentar lagi akan dilaksanakan.</p>\\r\\n<p>Bimtek merupakan bagian yang sangat penting setelah pelantikan.Hal ini sebagai bekal untuk melaksanakan tugas pengawasan pemilu serentak 2024.Diharapkan PKD terpilih bisa menjaga amanah,menjaga integritas sebagai penyelenggara pemilu serta bersinergi dengan semua stakeholder demi suksesnya pemilu serentak 2024</p>\\r\\n<p>Menjelang akhir acara penyampaian materi pengawasan juga disampaikan anggota Panwaslu Kecamatan Kuwarasan Ibu Robiyati, S.Pd dan Bapak Slamet Muhajir,S.H.I .Acara pelantikan dan pembekalan anggota panwaslu desa se-kecamatan kuwarasan berjalan khidmat dan lancar.</p>\\r\\n<p></p>\\r\\n<p></p>\\r\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-02/IMG-20230205-WA0048_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-02/IMG-20230205-WA0048.jpg\",\n                \"status\": 1,\n                \"counter_view\": 7,\n                \"counter_share\": 0,\n                \"counter_like\": 4,\n                \"counter_comment\": 1,\n                \"created_by\": 22106,\n                \"created_date\": \"2023-02-05T15:47:04.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"like\": false,\n                \"author\": {\n                    \"resource_id\": 22106,\n                    \"username\": \"hasna240892\",\n                    \"full_name\": \"HASNAWATI\",\n                    \"image_foto\": \"/uploads/resource/2023-02/B612_20201210_102039_572.jpg\"\n                },\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 576,\n                    \"tema_name\": \"Pengawasan tahapan Pemilu dan/atau Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 573,\n                \"category_name\": null,\n                \"title\": \"Pelantikan dan pembekalan PKD kec. Bayat kab. Klaten Jateng\",\n                \"slug\": \"pelantikan-dan-pembekalan-pkd-kec-bayat-kab-klaten-jateng\",\n                \"description\": \"<p></p>\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-02/IMG-20230205-WA0061_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-02/IMG-20230205-WA0061.jpg\",\n                \"status\": 1,\n                \"counter_view\": 14,\n                \"counter_share\": 0,\n                \"counter_like\": 1,\n                \"counter_comment\": 0,\n                \"created_by\": 12285,\n                \"created_date\": \"2023-02-05T15:17:06.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"like\": false,\n                \"author\": {\n                    \"resource_id\": 12285,\n                    \"username\": \"bintangfebriyan48\",\n                    \"full_name\": \"Sidik miranto\",\n                    \"image_foto\": \"/uploads/resource/2023-02/Screenshot_2023_0205_113509.jpg\"\n                },\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 573,\n                    \"tema_name\": \"Pencegahan Pelanggaran dan Sengketa Proses Pemilu dan/atau Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 570,\n                \"category_name\": null,\n                \"title\": \"Pelantikan PKD kecamatan lahei barat, kabupaten Barito Utara, provinsi Kalimantan tengah \",\n                \"slug\": \"pelantikan-pkd-kecamatan-lahei-barat-kabupaten-barito-utara-provinsi-kalimantan-tengah-\",\n                \"description\": \"<p></p>\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-02/IMG-20230205-WA0023_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-02/IMG-20230205-WA0023.jpg\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 0,\n                \"counter_comment\": 0,\n                \"created_by\": 22371,\n                \"created_date\": \"2023-02-05T15:15:21.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"like\": false,\n                \"author\": {\n                    \"resource_id\": 22371,\n                    \"username\": \"nyailestarin\",\n                    \"full_name\": \"Nyai lestari \",\n                    \"image_foto\": null\n                },\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 570,\n                    \"tema_name\": \"Pengawasan tahapan Pemilu dan/atau Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 569,\n                \"category_name\": null,\n                \"title\": \"Pelantikan PKD kwc. Bayat kab. klaten Jateng\",\n                \"slug\": \"pelantikan-pkd-kwc-bayat-kab-klaten-jateng\",\n                \"description\": \"<h1></h1>\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-02/IMG-20230205-WA0061_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-02/IMG-20230205-WA0061.jpg\",\n                \"status\": 1,\n                \"counter_view\": 2,\n                \"counter_share\": 0,\n                \"counter_like\": 0,\n                \"counter_comment\": 0,\n                \"created_by\": 12285,\n                \"created_date\": \"2023-02-05T15:12:04.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"like\": false,\n                \"author\": {\n                    \"resource_id\": 12285,\n                    \"username\": \"bintangfebriyan48\",\n                    \"full_name\": \"Sidik miranto\",\n                    \"image_foto\": \"/uploads/resource/2023-02/Screenshot_2023_0205_113509.jpg\"\n                },\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 569,\n                    \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 568,\n                \"category_name\": null,\n                \"title\": \"Jamal Pkd batuah\",\n                \"slug\": \"jamal-pkd-batuah\",\n                \"description\": \"<p>Pelantikan Pengawas kelurahan/desa  kecamatan seranau. Kab. Kota waringin Timur. Kalimatan tengah.&nbsp;</p>\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-02/IMG-20230205-WA0018_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-02/IMG-20230205-WA0018.jpg\",\n                \"status\": 1,\n                \"counter_view\": 2,\n                \"counter_share\": 0,\n                \"counter_like\": 1,\n                \"counter_comment\": 0,\n                \"created_by\": 22336,\n                \"created_date\": \"2023-02-05T15:11:03.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"like\": false,\n                \"author\": {\n                    \"resource_id\": 22336,\n                    \"username\": \"jamalbatuah38\",\n                    \"full_name\": \"JAMAL\",\n                    \"image_foto\": null\n                },\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 568,\n                    \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 567,\n                \"category_name\": null,\n                \"title\": \"SELEKSI TES WAWANCARA CALON PENGAWAS PEMILU KELURAHAN/DESA\",\n                \"slug\": \"seleksi-tes-wawancara-calon-pengawas-pemilu-kelurahandesa\",\n                \"description\": \"<p style=\\\"text-align:left;\\\"><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 14px;font-family: Verdana;\\\">Kordiv SDMO &amp; DatIn (M. Ridwan) : Tahapan rekrutmen badan adhoc Pengawas Kelurahan/Desa (PKD) untuk Pemilu Serentak 2024 saat ini tengah memasuki Tes Wawancara, tahap ini berlangsung sejak tanggal 31 Januari hingga 2 Februari 2023 di Kantor Panwaslu Kecamatan se-Jatinegara Dijelaskan oleh Anggota Bawaslu Kabupaten Tegal, </span><span style=\\\"font-size: 14px;font-family: Verdana;\\\"> </span><span style=\\\"color: black;font-size: 24pt;font-family: Verdana;\\\">Sri Anjarwati, M.Kom</span><span style=\\\"font-size: 14px;font-family: Verdana;\\\"> </span><span style=\\\"color: black;font-size: 24pt;font-family: Verdana;\\\">Kordiv</span><span style=\\\"font-size: 14px;font-family: Verdana;\\\"> </span><span style=\\\"color: black;font-size: 24pt;font-family: Verdana;\\\">Pencegahan, Parmas</span><span style=\\\"font-size: 14px;font-family: Verdana;\\\"> </span><span style=\\\"color: black;font-size: 24pt;font-family: Verdana;\\\">dan</span><span style=\\\"font-size: 14px;font-family: Verdana;\\\"> </span><span style=\\\"color: black;font-size: 24pt;font-family: Verdana;\\\">Humas</span><span style=\\\"font-size: 14px;font-family: Verdana;\\\"> </span><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 14px;font-family: Verdana;\\\"> bahwa tahapan Tes Wawancara merupakan bagian penting dalam proses rekrutmen, melalui tahapan ini Panwaslu Kecamatan akan menggali informasi terkait motivasi, integritas, pengetahuan terhadap penyelenggaraan dan pengawasan tahapan Pemilu serta pengetahuan Calon PKD terhadap isu dan kearifan lokal di wilayahnya.</span></p>\\r\\n<p style=\\\"text-align:left;\\\"><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 14px;font-family: Verdana;\\\">“Pada pelaksanaan Tes Wawancara ini juga akan di klarifikasi terkait rekam jejak dan tanggapan masyarakat terhadap Calon PKD.” Ungkap Anjar, Kamis pagi (1/2/2022).</span></p>\\r\\n<p style=\\\"text-align:left;\\\"><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 14px;font-family: Verdana;\\\">Lebih lanjut kami juga menyampaikan bahwa dalam proses perekrutan calon pengawas kelurahan/desa  ini kami laksankan dengan maksimal, sehingga pada prosesnya di Panwaslu Kecamatan Jatinegara tidak adanya perpanjangan pendaftaran. Perlu diketahui dengan kerja keras kami selaku Ketua dan anggota komisioner lainya penuh semangat dan menjunjung tinggi integritas.</span></p>\\r\\n<p style=\\\"text-align:left;\\\"><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 14px;font-family: Verdana;\\\">Diharapkan melalui serangkaian tahapan mulai seleksi administrasi hingga tes wawancara dapat terpilih calon PKD yang benar-benar berintegritas, professional serta memiliki pengetahuan yang mumpuni untuk mengawal tahapan Pemilu 2024 di wilayahnya masing-masing.</span></p>\\r\\n<p style=\\\"text-align:left;\\\"><span style=\\\"color: rgb(68,68,68);background-color: rgb(255,255,255);font-size: 14px;font-family: Verdana;\\\">Sebagai informasi, Di Kecamatan Jatinegara Tes Wawancara ini diikuti oleh sejumlah 69 peserta dengan rincian 42 laki-laki dan 27 perempuan. Tahap pengumuman terpilih Calon Anggota PKD pada tahapan Pemilu Serentak 2024 ini akan diumumkan pada tanggal 4 Februari 2023 dan dilanjutkan dengan pelantikan serta pembekalan pada hari Senin tanggal 6 Februari 2023. (Kordiv SDM).</span><span style=\\\"font-size: 14px;font-family: Verdana;\\\"> </span></p>\\r\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-02/WhatsAppImage2023-02-01at16_250.jpeg\",\n                \"path_image\": \"/uploads/article/2023-02/WhatsAppImage2023-02-01at16.01.44.jpeg\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 0,\n                \"counter_comment\": 0,\n                \"created_by\": 13317,\n                \"created_date\": \"2023-02-05T15:07:05.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"like\": false,\n                \"author\": {\n                    \"resource_id\": 13317,\n                    \"username\": \"deltabestone4\",\n                    \"full_name\": \"M. Ridwan\",\n                    \"image_foto\": null\n                },\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 567,\n                    \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 566,\n                \"category_name\": null,\n                \"title\": \"Panwaslu Kecamatan Poncowarno Melantik 11 Panwaslu Kel/Desa di JWA\",\n                \"slug\": \"panwaslu-kecamatan-poncowarno-melantik-11-panwaslu-keldesa-di-jwa\",\n                \"description\": \"<p>Pelantikan dan pembekalan PKD Terpilih se-Kecamatan Poncowarno di Depo MK Resto JWA. Dihadiri oleh anggota bawaslu Kabupaten Kebumen Bapak Nasihudin,SHI., MSI Beserta Forkopimcam Kecamatan Poncowarno.</p>\\r\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-02/IMG-20230205-WA0122_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-02/IMG-20230205-WA0122.jpg\",\n                \"status\": 1,\n                \"counter_view\": 9,\n                \"counter_share\": 0,\n                \"counter_like\": 4,\n                \"counter_comment\": 2,\n                \"created_by\": 6191,\n                \"created_date\": \"2023-02-05T15:04:00.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"like\": false,\n                \"author\": {\n                    \"resource_id\": 6191,\n                    \"username\": \"mohamadmadum8\",\n                    \"full_name\": \"Mohamad Madum\",\n                    \"image_foto\": null\n                },\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 566,\n                    \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 565,\n                \"category_name\": null,\n                \"title\": \"Pengawas pemilu kelurahan\",\n                \"slug\": \"pengawas-pemilu-kelurahan\",\n                \"description\": \"<p>PKD</p>\\r\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-02/IMG-20230205-WA0053_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-02/IMG-20230205-WA0053.jpg\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 0,\n                \"counter_comment\": 0,\n                \"created_by\": 21256,\n                \"created_date\": \"2023-02-05T15:00:52.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"like\": false,\n                \"author\": {\n                    \"resource_id\": 21256,\n                    \"username\": \"heri65100\",\n                    \"full_name\": \"Heri purwanto\",\n                    \"image_foto\": null\n                },\n                \"komunitas\": {\n                    \"id\": 4,\n                    \"komunitas_name\": \"Kader Pengawas Partisipatif\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 565,\n                    \"tema_name\": \"Dugaan pelanggaran Pemilu/Pemilihan\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            },\n            {\n                \"id\": 562,\n                \"category_name\": null,\n                \"title\": \"Pelantikan dan Pembekalan PKD sekecamatan Ngusikan Kabupaten Jombang\",\n                \"slug\": \"pelantikan-dan-pembekalan-pkd-sekecamatan-ngusikan-kabupaten-jombang\",\n                \"description\": \"<p>Bertempat di pendopo kecamatan Ngusikan, Kabupaten Jombang Ketua Panwaslu Kecamatan Ngusikan Hendra Septiawan melantik 11 PKD dari 11 Desa yang ada di wilayah Kecamatan Ngusikan Kabupaten Jombang. Setelah pelantikan acara dilanjutkan dengan memberikan pembekalan kepada 11 PKD tentang tugas,wewenang dan kewajiban PKD.</p>\\n\",\n                \"path_thumbnail\": \"/uploads/article/2023-02/IMG-20230205-WA0073_250.jpg\",\n                \"path_image\": \"/uploads/article/2023-02/IMG-20230205-WA0073.jpg\",\n                \"status\": 1,\n                \"counter_view\": 0,\n                \"counter_share\": 0,\n                \"counter_like\": 2,\n                \"counter_comment\": 0,\n                \"created_by\": 3218,\n                \"created_date\": \"2023-02-05T14:51:55.000Z\",\n                \"modified_by\": null,\n                \"modified_date\": null,\n                \"like\": false,\n                \"author\": {\n                    \"resource_id\": 3218,\n                    \"username\": \"hery.sukrisno\",\n                    \"full_name\": \"Dudung Hery Sukrisno\",\n                    \"image_foto\": \"/uploads/resource/2023-02/bc26cfb3-7764-4ae6-b9a6-ed735f2c5bea.jpg\"\n                },\n                \"komunitas\": {\n                    \"id\": 1,\n                    \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                },\n                \"tema\": {\n                    \"id\": 562,\n                    \"tema_name\": \"Penguatan SDM Pengawas Pemilu\",\n                    \"type\": 0,\n                    \"icon_image\": null\n                }\n            }\n        ]\n    }\n}"
             }
           ]
         }
@@ -12202,6 +12324,296 @@
                   ],
                   "cookie": [],
                   "body": "{\n    \"status\": true,\n    \"message\": \"Data dashboard\",\n    \"data\": {\n        \"pengguna\": 1003,\n        \"gallery\": 6,\n        \"article\": 25,\n        \"bawaslu_update\": 2,\n        \"laporan_aduan\": 2,\n        \"laporan_article\": 5\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Pengguna Province",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/summary/pengguna-province?page=1&perPage=10",
+                  "host": ["{{url}}"],
+                  "path": ["report", "summary", "pengguna-province"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": "YOGYAKARTA",
+                      "disabled": true
+                    },
+                    {
+                      "key": "province",
+                      "value": "34",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Pengguna Province",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/summary/pengguna-province?page=1&perPage=10",
+                      "host": ["{{url}}"],
+                      "path": ["report", "summary", "pengguna-province"],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "perPage",
+                          "value": "10"
+                        },
+                        {
+                          "key": "q",
+                          "value": "YOGYAKARTA",
+                          "disabled": true
+                        },
+                        {
+                          "key": "province",
+                          "value": "34",
+                          "disabled": true
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "800"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"320-J5QOuj1OHTqxIDa30SM81o4XNJs\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 05 Feb 2023 15:17:14 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data summary pengguna province\",\n    \"data\": {\n        \"total\": 34,\n        \"values\": [\n            {\n                \"area_province_id\": 11,\n                \"provinces\": \"ACEH\",\n                \"total_pengguna\": 267\n            },\n            {\n                \"area_province_id\": 12,\n                \"provinces\": \"SUMATERA UTARA\",\n                \"total_pengguna\": 852\n            },\n            {\n                \"area_province_id\": 13,\n                \"provinces\": \"SUMATERA BARAT\",\n                \"total_pengguna\": 763\n            },\n            {\n                \"area_province_id\": 14,\n                \"provinces\": \"RIAU\",\n                \"total_pengguna\": 231\n            },\n            {\n                \"area_province_id\": 15,\n                \"provinces\": \"JAMBI\",\n                \"total_pengguna\": 302\n            },\n            {\n                \"area_province_id\": 16,\n                \"provinces\": \"SUMATERA SELATAN\",\n                \"total_pengguna\": 188\n            },\n            {\n                \"area_province_id\": 17,\n                \"provinces\": \"BENGKULU\",\n                \"total_pengguna\": 628\n            },\n            {\n                \"area_province_id\": 18,\n                \"provinces\": \"LAMPUNG\",\n                \"total_pengguna\": 341\n            },\n            {\n                \"area_province_id\": 19,\n                \"provinces\": \"KEPULAUAN BANGKA BELITUNG\",\n                \"total_pengguna\": 198\n            },\n            {\n                \"area_province_id\": 21,\n                \"provinces\": \"KEPULAUAN RIAU\",\n                \"total_pengguna\": 114\n            }\n        ]\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Pengguna Province Komunitas",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/report/summary/pengguna-province-komunitas?page=1&perPage=10&q=YOGYAKARTA&komunitas=1",
+                  "host": ["{{url}}"],
+                  "path": ["report", "summary", "pengguna-province-komunitas"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "perPage",
+                      "value": "10"
+                    },
+                    {
+                      "key": "q",
+                      "value": "YOGYAKARTA"
+                    },
+                    {
+                      "key": "province",
+                      "value": "34",
+                      "disabled": true
+                    },
+                    {
+                      "key": "komunitas",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Pengguna Province Komunitas",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/report/summary/pengguna-province-komunitas?page=1&perPage=10&q=YOGYAKARTA&komunitas=1",
+                      "host": ["{{url}}"],
+                      "path": [
+                        "report",
+                        "summary",
+                        "pengguna-province-komunitas"
+                      ],
+                      "query": [
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "perPage",
+                          "value": "10"
+                        },
+                        {
+                          "key": "q",
+                          "value": "YOGYAKARTA"
+                        },
+                        {
+                          "key": "province",
+                          "value": "34",
+                          "disabled": true
+                        },
+                        {
+                          "key": "komunitas",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Credentials",
+                      "value": "true"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "226"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"e2-wcNodNxA2XwwH39r7r1ujCuJpUc\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sun, 05 Feb 2023 15:18:08 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"status\": true,\n    \"message\": \"Data summary province per komunitas\",\n    \"data\": {\n        \"total\": 1,\n        \"values\": [\n            {\n                \"area_province_id\": 34,\n                \"provinces\": \"DI YOGYAKARTA\",\n                \"komunitas_id\": 1,\n                \"komunitas_name\": \"Jajaran Pengawas Pemilu\",\n                \"total_pengguna\": 203\n            }\n        ]\n    }\n}"
                 }
               ]
             }

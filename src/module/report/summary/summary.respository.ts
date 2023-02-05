@@ -1,11 +1,13 @@
 'use strict';
 
-import { Op, QueryTypes } from 'sequelize';
 import Pengguna from './pengguna.model';
+import { Op, QueryTypes } from 'sequelize';
 import conn from '../../../config/database';
 import ArticleTema from './article.tema.model';
+import PenggunaProvinve from './pengguna.province.model';
 import ArticleKomunitas from './article.komunitas.model';
 import PenggunaKomunitas from './pengguna.komunitas.model';
+import PenggunaProvinveKomunitas from './pengguna.province.komunitas.model';
 
 export default class Respository {
   public pengguna(data: any) {
@@ -110,6 +112,45 @@ export default class Respository {
       `,
       { type: QueryTypes.SELECT }
     );
+  }
+
+  public penggunaProvince(data: any) {
+    let query: Object = {
+      offset: data?.offset,
+      limit: data?.limit,
+      where: data?.condition,
+    };
+    if (data?.keyword !== undefined && data?.keyword != null) {
+      query = {
+        ...query,
+        where: {
+          ...data?.condition,
+          [Op.or]: [{ provinces: { [Op.like]: `%${data?.keyword}%` } }],
+        },
+      };
+    }
+    return PenggunaProvinve.findAndCountAll(query);
+  }
+
+  public penggunaProvinceKomunitas(data: any) {
+    let query: Object = {
+      offset: data?.offset,
+      limit: data?.limit,
+      where: data?.condition,
+    };
+    if (data?.keyword !== undefined && data?.keyword != null) {
+      query = {
+        ...query,
+        where: {
+          ...data?.condition,
+          [Op.or]: [
+            { provinces: { [Op.like]: `%${data?.keyword}%` } },
+            { komunitas_name: { [Op.like]: `%${data?.keyword}%` } },
+          ],
+        },
+      };
+    }
+    return PenggunaProvinveKomunitas.findAndCountAll(query);
   }
 }
 

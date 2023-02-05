@@ -1,8 +1,10 @@
 'use strict';
 
+import { Op } from 'sequelize';
 import { Request, Response } from 'express';
 import { helper } from '../../helpers/helper';
 import { response } from '../../helpers/response';
+import { transformer } from '../global/global.transformer';
 import { repository as RepoMenu } from '../app/menu/menu.respository';
 import { repository as repoGallery } from '../reff/gallery/gallery.respository';
 import { repository as repoArticle } from '../forum/article/article.respository';
@@ -192,6 +194,31 @@ export default class Controller {
       return response.success(true, 'Send email success', res);
     } catch (err) {
       return helper.catchError(`sendmail: ${err?.message}`, 500, res);
+    }
+  }
+
+  public async search(req: Request, res: Response) {
+    try {
+      const limit: any = req?.query?.perPage || 10;
+      const offset: any = req?.query?.page || 1;
+      const keyword: any = req?.query?.q;
+      const user_id: any = req?.query?.user_id;
+      const { result, count } = await repoArticle.search({
+        limit: parseInt(limit),
+        offset: parseInt(limit) * (parseInt(offset) - 1),
+        keyword: keyword,
+        user_id: user_id || 0,
+      });
+      if (result?.length < 1)
+        return response.failed('Data not found', 404, res);
+      const search = transformer.list(result);
+      return response.successDetail(
+        'Data search',
+        { total: count[0]?.total, values: search },
+        res
+      );
+    } catch (err) {
+      return helper.catchError(`search: ${err?.message}`, 500, res);
     }
   }
 }

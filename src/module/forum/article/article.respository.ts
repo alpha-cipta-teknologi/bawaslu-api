@@ -1,9 +1,10 @@
 'use strict';
 
 import Model from './article.model';
-import sequelize, { Op } from 'sequelize';
+import conn from '../../../config/database';
 import Like from '../like.comment/like.model';
 import Tema from '../../reff/tema/tema.model';
+import sequelize, { Op, QueryTypes } from 'sequelize';
 import Resource from '../../app/resource/resource.model';
 import Komunitas from '../../reff/komunitas/komunitas.model';
 
@@ -239,6 +240,106 @@ export default class Respository {
         },
       ],
     });
+  }
+
+  public async search(data: any) {
+    let keyword = '';
+    if (data?.keyword !== undefined && data?.keyword != null) {
+      keyword = ` AND (
+        fa.title LIKE :keyword1
+        OR fa.description LIKE :keyword2
+        OR t.tema_name LIKE :keyword3
+      )`;
+    }
+
+    const result = await conn.sequelize.query(
+      `
+        SELECT
+          fa.id,
+          fa.category_name,
+          fa.title,
+          fa.slug,
+          fa.description,
+          fa.path_thumbnail,
+          fa.path_image,
+          fa.status,
+          fa.counter_view,
+          fa.counter_share,
+          (
+            SELECT COUNT(1)
+            FROM forum_likes
+            WHERE forum_likes.id_external = fa.id
+            AND forum_likes.group_like = 1
+          ) AS counter_like,
+          (
+            SELECT COUNT(1)
+            FROM forum_comment
+            WHERE forum_comment.id_external = fa.id
+            AND forum_comment.group_comment = 1
+            AND forum_comment.status = 1
+          ) AS counter_comment,
+          fa.created_by,
+          fa.created_date,
+          fa.modified_by,
+          fa.modified_date,
+          fa.komunitas_id,
+          fa.tema_id,
+          author.username AS username,
+          author.full_name AS full_name,
+          author.image_foto AS image_foto,
+          k.komunitas_name AS k_komunitas_name,
+          k.type AS k_type,
+          k.icon_image AS k_icon_image,
+          t.tema_name AS t_tema_name,
+          t.type AS t_type,
+          t.icon_image AS t_icon_image,
+          (
+            SELECT COUNT(1)
+            FROM forum_likes AS fl
+            WHERE fl.id_external = fa.id
+            AND fl.group_like = 1
+            AND fl.created_by = ${data?.user_id}
+          ) AS user_like
+        FROM forum_article AS fa 
+        LEFT JOIN app_resource AS author ON author.resource_id = fa.created_by
+        LEFT JOIN content_tema AS t ON fa.tema_id = t.id
+        LEFT JOIN content_komunitas AS k ON fa.komunitas_id = k.id
+        LEFT JOIN forum_likes AS l ON fa.id = l.id_external AND l.group_like = 1
+        WHERE fa.status != 9 ${keyword}
+        GROUP BY fa.id 
+        ORDER BY fa.id DESC 
+        LIMIT :offset, :limit
+      `,
+      {
+        replacements: {
+          keyword1: `%${data?.keyword}%`,
+          keyword2: `%${data?.keyword}%`,
+          keyword3: `%${data?.keyword}%`,
+          offset: data?.offset,
+          limit: data?.limit,
+        },
+        type: QueryTypes.SELECT,
+      }
+    );
+    const count = await conn.sequelize.query(
+      `
+        SELECT COUNT(1) AS total
+        FROM forum_article AS fa 
+        LEFT JOIN app_resource AS author ON author.resource_id = fa.created_by
+        LEFT JOIN content_tema AS t ON fa.tema_id = t.id
+        LEFT JOIN content_komunitas AS k ON fa.komunitas_id = k.id
+        WHERE fa.status != 9 ${keyword}
+      `,
+      {
+        replacements: {
+          keyword1: `%${data?.keyword}%`,
+          keyword2: `%${data?.keyword}%`,
+          keyword3: `%${data?.keyword}%`,
+        },
+        type: QueryTypes.SELECT,
+      }
+    );
+    return { result, count };
   }
 
   public detail(data: any) {
