@@ -155,7 +155,7 @@ export default class Helper {
         pass: configMail?.pass,
       },
       tls: {
-        minVersion: 'TLSv1',
+        minVersion: 'TLSv1.2',
         rejectUnauthorized: false,
       },
       logger: true,
@@ -180,16 +180,6 @@ export default class Helper {
         console.warn(`Email sent: ${info?.response}`);
       }
     });
-    // try {
-    //   const url: string = 'https://dev-api-ckp.sphere154.com/sendmail';
-    //   await axios.post(url, {
-    //     email: [data?.to],
-    //     subject: data?.subject,
-    //     content: data?.content,
-    //   });
-    // } catch (err) {
-    //   await this.sendNotif(`send email: ${err?.message}`);
-    // }
   }
 
   public slug(string: string) {
