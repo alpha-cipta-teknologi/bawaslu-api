@@ -244,12 +244,20 @@ export default class Respository {
 
   public async search(data: any) {
     let keyword = '';
+    let komunitas = '';
+    let tema = '';
     if (data?.keyword !== undefined && data?.keyword != null) {
       keyword = ` AND (
         fa.title LIKE :keyword1
         OR fa.description LIKE :keyword2
         OR t.tema_name LIKE :keyword3
       )`;
+    }
+    if (data?.komunitas_id !== undefined && data?.komunitas_id != null) {
+      komunitas = ` AND fa.komunitas_id = :komunitas`;
+    }
+    if (data?.tema_id !== undefined && data?.tema_id != null) {
+      tema = ` AND fa.tema_id = :tema`;
     }
 
     const result = await conn.sequelize.query(
@@ -305,7 +313,7 @@ export default class Respository {
         LEFT JOIN content_tema AS t ON fa.tema_id = t.id
         LEFT JOIN content_komunitas AS k ON fa.komunitas_id = k.id
         LEFT JOIN forum_likes AS l ON fa.id = l.id_external AND l.group_like = 1
-        WHERE fa.status != 9 ${keyword}
+        WHERE fa.status != 9 ${keyword} ${komunitas} ${tema}
         GROUP BY fa.id 
         ORDER BY fa.id DESC 
         LIMIT :offset, :limit
@@ -317,6 +325,8 @@ export default class Respository {
           keyword3: `%${data?.keyword}%`,
           offset: data?.offset,
           limit: data?.limit,
+          komunitas: data?.komunitas_id,
+          tema: data?.tema_id,
         },
         type: QueryTypes.SELECT,
       }
@@ -328,13 +338,15 @@ export default class Respository {
         LEFT JOIN app_resource AS author ON author.resource_id = fa.created_by
         LEFT JOIN content_tema AS t ON fa.tema_id = t.id
         LEFT JOIN content_komunitas AS k ON fa.komunitas_id = k.id
-        WHERE fa.status != 9 ${keyword}
+        WHERE fa.status != 9 ${keyword} ${komunitas} ${tema}
       `,
       {
         replacements: {
           keyword1: `%${data?.keyword}%`,
           keyword2: `%${data?.keyword}%`,
           keyword3: `%${data?.keyword}%`,
+          komunitas: data?.komunitas_id,
+          tema: data?.tema_id,
         },
         type: QueryTypes.SELECT,
       }

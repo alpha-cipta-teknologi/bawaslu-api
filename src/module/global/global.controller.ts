@@ -199,15 +199,16 @@ export default class Controller {
 
   public async search(req: Request, res: Response) {
     try {
-      const limit: any = req?.query?.perPage || 10;
-      const offset: any = req?.query?.page || 1;
-      const keyword: any = req?.query?.q;
-      const user_id: any = req?.query?.user_id;
+      const { q, user_id, komunitas_id, tema_id, perPage, page } = req?.query;
+      const limit: any = perPage || 10;
+      const offset: any = page || 1;
       const { result, count } = await repoArticle.search({
         limit: parseInt(limit),
         offset: parseInt(limit) * (parseInt(offset) - 1),
-        keyword: keyword,
+        keyword: q,
         user_id: user_id || 0,
+        komunitas_id: komunitas_id,
+        tema_id: tema_id,
       });
       if (result?.length < 1)
         return response.failed('Data not found', 404, res);

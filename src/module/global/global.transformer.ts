@@ -33,7 +33,7 @@ export default class Transformer {
         icon_image: item?.k_icon_image,
       },
       tema: {
-        id: item?.id,
+        id: item?.tema_id,
         tema_name: item?.t_tema_name,
         type: item?.t_type,
         icon_image: item?.t_icon_image,
