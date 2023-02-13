@@ -211,6 +211,8 @@ export default class Controller {
           422,
           res
         );
+      if (!id)
+        return response.failed('id must be a valid value', 422, res);
 
       const check = await repository.checkData(req);
       if (!check) return response.failed('Data not found', 404, res);
