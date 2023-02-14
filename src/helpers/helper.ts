@@ -7,8 +7,10 @@ import axios from 'axios';
 import moment from 'moment';
 import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
-import { Response } from 'express';
 import nodemailer from 'nodemailer';
+import conn from '../config/database';
+import { Op, QueryTypes } from 'sequelize';
+import { Request, Response } from 'express';
 import { response } from '../helpers/response';
 import { onesignal } from '../config/onesignal';
 import SSOLogs from '../module/auth/sso.log.model';
@@ -217,6 +219,67 @@ export default class Helper {
 
   public async SSOLogs(data: any) {
     return SSOLogs.create(data);
+  }
+
+  public condition(req: Request) {
+    const type: any = req?.query?.type;
+    const tema_id: any = req?.query?.tema_id;
+    const komunitas_id: any = req?.query?.komunitas_id;
+    let condition: any = {
+      ...req?.user?.is_public,
+      status: { [Op.ne]: 9 },
+    };
+    if (type && type == 'fe') {
+      condition = {
+        status: 1,
+      };
+    }
+    if (tema_id) {
+      condition = {
+        ...condition,
+        tema_id: tema_id,
+      };
+    }
+    if (komunitas_id) {
+      condition = {
+        ...condition,
+        komunitas_id: komunitas_id,
+      };
+    }
+    return condition;
+  }
+
+  public conditionArea(data: any) {
+    let condition: object = {};
+    if (data?.role_name == 'admin kota') {
+      condition = {
+        area_province_id: data?.province_id,
+        area_regencies_id: data?.regency_id,
+      };
+    } else if (data?.role_name == 'admin provinsi')
+      condition = {
+        area_province_id: data?.province_id,
+      };
+    return condition;
+  }
+
+  public async updateUsia() {
+    try {
+      await conn.sequelize.query(
+        `
+          UPDATE app_resource SET usia = (
+            SELECT timestampdiff(YEAR, ar.date_of_birth, curdate()) AS usia
+            FROM jarimuawasi_kdpp.app_resource ar
+            WHERE ar.resource_id = app_resource.resource_id
+          )
+          WHERE role_id = 3 AND date_of_birth IS NOT NULL AND date_of_birth < curdate()
+        `,
+        { type: QueryTypes.SELECT }
+      );
+      await this.sendNotif('success update usia');
+    } catch (err) {
+      await this.sendNotif(`gagal update usia: ${err?.message}`);
+    }
   }
 }
 

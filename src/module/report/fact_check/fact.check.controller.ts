@@ -15,6 +15,7 @@ export default class Controller {
       const limit: any = req?.query?.perPage || 10;
       const offset: any = req?.query?.page || 1;
       const keyword: any = req?.query?.q;
+      const conditionArea: object = helper.conditionArea(req?.user);
       const { count, rows } = await repository.index({
         limit: parseInt(limit),
         offset: parseInt(limit) * (parseInt(offset) - 1),
@@ -22,6 +23,7 @@ export default class Controller {
         condition: {
           status: { [Op.ne]: 9 },
         },
+        conditionArea: conditionArea,
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
       return response.successDetail(

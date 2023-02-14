@@ -1,10 +1,12 @@
 'use strict';
 
+import { Op } from 'sequelize';
 import { Request, Response } from 'express';
 import { helper } from '../../../helpers/helper';
 import { response } from '../../../helpers/response';
 import { variable } from './report.article.variable';
 import { repository } from './report.article.respository';
+import { repository as repoArticle } from '../../forum/article/article.respository';
 
 const date: string = helper.date();
 
@@ -14,10 +16,12 @@ export default class Controller {
       const limit: any = req?.query?.perPage || 10;
       const offset: any = req?.query?.page || 1;
       const keyword: any = req?.query?.q;
+      const conditionArea: object = helper.conditionArea(req?.user);
       const { count, rows } = await repository.index({
         limit: parseInt(limit),
         offset: parseInt(limit) * (parseInt(offset) - 1),
         keyword: keyword,
+        condition: conditionArea,
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
       return response.successDetail(
@@ -55,11 +59,23 @@ export default class Controller {
     try {
       const { article_id } = req?.body;
       const data: Object = helper.only(variable.fillable(), req?.body);
+      const id: number = article_id?.value;
+      if (!id) return response.failed('Article must be selected', 500, res);
+      const article = await repoArticle.detail({
+        condition: {
+          id: id,
+          status: { [Op.ne]: 9 },
+        },
+        user_id: null,
+      });
+      const author = article?.getDataValue('author');
       await repository.create({
         payload: {
           ...data,
-          article_id: article_id?.value || 0,
+          article_id: id,
           created_by: req?.user?.id,
+          area_province_id: author?.area_province_id || 0,
+          area_regencies_id: author?.area_regencies_id || 0,
         },
       });
       return response.success(true, 'Data success saved', res);

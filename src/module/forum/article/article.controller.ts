@@ -52,46 +52,21 @@ export default class Controller {
       const limit: any = req?.query?.perPage || 10;
       const offset: any = req?.query?.page || 1;
       const keyword: any = req?.query?.q;
-      const type: any = req?.query?.type;
-      const tema_id: any = req?.query?.tema_id;
-      const komunitas_id: any = req?.query?.komunitas_id;
-      let condition: any = {
-        ...req?.user?.is_public,
-        status: { [Op.ne]: 9 },
-      };
-      if (type && type == 'fe') {
-        condition = {
-          status: 1,
-        };
-      }
-      if (tema_id) {
-        condition = {
-          ...condition,
-          tema_id: tema_id,
-        };
-      }
-      if (komunitas_id) {
-        condition = {
-          ...condition,
-          komunitas_id: komunitas_id,
-        };
-      }
+      const condition: object = helper.condition(req);
+      const conditionArea: object = helper.conditionArea(req?.user);
       const { count, rows } = await repository.index({
         limit: parseInt(limit),
         offset: parseInt(limit) * (parseInt(offset) - 1),
         keyword: keyword,
         condition: condition,
         user_id: req?.user?.id || null,
+        conditionArea: conditionArea,
       });
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
       const total: number = count?.length;
-      const article: Array<Object> = rows.map((item: any) => ({
-        ...item?.dataValues,
-        like: item?.like?.length > 0,
-      }));
       return response.successDetail(
         'Data article',
-        { total: total, values: article },
+        { total: total, values: rows },
         res
       );
     } catch (err) {

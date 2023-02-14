@@ -29,6 +29,8 @@ export default class Controller {
       const payload: Object = {
         id: user?.getDataValue('resource_id'),
         username: user?.getDataValue('username'),
+        province_id: user?.getDataValue('area_province_id'),
+        regency_id: user?.getDataValue('area_regencies_id'),
         role_name: role?.getDataValue('role_name'),
         is_sso: 0,
         is_public:
@@ -73,6 +75,8 @@ export default class Controller {
     const payload = {
       id: result?.getDataValue('resource_id'),
       username: result?.getDataValue('username'),
+      province_id: result?.getDataValue('area_province_id'),
+      regency_id: result?.getDataValue('area_regencies_id'),
       role_name: result?.getDataValue('role')?.role_name,
       is_sso: 0,
       is_public:
@@ -264,6 +268,8 @@ export default class Controller {
     const payload: Object = {
       id: user?.getDataValue('resource_id'),
       username: user?.getDataValue('username'),
+      province_id: user?.getDataValue('area_province_id'),
+      regency_id: user?.getDataValue('area_regencies_id'),
       role_name: role?.getDataValue('role_name'),
       is_sso: 1,
       is_public:

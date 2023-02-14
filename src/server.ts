@@ -1,8 +1,10 @@
 'use strict';
 
+import fs from 'fs';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import moment from 'moment';
+import cron from 'node-cron';
 import bodyParser from 'body-parser';
 import express, { Express } from 'express';
 import fileUpload from 'express-fileupload';
@@ -65,6 +67,10 @@ app.use(routes);
   });
   await redis.connect();
 })();
+
+cron.schedule('1 0 * * *', async () => {
+  await helper.updateUsia();
+});
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running on port: ${port}`);

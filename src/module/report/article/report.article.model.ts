@@ -25,6 +25,12 @@ const Model = conn.sequelize.define(
       type: DataTypes.TINYINT,
       defaultValue: 1,
     },
+    area_province_id: {
+      type: DataTypes.INTEGER,
+    },
+    area_regencies_id: {
+      type: DataTypes.INTEGER,
+    },
     created_by: {
       type: DataTypes.INTEGER,
     },

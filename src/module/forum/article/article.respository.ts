@@ -41,6 +41,21 @@ export default class Respository {
             )`),
           'counter_comment',
         ],
+        [
+          sequelize.literal(`(
+            select case 
+              when exists (
+                select 1 
+                from forum_likes 
+                where forum_likes.group_like = 1
+                and forum_likes.id_external = forum_article.id
+                and forum_likes.created_by = ${data?.user_id}
+              ) then 1
+              else 0
+            end
+            )`),
+          'like',
+        ],
         'created_by',
         'created_date',
         'modified_by',
@@ -94,18 +109,10 @@ export default class Respository {
           ],
           model: Resource,
           as: 'author',
-          required: false,
+          required: data?.conditionArea ? true : false,
           where: {
             status: { [Op.ne]: 9 },
-          },
-        },
-        {
-          model: Like,
-          as: 'like',
-          required: false,
-          where: {
-            group_like: 1,
-            created_by: data?.user_id,
+            ...data?.conditionArea,
           },
         },
         {
@@ -401,6 +408,8 @@ export default class Respository {
             'username',
             'full_name',
             'image_foto',
+            'area_province_id',
+            'area_regencies_id',
             [
               sequelize.literal(`(
                 select name

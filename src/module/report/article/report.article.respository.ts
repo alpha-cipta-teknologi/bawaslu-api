@@ -13,11 +13,13 @@ export default class Respository {
       order: [['id', 'DESC']],
       offset: data?.offset,
       limit: data?.limit,
+      where: data?.condition,
     };
     if (data?.keyword !== undefined && data?.keyword != null) {
       query = {
         ...query,
         where: {
+          ...data?.condition,
           status: { [Op.ne]: 9 },
           [Op.or]: [
             { jenis_laporan: { [Op.like]: `%${data?.keyword}%` } },

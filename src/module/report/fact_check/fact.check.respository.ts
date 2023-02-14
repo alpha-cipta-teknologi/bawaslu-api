@@ -48,9 +48,10 @@ export default class Respository {
           ],
           model: Resource,
           as: 'author',
-          required: false,
+          required: data?.conditionArea ? true : false,
           where: {
             status: { [Op.ne]: 9 },
+            ...data?.conditionArea,
           },
         },
       ],
