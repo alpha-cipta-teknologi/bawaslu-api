@@ -249,7 +249,10 @@ export default class Middleware {
       }
 
       const resource = await repository.detail({
-        username: payload?.preferred_username,
+        [Op.or]: [
+          { username: payload?.preferred_username },
+          { email: payload?.email },
+        ]
       });
       if (!resource) return response.failed('Data not found', 404, res);
 
