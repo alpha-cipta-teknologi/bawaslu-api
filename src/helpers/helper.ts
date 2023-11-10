@@ -151,14 +151,12 @@ export default class Helper {
       host: configMail?.host,
       port: configMail?.port,
       secure: true,
-      requireTLS: true,
       auth: {
         user: configMail?.user,
         pass: configMail?.pass,
       },
       tls: {
-        minVersion: 'TLSv1.2',
-        rejectUnauthorized: false,
+        ciphers:'SSLv3',
       },
       logger: true,
     });
