@@ -23,6 +23,8 @@ interface mail {
   user: string;
   pass: string;
   sender: string;
+  secure: boolean;
+  debug: boolean;
 }
 
 dotenv.config();
@@ -35,6 +37,8 @@ const configMail: mail = {
   user: process.env.MAIL_USERNAME || 'fce06934e4832d',
   pass: process.env.MAIL_PASSWORD || '27ceb283c382c4',
   sender: process.env.MAIL_SENDER || 'noreply@bawaslu.go.id',
+  secure: process.env.MAIL_ENCRYPTION == 'ssl' ? true : false,
+  debug: process.env.MAIL_DEBUG == 'true',
 };
 
 export default class Helper {
@@ -147,18 +151,25 @@ export default class Helper {
   }
 
   public async sendEmail(data: Object | any) {
+    let tls = {};
+    if (configMail?.secure) {
+      tls = {
+        tls: {
+          ciphers:'SSLv3',
+        }
+      }
+    }
+
     const transporter = nodemailer.createTransport({
       host: configMail?.host,
       port: configMail?.port,
-      secure: true,
+      secure: configMail?.secure,
       auth: {
         user: configMail?.user,
         pass: configMail?.pass,
       },
-      tls: {
-        ciphers:'SSLv3',
-      },
-      logger: true,
+      logger: configMail?.debug,
+      ...tls,
     });
 
     const mailOptions = {
