@@ -11,6 +11,7 @@ interface Config {
   database: string;
   username: string;
   password: string;
+  debug: boolean;
 }
 
 const cfg: Config = {
@@ -19,6 +20,7 @@ const cfg: Config = {
   database: process.env.DB_NAME || 'jarimuawasi_kdpp',
   username: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD || '',
+  debug: process.env.DB_DEBUG == 'true',
 };
 
 const conn: any = {};
@@ -37,6 +39,7 @@ const sequelize = new Sequelize(cfg?.database, cfg?.username, cfg?.password, {
     acquire: 60000,
     idle: 5000,
   },
+  logging: cfg?.debug ? console.log : false,
 });
 
 conn.sequelize = sequelize;
