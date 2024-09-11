@@ -3,7 +3,6 @@
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
-import axios from 'axios';
 import moment from 'moment';
 import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
@@ -83,6 +82,18 @@ export default class Helper {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
+  public checkExtention(file: File, type: string = 'image') {
+    if (type == 'image' && file?.size > 2048000)
+      return 'file size maksimal *2MB.';
+    const allowedExt: any = {
+      image: ['jpg', 'jpeg', 'png', 'gif'],
+      video: ['mp4', 'webm', 'avi', 'mkv', 'mov', 'flv', 'mts', 'wmv'],
+    };
+    let ext: string = file?.name.split('.').pop() || '-';
+    if (allowedExt[type].includes(ext.toLocaleLowerCase())) return 'allowed';
+    return 'file extension allowed *jpg, jpeg and png.';
+  }
+
   public async upload(file: any, folder: string = '') {
     const upload_path: string = `./public/uploads/${folder}/${month}`;
     if (!fs.existsSync(upload_path)) {
@@ -155,9 +166,9 @@ export default class Helper {
     if (configMail?.secure) {
       tls = {
         tls: {
-          ciphers:'SSLv3',
-        }
-      }
+          ciphers: 'SSLv3',
+        },
+      };
     }
 
     const transporter = nodemailer.createTransport({
@@ -202,28 +213,34 @@ export default class Helper {
 
   public async sendOneSignalCMS(data: any, usernames: Array<string>) {
     const onesignal_app_id: string = process.env.ONESIGNAL_APP_ID_CMS || '';
-    const notification: OneSignal.Notification = new OneSignal.Notification();
-    notification.app_id = onesignal_app_id;
-    notification.included_segments = ['Subscribed Users'];
-    notification.contents = { en: data?.title };
-    notification.web_url = data?.web_url;
-    notification.include_external_user_ids = usernames;
-    const { id } = await onesignal.cms.createNotification(notification);
+    if (onesignal_app_id && onesignal_app_id != '') {
+      const notification: OneSignal.Notification = new OneSignal.Notification();
+      notification.app_id = onesignal_app_id;
+      notification.included_segments = ['Subscribed Users'];
+      notification.contents = { en: data?.title };
+      notification.web_url = data?.web_url;
+      notification.include_external_user_ids = usernames;
+      const { id } = await onesignal.cms.createNotification(notification);
 
-    return await onesignal.cms.getNotification(onesignal_app_id, id);
+      return await onesignal.cms.getNotification(onesignal_app_id, id);
+    }
+    return false;
   }
 
   public async sendOneSignalForum(msg: string, usernames: Array<string>) {
     const onesignal_app_id: string = process.env.ONESIGNAL_APP_ID_FORUM || '';
-    const notification: OneSignal.Notification = new OneSignal.Notification();
-    notification.app_id = onesignal_app_id;
-    notification.included_segments = ['Subscribed Users'];
-    notification.contents = { en: msg };
-    notification.web_url = process.env.BASE_URL_FE || '';
-    notification.include_external_user_ids = usernames;
-    const { id } = await onesignal.forum.createNotification(notification);
+    if (onesignal_app_id && onesignal_app_id != '') {
+      const notification: OneSignal.Notification = new OneSignal.Notification();
+      notification.app_id = onesignal_app_id;
+      notification.included_segments = ['Subscribed Users'];
+      notification.contents = { en: msg };
+      notification.web_url = process.env.BASE_URL_FE || '';
+      notification.include_external_user_ids = usernames;
+      const { id } = await onesignal.forum.createNotification(notification);
 
-    return await onesignal.forum.getNotification(onesignal_app_id, id);
+      return await onesignal.forum.getNotification(onesignal_app_id, id);
+    }
+    return false;
   }
 
   public async SSOLogs(data: any) {

@@ -17,9 +17,7 @@ const base_url_cms: string = process.env.BASE_URL_FE_CMS || '';
 const notif = async (data: any) => {
   const url: string = `${base_url_cms}/article/list`;
 
-  const admins = await repoResource.list({
-    condition: { role_id: { [Op.in]: [1, 2] } },
-  });
+  const admins = await repoResource.admin({});
 
   let insert: Array<Object> = [];
   let usernames: Array<string> = [];
@@ -109,6 +107,8 @@ export default class Controller {
       let path_thumbnail: any = null;
       let path_image: any = null;
       if (req?.files && req?.files?.image) {
+        let checkFile = helper.checkExtention(req?.files?.image);
+        if (checkFile != 'allowed') return response.failed(checkFile, 422, res);
         // resize
         const { path_doc } = await helper.resize(
           req?.files?.image,
@@ -183,6 +183,8 @@ export default class Controller {
       let path_thumbnail: any = null;
       let path_image: any = null;
       if (req?.files && req?.files?.image) {
+        let checkFile = helper.checkExtention(req?.files?.image);
+        if (checkFile != 'allowed') return response.failed(checkFile, 422, res);
         // resize
         const { path_doc } = await helper.resize(
           req?.files?.image,

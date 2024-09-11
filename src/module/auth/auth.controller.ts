@@ -320,14 +320,14 @@ export default class Controller {
 
           axios.defaults.headers.post['Content-Type'] =
             'application/x-www-form-urlencoded';
-          const response = await axios.post(url, payload);
+          const resSSO = await axios.post(url, payload);
           await redis.del(user?.username);
 
           // sso logs
           await helper.SSOLogs({
             url: url,
             request: JSON.stringify(payload),
-            response: JSON.stringify(response?.data),
+            response: JSON.stringify(resSSO?.data),
             created_by: user?.username,
             created_date: date,
           });

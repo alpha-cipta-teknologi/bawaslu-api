@@ -118,6 +118,29 @@ export default class Respository {
     });
   }
 
+  public admin(condition: any) {
+    return Model.findAll({
+      where: {
+        ...condition,
+        status: { [Op.ne]: 'D' },
+      },
+      include: [
+        {
+          model: Role,
+          attributes: ['role_id', 'role_name', 'status'],
+          as: 'role',
+          required: true,
+          where: {
+            [Op.or]: [
+              { role_name: 'administrator' },
+              { role_name: 'admin pusat' },
+            ],
+          },
+        },
+      ],
+    });
+  }
+
   public async create(data: any) {
     return Model.create(data?.payload);
   }

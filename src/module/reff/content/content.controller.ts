@@ -53,6 +53,8 @@ export default class Controller {
       let path_thumbnail: any = null;
       let path_image: any = null;
       if (req?.files && req?.files?.image) {
+        let checkFile = helper.checkExtention(req?.files?.image);
+        if (checkFile != 'allowed') return response.failed(checkFile, 422, res);
         // resize
         const { path_doc } = await helper.resize(
           req?.files?.image,
@@ -67,6 +69,9 @@ export default class Controller {
 
       let path_video: any = null;
       if (req?.files && req?.files?.image) {
+        let checkVideo = helper.checkExtention(req?.files?.video, 'video');
+        if (checkVideo != 'allowed')
+          return response.failed(checkVideo, 422, res);
         path_video = await helper.upload(req?.files?.video, 'content');
       }
 
@@ -95,6 +100,8 @@ export default class Controller {
       let path_thumbnail: any = null;
       let path_image: any = null;
       if (req?.files && req?.files?.image) {
+        let checkFile = helper.checkExtention(req?.files?.image);
+        if (checkFile != 'allowed') return response.failed(checkFile, 422, res);
         // resize
         const { path_doc } = await helper.resize(
           req?.files?.image,
@@ -108,7 +115,11 @@ export default class Controller {
       }
 
       let path_video: any = null;
-      if (req?.files && req?.files?.image) {
+      if (req?.files && req?.files?.video) {
+        let checkVideo = helper.checkExtention(req?.files?.video, 'video');
+        if (checkVideo != 'allowed')
+          return response.failed(checkVideo, 422, res);
+
         path_video = await helper.upload(req?.files?.video, 'content');
       }
 

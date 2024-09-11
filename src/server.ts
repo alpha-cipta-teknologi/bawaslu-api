@@ -1,6 +1,5 @@
 'use strict';
 
-import fs from 'fs';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import moment from 'moment';
@@ -8,6 +7,7 @@ import cron from 'node-cron';
 import bodyParser from 'body-parser';
 import express, { Express } from 'express';
 import fileUpload from 'express-fileupload';
+import { xss } from 'express-xss-sanitizer';
 
 import routes from './routes';
 import redis from './config/redis';
@@ -20,8 +20,8 @@ const port: number = +(process.env.PORT || 5000);
 const day: string = moment().format('YYYY-MM-DD');
 
 dotenv.config();
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(
   fileUpload({
@@ -29,6 +29,7 @@ app.use(
     tempFileDir: `./tmp/${day}/`,
   })
 );
+app.use(xss());
 
 const options: cors.CorsOptions = {
   allowedHeaders: [

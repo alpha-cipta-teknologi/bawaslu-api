@@ -25,6 +25,9 @@ const insertDetails = async (req: Request, gallery_id: number) => {
     let insert: Array<Object> = [];
     if (images?.length > 0) {
       for (let i in images) {
+        let checkFile = helper.checkExtention(images[i]);
+        if (checkFile != 'allowed') return checkFile;
+
         const path_image = await helper.upload(images[i], 'gallery');
         insert.push({
           gallery_id: gallery_id,
@@ -34,6 +37,9 @@ const insertDetails = async (req: Request, gallery_id: number) => {
         });
       }
     } else {
+      let checkFile = helper.checkExtention(images);
+      if (checkFile != 'allowed') return checkFile;
+
       const path_image = await helper.upload(images, 'gallery');
       insert.push({
         gallery_id: gallery_id,

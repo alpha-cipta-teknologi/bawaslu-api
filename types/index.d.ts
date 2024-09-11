@@ -4,3 +4,4 @@ declare namespace Express {
     files?: any;
   }
 }
+declare module 'express-xss-sanitizer';

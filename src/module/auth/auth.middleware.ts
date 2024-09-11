@@ -3,6 +3,7 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
 import moment from 'moment';
+import fetch from 'node-fetch';
 import { Op } from 'sequelize';
 import redis from '../../config/redis';
 import { helper } from '../../helpers/helper';
@@ -126,7 +127,12 @@ export default class Middleware {
         const token_sso: any = JSON.parse(getRedisUser);
         if (token_sso != 0) {
           if (moment().diff(moment(token_sso?.duration)) >= 0) {
-            return await tokenValidationSSO(auth?.username, token_sso, res, next);
+            return await tokenValidationSSO(
+              auth?.username,
+              token_sso,
+              res,
+              next
+            );
           } else {
             next();
             return;
@@ -205,6 +211,33 @@ export default class Middleware {
     }
   }
 
+  public async recaptcha(req: Request, res: Response, next: NextFunction) {
+    try {
+      if (process.env.RECAPTCHA_STATUS == 'true') {
+        let secret_key: string = process.env.RECAPTCHA_SECRET_KEY || '';
+        let url: string = `https://www.google.com/recaptcha/api/siteverify`;
+
+        const result: any = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams({
+            secret: secret_key,
+            response: req?.body?.captcha,
+          }),
+        }).then((res) => res.json());
+
+        const { success } = result;
+        if (!success)
+          return response.failed('recaptcha verification failed', 422, res);
+      }
+      next();
+    } catch (err) {
+      return helper.catchError(`recaptcha: ${err?.message}`, 400, res);
+    }
+  }
+
   public async checkVerify(
     req: RequestBody<UserBody>,
     res: Response,
@@ -257,7 +290,7 @@ export default class Middleware {
         [Op.or]: [
           { username: payload?.preferred_username },
           { email: payload?.email },
-        ]
+        ],
       });
       if (!resource) return response.failed('Data not found', 404, res);
 

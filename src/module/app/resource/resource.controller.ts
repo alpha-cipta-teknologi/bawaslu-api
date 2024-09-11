@@ -113,6 +113,9 @@ export default class Controller {
       if (req?.body?.komunitas_id)
         komunitas_id = JSON.parse(req?.body?.komunitas_id);
       if (req?.files && req?.files.image_foto) {
+        let checkFile = helper.checkExtention(req?.files?.image_foto);
+        if (checkFile != 'allowed') return response.failed(checkFile, 422, res);
+
         image_foto = await helper.upload(req?.files.image_foto, 'resource');
       }
 
@@ -176,6 +179,9 @@ export default class Controller {
       if (req?.body?.komunitas_id)
         komunitas_id = JSON.parse(req?.body?.komunitas_id);
       if (req?.files && req?.files.image_foto) {
+        let checkFile = helper.checkExtention(req?.files?.image_foto);
+        if (checkFile != 'allowed') return response.failed(checkFile, 422, res);
+
         image_foto = await helper.upload(req?.files.image_foto, 'resource');
       }
 
