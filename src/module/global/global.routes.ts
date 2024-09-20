@@ -20,9 +20,10 @@ router.get('/fe/bawaslu-update/:slug', global.bwuDetail);
 router.get('/fe/comment', likeComment.index);
 router.get('/fe/comment/:id_external/:group', likeComment.detail);
 router.get('/fe/trending-article', global.trendingArticle);
-router.post('/sendmail', global.sendmail);
 router.get('/fe/factcheck', factcheck.indexFE);
-router.get('/fe/history-complaint', auth.checkBearerToken, complaint.history);
 router.get('/fe/search', global.search);
+router.get('/fe/history-complaint', auth.checkBearerToken, complaint.history);
+router.get('/fe/antihoax/search', global.antihoaxSearch);
+router.post('/sendmail', global.sendmail);
 
 export default router;

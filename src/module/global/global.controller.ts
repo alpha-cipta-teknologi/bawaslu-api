@@ -1,5 +1,7 @@
 'use strict';
 
+import axios from 'axios';
+import dotenv from 'dotenv';
 import { Request, Response } from 'express';
 import { helper } from '../../helpers/helper';
 import { response } from '../../helpers/response';
@@ -8,6 +10,8 @@ import { repository as RepoMenu } from '../app/menu/menu.respository';
 import { repository as repoGallery } from '../reff/gallery/gallery.respository';
 import { repository as repoArticle } from '../forum/article/article.respository';
 import { repository as repoBWU } from '../forum/bawaslu.update/bawaslu.update.respository';
+
+dotenv.config();
 
 const nestedChildren = (data: any, parent: number = 0) => {
   let result: Array<object> = [];
@@ -215,6 +219,45 @@ export default class Controller {
       return response.successDetail(
         'Data search',
         { total: count[0]?.total, values: search },
+        res
+      );
+    } catch (err) {
+      return helper.catchError(`search: ${err?.message}`, 500, res);
+    }
+  }
+
+  public async antihoaxSearch(req: Request, res: Response) {
+    const apiUrl = process.env.MAFINDO_API_URL;
+    const limit: any = req?.query?.perPage || 10;
+    const keyword: any = req?.query?.keyword;
+
+    if (!keyword) return response.failed('keyword is a required', 422, res);
+
+    try {
+      let payload = {
+        key: process.env.MAFINDO_API_KEY,
+        method: 'content',
+        value: keyword,
+      };
+      let headers = {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      };
+
+      const result = await axios.post(
+        `${apiUrl}/antihoax/search`,
+        { ...payload, limit: limit },
+        headers
+      );
+      const total = await axios.post(
+        `${apiUrl}/antihoax/search`,
+        { ...payload, total: 1 },
+        headers
+      );
+      return response.successDetail(
+        'data antihoax',
+        { total: total?.data, values: result?.data },
         res
       );
     } catch (err) {
