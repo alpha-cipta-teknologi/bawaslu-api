@@ -309,6 +309,22 @@ export default class Middleware {
       return response.failed(`check sso token: ${err?.message}`, 404, res);
     }
   }
+
+  public async checkToken(req: Request, res: Response, next: NextFunction) {
+    const authorization: string = req?.headers['authorization'] || '';
+    const token: string = await helperauth.decodeBearerToken(authorization);
+
+    try {
+      const auth: any = helperauth.decodeToken(token);
+      req.user = auth;
+
+      next();
+      return;
+    } catch (err) {
+      req.user = null;
+      next();
+    }
+  }
 }
 
 export const auth = new Middleware();

@@ -7,6 +7,7 @@ import { content } from './content/content.controller';
 import { gallery } from './gallery/gallery.controller';
 import { category } from './category/category.controller';
 import { komunitas } from './komunitas/komunitas.controller';
+import { kerjasama } from '../jari.hubal/bentuk/kerjasama.controller';
 
 const router: Router = Router();
 
@@ -37,5 +38,11 @@ router.get('/komunitas/', auth.checkBearerToken, komunitas.index);
 router.post('/komunitas/', auth.checkBearerToken, komunitas.create);
 router.put('/komunitas/:id', auth.checkBearerToken, komunitas.update);
 router.delete('/komunitas/:id', auth.checkBearerToken, komunitas.delete);
+
+router.get('/bentuk-kerjasama/all-data', kerjasama.list);
+router.get('/bentuk-kerjasama/', auth.checkBearerToken, kerjasama.index);
+router.post('/bentuk-kerjasama/', auth.checkBearerToken, kerjasama.create);
+router.put('/bentuk-kerjasama/:id', auth.checkBearerToken, kerjasama.update);
+router.delete('/bentuk-kerjasama/:id', auth.checkBearerToken, kerjasama.delete);
 
 export default router;

@@ -45,6 +45,10 @@ export default class Helper {
     return moment().locale('id').format('YYYY-MM-DD HH:mm:ss');
   }
 
+  public dateForNumber() {
+    return moment().locale('id').format('DDMMYYYY');
+  }
+
   public only(keys: Array<string>, data: any, isUpdate: boolean = false) {
     const date = moment().locale('id').format('YYYY-MM-DD HH:mm:ss');
     let result: any = {};
@@ -88,10 +92,11 @@ export default class Helper {
     const allowedExt: any = {
       image: ['jpg', 'jpeg', 'png', 'gif'],
       video: ['mp4', 'webm', 'avi', 'mkv', 'mov', 'flv', 'mts', 'wmv'],
+      file: ['pdf', 'txt', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx'],
     };
     let ext: string = file?.name.split('.').pop() || '-';
     if (allowedExt[type].includes(ext.toLocaleLowerCase())) return 'allowed';
-    return 'file extension allowed *jpg, jpeg and png.';
+    return `file extension allowed *${allowedExt[type]?.join(', ')}.`;
   }
 
   public async upload(file: any, folder: string = '') {

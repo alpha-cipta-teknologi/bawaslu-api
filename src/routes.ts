@@ -10,6 +10,7 @@ import forum from './module/forum/forum.routes';
 import notif from './module/notif/notif.routes';
 import global from './module/global/global.routes';
 import report from './module/report/report.routes';
+import form from './module/jari.hubal/form.routes';
 
 const router: Router = Router();
 
@@ -18,6 +19,7 @@ router.use('/auth', auth);
 router.use('/app', apps);
 router.use('/area', area);
 router.use('/reff', reff);
+router.use('/form', form);
 router.use('/forum', forum);
 router.use('/notif', notif);
 router.use('/report', report);

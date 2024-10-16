@@ -8,7 +8,7 @@ export default class Transformer {
     let result: Array<object> = [];
     for (let i in data) {
       const role_menu: any = await repository.detailRole({
-        role_id: data[i]?.role_id,
+        role_id: data[i]?.dataValues?.role_id,
       });
       let ability: Array<object> = [];
       if (role_menu?.dataValues?.menu?.length > 0) {
@@ -30,7 +30,7 @@ export default class Transformer {
       }
 
       const resource: any = {
-        ...data[i],
+        ...data[i]?.dataValues,
         ability: ability,
       };
       delete resource?.password;
