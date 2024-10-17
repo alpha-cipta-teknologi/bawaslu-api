@@ -213,7 +213,8 @@ export default class Middleware {
 
   public async recaptcha(req: Request, res: Response, next: NextFunction) {
     try {
-      if (process.env.RECAPTCHA_STATUS == 'true') {
+      const origin: string = req?.headers['origin'] || '';
+      if (process.env.RECAPTCHA_STATUS == 'true' && !origin.includes('cms')) {
         let secret_key: string = process.env.RECAPTCHA_SECRET_KEY || '';
         let url: string = `https://www.google.com/recaptcha/api/siteverify`;
 
