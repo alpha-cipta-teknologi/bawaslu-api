@@ -1,5 +1,6 @@
 'use strict';
 
+import { Op } from 'sequelize';
 import { Request, Response } from 'express';
 import { helper } from '../../../helpers/helper';
 import { variable } from './param.global.variable';
@@ -40,6 +41,23 @@ export default class Controller {
       );
     } catch (err) {
       return helper.catchError(`param global index: ${err?.message}`, 500, res);
+    }
+  }
+
+  public async detail(req: Request, res: Response) {
+    try {
+      const key = req.query.key || '';
+      const result: Object | any = await repository.detail({
+        param_key: { [Op.like]: `%${key}%` },
+      });
+      if (!result) return response.failed('Data not found', 404, res);
+      return response.successDetail('Data param global', result, res);
+    } catch (err) {
+      return helper.catchError(
+        `param global detail: ${err?.message}`,
+        500,
+        res
+      );
     }
   }
 

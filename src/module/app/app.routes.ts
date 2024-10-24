@@ -28,6 +28,7 @@ router.post('/role-menu', auth.checkBearerToken, roleMenu.create);
 
 router.get('/param-global/all-data', auth.checkBearerToken, paramGlobal.list);
 router.get('/param-global', auth.checkBearerToken, paramGlobal.index);
+router.get('/param-global/detail', auth.checkBearerToken, paramGlobal.detail);
 router.post('/param-global', auth.checkBearerToken, paramGlobal.create);
 router.put('/param-global/:id', auth.checkBearerToken, paramGlobal.update);
 router.delete('/param-global/:id', auth.checkBearerToken, paramGlobal.delete);
