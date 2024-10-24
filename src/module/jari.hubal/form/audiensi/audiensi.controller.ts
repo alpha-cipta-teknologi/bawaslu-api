@@ -9,6 +9,7 @@ import { helper } from '../../../../helpers/helper';
 import { transformer } from './audiensi.transformer';
 import { response } from '../../../../helpers/response';
 import { repository as repoForm } from '../form.repository';
+import { auth as authController } from '../../../auth/auth.controller';
 
 dotenv.config();
 const date: string = helper.date();
@@ -103,6 +104,13 @@ export default class Controller {
 
   public async create(req: Request, res: Response) {
     try {
+      const { otp, pic_email } = req?.body;
+      const { status, message } = await authController.verifyOtpSubmit(
+        otp,
+        pic_email
+      );
+      if (!status) return response.failed(message, 400, res);
+
       let noRegister: string = `${helper.dateForNumber()}|audiensi|insert_id`;
       let regency_id: any = null;
       let province_id: any = null;
@@ -146,12 +154,12 @@ export default class Controller {
       });
 
       await helper.sendEmail({
-        to: req?.body?.email,
+        to: req?.body?.pic_email,
         subject: 'Pengajuan Audiensi',
         content: `
           <h3>Hi ${req?.body?.pic_name},</h3>
           <p>Pengajuan berhasil, berikut nomor pendaftaran untuk pelacakan status pengajuan:</p>
-          ${noRegister}
+          <h3>${noRegister}</h3>
         `,
       });
 
@@ -163,6 +171,13 @@ export default class Controller {
 
   public async update(req: Request, res: Response) {
     try {
+      const { otp, pic_email } = req?.body;
+      const { status, message } = await authController.verifyOtpSubmit(
+        otp,
+        pic_email
+      );
+      if (!status) return response.failed(message, 400, res);
+
       const id: any = req.params.id || 0;
       const check = await repository.check({ id: id });
       if (!check) return response.failed('Data not found', 404, res);

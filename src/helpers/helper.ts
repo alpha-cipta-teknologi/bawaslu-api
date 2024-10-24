@@ -49,6 +49,17 @@ export default class Helper {
     return moment().locale('id').format('DDMMYYYY');
   }
 
+  public dateAdd(num: number, type: any) {
+    return moment().add(num, type).locale('id').format('YYYY-MM-DD HH:mm:ss');
+  }
+
+  public dateSubtract(num: number, type: any) {
+    return moment()
+      .subtract(num, type)
+      .locale('id')
+      .format('YYYY-MM-DD HH:mm:ss');
+  }
+
   public only(keys: Array<string>, data: any, isUpdate: boolean = false) {
     const date = moment().locale('id').format('YYYY-MM-DD HH:mm:ss');
     let result: any = {};
@@ -311,6 +322,11 @@ export default class Helper {
     } catch (err) {
       await this.sendNotif(`gagal update usia: ${err?.message}`);
     }
+  }
+
+  public validateEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   }
 }
 

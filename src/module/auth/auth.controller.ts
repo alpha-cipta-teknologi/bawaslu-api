@@ -2,12 +2,14 @@
 
 import axios from 'axios';
 import dotenv from 'dotenv';
+import moment from 'moment';
 import { Op } from 'sequelize';
 import redis from '../../config/redis';
 import { Request, Response } from 'express';
 import { helper } from '../../helpers/helper';
 import { response } from '../../helpers/response';
 import { helperauth } from '../../helpers/auth.helper';
+import { repository as repoOtp } from './otp.repository';
 import { variable } from '../app/resource/resource.variable';
 import { repository } from '../app/resource/resource.repository';
 import { transformer } from '../app/resource/resource.transformer';
@@ -337,6 +339,104 @@ export default class Controller {
     } catch (err) {
       return helper.catchError(`logout: ${err?.message}`, 500, res);
     }
+  }
+
+  public async otp(req: Request, res: Response) {
+    try {
+      const date = helper.date();
+      const { email } = req?.body;
+
+      if (!email) return response.failed('Email is required', 422, res);
+      if (!helper.validateEmail(email))
+        return response.failed('Invalid email format', 400, res);
+
+      const code = helper.random(1000, 9999);
+      const expired = helper.dateAdd(3, 'minutes');
+      const check = await repoOtp.detail({ email: email });
+
+      if (check) {
+        await repoOtp.update({
+          payload: {
+            code: code,
+            expired: expired,
+            modified_date: date,
+          },
+          condition: { email: email },
+        });
+      } else {
+        await repoOtp.create({
+          payload: {
+            email: email,
+            code: code,
+            expired: expired,
+            created_date: date,
+          },
+        });
+      }
+
+      await helper.sendEmail({
+        to: email,
+        subject: 'OTP Email - Bawaslu (jarimuawasipemilu.bawaslu.go.id)',
+        content: `
+          <h3>Hi ${email.split('@')[0]},</h3>
+          <p>Gunakan kode OTP di bawah ini untuk pengajuan Anda:</p>
+          <h1>${code}</h1>
+          <p>Kode ini berlaku selama 3 menit.</p>
+          <p>Demi keamanan, jangan berikan kode ini kepada siapa pun!</p>
+        `,
+      });
+
+      return response.success(true, 'send otp success', res);
+    } catch (err) {
+      return helper.catchError(`send otp: ${err?.message}`, 500, res);
+    }
+  }
+
+  public async verifyOtp(req: Request, res: Response) {
+    try {
+      let status = 1;
+      const date = helper.date();
+      const { otp, email } = req?.body;
+
+      if (!otp) return response.failed('Code OTP is required', 422, res);
+
+      const check = await repoOtp.detail({ code: otp, email: email });
+      if (!check) return response.failed('Data not found', 404, res);
+
+      const now = moment();
+      const expired = moment(check?.getDataValue('expired'));
+      if (expired.isBefore(now)) status = 3;
+
+      await repoOtp.update({
+        payload: {
+          status: status,
+          modified_date: date,
+        },
+        condition: { code: otp },
+      });
+
+      if (status == 3) return response.failed('Code OTP expired', 400, res);
+      return response.success(true, 'verify otp success', res);
+    } catch (err) {
+      return helper.catchError(`send otp: ${err?.message}`, 500, res);
+    }
+  }
+
+  public async verifyOtpSubmit(otp: number, email: string) {
+    if (!otp) return { status: false, message: 'Code OTP is required' };
+
+    const check = await repoOtp.detail({ code: otp, email: email });
+    if (!check) return { status: false, message: 'Code OTP not found' };
+
+    if (check?.getDataValue('status') != 1) {
+      const now = moment();
+      const expired = moment(check?.getDataValue('expired'));
+      if (expired.isBefore(now))
+        return { status: false, message: 'Code OTP expired' };
+      return { status: false, message: 'Code OTP need verify' };
+    }
+
+    return { status: true, message: 'success' };
   }
 }
 
