@@ -213,8 +213,20 @@ export default class Middleware {
 
   public async recaptcha(req: Request, res: Response, next: NextFunction) {
     try {
+      let recpatcha: boolean = false;
       const origin: string = req?.headers['origin'] || '';
-      if (process.env.RECAPTCHA_STATUS == 'true' && !origin.includes('cms')) {
+
+      if (process.env.RECAPTCHA_CMS_STATUS == 'true' && origin.includes('cms'))
+        recpatcha = true;
+      else if (
+        process.env.RECAPTCHA_STATUS == 'true' &&
+        !origin.includes('cms')
+      )
+        recpatcha = true;
+
+      console.warn(origin, recpatcha)
+
+      if (recpatcha) {
         let secret_key: string = process.env.RECAPTCHA_SECRET_KEY || '';
         let url: string = `https://www.google.com/recaptcha/api/siteverify`;
 
