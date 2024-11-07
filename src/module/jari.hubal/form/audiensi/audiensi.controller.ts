@@ -193,13 +193,6 @@ export default class Controller {
 
   public async update(req: Request, res: Response) {
     try {
-      const { otp, pic_email } = req?.body;
-      const { status, message } = await authController.verifyOtpSubmit(
-        otp,
-        pic_email
-      );
-      if (!status) return response.failed(message, 400, res);
-
       const id: any = req.params.id || 0;
       const check = await repository.check({ id: id });
       if (!check) return response.failed('Data not found', 404, res);
