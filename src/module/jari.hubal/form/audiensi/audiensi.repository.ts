@@ -7,6 +7,36 @@ import Regency from '../../../area/regencies.model';
 import Province from '../../../area/provinces.model';
 
 export default class Respository {
+  public list(data: any, condition: any) {
+    return Model.findAll({
+      where: {
+        ...condition,
+        [Op.or]: [
+          { no_register: { [Op.like]: `%${data?.keyword}%` } },
+          { nama_lembaga: { [Op.like]: `%${data?.keyword}%` } },
+          { pic_name: { [Op.like]: `%${data?.keyword}%` } },
+          { pic_email: { [Op.like]: `%${data?.keyword}%` } },
+          { perihal_audiensi: { [Op.like]: `%${data?.keyword}%` } },
+        ],
+      },
+      order: [['id', 'DESC']],
+      include: [
+        {
+          model: Province,
+          attributes: ['id', 'name'],
+          as: 'province',
+          required: false,
+        },
+        {
+          model: Regency,
+          attributes: ['id', 'name', 'area_province_id'],
+          as: 'regency',
+          required: false,
+        },
+      ],
+    });
+  }
+
   public index(data: any, condition: any) {
     let query: Object = {
       where: {

@@ -90,6 +90,28 @@ export default class Controller {
     }
   }
 
+  public async indexApprove(req: Request, res: Response) {
+    try {
+      const keyword: any = req?.query?.q;
+      const conditionArea: object = helper.conditionArea(req?.user);
+      const result = await repository.list(
+        {
+          keyword: keyword,
+        },
+        {
+          ...conditionArea,
+          status: 5,
+        }
+      );
+      if (result?.length < 1)
+        return response.failed('Data not found', 404, res);
+      const audiensi = await transformer.list(result);
+      return response.successDetail('Data audiensi', audiensi, res);
+    } catch (err) {
+      return helper.catchError(`audiensi index: ${err?.message}`, 500, res);
+    }
+  }
+
   public async detail(req: Request, res: Response) {
     try {
       const id: any = req.params.id || 0;

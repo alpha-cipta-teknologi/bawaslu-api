@@ -224,8 +224,6 @@ export default class Middleware {
       )
         recpatcha = true;
 
-      console.warn(origin, recpatcha)
-
       if (recpatcha) {
         let secret_key: string = process.env.RECAPTCHA_SECRET_KEY || '';
         let url: string = `https://www.google.com/recaptcha/api/siteverify`;

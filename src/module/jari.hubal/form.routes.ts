@@ -9,6 +9,7 @@ import { kerjasama } from '../jari.hubal/form/kerjasama/kerjasama.controller';
 const router: Router = Router();
 
 router.get('/audiensi/', auth.checkToken, audiensi.index);
+router.get('/audiensi/approve', auth.checkToken, audiensi.indexApprove);
 router.get('/audiensi/:id', auth.checkToken, audiensi.detail);
 router.post('/audiensi/', auth.checkToken, audiensi.create);
 router.put('/audiensi/status/:id', auth.checkToken, audiensi.updateStatus);
