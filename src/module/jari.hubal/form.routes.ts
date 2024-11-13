@@ -24,5 +24,6 @@ router.put('/kerjasama/:id', auth.checkToken, kerjasama.update);
 router.delete('/kerjasama/:id', auth.checkToken, kerjasama.delete);
 
 router.post('/lacak-pengajuan', auth.checkToken, form.lacak);
+router.get('/pengajuan/mou', auth.checkToken, form.index);
 
 export default router;

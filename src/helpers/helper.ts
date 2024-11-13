@@ -2,10 +2,12 @@
 
 import fs from 'fs';
 import path from 'path';
+import axios from 'axios';
 import sharp from 'sharp';
 import moment from 'moment';
 import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
+import FormData from 'form-data';
 import nodemailer from 'nodemailer';
 import conn from '../config/database';
 import { Op, QueryTypes } from 'sequelize';
@@ -177,6 +179,37 @@ export default class Helper {
     return response.failed(message, code, res);
   }
 
+  public async sendEmailServer(data: Object | any) {
+    try {
+      const formData = new FormData();
+      formData.append('email', data?.to);
+      formData.append('subject', data?.subject);
+      formData.append('content', data?.html);
+
+      if (data?.attachments && data?.attachments?.length > 0) {
+        data?.attachments.forEach((file: any) => {
+          formData.append(
+            `attachs`,
+            fs.createReadStream(file?.path),
+            file?.filename
+          );
+        });
+      }
+
+      const res = await axios.post(
+        `${process.env.MAIL_SERVER_URL}/sendmail`,
+        formData,
+        {
+          headers: {
+            ...formData.getHeaders(),
+          },
+        }
+      );
+    } catch (err) {
+      await this.sendNotif(`sendmail server: ${err?.message}`);
+    }
+  }
+
   public async sendEmail(data: Object | any) {
     let tls = {};
     if (configMail?.secure) {
@@ -185,6 +218,29 @@ export default class Helper {
           ciphers: 'SSLv3',
         },
       };
+    }
+
+    let mailOptions: any;
+    if (data?.attachments && data?.attachments?.length > 0) {
+      mailOptions = {
+        from: configMail?.sender,
+        to: data?.to,
+        subject: data?.subject,
+        html: data?.content,
+        attachments: data?.attachments,
+      };
+    } else {
+      mailOptions = {
+        from: configMail?.sender,
+        to: data?.to,
+        subject: data?.subject,
+        html: data?.content,
+      };
+    }
+
+    if (process.env.MAIL_SERVER == 'server') {
+      await this.sendEmailServer(mailOptions);
+      return;
     }
 
     const transporter = nodemailer.createTransport({
@@ -198,13 +254,6 @@ export default class Helper {
       logger: configMail?.debug,
       ...tls,
     });
-
-    const mailOptions = {
-      from: configMail?.sender,
-      to: data?.to,
-      subject: data?.subject,
-      html: data?.content,
-    };
 
     transporter.sendMail(mailOptions, async (error: any, info: any) => {
       if (error) {

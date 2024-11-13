@@ -1,6 +1,7 @@
 'use strict';
 
 import { DataTypes } from 'sequelize';
+import DocMou from '../document.mou.model';
 import Attachment from '../attachment.model';
 import conn from '../../../../config/database';
 import HistoryStatus from '../history.status.model';
@@ -50,6 +51,9 @@ const Model = conn.sequelize.define(
     status: {
       type: DataTypes.INTEGER,
     },
+    pengajuan_ke: {
+      type: DataTypes.STRING,
+    },
     created_by: {
       type: DataTypes.INTEGER,
     },
@@ -86,6 +90,10 @@ Model.hasMany(HistoryStatus, {
 });
 Model.hasMany(Attachment, {
   as: 'attachment',
+  foreignKey: 'id_pengajuan_audiensi',
+});
+Model.hasOne(DocMou, {
+  as: 'document_mou',
   foreignKey: 'id_pengajuan_audiensi',
 });
 

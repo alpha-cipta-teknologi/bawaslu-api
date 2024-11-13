@@ -2,6 +2,7 @@
 
 import { Op } from 'sequelize';
 import Model from './kerjasama.model';
+import DocMou from '../document.mou.model';
 import Attachment from '../attachment.model';
 import Regency from '../../../area/regencies.model';
 import Province from '../../../area/provinces.model';
@@ -69,6 +70,11 @@ export default class Respository {
           model: Regency,
           attributes: ['id', 'name', 'area_province_id'],
           as: 'regency',
+          required: false,
+        },
+        {
+          model: DocMou,
+          as: 'document_mou',
           required: false,
         },
       ],

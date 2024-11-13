@@ -13,6 +13,7 @@ export default class Variable {
       'area_province_id',
       'area_regencies_id',
       'status',
+      'pengajuan_ke',
     ];
     return field;
   }

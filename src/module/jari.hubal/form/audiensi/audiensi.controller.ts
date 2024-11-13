@@ -79,7 +79,7 @@ export default class Controller {
         conditionArea
       );
       if (rows?.length < 1) return response.failed('Data not found', 404, res);
-      const audiensi = await transformer.list(rows);
+      const audiensi = await transformer.list(rows, req?.user);
       return response.successDetail(
         'Data audiensi',
         { total: count, values: audiensi },
@@ -105,7 +105,7 @@ export default class Controller {
       );
       if (result?.length < 1)
         return response.failed('Data not found', 404, res);
-      const audiensi = await transformer.list(result);
+      const audiensi = await transformer.list(result, req?.user);
       return response.successDetail('Data audiensi', audiensi, res);
     } catch (err) {
       return helper.catchError(`audiensi index: ${err?.message}`, 500, res);
@@ -117,7 +117,7 @@ export default class Controller {
       const id: any = req.params.id || 0;
       const result: Object | any = await repository.detail({ id: id });
       if (!result) return response.failed('Data not found', 404, res);
-      const audiensi = await transformer.detail(result);
+      const audiensi = await transformer.detail(result, req?.user);
       return response.successDetail('Data audiensi', audiensi, res);
     } catch (err) {
       return helper.catchError(`audiensi detail: ${err?.message}`, 500, res);
@@ -231,6 +231,43 @@ export default class Controller {
       const id: any = req.params.id || 0;
       const check = await repository.check({ id: id });
       if (!check) return response.failed('Data not found', 404, res);
+
+      let path_url: string = '';
+      if (req?.files && req?.files?.doc_mou) {
+        const docMou = req?.files?.doc_mou;
+        let checkFile = helper.checkExtention(docMou, 'file');
+        if (checkFile != 'allowed') return checkFile;
+
+        path_url = await helper.upload(docMou, 'form_audiensi_mou');
+      }
+
+      const checkMou: Object | any = await repoForm.detailDocMou({
+        id_pengajuan_audiensi: id,
+      });
+      if (checkMou) {
+        await repository.update({
+          payload: {
+            path_url: path_url || checkMou?.getDataValue('path_url'),
+            keterangan:
+              req?.body?.keterangan || checkMou?.getDataValue('keterangan'),
+            masa_berlaku:
+              req?.body?.masa_berlaku || checkMou?.getDataValue('masa_berlaku'),
+            modified_by: req?.user?.id || 0,
+            modified_date: date,
+          },
+          condition: { id_pengajuan_audiensi: id },
+        });
+      } else {
+        await repoForm.createDocMou({
+          payload: {
+            id_pengajuan_audiensi: id || null,
+            path_url: path_url || null,
+            masa_berlaku: req?.body?.masa_berlaku || date,
+            keterangan: req?.body?.keterangan || null,
+            created_by: req?.user?.id || 0,
+          },
+        });
+      }
 
       await repository.update({
         payload: {

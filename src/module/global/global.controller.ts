@@ -185,20 +185,44 @@ export default class Controller {
     }
   }
 
-  public async sendmail(req: Request, res: Response) {
+  public sendmail = async (req: Request, res: Response): Promise<void> => {
     try {
       const { email, subject, content } = req?.body;
+      if (!email) return response.failed('email is required', 422, res);
+      if (!subject) return response.failed('subject is required', 422, res);
+      if (!content) return response.failed('content is required', 422, res);
+
+      let attachments: Array<Object> = [];
+      if (req?.files && req?.files?.attachs) {
+        const attachs = req?.files?.attachs;
+        if (attachs?.length > 0) {
+          for (let i in attachs) {
+            attachments.push({
+              filename: attachs[i]?.name,
+              path: attachs[i]?.tempFilePath,
+            });
+          }
+        } else {
+          attachments.push({
+            filename: attachs?.name,
+            path: attachs?.tempFilePath,
+          });
+        }
+      }
+
       await helper.sendEmail({
         to: email,
         subject: subject,
         content: content,
+        attachments: attachments,
       });
 
       return response.success(true, 'Send email success', res);
-    } catch (err) {
+    } catch (error) {
+      const err: any = error;
       return helper.catchError(`sendmail: ${err?.message}`, 500, res);
     }
-  }
+  };
 
   public async search(req: Request, res: Response) {
     try {

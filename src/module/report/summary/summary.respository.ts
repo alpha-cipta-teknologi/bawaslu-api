@@ -11,8 +11,6 @@ import PenggunaProvinveKomunitas from './pengguna.province.komunitas.model';
 
 export default class Respository {
   public pengguna(data: any) {
-    console.warn(data?.condition);
-
     let query: Object = {
       offset: data?.offset,
       limit: data?.limit,
