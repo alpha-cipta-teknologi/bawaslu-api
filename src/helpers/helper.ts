@@ -382,6 +382,21 @@ export default class Helper {
     const origin: string = req?.headers['origin'] || '';
     return origin.includes('cms');
   }
+
+  public formPengajuanStatus(sts: number) {
+    const status: Array<String> = [
+      'Diajukan',
+      'Dalam Tinjauan',
+      'Diterima',
+      'Diperlukan Klarifikasi',
+      'Disetujui',
+      'Ditolak',
+      'Dalam Proses Negosiasi',
+      'Selesai',
+      'Dibatalkan',
+    ];
+    return status[sts - 1] || '';
+  }
 }
 
 export const helper = new Helper();

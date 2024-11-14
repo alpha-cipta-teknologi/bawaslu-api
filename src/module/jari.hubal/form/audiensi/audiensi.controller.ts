@@ -1,5 +1,7 @@
 'use strict';
 
+import path from 'path';
+import moment from 'moment';
 import dotenv from 'dotenv';
 import { Op } from 'sequelize';
 import { Request, Response } from 'express';
@@ -230,30 +232,38 @@ export default class Controller {
 
   public async updateStatus(req: Request, res: Response) {
     try {
+      const { status, masa_berlaku, keterangan } = req?.body;
       const id: any = req.params.id || 0;
       const check = await repository.check({ id: id });
       if (!check) return response.failed('Data not found', 404, res);
 
       let path_url: string = '';
+      let attachments: Array<Object> = [];
       if (req?.files && req?.files?.doc_mou) {
         const docMou = req?.files?.doc_mou;
         let checkFile = helper.checkExtention(docMou, 'file');
         if (checkFile != 'allowed') return checkFile;
 
         path_url = await helper.upload(docMou, 'form_audiensi_mou');
+
+        attachments = [
+          {
+            filename: docMou?.name,
+            path: path.resolve(`./public/${path_url}`),
+          },
+        ];
       }
 
       const checkMou: Object | any = await repoForm.detailDocMou({
         id_pengajuan_audiensi: id,
       });
       if (checkMou) {
-        await repository.update({
+        await repoForm.updateDocMou({
           payload: {
             path_url: path_url || checkMou?.getDataValue('path_url'),
-            keterangan:
-              req?.body?.keterangan || checkMou?.getDataValue('keterangan'),
+            keterangan: keterangan || checkMou?.getDataValue('keterangan'),
             masa_berlaku:
-              req?.body?.masa_berlaku || checkMou?.getDataValue('masa_berlaku'),
+              masa_berlaku || checkMou?.getDataValue('masa_berlaku'),
             modified_by: req?.user?.id || 0,
             modified_date: date,
           },
@@ -264,8 +274,8 @@ export default class Controller {
           payload: {
             id_pengajuan_audiensi: id || null,
             path_url: path_url || null,
-            masa_berlaku: req?.body?.masa_berlaku || date,
-            keterangan: req?.body?.keterangan || null,
+            masa_berlaku: masa_berlaku || date,
+            keterangan: keterangan || null,
             created_by: req?.user?.id || 0,
           },
         });
@@ -273,9 +283,8 @@ export default class Controller {
 
       await repository.update({
         payload: {
-          keterangan:
-            req?.body?.keterangan || check?.getDataValue('keterangan'),
-          status: req?.body?.status || check?.getDataValue('status'),
+          keterangan: keterangan || check?.getDataValue('keterangan'),
+          status: status || check?.getDataValue('status'),
           modified_by: req?.user?.id || 0,
           modified_date: date,
         },
@@ -285,12 +294,36 @@ export default class Controller {
       await repoForm.createHistoryStatus({
         payload: {
           id_pengajuan_audiensi: id || check?.getDataValue('id'),
-          keterangan:
-            req?.body?.keterangan || check?.getDataValue('keterangan'),
+          keterangan: keterangan || check?.getDataValue('keterangan'),
           status: check?.getDataValue('status'),
           created_by: req?.user?.id || 0,
           created_date: date,
         },
+      });
+
+      await helper.sendEmail({
+        to: check?.getDataValue('pic_email'),
+        subject: 'Status Pengajuan Audiensi',
+        content: `
+          <h3>Hi ${check?.getDataValue('pic_name')},</h3>
+          <p>Pengajuan dengan nomor pendaftaran <b>${check?.getDataValue(
+            'no_register'
+          )}</b>, status menjadi:</p>
+          <h3>${helper.formPengajuanStatus(check?.getDataValue('status'))}</h3>
+          ${
+            keterangan && keterangan != undefined
+              ? `Keterangan: ${keterangan}`
+              : ''
+          }
+          ${
+            status == 5
+              ? `<p>Masa berlaku MoU sampai dengan ${moment(masa_berlaku)
+                  .locale('id')
+                  .format('DD MMMM YYYY')}</p>`
+              : ''
+          }
+        `,
+        attachments: attachments,
       });
 
       return response.success(true, 'Data success updated', res);
