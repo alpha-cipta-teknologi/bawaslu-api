@@ -377,6 +377,11 @@ export default class Helper {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
+
+  public checkIsAdminPanel(req: Request) {
+    const origin: string = req?.headers['origin'] || '';
+    return origin.includes('cms');
+  }
 }
 
 export const helper = new Helper();

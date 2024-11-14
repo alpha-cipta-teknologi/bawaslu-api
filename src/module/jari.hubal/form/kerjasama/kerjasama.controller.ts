@@ -104,12 +104,14 @@ export default class Controller {
 
   public async create(req: Request, res: Response) {
     try {
-      const { otp, pic_email } = req?.body;
-      const { status, message } = await authController.verifyOtpSubmit(
-        otp,
-        pic_email
-      );
-      if (!status) return response.failed(message, 400, res);
+      if (!helper.checkIsAdminPanel(req)) {
+        const { otp, pic_email } = req?.body;
+        const { status, message } = await authController.verifyOtpSubmit(
+          otp,
+          pic_email
+        );
+        if (!status) return response.failed(message, 400, res);
+      }
 
       let noRegister: string = `${helper.dateForNumber()}|kerjasama|insert_id`;
       let regency_id: any = null;
