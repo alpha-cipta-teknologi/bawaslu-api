@@ -26,9 +26,9 @@ router.get('/role-menu/all-data', auth.checkBearerToken, roleMenu.list);
 router.get('/role-menu', auth.checkBearerToken, roleMenu.index);
 router.post('/role-menu', auth.checkBearerToken, roleMenu.create);
 
-router.get('/param-global/all-data', auth.checkBearerToken, paramGlobal.list);
-router.get('/param-global', auth.checkBearerToken, paramGlobal.index);
-router.get('/param-global/detail', auth.checkBearerToken, paramGlobal.detail);
+router.get('/param-global/all-data', auth.checkToken, paramGlobal.list);
+router.get('/param-global', auth.checkToken, paramGlobal.index);
+router.get('/param-global/detail', auth.checkToken, paramGlobal.detail);
 router.post('/param-global', auth.checkBearerToken, paramGlobal.create);
 router.put('/param-global/:id', auth.checkBearerToken, paramGlobal.update);
 router.delete('/param-global/:id', auth.checkBearerToken, paramGlobal.delete);
