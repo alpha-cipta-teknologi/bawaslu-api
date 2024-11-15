@@ -191,8 +191,8 @@ export default class Respository {
       }
     );
 
-    if (data?.offset) query += ` OFFSET ${data?.offset}`;
     if (data?.limit) query += ` LIMIT ${data?.limit}`;
+    if (data?.offset) query += ` OFFSET ${data?.offset}`;
 
     const rows = await conn.sequelize.query(query, {
       type: QueryTypes.SELECT,
