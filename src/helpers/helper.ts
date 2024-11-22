@@ -346,10 +346,12 @@ export default class Helper {
       condition = {
         area_province_id: data?.province_id,
         area_regencies_id: data?.regency_id,
+        role_id: {[Op.not]:1},
       };
     } else if (data?.role_name == 'admin provinsi')
       condition = {
         area_province_id: data?.province_id,
+        role_id: {[Op.not]:1},
       };
     return condition;
   }

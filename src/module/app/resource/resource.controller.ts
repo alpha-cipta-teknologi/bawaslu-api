@@ -76,7 +76,13 @@ export default class Controller {
 
   public async detail(req: Request, res: Response) {
     try {
+      const requestorId: any = req?.user.role_id;
       const id: any = req.params.id || 0;
+      if (requestorId != 1) {
+        if (id == 1) {
+          return response.failed('Not Authorized Access', 403, res);
+        }
+      }
       const result: Object | any = await repository.detail({ resource_id: id });
       if (!result) return response.failed('Data not found', 404, res);
       const getUser: Object = await transformer.detail(result);
@@ -163,9 +169,16 @@ export default class Controller {
 
   public async update(req: Request, res: Response) {
     try {
+      const requestorId: any = req?.user.role_id;
       const id: any = req.params.id || 0;
       const check = await repository.check({ resource_id: id });
       if (!check) return response.failed('Data not found', 404, res);
+
+      if (requestorId != 1) {
+        if (check.role_id == 1) {
+          return response.failed('Not Authorized Access', 403, res);
+        }
+      }
 
       let role_id: any = null;
       let province_id: any = null;
