@@ -35,12 +35,11 @@
     "sequelize": "^6.26.0",
     "sharp": "^0.31.2",
     "tele-sender": "^1.0.2",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@onesignal/node-onesignal": "^1.0.0-beta7",
-    "@types/node-cron": "^3.0.7",
-    "@types/nodemailer": "^6.4.7",
     "@types/axios": "^0.14.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/body-parser": "^1.19.2",
@@ -49,6 +48,8 @@
     "@types/express-fileupload": "^1.4.1",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/node": "^18.11.10",
+    "@types/node-cron": "^3.0.7",
+    "@types/nodemailer": "^6.4.7",
     "@types/redis": "^4.0.11",
     "@types/sequelize": "^4.28.14",
     "@types/sharp": "^0.31.0",

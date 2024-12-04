@@ -83,7 +83,7 @@ export default class Controller {
           return response.failed('Not Authorized Access', 403, res);
         }
       }
-      const result: Object | any = await repository.detail({ resource_id: id });
+      const result: Object | any = await repository.detail({ resource_uuid: id });
       if (!result) return response.failed('Data not found', 404, res);
       const getUser: Object = await transformer.detail(result);
       return response.successDetail('Data resource', getUser, res);
@@ -170,8 +170,9 @@ export default class Controller {
   public async update(req: Request, res: Response) {
     try {
       const requestorId: any = req?.user.role_id;
-      const id: any = req.params.id || 0;
-      const check = await repository.check({ resource_id: id });
+      // const id: any = req.params.id || 0;
+      const resource_uuid: any = req.params.id || 0;
+      const check = await repository.check({ resource_uuid: resource_uuid });
       if (!check) return response.failed('Data not found', 404, res);
 
       if (requestorId != 1) {
@@ -227,11 +228,11 @@ export default class Controller {
             komunitas_id?.value || check?.getDataValue('komunitas_id'),
           modified_by: req?.user?.id,
         },
-        condition: { resource_id: id },
+        condition: { resource_uuid: resource_uuid },
       });
 
       if (req?.body?.tema_id) {
-        await temaMapping(JSON.parse(req?.body?.tema_id), id, true);
+        await temaMapping(JSON.parse(req?.body?.tema_id), check.resource_id, true);
       }
 
       return response.success(true, 'Data success updated', res);
@@ -243,7 +244,7 @@ export default class Controller {
   public async delete(req: Request, res: Response) {
     try {
       const id: any = req.params.id || 0;
-      const check = await repository.detail({ resource_id: id });
+      const check = await repository.detail({ resource_uuid: id });
       if (!check) return response.failed('Data not found', 404, res);
       await repository.update({
         payload: {
@@ -251,7 +252,7 @@ export default class Controller {
           modified_by: req?.user?.id,
           modified_date: date,
         },
-        condition: { resource_id: id },
+        condition: { resource_uuid: id },
       });
       return response.success(true, 'Data success deleted', res);
     } catch (err) {

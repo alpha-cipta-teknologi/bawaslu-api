@@ -1,11 +1,11 @@
 'use strict';
-
 import { DataTypes } from 'sequelize';
 import Role from '../role/role.model';
 import conn from '../../../config/database';
 import Regency from '../../area/regencies.model';
 import Province from '../../area/provinces.model';
 import Komunitas from '../../reff/komunitas/komunitas.model';
+import { uuid } from 'uuidv4';
 
 const Model = conn.sequelize.define(
   'app_resource',
@@ -14,6 +14,10 @@ const Model = conn.sequelize.define(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
+    },
+    resource_uuid: {
+      type: DataTypes.STRING,
+      unique: true,
     },
     role_id: {
       type: DataTypes.INTEGER,
@@ -83,6 +87,9 @@ const Model = conn.sequelize.define(
     freezeTableName: true,
   }
 );
+
+Model.beforeCreate(app_resource => app_resource.resource_uuid = uuid());
+
 Model.belongsTo(Role, { as: 'role', foreignKey: 'role_id' });
 Model.belongsTo(Province, {
   as: 'province',
