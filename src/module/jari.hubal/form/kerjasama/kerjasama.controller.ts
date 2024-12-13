@@ -105,6 +105,9 @@ export default class Controller {
   }
 
   public async create(req: Request, res: Response) {
+    let message: string = '';
+    let noRegister: string = `${helper.dateForNumber()}|kerjasama|insert_id`;
+
     try {
       if (!helper.checkIsAdminPanel(req)) {
         const { otp, pic_email } = req?.body;
@@ -115,7 +118,6 @@ export default class Controller {
         if (!status) return response.failed(message, 400, res);
       }
 
-      let noRegister: string = `${helper.dateForNumber()}|kerjasama|insert_id`;
       let regency_id: any = null;
       let province_id: any = null;
       let bentuk_kerjasama: any = null;
@@ -162,6 +164,12 @@ export default class Controller {
         },
       });
 
+      message = 'Data success saved';
+    } catch (err) {
+      return helper.catchError(`kerjasama create: ${err?.message}`, 500, res);
+    }
+
+    try {
       await helper.sendEmail({
         to: req?.body?.pic_email,
         subject: 'Pengajuan Kerjasama',
@@ -171,11 +179,11 @@ export default class Controller {
           <h3>${noRegister}</h3>
         `,
       });
-
-      return response.success(true, 'Data success saved', res);
     } catch (err) {
-      return helper.catchError(`kerjasama create: ${err?.message}`, 500, res);
+      message = `<br /> error send email: ${err?.message}`;
     }
+
+    return response.success(true, message, res);
   }
 
   public async update(req: Request, res: Response) {
@@ -222,14 +230,17 @@ export default class Controller {
   }
 
   public async updateStatus(req: Request, res: Response) {
+    let message: string = '';
+    let check: any = null;
+    let attachments: Array<Object> = [];
+    const { status, masa_berlaku, keterangan } = req?.body;
+
     try {
-      const { status, masa_berlaku, keterangan } = req?.body;
       const id: any = req.params.id || 0;
-      const check = await repository.check({ id: id });
+      check = await repository.check({ id: id });
       if (!check) return response.failed('Data not found', 404, res);
 
       let path_url: string = '';
-      let attachments: Array<Object> = [];
       if (req?.files && req?.files?.doc_mou) {
         const docMou = req?.files?.doc_mou;
         let checkFile = helper.checkExtention(docMou, 'file');
@@ -292,32 +303,7 @@ export default class Controller {
         },
       });
 
-      await helper.sendEmail({
-        to: check?.getDataValue('pic_email'),
-        subject: 'Status Pengajuan Kerjasama',
-        content: `
-          <h3>Hi ${check?.getDataValue('pic_name')},</h3>
-          <p>Pengajuan dengan nomor pendaftaran <b>${check?.getDataValue(
-            'no_register'
-          )}</b>, status menjadi:</p>
-          <h3>${helper.formPengajuanStatus(check?.getDataValue('status'))}</h3>
-          ${
-            keterangan && keterangan != undefined
-              ? `Keterangan: ${keterangan}`
-              : ''
-          }
-          ${
-            status == 5
-              ? `<p>Masa berlaku MoU sampai dengan ${moment(masa_berlaku)
-                  .locale('id')
-                  .format('DD MMMM YYYY')}</p>`
-              : ''
-          }
-        `,
-        attachments: attachments,
-      });
-
-      return response.success(true, 'Data success updated', res);
+      message = 'Data success updated';
     } catch (err) {
       return helper.catchError(
         `status kerjasama update: ${err?.message}`,
@@ -325,6 +311,39 @@ export default class Controller {
         res
       );
     }
+
+    try {
+      if (check?.getDataValue('pic_email')) {
+        await helper.sendEmail({
+          to: check?.getDataValue('pic_email'),
+          subject: 'Status Pengajuan Kerjasama',
+          content: `
+            <h3>Hi ${check?.getDataValue('pic_name')},</h3>
+            <p>Pengajuan dengan nomor pendaftaran <b>${check?.getDataValue(
+              'no_register'
+            )}</b>, status menjadi:</p>
+            <h3>${helper.formPengajuanStatus(check?.getDataValue('status'))}</h3>
+            ${
+              keterangan && keterangan != undefined
+                ? `Keterangan: ${keterangan}`
+                : ''
+            }
+            ${
+              status == 5
+                ? `<p>Masa berlaku MoU sampai dengan ${moment(masa_berlaku)
+                    .locale('id')
+                    .format('DD MMMM YYYY')}</p>`
+                : ''
+            }
+          `,
+          attachments: attachments,
+        });
+      }
+    } catch (err) {
+      message = `<br /> error send email: ${err?.message}`;
+    }
+
+    return response.success(true, message, res);
   }
 
   public async delete(req: Request, res: Response) {

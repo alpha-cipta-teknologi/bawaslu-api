@@ -101,6 +101,9 @@ export default class Controller {
   }
 
   public async register(req: Request, res: Response) {
+    let confirm_hash: string = '';
+    let message: string = '';
+
     try {
       const checkEmail = await repository.check({
         email: { [Op.like]: `%${req?.body?.email}%` },
@@ -113,8 +116,8 @@ export default class Controller {
       });
       if (checkUsername) username = username + 1;
 
+      confirm_hash = await helper.hashIt(username, 6);
       const password: string = await helper.hashIt(req?.body?.password);
-      const confirm_hash = await helper.hashIt(username, 6);
       const only: Object = helper.only(variable.fillable(), req?.body);
 
       const role = await repoRole.detail({
@@ -151,6 +154,12 @@ export default class Controller {
         }
       }
 
+      message = 'success register';
+    } catch (err) {
+      return helper.catchError(`register: ${err?.message}`, 500, res);
+    }
+
+    try {
       await helper.sendEmail({
         to: req?.body?.email,
         subject: 'Welcome to Bawaslu Forum',
@@ -160,11 +169,11 @@ export default class Controller {
           ${process.env.BASE_URL_FE}/account-verification?confirm_hash=${confirm_hash}
         `,
       });
-
-      return response.success(true, 'success register', res);
     } catch (err) {
-      return helper.catchError(`register: ${err?.message}`, 500, res);
+      message = `<br /> error send email: ${err?.message}`;
     }
+
+    return response.success(true, message, res);
   }
 
   public async verify(req: Request, res: Response) {

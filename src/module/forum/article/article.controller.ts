@@ -94,6 +94,9 @@ export default class Controller {
   }
 
   public async create(req: Request, res: Response) {
+    let payload: any = null;
+    let message: string = '';
+
     try {
       const body: any = req?.body;
       if (!body?.title) return response.failed('Title is required', 422, res);
@@ -131,7 +134,7 @@ export default class Controller {
       if (komunitas_id) komunitas = JSON.parse(komunitas_id);
       if (tema_id) tema = JSON.parse(tema_id);
       const data: Object = helper.only(variable.fillable(), body);
-      const payload: any = {
+      payload = {
         ...data,
         slug: slug,
         path_thumbnail: path_thumbnail,
@@ -144,6 +147,13 @@ export default class Controller {
       await repository.create({
         payload: payload,
       });
+
+      message = 'Data success saved';
+    } catch (err) {
+      return helper.catchError(`article create: ${err?.message}`, 500, res);
+    }
+
+    try {
       const { web_url, usernames } = await notif({
         ...payload,
         title: `${req?.user?.username} create article: ${payload?.title}`,
@@ -156,11 +166,11 @@ export default class Controller {
         },
         usernames
       );
-
-      return response.success(true, 'Data success saved', res);
     } catch (err) {
-      return helper.catchError(`article create: ${err?.message}`, 500, res);
+      message = `<br /> error one signal: ${err?.message}`;
     }
+
+    return response.success(true, message, res);
   }
 
   public async update(req: Request, res: Response) {

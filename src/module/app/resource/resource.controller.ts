@@ -93,6 +93,9 @@ export default class Controller {
   }
 
   public async create(req: Request, res: Response) {
+    let confirm_hash: string = '';
+    let message: string = '';
+
     try {
       const checkEmail = await repository.check({
         email: { [Op.like]: `%${req?.body?.email}%` },
@@ -125,8 +128,8 @@ export default class Controller {
         image_foto = await helper.upload(req?.files.image_foto, 'resource');
       }
 
+      confirm_hash = await helper.hashIt(username, 6);
       const password: string = await helper.hashIt(req?.body?.password);
-      const confirm_hash = await helper.hashIt(username, 6);
       const only: Object = helper.only(variable.fillable(), req?.body);
 
       const resource = await repository.create({
@@ -151,6 +154,12 @@ export default class Controller {
         );
       }
 
+      message = 'Data success saved';
+    } catch (err) {
+      return helper.catchError(`resource create: ${err?.message}`, 500, res);
+    }
+
+    try {
       await helper.sendEmail({
         to: req?.body?.email,
         subject: 'Welcome to Bawaslu Forum',
@@ -160,11 +169,11 @@ export default class Controller {
           ${process.env.BASE_URL_FE}/account-verification?confirm_hash=${confirm_hash}
         `,
       });
-
-      return response.success(true, 'Data success saved', res);
     } catch (err) {
-      return helper.catchError(`resource create: ${err?.message}`, 500, res);
+      message = `<br /> error send email: ${err?.message}`;
     }
+
+    return response.success(true, message, res);
   }
 
   public async update(req: Request, res: Response) {
