@@ -75,6 +75,14 @@ export default class Controller {
         slug: slug,
       });
       if (checkSlug) slug = slug + 1;
+      const checkData = await repository.check({
+        [Op.or]: [
+          { title: body?.title },
+          { slug: slug },
+          { description: body?.description },
+        ],
+      });
+      if (checkData) return response.failed('Bawaslu Update already exists', 403, res);
 
       let path_thumbnail: any = null;
       let path_image: any = null;

@@ -99,10 +99,14 @@ export default class Controller {
       if (!body?.title) return response.failed('Title is required', 422, res);
 
       let slug: string = helper.slug(body?.title);
-      const checkSlug = await repository.check({
-        slug: slug,
+      const checkData = await repository.check({
+        [Op.or]: [
+          { title: body?.title },
+          { slug: slug },
+          { description: body?.description },
+        ],
       });
-      if (checkSlug) slug = slug + 1;
+      if (checkData) return response.failed('Article already exists', 403, res);
 
       let path_thumbnail: any = null;
       let path_image: any = null;

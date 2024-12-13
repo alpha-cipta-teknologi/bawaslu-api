@@ -88,7 +88,7 @@ const Model = conn.sequelize.define(
   }
 );
 
-Model.beforeCreate(app_resource => app_resource.resource_uuid = uuid());
+Model.beforeCreate((app_resource: { resource_uuid: string; }) => app_resource.resource_uuid = uuid());
 
 Model.belongsTo(Role, { as: 'role', foreignKey: 'role_id' });
 Model.belongsTo(Province, {
